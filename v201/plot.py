@@ -55,6 +55,7 @@ ax.plot(
     linewidth=1,
     color="tab:orange",
 )
+
 ax.legend()
 ax.set(xlabel=r"$\Delta x$", ylabel=r"$\symbf{F}(N)$");
 
