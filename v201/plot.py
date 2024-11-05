@@ -14,12 +14,7 @@ ax2.plot(x, y, label="Kurve")
 ax2.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
 ax2.set_ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
 ax2.legend(loc="best")
-
 #fig.savefig("build/plot.pdf")
-
-
-
-from sklearn.linear_model import LinearRegression
 
 #einfachste Lösung
 plt.rcParams["figure.figsize"] = (6, 4)
