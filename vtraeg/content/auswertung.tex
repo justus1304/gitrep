@@ -1,11 +1,13 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+
+\subsection{Winkelrichtgröße D}
 Im Folgenden wird zunächst die Winkelrichtgröße $D$ und das 
 Eigenträgheitsmoment der Drehachse bestimmt. Dazu wird die
 rücktreibende Kraft $F$ der Spiralfeder für verschiedene 
 Auslenkungen $\varphi$ gemessen. \\
-\begin{table}
+\begin{table}[H]
   \centering
   \caption{Messwerte zur Bestimmung von $D$.}
   \label{tab:tabelle}
@@ -37,7 +39,9 @@ Auslenkungen $\varphi$ gemessen. \\
 \end{table}
 Mit diesen Mittelwerten kann mithilfe der Formel
 \eqref{eqn:gl9} und $r= 29,2cm$ die Winkelrichtgröße der Spiralfeder zu %ich weiß nicht, was ich falsch mache, er will einfach nicht die gleichung im pdf referenzieren.
-0,0031 $\frac{N \cdot m}{rad}$ bestimmt werden. \\
+0,0031 $\frac{N \cdot m}{rad}$ bestimmt werden. 
+
+\subsection{Eigenträgheitsmoment $I_D$}
 Als nächstes wird das Eigenträgheitsmoment $I_D$ der Drillachse bestimmt.
 Um das zu tun, wird das Trägheitsmoment des gesamten System berechnet.
 Dafür wird das Trägheitsmoment des Stabs um die Drehachse ermittelt, ebenso
@@ -46,41 +50,89 @@ a zu der Drehachse stehen. Im Anschluss wird das Trägheitsmoment des Stabes
 und der Hohlzylinder von dem Gesamtergebnis abgezogen, sodass sich als 
 Ergebnis das gesuchte Trägheitsmoment der Drillachse ergibt.
 
-%Pdf lädt nicht, wenn die Tabelle in dem code ist, KA WIESO
+das theoretische Trägheitsmoment 
 
-% \begin{table}
-%   \centering
-%   \caption{Messwerte T/a.}
-%   \label{tab:tabelle}
-%   %\sisetup{table-format=1.1, per-mode=reciprocal}
-%   \begin{tblr}{
-%       colspec = {S S },
-%       row{1} = {guard, mode=math},
-%       %vline{4} = {2}{-}{text=\clap{$\pm$}},
-%     }
-%     \toprule
-%     \a(cm) & T(s)\\
-%     \midrule
-%     10    & 3.28\\
-%     11.5  & 3.71\\
-%     13    & 4.28\\
-%     14.5  & 4.75\\
-%     16    & 5.25\\
-%     17.5  & 5.90\\
-%     19    & 6.28\\
-%     20.5  & 6.78\\
-%     22    & 7.28\\
-%     23.5  & 7.97\\
-%     \midrule
-%     $\overline{\T}$ & $\overline{a}$\\
-%     \midrule
-%     \bottomrule
-%   \end{tblr}
-% \end{table}
+ \begin{table}[H]
+   \centering
+   \caption{Messwerte T/a.}
+   \label{tab:tabelle}
+   %\sisetup{table-format=1.1, per-mode=reciprocal}
+   \begin{tblr}{
+       colspec = {S S },
+       row{1} = {guard, mode=math},
+       %vline{4} = {2}{-}{text=\clap{$\pm$}},
+     }
+     \toprule
+     a(cm) & T(s)\\
+     \midrule
+     10    & 3.28\\
+     11.5  & 3.71\\
+     13    & 4.28\\
+     14.5  & 4.75\\
+     16    & 5.25\\
+     17.5  & 5.90\\
+     19    & 6.28\\
+     20.5  & 6.78\\
+     22    & 7.28\\
+     23.5  & 7.97\\
+     \midrule
+     $\overline{T}$ & $\overline{a}$\\
+     \midrule
+     \bottomrule
+   \end{tblr}
+ \end{table}
 
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics{plot.pdf}
   \caption{Plot.}
   \label{fig:plot}
 \end{figure}
+
+\subsection{Trägheitsmoment Kugel und Zylinder}
+%Kugel
+\begin{table}[H]
+  \centering
+  \caption{Abmessungen Holzkugel.}
+  \label{tab:kugel}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S },
+      row{1} = {guard, mode=math},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    r(m) & m(kg)\\
+    \midrule
+    0.0605\pm 0.0001  & 0.638\pm 0.001 \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+%zylinder
+\begin{table}[H]
+  \centering
+  \caption{Abmessungen Holzzylinder.}
+  \label{tab:zylinder}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S},
+      row{1} = {guard, mode=math},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    r(m) & h(m) & m(kg)\\
+    \midrule
+    0.0493\pm 0.0001 & 0.0995\pm 0.0001 & 0.366\pm 0.001 \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+Hier sollte das Trägheitsmoment von einer kugel und eines Zylinders berechnet werden. mit den maßen aus \autoref{tab:kugel}
+und \autoref{eqn:gl5} berechnet sich $I_{Holzkugel} = (0.0009350\pm0.0000034)kg ⋅ m²$. und Das Trägheitsmoment des Zylinder
+mit den abmessungen \autoref{tab:zylinder} eingesetzt in \autoref{eqn:gl6} zu $I_Holzzylinder = 
+0.000444\pm0.0000022 kg ⋅ m²$.
+
+
+
+
+

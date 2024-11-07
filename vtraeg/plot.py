@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+
+
 #Liniare regression
 plt.rcParams["figure.figsize"] = (6, 4)
 plt.rcParams["font.size"] = 16
