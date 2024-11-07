@@ -1,13 +1,13 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-Im folgenden wird zunächst die Winkelrichtgröße $D$ und das Eigentraegheitsmoment der drehachse bestimmt.
-Dazu Messen wir die rücktreibende kraft $\symbf{F}$ der Spiralfeder für verschiedene auslenkungen $\Phi$.
-
-
+Im Folgenden wird zunächst die Winkelrichtgröße $D$ und das 
+Eigenträgheitsmoment der Drehachse bestimmt. Dazu wird die
+rücktreibende Kraft $F$ der Spiralfeder für verschiedene 
+Auslenkungen $\varphi$ gemessen. \\
 \begin{table}
   \centering
-  \caption{Messwerte zur bestimmung von $D$.}
+  \caption{Messwerte zur Bestimmung von $D$.}
   \label{tab:tabelle}
   %\sisetup{table-format=1.1, per-mode=reciprocal}
   \begin{tblr}{
@@ -16,64 +16,67 @@ Dazu Messen wir die rücktreibende kraft $\symbf{F}$ der Spiralfeder für versch
       %vline{4} = {2}{-}{text=\clap{$\pm$}},
     }
     \toprule
-    \Phi &  F(N)\\
+    \varphi(°) &  F(N)\\
     \midrule
     22.5  & 0\\
-    45    &0.04\\
-    67.5  &0.068\\
-    90    & 0.09\\
-    112.5 &0.126\\
-    135   &0.164\\
+    45.0  & 0.04\\
+    67.5  & 0.068\\
+    90.0  & 0.09\\
+    112.5 & 0.126\\
+    135.0 & 0.164\\
     157.5 & 0.172\\
-    180   & 0.18\\
+    180.0 & 0.18\\
     202.5 & 0.2\\
-    225   & 0.28\\
+    225.0 & 0.28\\
     \midrule
-    $\overline{\Phi}$& $\overline{F(N)}$\\
-    \midrule
-    \bottomrule
-  \end{tblr}
-\end{table}
-
-mit diesen mittelwert kann man mit Formel \autoref{} und $r= ???cm$ Die Winkelrichtgröße 
-der Spiralfeder zu ???? bestimmen. 
-
-Als nächstes wird das Eigenträgheitsmoment $I_D$ der Drillachse bestimmt. Dazu wird Das Trägheitsmoment 
-eines Dünnen stabes mit 2 identischen liegenden Hohlzylindern im abstand a von der Drehachse 
-zusammen mit dem Trägheitsmoment der Drillachse bestimmt, um danach den Theoretischen wert von dem dünnen Stab mit den zwei Hohlzylindern 
-abziehen zu können und das Trägheitsmoment von der Drillachse zu erhlten.
-
-
-
-\begin{table}
-  \centering
-  \caption{Messwerte T/a.}
-  \label{tab:tabelle}
-  %\sisetup{table-format=1.1, per-mode=reciprocal}
-  \begin{tblr}{
-      colspec = {S S },
-      row{1} = {guard, mode=math},
-      %vline{4} = {2}{-}{text=\clap{$\pm$}},
-    }
-    \toprule
-    \Phi &  F(N)\\
-    \midrule
-    5&4\\
-    \midrule
-    $\overline{\Phi}$& $\overline{F(N)}$\\
+    $\overline{\varphi}$ & $\overline{F}$\\
+    123.75 & 0.132\\
     \midrule
     \bottomrule
   \end{tblr}
 \end{table}
+Mit diesen Mittelwerten kann mithilfe der Formel
+\eqref{eqn:gl9} und $r= 29,2cm$ die Winkelrichtgröße der Spiralfeder zu %ich weiß nicht, was ich falsch mache, er will einfach nicht die gleichung im pdf referenzieren.
+0,0031 $\frac{N \cdot m}{rad}$ bestimmt werden. \\
+Als nächstes wird das Eigenträgheitsmoment $I_D$ der Drillachse bestimmt.
+Um das zu tun, wird das Trägheitsmoment des gesamten System berechnet.
+Dafür wird das Trägheitsmoment des Stabs um die Drehachse ermittelt, ebenso
+wie das Trägheitsmoment der beiden Hohlzylinder, welche jeweils im Abstand
+a zu der Drehachse stehen. Im Anschluss wird das Trägheitsmoment des Stabes
+und der Hohlzylinder von dem Gesamtergebnis abgezogen, sodass sich als 
+Ergebnis das gesuchte Trägheitsmoment der Drillachse ergibt.
 
+%Pdf lädt nicht, wenn die Tabelle in dem code ist, KA WIESO
 
-
-
-
-
-
-
-
+% \begin{table}
+%   \centering
+%   \caption{Messwerte T/a.}
+%   \label{tab:tabelle}
+%   %\sisetup{table-format=1.1, per-mode=reciprocal}
+%   \begin{tblr}{
+%       colspec = {S S },
+%       row{1} = {guard, mode=math},
+%       %vline{4} = {2}{-}{text=\clap{$\pm$}},
+%     }
+%     \toprule
+%     \a(cm) & T(s)\\
+%     \midrule
+%     10    & 3.28\\
+%     11.5  & 3.71\\
+%     13    & 4.28\\
+%     14.5  & 4.75\\
+%     16    & 5.25\\
+%     17.5  & 5.90\\
+%     19    & 6.28\\
+%     20.5  & 6.78\\
+%     22    & 7.28\\
+%     23.5  & 7.97\\
+%     \midrule
+%     $\overline{\T}$ & $\overline{a}$\\
+%     \midrule
+%     \bottomrule
+%   \end{tblr}
+% \end{table}
 
 \begin{figure}
   \centering
@@ -81,5 +84,3 @@ abziehen zu können und das Trägheitsmoment von der Drillachse zu erhlten.
   \caption{Plot.}
   \label{fig:plot}
 \end{figure}
-
-

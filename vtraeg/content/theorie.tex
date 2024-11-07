@@ -5,44 +5,66 @@ Das Trägheitsmoment entspricht der Kraft, welche gegen die Änderung der
 Winkelgeschwindigkeit $\omega$ wirkt. Ausgehend von einer punktförmigen 
 Masse m mit einem Radius r (der Abstand zur Drehachse) lässt sich das 
 Trägheitsmoment berechnen durch
-
 \begin{equation}
-    I = m r^2 .
+    I = m r^2 \quad \text{,[I]=} kg \cdot m^2.
+    \label{eq:gl1}
 \end{equation}
-
-Dreht sich ein Körper um eine (beliebige) Achse, so bewegen sich auch alle
+\noindent Dreht sich ein Körper um eine (beliebige) Achse, so bewegen sich auch alle
 Elemente dieses Körpers mit identischer Winkelgeschwindigkeit um Diese. Das
 gesamte Trägheitsmoment eines Körpers berechnet sich somit aus der Summe
-
 \begin{equation}
     I = \sum\limits_{i} m_i r_i^2
+    \label{eq:gl2}
 \end{equation}
-
-der einzelnen Trägheitsmomente der verschiedenen Masseelementen. Für
+\noindent der einzelnen Trägheitsmomente der verschiedenen Masseelementen. Für
 infinitesimale Massen gilt
-
 \begin{equation}
     I = \int r^2 dm .
+    \label{eqn:gl3}
 \end{equation}
-
-Das Trägheitsmoment hängt dabei von Lage und Objekt ab. Sei die
+\noindent Das Trägheitsmoment hängt dabei von Lage und Objekt ab. Sei die
 Achse, um die sich das Objekt drehe, jeweils in positiver z-Richtung liegend.
 Dann wären die Trägheitsmomente folgender Objekte folgendermaßen definiert:\\
-Langer, infinitesimal dünner Stab mit Länge l
+\noindent Langer, infinitesimal dünner Stab mit Länge l
 \begin{equation}
     I = \frac{ml^2}{12}
+    \label{eqn:gl4}
 \end{equation}
 Kugel
 \begin{equation}
     I = \frac{2}{5} m r^2
+    \label{eq:gl5}
 \end{equation}
 Zylinder (stehend)
 \begin{equation}
     I = \frac{1}{2} m r^2
+    \label{eq:gl6}
 \end{equation}
 Zylinder (liegend) mit Höhe h
 \begin{equation}
     I = m \left(\frac{r^2}{4} + \frac{h^2}{12} \right) 
+    \label{eq:gl7}
+\end{equation}
+Wenn eine Kraft $\vec{F}$ auf einen sich drehbaren Körper (dieser befinde
+sich im Abstand $\vec{r}$ zur Drehachse) wirkt, entsteht das Drehmoment.
+Dieses ist definiert durch:
+\begin{equation}
+    \vec{M} = \vec{M} \times \vec{r} \quad \text{oder betragsmäßig:} 
+    \quad M = F \cdot r \quad \text{,[M]=} J.\end{equation}
+    \label{eq:gl8}
+Allerdings lässt es sich auch über die Winkelrichtgröße $D$ (rücktreibendes
+Moment der Feder) darstellen:
+\begin{equation}
+    M = D \cdot \varphi \quad \text{,[D]=} \frac{N \cdot m}{rad}
+    \label{eq:gl9}
+\end{equation}
+Wird der Körper um einen Winkel $\varphi$ aus seiner Ruhelage ausgelenkt,
+so wirkt ein rücktreibendes Drehmoment, durch eine Feder verursacht, 
+entgegen. Es kommmt zur harmonischen Schwingung, dessen Schwingungsdauer
+sich als
+\begin{equation}
+    T = 2 \pi \sqrt{\frac{I}{D}} \quad \text{,[T]=} s.
+    \label{eq:gl10}
 \end{equation}
 
 \cite{sample}
