@@ -30,16 +30,18 @@ Auslenkungen $\varphi$ gemessen. \\
     180.0 & 0.18\\
     202.5 & 0.2\\
     225.0 & 0.28\\
-    \midrule
-    $\overline{\varphi}$ & $\overline{F}$\\
-    123.75 & 0.132\\
-    \midrule
+   % \midrule
+   % $\overline{\varphi}$ & $\overline{F}$\\
+   % 123.75 & 0.132\\
+   % \midrule
     \bottomrule
   \end{tblr}
 \end{table}
-Mit diesen Mittelwerten kann mithilfe der Formel
-\eqref{eqn:gl9} und $r= 29,2cm$ die Winkelrichtgröße der Spiralfeder zu %ich weiß nicht, was ich falsch mache, er will einfach nicht die gleichung im pdf referenzieren.
-0,0031 $\frac{N \cdot m}{rad}$ bestimmt werden. 
+
+Mithilfe von \eqref{eqn:gl9} und $r= 29,2cm$ kann die Winkelrichtgröße der 
+Spiralfeder als Mittelwert von den errechneten
+Größen für die einzelnen Messwerte zu %ich weiß nicht, was ich falsch mache, er will einfach nicht die gleichung im pdf referenzieren.
+0.00002790 \pm 0.000003259 $\frac{N \cdot m}{rad}$ bestimmt werden. 
 
 \subsection{Eigenträgheitsmoment $I_D$}
 Als nächstes wird das Eigenträgheitsmoment $I_D$ der Drillachse bestimmt.
@@ -132,7 +134,103 @@ und \autoref{eqn:gl5} berechnet sich $I_{Holzkugel} = (0.0009350\pm0.0000034)kg 
 mit den abmessungen \autoref{tab:zylinder} eingesetzt in \autoref{eqn:gl6} zu $I_Holzzylinder = 
 0.000444\pm0.0000022 kg ⋅ m²$.
 
+\subsection{Experimentelles Trägheitsmoment Kugel}
+Dann wird wir in \autoref{sec:zwei körper} das System zum schwingen gebracht und die Periodendauer 
+dokumentiert. Daraus berechnen wir mit hilfe der \autoref{equ:gl10} nach dem Trägheitsmoment I umgestellt zu
+\begin {equation}
+\frac{T^2}{4*\pi^2}*D = \symbf{I}
+\end{equation}
+das experimentelle Trägheitsmoment der Kugel. Identische Vorgehensweise auch beim Zylinder.
 
+%Messwerte T Kugel
+\begin{table}[H]
+  \centering
+  \caption{Schwingungsdauer Kugel}
+  \label{tab:Tkugel}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S},
+      row{1} = {guard, mode=math},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    T_k(s) Kugel & T_Z(s) Zylinder\\
+    \midrule
+    1.13 & 0.78\\
+    1.22 & 0.65\\
+    1.15 & 0.78\\
+    1.16 & 0.78\\
+    1.16 & 0.78\\
+    1.22 & 0.75\\
+    1.22 & 0.72\\
+    1.25 & 0.79\\
+    1.16 & 0.75\\
+    1.19 & 0.78\\
+    \midrule
+    $\overline{T_k}$ & $\overline{T_z}$\\
+    \midrule
+    1.186 \pm 0.0124 & 0.756 \pm 0.0135\\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+bei berücksichtigung der mittelwerten und dem zugehörigen Standardehler des Mittelwerts beläuft 
+sich das Trägheitsmoment fur die Kugel auf $I_k = (0.00097 \pm 0.00011)$ und das Trägheitsmoment 
+des Zylinders auf $I_z = (0.00039 \pm 0.00005)$
+
+
+\subsection{Trägheitsmoment von zwei Puppen}
+Um das Theoretische Trägheitsmoment einer Puppe in ihrer eingenommenen 
+Position zuberechnen benötigen wir die Abmessungen der einzelnen körperteile, 
+sowie derren Masse, Ausrichting und die Entfernung von der Rotationsaxe. 
+Zuerst haben wir die Volumina der Einzelkörperteile der Puppe bestimmt. Wenn man diese Teilvolumina 
+durch das Gesamtvolumen der Puppe teilt und erhällt man den anteil der Masse des Volumenstückes 
+an der Gesamtmasse. so kann man alle größen vereinfacht angeben und zur theoretischen berechnung nutzen.
+
+
+
+\begin{table}[H]
+  \centering
+  \caption{Abmessungen Puppe}
+  \label{tab:maßePuppe}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S S S},
+      row{1} = {guard, mode=math},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    \SetCell[c=2]{c} R_{Arme} & & R_{Beine} & R_{Torso} & R_{Kopf}\\
+    \midrule
+    0.985  &0.875 & 1.25   &  1.885  & 1.580\\
+    0.925  &0.905 & 1.305  &  2.415  & 1.725\\
+    1.045  &0.95  & 1.19   &  2.195  & 1.715\\
+    1.055  &0.91  & 1      &  2.03   & 1.65\\
+    1.05   &0.81  & 0.95   &  3.67   & 1.59\\
+    0.995  &0.775 & 1.010  &  2.14   & 1.425\\
+    0.88   &0.71  & 1.075  &  2.485  & \\
+    0.8    &0.655 & 0.97   &  2.495  & \\
+    0.795  &0.8   & 0.825  &  2.36   & \\
+    0.79   &1.95  & 0.78   &  1.925  & \\
+    \midrule
+    &$\overline{R_A}$  & $\overline{R_B}$ & $\overline{R_T}$ & $\overline{R_K}$\\
+    \midrule
+      &   &   &   \\
+    \midrule
+    $h_A$&&$h_B$&$h_T$&$h_K$\\
+    \midrule
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+In der \autoref{tab:maßePuppe} sind die gemittelten radien und die Höhen der Körperteile 
+aufgetragen. (Am Anfang ein bischen übertriebene 10 Messwerte) wir Teilen die Puppe in ihre 
+sechs Körperteile ein, welche alle als Zylinder genähert werden. Also können wir die Volumina 
+der Körperteile mit der Formel 
+
+\begin{equation}
+  \symbf{V} = h * \pi * r^2
+\end{equation}
 
 
 
