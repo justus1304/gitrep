@@ -59,20 +59,104 @@ Iz = (Tz*Tz*D)/4*np.pi*np.pi
 print(Iz, "Trägheitsmoment zylinder")
 
 
+#Puppe Berechnungen
+ 
+mg = 0.3308 * 1000
+#Mittelwerte radien
+#Bein
+dataRbein = np.array([1.25  ,1.305 ,1.19  ,1     ,0.95 , 1.010,1.075,0.97,0.825,0.78])
+mwRbein = np.sum(dataRbein) / 10
+mwFehlerRbein = sem(dataRbein)
+print(mwRbein , mwFehlerRbein, "Radius Bein")
+rb = ufloat(mwRbein, mwFehlerRbein)
+#Arm
+dataRarm = np.array([0.985 ,0.925 ,1.045 ,1.055 ,1.05  ,0.995 ,0.88  ,0.8   ,0.795 ,0.79 , 0.875,0.905,0.95,0.91,0.81,0.775,0.71,0.655,0.8,1.95 ])
+mwRarm = np.sum(dataRarm) / 20
+mwFehlerRarm = sem(dataRarm)
+print(mwRarm , mwFehlerRarm, "Radius Arm")
+ra = ufloat(mwRarm, mwFehlerRarm)
+#Kopf
+dataRkopf = np.array([1.580,1.725,1.715,1.65,1.59,1.425])
+mwRkopf = np.sum(dataRkopf) / 6
+mwFehlerRkopf = sem(dataRkopf)
+print(mwRkopf , mwFehlerRkopf , "Radius Kopf")
+rk = ufloat(mwRkopf, mwFehlerRkopf)
+#Torso
+dataRtorso = np.array([2.14 ,2.485,2.495,2.36 ,1.925, 1.885,2.415,2.195,2.03,3.67])
+mwRtorso = np.sum(dataRtorso ) / 6
+mwFehlerRtorso = sem(dataRtorso)
+print(mwRtorso , mwFehlerRtorso , "Radius Torso")
+rt = ufloat(mwRtorso, mwFehlerRtorso)
 
+#(höhen)
+ht = 7.19 + 4.28
+ha = 6.075 + 5.74
+hb = 7.54 + 8.46
+hk = 5.02
 
+#Volumen Körperteile
+Vb = np.pi * (hb*rb*rb) 
+Va = np.pi * (hb * rb * rb)
+Vk = np.pi * (hk * rk * rk)
+Vt = np.pi * (ht * rt * rt)
 
-""" d1 = ufloat((0), 0)
-d2 = ufloat((0.04*29.2)/45, 0)
-d3 = ufloat((0.06*29.2)/67.5, 0)
-d4 = ufloat((0.09*29.2)/90, 0)
-d5 = ufloat((0.12*29.2)/112.5, 0)
-d6 = ufloat((0.16*29.2)/135, 0)
-d7 = ufloat((0.17*29.2)/157.5, 0)
-d8 = ufloat((0.18*29.2)/180, 0)
-d9 = ufloat((0.20*29.2)/102.5, 0)
-d10 = ufloat((0.28*29.2)/225, 0)
+Vg = Vb + Va + Vk + Vt
+#Berechnen der Trägheitsmomente einzelteile
+mk = (Vk/Vg)*mg
+mb = (Vb/Vg)*mg
+ma = (Va/Vg)*mg
+mt = (Vt/Vg)*mg
 
-mwd = np.mean([d1,d2,d3])
+Ik = (2/5) * mk * rk * rk
+It = (2/5) * mt * rt * rt
+Ib = (2/5) * mb * rb * rb
+Ia = (2/5) * ma * ra * ra
 
-print(mwd) """
+Iah = ma * ((ra*ra)/4 + (ha * ha)/12)
+Ibh = mb * ((rb*rb)/4 + (hb * hb)/12)
+
+#gesamtes Trägheitsmoment 
+Ip1 = Ik + It + (Ib + mb*(rb)*(rb)) * 2 + (Ia + ma*(ra+rt)*(ra+rt)) * 2
+
+Ip2 = Ik + It + (Ib + mb*(hb/2)*(hb/2)) + (Ibh + mb*(hb/2)*(hb/2)) + (Iah + ma*(ha/2+rt)*(ha/2+rt)) * 2
+
+#umrechnung in kg*m²
+Ip1 = Ip1 * 10**(-7)
+Ip2 = Ip2 * 10**(-7)
+print(repr(Ip1), "Gesamtes Trägheitsmoment P1")
+print(repr(Ip2), "Gesamtes Trägheitsmoment P2")
+print (" ")
+
+#ausgabe mittel radien höhen ...
+print(ra," Radius arm ", rb, " Radius Bein ", rk ," Radius Kopf ", rt, " Radius Torso ")
+print (" ")
+print(ha," höhe arm ", hb, " höhe Bein ", hk ," höhe Kopf ", ht, " höhe Torso ")
+print (" ")
+print(Va," Volumen arm ", Vb, " Volumen Bein ", Vk ," Volumen Kopf ", repr(Vt), " Volumen Torso ")
+print (" ")
+print(ma," masse arm ", mb, " hmasse Bein ", mk ," masse Kopf ", mt, " masse Torso ")
+
+print(Ia," I arm ",repr(Iah), " Iarmh ", Ib, " I Bein ", repr(Ibh), " Ibh ", Ik ," I Kopf ", repr(It), " I Torso ")
+  
+
+#Mittelwert T Puppe
+#pos1
+dataPos1 = np.array([0.75,0.82,0.78,0.84,0.72,0.78,0.78,0.88,0.78,0.85])
+mwPos1 = np.sum(dataPos1) / 10
+mwFehlerPos1 = sem(dataPos1)
+print(mwPos1 , mwFehlerPos1, "Tmw pos1")
+Tp1 = ufloat(mwPos1, mwFehlerPos1)
+
+#pos2
+dataPos2 = np.array([1.59,1.63,1.75,1.69,1.65,1.78,1.72,1.61,1.62,1.55])
+mwPos2 = np.sum(dataPos2) / 10
+mwFehlerPos2 = sem(dataPos2)
+print(mwPos2 , mwFehlerPos2, "Tmw pos2")
+Tp2 = ufloat(mwPos2, mwFehlerPos2)
+
+#I Puppen exp
+Ipos1exp = ((Tp1*Tp1)/4*np.pi**2) * D
+Ipos2exp = (Tp2**2/4*np.pi**2) * D
+
+print(Ipos1exp , " Ipos1exp")
+print(Ipos2exp , " Ipos2exp")
