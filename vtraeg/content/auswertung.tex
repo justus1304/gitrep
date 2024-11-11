@@ -45,19 +45,24 @@ Größen für die einzelnen Messwerte zu %ich weiß nicht, was ich falsch mache,
 
 \subsection{Eigenträgheitsmoment $I_D$}
 Als nächstes wird das Eigenträgheitsmoment $I_D$ der Drillachse bestimmt.
-Um das zu tun, wird das Trägheitsmoment des gesamten System berechnet.
-Dafür wird das Trägheitsmoment des Stabs um die Drehachse ermittelt, ebenso
-wie das Trägheitsmoment der beiden Hohlzylinder, welche jeweils im Abstand
-a zu der Drehachse stehen. Im Anschluss wird das Trägheitsmoment des Stabes
-und der Hohlzylinder von dem Gesamtergebnis abgezogen, sodass sich als 
-Ergebnis das gesuchte Trägheitsmoment der Drillachse ergibt.
+ 
+\begin{equation}
+  I_{ges} = I_D + I_s + 2\cdot(I_z + m_z \cdot a^2)
+\end{equation}
 
-Dazu wird das Trägheitsmoment eines iegenden Zylinders \autoref{eqn:gl7} und das eines 
-Dünnen Stabes \autoref{eqn:gl4} benötigt. 
+\begin{equation}
+  I_{ges} = I_D + \frac{ml^2}{12} + 2\cdot m_z \cdot \left(\left(\frac{r^2}{4} + \frac{h^2}{12} \right) + \cdot a^2\right)
+\end{equation}
 
-Das 
+Durch einsetzen in \autoref{eqn:gl10} und aus der umgestelten Geradengleichung
+\begin{equation}
+  b = y - m \cdot x
+\end{equation}
+ergibt sich die gleichung für das Eigenträgheitsmoment $I_D$
+\begin{equation}
+  I_D = \frac{bD}{4\pi^2} - \left(2\cdot m_z \cdot \left(\frac{r^2}{4} + \frac{h^2}{12} \right) + \frac{m_s\cdot l_s}{12}\right)
+\end{equation}
 
-das theoretische Trägheitsmoment 
 
  \begin{table}[H]
    \centering

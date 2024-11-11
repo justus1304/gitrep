@@ -162,5 +162,15 @@ print(Ipos1exp , " Ipos1exp")
 print(Ipos2exp , " Ipos2exp")
 
 #a^2b^2
-m = ufloat(0.113,  0.002)
+m = ufloat( 113.343 , 1.623)
 b = ufloat(-1.019 , 0.540)
+
+mz = 0.219
+rz = 0.017
+hz = 0.03
+
+ms = 0.2
+ls = 0.6
+
+Id = (b*D)/(4*np.pi**2) - (2*mz*(rz**2/4 + hz**2/12) + (ms * ls) / 12)
+print (Id, "Id")
