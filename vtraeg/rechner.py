@@ -169,8 +169,8 @@ mz = 0.219
 rz = 0.017
 hz = 0.03
 
-ms = 0.2
+ms = 0.1
 ls = 0.6
 
 Id = (b*D)/(4*np.pi**2) - (2*mz*(rz**2/4 + hz**2/12) + (ms * ls) / 12)
-print (Id, "Id")
+print (b,Id, "Id")

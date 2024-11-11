@@ -1,6 +1,22 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Fehlerrechnung}
+Die gemessenen Werte für Längen, Periodendauern und Massen werden im folgenden als nicht fehlerbehaftet 
+angesehen. Die Fehler entstehen bei der bildung der Mittelwerte durch den Fehler des Mittelwertes und
+bei der regressionsrechnung sowie der Fehlerfortpflanzung durch Python.
+
+der Fehler des Mittelwertes beträgt
+\begin{equation}
+  \sqrt{\overline{x^2} - \overline{x}^2}
+\end{equation}
+
+Die Formel für die Feherfortpflanzung lautet
+\begin{equation}
+  \Delta f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 \cdot \left(\Delta x\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 \cdot \left(\Delta y\right)^2 + .... + \left(\frac{\partial f}{\partial z}\right)^2 \cdot \left(\Delta z\right)^2}
+\end{equation}
+
+
 
 \subsection{Winkelrichtgröße D}
 Im Folgenden wird zunächst die Winkelrichtgröße $D$ und das 
@@ -60,6 +76,7 @@ Durch einsetzen in \autoref{eqn:gl10} und aus der umgestelten Geradengleichung
 \end{equation}
 ergibt sich die gleichung für das Eigenträgheitsmoment $I_D$
 \begin{equation}
+  \label{eqn:Id}
   I_D = \frac{bD}{4\pi^2} - \left(2\cdot m_z \cdot \left(\frac{r^2}{4} + \frac{h^2}{12} \right) + \frac{m_s\cdot l_s}{12}\right)
 \end{equation}
 
@@ -67,7 +84,7 @@ ergibt sich die gleichung für das Eigenträgheitsmoment $I_D$
  \begin{table}[H]
    \centering
    \caption{Messwerte T/a.}
-   \label{tab:tabelle}
+   \label{tab:at}
    %\sisetup{table-format=1.1, per-mode=reciprocal}
    \begin{tblr}{
        colspec = {S S },
@@ -94,12 +111,43 @@ ergibt sich die gleichung für das Eigenträgheitsmoment $I_D$
    \end{tblr}
  \end{table}
 
+ %messwerte zur berechnng von ID
+ \begin{table}[H]
+  \centering
+  \caption{Messwerte zur berechnung von $I_D$}
+  \label{tab:messwerteId}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S S S },
+      row{1} = {guard, mode=math},
+      row{2} = {guard, mode=math},
+      row{14} = {guard},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    m_{Zylinder}(kg) & r_{Zylinder}(m)  & h_{Zylinder}(m) & m_{Stab} (kg)& l_{Stab}(m) \\
+    \midrule
+    0.219 & 0.017 & 0.03 & 0.1 & 0.6  \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+Als Masse des Stabes haben wir 0.1 gk angenommmen, da wir ihn nicht gewogen haben.
+
 \begin{figure}[H]
   \centering
   \includegraphics{plot.pdf}
   \caption{Lineare Regression zur bestimmung von $I_D$.}
   \label{fig:linreg}
 \end{figure}
+
+Die Messwerte der Periodendauer in abhängigkeit von dem Abstand der Gewichte sind 
+der \autoref{tab:at} zu entnehmen. Daraus ergibt sich die Liniare Regression\autoref{fig:linreg}.
+die Parameter der Ausgleichsgeraden sind $m = 113.343 \pm 1.623 $ und $ b = -1.019 \pm 0.540$.
+Daraus folgt durch Einseten des Parameters b und den Messwerten aus \autoref{tab:messwerteId} in \autoref{eqn:Id}
+\begin{center}
+$I_D = -0.005072\pm0.000004$ 
+\end{center}
 
 \subsection{Trägheitsmoment Kugel und Zylinder}
 %Kugel

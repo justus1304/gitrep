@@ -64,7 +64,22 @@ entgegen. Es kommmt zur harmonischen Schwingung, dessen Schwingungsdauer
 sich als
 \begin{equation}
     T = 2 \pi \sqrt{\frac{I}{D}} \quad \text{,[T]=} s.
-    \label{equ:gl10}
+    \label{eqn:gl10}
 \end{equation}
 beschreiben lässt.
 \cite{sample}
+
+\subsection{Fehlerrechnung}
+Die gemessenen Werte für Längen, Periodendauern und Massen werden im folgenden als nicht fehlerbehaftet 
+angesehen. Die Fehler entstehen bei der bildung der Mittelwerte durch den Fehler des Mittelwertes und
+bei der regressionsrechnung sowie der Fehlerfortpflanzung durch Python.
+
+der Fehler des Mittelwertes beträgt
+\begin{equation}
+  \sqrt{\overline{x^2} - \overline{x}^2}
+\end{equation}
+
+Die Formel für die Feherfortpflanzung lautet
+\begin{equation}
+  \Delta f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 \cdot \left(\Delta x\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 \cdot \left(\Delta y\right)^2 + .... + \left(\frac{\partial f}{\partial z}\right)^2 \cdot \left(\Delta z\right)^2}
+\end{equation}

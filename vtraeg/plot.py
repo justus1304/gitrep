@@ -26,7 +26,7 @@ for name, value, error in zip("ab", params, errors):
 
 
 
-x_plot = np.linspace(0, 600)
+x_plot = np.linspace(0, 0.6)
 
 fig, ax = plt.subplots(1, 1, layout="constrained")
 
