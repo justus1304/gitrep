@@ -160,3 +160,7 @@ Ipos2exp = (Tp2**2/4*np.pi**2) * D
 
 print(Ipos1exp , " Ipos1exp")
 print(Ipos2exp , " Ipos2exp")
+
+#a^2b^2
+m = ufloat(0.113,  0.002)
+b = ufloat(-1.019 , 0.540)
