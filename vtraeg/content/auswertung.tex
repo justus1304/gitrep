@@ -2,21 +2,18 @@
 \label{sec:Auswertung}
 
 \subsection{Fehlerrechnung}
-Die gemessenen Werte für Längen, Periodendauern und Massen werden im folgenden als nicht fehlerbehaftet 
-angesehen. Die Fehler entstehen bei der bildung der Mittelwerte durch den Fehler des Mittelwertes und
-bei der regressionsrechnung sowie der Fehlerfortpflanzung durch Python.
+Die gemessenen Werte für Längen, Periodendauern und Massen werden im Folgenden als nicht-
+fehlerbehaftet angesehen. Die Fehler entstehen bei der Bildung der Mittelwerte durch den 
+Fehler des Mittelwertes und bei der Regressionsrechnung sowie der Fehlerfortpflanzung durch Python.
 
-der Fehler des Mittelwertes beträgt
+\noindent Der Fehler des Mittelwertes beträgt:
 \begin{equation}
   \sqrt{\overline{x^2} - \overline{x}^2}
 \end{equation}
-
-Die Formel für die Feherfortpflanzung lautet
+Die Formel für die Feherfortpflanzung lautet:
 \begin{equation}
   \Delta f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 \cdot \left(\Delta x\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 \cdot \left(\Delta y\right)^2 + .... + \left(\frac{\partial f}{\partial z}\right)^2 \cdot \left(\Delta z\right)^2}
 \end{equation}
-
-
 
 \subsection{Winkelrichtgröße D}
 Im Folgenden wird zunächst die Winkelrichtgröße $D$ und das 
@@ -70,11 +67,11 @@ Als nächstes wird das Eigenträgheitsmoment $I_D$ der Drillachse bestimmt.
   I_{ges} = I_D + \frac{ml^2}{12} + 2\cdot m_z \cdot \left(\left(\frac{r^2}{4} + \frac{h^2}{12} \right) + \cdot a^2\right)
 \end{equation}
 
-Durch einsetzen in \autoref{eqn:gl10} und aus der umgestelten Geradengleichung
+Durch Einsetzen in \autoref{eqn:gl10} und aus der umgestelten Geradengleichung
 \begin{equation}
   b = y - m \cdot x
 \end{equation}
-ergibt sich die gleichung für das Eigenträgheitsmoment $I_D$
+ergibt sich die Gleichung für das Eigenträgheitsmoment $I_D$
 \begin{equation}
   \label{eqn:Id}
   I_D = \frac{bD}{4\pi^2} - \left(2\cdot m_z \cdot \left(\frac{r^2}{4} + \frac{h^2}{12} \right) + \frac{m_s\cdot l_s}{12}\right)
@@ -114,7 +111,7 @@ ergibt sich die gleichung für das Eigenträgheitsmoment $I_D$
  %messwerte zur berechnng von ID
  \begin{table}[H]
   \centering
-  \caption{Messwerte zur berechnung von $I_D$}
+  \caption{Messwerte zur Berechnung von $I_D$}
   \label{tab:messwerteId}
   %\sisetup{table-format=1.1, per-mode=reciprocal}
   \begin{tblr}{
@@ -132,7 +129,7 @@ ergibt sich die gleichung für das Eigenträgheitsmoment $I_D$
   \end{tblr}
 \end{table}
 
-Als Masse des Stabes haben wir 0.1 gk angenommmen, da wir ihn nicht gewogen haben.
+Als Masse des Stabes wird 0.1 kg angenommmen, da diese nicht bestimmt wurde.
 
 \begin{figure}[H]
   \centering
@@ -141,13 +138,14 @@ Als Masse des Stabes haben wir 0.1 gk angenommmen, da wir ihn nicht gewogen habe
   \label{fig:linreg}
 \end{figure}
 
-Die Messwerte der Periodendauer in abhängigkeit von dem Abstand der Gewichte sind 
-der \autoref{tab:at} zu entnehmen. Daraus ergibt sich die Liniare Regression\autoref{fig:linreg}.
-die Parameter der Ausgleichsgeraden sind $m = 113.343 \pm 1.623 $ und $ b = -1.019 \pm 0.540$.
-Daraus folgt durch Einseten des Parameters b und den Messwerten aus \autoref{tab:messwerteId} in \autoref{eqn:Id}
-\begin{center}
-$I_D = -0.005072\pm0.000004$ 
-\end{center}
+\noindent Die Messwerte der Periodendauer in Abhängigkeit von dem Abstand der Gewichte sind 
+der \autoref{tab:at} zu entnehmen. Daraus ergibt sich die lineare Regression \autoref{fig:linreg}.
+Die Parameter der Ausgleichsgeraden sind $m = 113.343 \pm 1.623 $ und $ b = -1.019 \pm 0.540$.
+Daraus folgt durch Einseten des Parameters b und den Messwerten aus \autoref{tab:messwerteId} in 
+\autoref{eqn:Id}:
+\begin{equation}
+  I_D = -0.005072 \pm 0.000004 \quad kg \cdot m^2. 
+\end{equation}
 
 \subsection{Trägheitsmoment Kugel und Zylinder}
 %Kugel
@@ -187,19 +185,21 @@ $I_D = -0.005072\pm0.000004$
   \end{tblr}
 \end{table}
 
-Hier sollte das Trägheitsmoment von einer Kugel und eines Zylinders berechnet werden. mit den maßen aus \autoref{tab:kugel}
-und \autoref{eqn:gl5} berechnet sich $I_{Holzkugel} = (0.0009350\pm0.0000034)kg ⋅ m²$ sowie das Trägheitsmoment des Zylinders
-mit den Abmessungen \autoref{tab:zylinder} eingesetzt in \autoref{eqn:gl6} berechnet sich zu $I_Holzzylinder = 
-0.000444\pm0.0000022 kg ⋅ m²$.
+Hier soll das Trägheitsmoment einer Kugel und eines Zylinders berechnet werden. 
+Mit den Maßen aus \autoref{tab:kugel} und \autoref{eqn:gl5} berechnet sich
+$I_{Holzkugel} = 0.0009350\pm0.0000034 \quad kg ⋅ m²$ sowie das Trägheitsmoment des 
+Zylinders mit den Abmessungen \autoref{tab:zylinder} eingesetzt in 
+\autoref{eqn:gl6} berechnet zu $I_{Holzzylinder} = 0.000444\pm0.0000022 \quad kg ⋅ m²$.
 
 \subsection{Experimentelles Trägheitsmoment Kugel}
-Dann wird wie in \autoref{sec:zwei körper} das System zum Schwingen gebracht und die Periodendauer 
-dokumentiert. Daraus berechnet man mit Hilfe der \autoref{equ:gl10} nach dem Trägheitsmoment I umgestellt zu
+Wie in \autoref{sec:zwei körper} das System zum Schwingen gebracht und die Periodendauer 
+dokumentiert. Daraus ergibt sich mithilfe der \autoref{eqn:gl10} nach dem Trägheitsmoment I umgestellt
+für das experimentelle Trägheitsmoment der Kugel:
 \begin {equation}
 \label{eqn:gl11}
-\frac{T^2}{4*\pi^2}*D = \symbf{I}
+  \frac{T^2}{4\pi^2}D = I.
 \end{equation}
-das experimentelle Trägheitsmoment der Kugel. Identische Vorgehensweise ebenfalls beim Zylinder.
+Identische Vorgehensweise ebenfalls beim Zylinder.
 
 %Messwerte T Kugel
 \begin{table}[H]
@@ -233,20 +233,20 @@ das experimentelle Trägheitsmoment der Kugel. Identische Vorgehensweise ebenfal
   \end{tblr}
 \end{table}
 
-bei Berücksichtigung der Mittelwerte und dem zugehörigen Standardehler des Mittelwerts beläuft 
-sich das Trägheitsmoment für die Kugel auf $I_k = (0.00097 \pm 0.00011)$ und das Trägheitsmoment 
-des Zylinders auf $I_z = (0.00039 \pm 0.00005)$.
-
+\noindent Bei Berücksichtigung der Mittelwerte und dem zugehörigen Standardfehler 
+des Mittelwerts beläuft sich das Trägheitsmoment für die Kugel auf 
+$I_k = (0.00097 \pm 0.00011)$ und das Trägheitsmoment des Zylinders auf
+$I_z = (0.00039 \pm 0.00005)$.
 
 \subsection{Trägheitsmoment von zwei Puppen}
 Um das theoretische Trägheitsmoment einer Puppe in ihrer eingenommenen 
-Position zu berechnen, benötigt man die Abmessungen der einzelnen Körperteile, 
-sowie deren Masse, Ausrichting und die Entfernung von der Rotationsachse. 
-Zunächst haben wir die Volumina der Einzelkörperteile der Puppe bestimmt. Wenn man diese Teilvolumina 
-durch das Gesamtvolumen der Puppe teilt, erhält man den Anteil der Masse des Volumenstückes 
-an der Gesamtmasse. So kann man alle Größen vereinfacht angeben und zur theoretischen Berechnung nutzen.
-
-
+Position zu berechnen, werden die Abmessungen der einzelnen Körperteile, 
+sowie deren Masse, Ausrichting und die Entfernung von der Rotationsachse benötigt. 
+Zunächst erfolgt die Bestimmung der Volumina der Einzelkörperteile der Puppe. 
+Werden die Teilvolumina durch das Gesamtvolumen der Puppe geteilt, so ergeben 
+sich der Anteil der Masse des betrachteten Puppenteils an der Gesamtmasse. 
+So können alle Größen vereinfacht angeben und zur theoretischen Berechnung
+genutzt werden.
 
 \begin{table}[H]
   \centering
@@ -284,14 +284,15 @@ an der Gesamtmasse. So kann man alle Größen vereinfacht angeben und zur theore
   \end{tblr}
 \end{table}
 
-In der \autoref{tab:maßePuppe} sind die gemittelten Radien und die Höhen der Körperteile 
-aufgeführt. (Am Anfang ein bisschen übertriebene 20 Messwerte). wir Teilen die Puppe in ihre 
-sechs Körperteile ein, welche alle als Zylinder genähert werden. Also können wir die Volumina 
-der Körperteile mit folgender Formel berechnen
-
+\noindent In \autoref{tab:maßePuppe} sind die gemittelten Radien und die Höhen
+der Körperteile aufgeführt. 
+Einfachheitshalber wird die Puppe in ihre sechs Körperteile eingeteilt, welche
+alle als Zylinder genähert werden. Demnach können die Volumina der Puppe einzeln 
+durch
 \begin{equation}
-  \symbf{V} = h * \pi * r^2
+  V = h \pi r^2
 \end{equation}
+errechnet werden.
 
 \begin{table}[H]
   \centering
@@ -312,11 +313,11 @@ der Körperteile mit folgender Formel berechnen
   \end{tblr}
 \end{table}
 
-Daraus bestimmen wir die Masse der Körperteile
-
+\noindent Mithilfe dieser Daten und der Formel
 \begin{equation}
-  m_{i} = m_{gesamt} * \frac{V_i}{Vg}
+  m_{i} = m_{gesamt} \frac{V_i}{Vg}
 \end{equation}
+wird die Masse der einzelnen Körperteile bestimmt.
 
 \begin{table}[H]
   \centering
@@ -337,8 +338,8 @@ Daraus bestimmen wir die Masse der Körperteile
   \end{tblr}
 \end{table}
 
-und daraus mithilfe von \autoref{eqn:gl6} und \autoref{eqn:gl7} die Teilträgheitsmomente 
-um ihre eigene jeweilige Drehachse.
+\noindent Mit den Massen der einzelnen Körperteile, \autoref{eqn:gl6} und \autoref{eqn:gl7} 
+werden die Teilträgheitsmomente um ihre eigene jeweilige Drehachse berechnet.
 
 \begin{table}[H]
   \centering
@@ -353,22 +354,26 @@ um ihre eigene jeweilige Drehachse.
       %vline{4} = {2}{-}{text=\clap{$\pm$}},
     }
     \toprule
-     I_a (g \cdot cm^2)& I_{aHorizontal}(g \cdot cm^2) & I_b(g \cdot cm^2) & I_{bHorizontal} (g \cdot cm^2)& I_t (g \cdot cm^2)& I_k (g \cdot cm^2)& \\
+     I_A (g \cdot cm^2)& I_{A,horizontal}(g \cdot cm^2) & I_B(g \cdot cm^2) & I_{B,horizontal} (g \cdot cm^2)& I_T (g \cdot cm^2)& I_K (g \cdot cm^2)& \\
     \midrule
     8.8\pm1.5  &  299\pm33 & 10.8\pm2.2  & 545 \pm 60& 1615 \pm 162& 20.1\pm2.6  \\
     \bottomrule
   \end{tblr}
 \end{table}
 
-Damit haben wir alle Größen um das theoretische Trägheitsmoment der Puppen in 
-Pos1 \autoref{fig:pos1} und Pos2 \autoref{fig:pos2} zu bestimmen. 
+\noindent Damit sind alle Größen gegeben, um das theoretische Trägheitsmoment der Puppen in 
+Position 1 (siehe \autoref{fig:pos1}) und Position 2 (siehe \autoref{fig:pos2}) zu bestimmen. 
 
-Für die Arme und Beine wird der Satz von Steiner verwendet \autoref{eqn:steiner} um die Drehachse der 
-Trägheitsmomente von den einzelnen Körperteile in die Drehachse der Puppe zu legen. In der 
-Position eins wird der Abstand der Eigendrehachse der Beine zur Drehachse der Puppe mit 
-dem Radius der Beine genähert, sowie der Abstand der Arme zur Drehachse der Puppe mit dem Radius der Arme 
-und dem Radius des Torso. In der ersten Position ist der Abstand zur Achse des Arms: der Radius des torso 
-und die halbe Armlänge. Der Abstand des ausgestrekten Beins ist die halbe Beinlänge.
+\noindent Für die Arme und Beine wird der Satz von Steiner verwendet 
+(siehe \autoref{eqn:steiner}) um die Drehachse der Trägheitsmomente von den
+einzelnen Körperteile in die Drehachse der Puppe zu legen und dort zu bestimmen.
+In der 1. Position wird der Abstand der Eigendrehachse der Beine zur Drehachse 
+der Puppe mit dem Radius der Beine genähert, sowie der Abstand der Arme zur 
+Drehachse der Puppe mit dem Radius der Arme und dem Radius des Torso. 
+Der Abstand vom Arm zur Achse ist der Radius des Torso und zusätzlich die Hälfte
+der Armlänge.
+Der Abstand der Drehachse des ausgestrekten Beins zur Drehachse der gesamten 
+Puppe ist die halbe Beinlänge.
 
 \begin{equation}
   \label{eqn:steiner}
@@ -380,13 +385,13 @@ Damit ergeben sich die theoretischen Trägheitsmomente zu
   $I_{pos1} = 0.000292 \pm 0.000018  kg \cdot m^2$
 \end{center}
 \begin{center}
-  $\symbf{I}_{pos2} = 0.001090 \pm 0.000085  kg \cdot m^2$
+  $I_{pos2} = 0.001090 \pm 0.000085  kg \cdot m^2$
 \end{center}
 
 \subsection{Experimentelles Trägheitsmoment von zwei Puppen}
- Nun werden die Trägheitsmomente noch einmal experimentell bestimmt.
+In diesem Abschnitt werden die Trägheitsmomente noch einmal experimentell bestimmt.
 
- \begin{table}[H]
+\begin{table}[H]
   \centering
   \caption{Schwingungsdauer der Puppe}
   \label{tab:Tpuppe}
@@ -417,13 +422,10 @@ Damit ergeben sich die theoretischen Trägheitsmomente zu
   \end{tblr}
 \end{table}
 
-Aus den Mittelwerten ergibt sich nach \autoref{eqn:gl11}
+Aus den Mittelwerten ergibt sich nach \autoref{eqn:gl11} :
 \begin{center}
-$\symbf{I}_{expPos1} = 0.00044\pm0.00005  kg \cdot m^2$
+  $I_{expPos1} = 0.00044\pm0.00005 \quad kg \cdot m^2$
 \end{center}
 \begin{center}
-  $\symbf{I}_{expPos1} = 0.00189\pm0.00023  kg \cdot m^2$
+  $I_{expPos1} = 0.00189\pm0.00023 \quad kg \cdot m^2$
 \end{center}
-
-
-
