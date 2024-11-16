@@ -1,4 +1,71 @@
 \section{Theorie}
 \label{sec:Theorie}
 
+Wird ein Körper in einem elastischen Maße deformiert, so lässt sich der lineare
+Zusammenhang der Größen $\sigma$ (die angreifende Spannung am Objekt) und der
+Deformation ($\Delta L/L$) mithilfe des Hookeschen Gesetzes. Hinzu kommt der
+Elastizitätsmodul $E$, eine Materialkonstante eines Werkstoffes. Alles zusammen 
+wird beschrieben durch 
+\begin{equation}
+    \sigma = E \frac{\Delta L}{L}.
+\end{equation}
+Die Funktion $D(x)$ setzt sich aus zwei Teilen zusammen; Der Auslenkung ohne
+Gewicht, eine Nullmessung ($D_0 (x)$) und der Messung mit Gewicht ($D_M (x)$).
+Beides zusammen ergänzt sich zu:
+\begin{equation}
+    D(x) = D_M (x)-D_0 (x).
+\end{equation}
+\subsection{Biegung bei einseitiger Befestigung}
+Bei den beiden Stäben, unabhängig davon, ob eckig oder rund (von der Grundfläche
+her), lässt sich die Durchbiedung $D$ durch eine Funktion in Abhängigkeit von x
+darstellen. Bei einem Stab der Länge L wird für die Funktion eine horizontale
+Komponente (x), der Querschnitt Q und eine nach unten gerichtete Kraft benötigt.
+
+\noindent Durch die diese Kraft $F$ am Stab entsteht ein Trägheitsmoment, welches am 
+Punkt x ansetzt, dieses wird beschrieben durch:
+\begin{equation}
+    M_F = F(L-x).
+\end{equation}
+Dieses Drehmoment bewirkt die Streckug und Stauchung an der Ober-und Unterseite
+des Stabes. Die durch diese Spannungen verursachten Drehmomente sind wiederum
+von gleicher Größe, jedoch in entgegengesetzte Richtung um die neutrale Faser 
+des Stabes, welcher keine Veränderungen vernimmt. Dieses Drehmoment im Inneren 
+ist definiert durch 
+\begin{equation}
+    M_\sigma = \int_Q y \sigma (y) dq.
+\end{equation}
+Variable y steht dabei für für den Abstand zum Zentrum des
+Stabes, dem neutralen Faser, welcher Spannungsfrei ist. $\sigma$ ist die
+angreifende Spannung, während dq als Flächenelement von y gedeutet wird.
+Um die Durchbiegungsfunktion $D(x)$ zu erlangen, muss eine Gleichsetzung der
+beiden Drehmomente erfolgen: $M_F = M_\sigma$. Damit ergibt sich letztendlich:
+\begin{equation}
+    D(x)=\frac{F}{2EI} (Lx^2-\frac{x^3}{3})
+\end{equation}
+mit I, dem Flächenträgheitsmoment, gegeben als 
+\begin{equation}
+    I = \int_Q y^2 dq(y).
+\end{equation}
+\subsection{Biegung bei beidseitiger Befestigung}
+Neben der Bestimmung durch einseitige Bespannung, kann die Auslenkung auch bei
+beidseitiger Befestigung bestimmt werden. Das Moment im Inneren beträgt auf einer
+Seite des Stabes:
+\begin{equation}
+    M_F = -\frac{F}{2} x \quad , 0 \leq x \leq L/2
+\end{equation}
+und auf der Anderen:
+\begin{equation}
+    M_F = -\frac{F}{2} (L-x) \quad , L/2 \leq x \leq L
+\end{equation}
+Die Bestimmung für $D(x)$ erfolgt analog zu der Vorherigen. Es ergibt sich
+\begin{equation}
+    D(x)=\frac{F}{48EI} (3L^2-4x^3)
+\end{equation}
+für die Seite im Bereich $0 \leq x \leq L/2$ und 
+\begin{equation}
+    D(x)=\frac{F}{48EI} (4x^3-12Lx^3+9L^2x-L^3)
+\end{equation}
+folgerlich im Bereich $L/2 \leq x \leq L$. Beides wieder mit dem Flächenträgheitsmoment I.
+
+
 \cite{sample}
