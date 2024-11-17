@@ -1,26 +1,188 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Gauß'sche Fehlerfortpflanzung}
+Da es in Experimenten zu unumgänglichen Messunsicherheiten kommt, ist eine 
+Fehlerkalkulation obligatorisch. In der folgenden Auswertung wird eine 
+Fehlerrechnung mithilfe der Gauß'schen Fehlerfortpflanzung durchgeführt, welche
+lautet:
+\begin{equation}
+    \sigma_f = \sqrt{\sum\limits_{i=1}^N \left( \frac{\partial f}{\partial x_i} \sigma_f \right) ^2}.
+\end{equation}
+
+\section{Fehlerfortpflanzung}
+Für die Fehlerfortpflanzung nach Gauß ergibt sich für die Linearisierung
+$f_e(x)=Lx^2-\frac{x^3}{3}$ der einsitigen Einspannung dann folgender Term:
+\begin{equation}
+  \Delta f_e(x) = \sqrt{(2Lx-x^2)^2 (\Delta x)^2}.
+\end{equation}
+Des Weiteren ist die Fehlerfortpflanzung für die beidseitige Einspannung 
+mit Linearisierung $f_b(x)=3L^2x-4x^3$ gegeben durch:
+\begin{equation}
+  \Delta f_b(x) = \sqrt{(3L^2-12x^2)^2 (\Delta x)^2}.
+\end{equation}
+
+%runder Stab-einseitige Einspannung plot und Messwerte
+\subsection{runder Stab-einseitige Einspannung}
 \begin{figure}
   \centering
   \includegraphics{plotrSeinseit.pdf}
-  \caption{Einseitiger Aufhang Runder Stab.}
+  \caption{Einseitiger Aufhang-runder Stab.}
   \label{fig:plotrSeinseit}
 \end{figure}
 
-\begin{figure}
+\begin{table}[H]
   \centering
-  \includegraphics{ploteSeinseit.pdf}
-  \caption{Einseitiger Aufhang Eckiger Stab.}
-  \label{fig:ploteSeinseit}
-\end{figure}
+  \caption{Messwerte x, D\textsubscript{0x}, D(x)}
+  \label{tab:at}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S},
+      row{1} = {guard, mode=math},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    x(mm) & D\textsubscript{0x}(mm) & D(x)(mm)\\
+    \midrule
+    500 & 4.31 & 2    \\
+    475 & 4.69 & 2.55 \\
+    450 & 5.07 & 3    \\
+    425 & 5.48 & 3.56 \\
+    400 & 5.85 & 4.1  \\
+    375 & 6.22 & 4.61 \\
+    350 & 6.59 & 5.16 \\
+    325 & 6.9  & 5.64 \\
+    300 & 7.23 & 6.12 \\
+    275 & 7.55 & 6.59 \\
+    250 & 7.87 & 7.04 \\
+    \midrule
+    $\overline{x}$ & $\overline{D_{0 x}}$ & $\overline{D(x)}$\\
+    \midrule
+    1 \pm 2 & 1 \pm 2 & 1 \pm 2\\
+    \bottomrule
+  \end{tblr}
+\end{table}
 
+%runder Stab-beidseitige Einspannung plot und Messwerte
+\subsection{runder Stab-beidseitige Bespannung}
 \begin{figure}
   \centering
   \includegraphics{beidseitigLinks.pdf}
-  \caption{Beidseitige Aufhängung Linke seite.}
+  \caption{Beidseitige Aufhängung-runder Stab.}
   \label{fig:beidseitigLinks}
 \end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte a, D\textsubscript{0,l}, D\textsubscript{x,l}, D\textsubscript{0,r}, D\textsubscript{x,r}}
+  \label{tab:at}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S S S},
+      row{1} = {guard, mode=math},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    a(mm), D\textsubscript{0,l}(mm), D\textsubscript{x,l}(mm), D\textsubscript{0,r}(mm), D\textsubscript{x,r}(mm)\\
+    \midrule
+    20  & 8.44 & 7.88 & 9.51  & 8.89  \\
+    40  & 8.34 & 7.75 & 9.66  & 9.05  \\
+    60  & 8.21 & 7.61 & 9.80  & 9.25  \\
+    80  & 8.08 & 7.52 & 9.96  & 9.45  \\
+    100 & 7.98 & 7.44 & 10.11 & 9.63  \\
+    120 & 7.86 & 7.37 & 10.26 & 9.81  \\
+    140 & 7.76 & 7.29 & 10.40 & 10.00 \\
+    160 & 7.63 & 7.23 & 10.55 & 10.21 \\
+    180 & 7.54 & 7.16 & 10.68 & 10.40 \\
+    200 & 7.43 & 7.12 & 10.81 & 10.61 \\
+    \midrule
+    $\overline{a}$ & $\overline{D_{0,l}}$ & $\overline{D_{x,l}}$ & $\overline{D_{0,r}}$ & $\overline{D_{x,r}}$\\
+    \midrule
+    1 \pm 2 & 1 \pm 2 & 1 \pm 2 & 1 \pm 2 & 1 \pm 2\\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+%eckiger Stab-einseitige Einspannung plot und Messwerte
+\subsection{eckiger Stab-einseitige Einspannung}
+\begin{figure}
+  \centering
+  \includegraphics{ploteSeinseit.pdf}
+  \caption{Einseitiger Aufhang-eckiger Stab.}
+  \label{fig:ploteSeinseit}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte x, D\textsubscript{0x}, D(x)}
+  \label{tab:at}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S},
+      row{1} = {guard, mode=math},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    x(mm) & D\textsubscript{0x}(mm) & D(x)(mm)\\
+    \midrule
+    500 & 6.01 & 4.71 \\
+    475 & 6.26 & 5.00 \\
+    450 & 6.41 & 5.27 \\
+    425 & 6.65 & 5.57 \\
+    400 & 6.83 & 5.88 \\
+    375 & 7.00 & 6.21 \\
+    350 & 7.22 & 6.47 \\
+    325 & 7.55 & 6.79 \\
+    300 & 7.75 & 7.13 \\
+    275 & 7.89 & 7.44 \\
+    250 & 8.14 & 7.67 \\
+    \midrule
+    $\overline{x}$ & $\overline{D_{0 x}}$ & $\overline{D(x)}$\\
+    \midrule
+    1 \pm 2 & 1 \pm 2 & 1 \pm 2\\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+%eckiger Stab-beidseitige Einspannung plot und Messwerte
+% \subsection{eckiger Stab-beidseitige Bespannung}
+% \begin{figure}
+%   \centering
+%   \includegraphics{beidseitigLinks.pdf}
+%   \caption{Einseitiger Aufhang-eckiger Stab.}
+%   \label{fig:ploteSeinseit}
+% \end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte a, D\textsubscript{0,l}, D\textsubscript{x,l}, D\textsubscript{0,r}, D\textsubscript{x,r}}
+  \label{tab:at}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S S S},
+      row{1} = {guard, mode=math},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    a(mm), D\textsubscript{0,l}(mm), D\textsubscript{x,l}(mm), D\textsubscript{0,r}(mm), D\textsubscript{x,r}(mm)\\
+    \midrule
+    20  & 9.59 & 9.13 & 10.52 & 10.15 \\
+    40  & 9.55 & 9.12 & 10.56 & 10.19 \\
+    60  & 9.49 & 9.07 & 10.55 & 10.19 \\
+    80  & 9.45 & 9.03 & 10.53 & 10.21 \\
+    100 & 9.42 & 9.03 & 10.54 & 10.25 \\
+    120 & 9.39 & 9.03 & 10.55 & 10.29 \\
+    140 & 9.34 & 9.01 & 10.57 & 10.34 \\
+    160 & 9.30 & 8.99 & 10.58 & 10.41 \\
+    180 & 9.23 & 8.96 & 10.65 & 10.50 \\
+    200 & 9.17 & 8.94 & 10.68 & 10.60 \\
+    \midrule
+    $\overline{a}$ & $\overline{D_{0,l}}$ & $\overline{D_{x,l}}$ & $\overline{D_{0,r}}$ & $\overline{D_{x,r}}$\\
+    \midrule
+    1 \pm 2 & 1 \pm 2 & 1 \pm 2 & 1 \pm 2 & 1 \pm 2\\
+    \bottomrule
+  \end{tblr}
+\end{table}
 
 %\begin{figure}
 %  \centering
