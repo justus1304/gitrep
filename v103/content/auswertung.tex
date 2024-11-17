@@ -23,13 +23,62 @@ mit Linearisierung $f_b(x)=3L^2x-4x^3$ gegeben durch:
 \end{equation}
 
 %runder Stab-einseitige Einspannung plot und Messwerte
+
 \subsection{runder Stab-einseitige Einspannung}
-\begin{figure}
+\label{sec:RunderStabEinseitig}
+Hier wird das Elastizitätsmodul für einen einseitig eingespanten Runden Stab der Länge
+L ermittelt. Dazu ist folgende Formel gegeben.
+\begin{equation}
+  \label{eqn:dEinseitigeEinspannung}
+    \symbf{D}(x) = \frac{F}{2 E \symbf{I}}\left(L x^2 - \frac{x^3}{3}\right)
+\end{equation}
+
+\begin{equation}
+  \label{eqn:FlächenträgheitKreis}
+    \symbf{I} = \frac{r^4\pi}{4}
+\end{equation}
+Darin ist $L$ die Stablänge, $E$ das Elastizitätsmodul, $F$ die angreifende Kraft und 
+$\symbf{I}$ das Flächenträgheitsmoment. Nun wird die Auslenkung gegen $\left(L x^2 - \frac{x^3}{3}\right)$
+aufgetragen. Es wird eine Ausgleichsrechnung mit Python durchgeführt und mit dem gewonnenen Parameter a
+ , welcher die Steigung der ausgleichsgeraden \autoref{fig:plotrSeinseit} angibt kann das Elastizitätsmodul bestimmt weerden 
+ durch gleichsetzung der Steigung a mit dem Vorfaktor aus \autoref{eqn:dEinseitigeEinspannung} und umgestellt 
+ zu
+ \begin{equation*}
+  \label{eqn:elastizitätsmodulEinseitig}
+    \symbf{E} = \frac{F}{2*a*\symbf{I}}
+\end{equation*}
+
+\begin{figure}[H]
   \centering
   \includegraphics{plotrSeinseit.pdf}
   \caption{Einseitiger Aufhang-runder Stab.}
   \label{fig:plotrSeinseit}
 \end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Werte zur bestimmung von E(Runder Stab)}
+  \label{tab:t1}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S S S},
+      row{1} = {guard, mode=math},
+      row{2} = {guard, mode=math},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    m_{gewicht}\unit{\kilo\gram} & g_{erde}\unit{\meter\per\second\squared} & r\unit{\meter} & I & a \\
+    \midrule
+    0.2 & 9.81 &0.0025 & \num{3.06e-11} & \num{0.0100 +- 0.0005 } \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+DIe werte aus \autoref{tab:t1} sind jene, welche zur bestimmung des Elastizitätsmodul 
+des Runden Stabes bei einseitiger Aufhängung nötig sind. Das Elastizitätsmodul ergibt
+\begin{equation*}
+  E = \qty{1.99(0.1)e11}{\newton\per\meter\squared}
+\end{equation*}
 
 \begin{table}[H]
   \centering
@@ -63,54 +112,50 @@ mit Linearisierung $f_b(x)=3L^2x-4x^3$ gegeben durch:
   \end{tblr}
 \end{table}
 
-%runder Stab-beidseitige Einspannung plot und Messwerte
-\subsection{runder Stab-beidseitige Bespannung}
-\begin{figure}
-  \centering
-  \includegraphics{beidseitigLinks.pdf}
-  \caption{Beidseitige Aufhängung-runder Stab.}
-  \label{fig:beidseitigLinks}
-\end{figure}
 
-\begin{table}[H]
-  \centering
-  \caption{Messwerte a, D\textsubscript{0,l}, D\textsubscript{x,l}, D\textsubscript{0,r}, D\textsubscript{x,r}}
-  \label{tab:at}
-  %\sisetup{table-format=1.1, per-mode=reciprocal}
-  \begin{tblr}{
-      colspec = {S S S S S},
-      row{1} = {guard, mode=math},
-      %vline{4} = {2}{-}{text=\clap{$\pm$}},
-    }
-    \toprule
-    a(mm), D\textsubscript{0,l}(mm), D\textsubscript{x,l}(mm), D\textsubscript{0,r}(mm), D\textsubscript{x,r}(mm)\\
-    \midrule
-    20  & 8.44 & 7.88 & 9.51  & 8.89  \\
-    40  & 8.34 & 7.75 & 9.66  & 9.05  \\
-    60  & 8.21 & 7.61 & 9.80  & 9.25  \\
-    80  & 8.08 & 7.52 & 9.96  & 9.45  \\
-    100 & 7.98 & 7.44 & 10.11 & 9.63  \\
-    120 & 7.86 & 7.37 & 10.26 & 9.81  \\
-    140 & 7.76 & 7.29 & 10.40 & 10.00 \\
-    160 & 7.63 & 7.23 & 10.55 & 10.21 \\
-    180 & 7.54 & 7.16 & 10.68 & 10.40 \\
-    200 & 7.43 & 7.12 & 10.81 & 10.61 \\
-    \midrule
-    $\overline{a}$ & $\overline{D_{0,l}}$ & $\overline{D_{x,l}}$ & $\overline{D_{0,r}}$ & $\overline{D_{x,r}}$\\
-    \midrule
-    1 \pm 2 & 1 \pm 2 & 1 \pm 2 & 1 \pm 2 & 1 \pm 2\\
-    \bottomrule
-  \end{tblr}
-\end{table}
+
 
 %eckiger Stab-einseitige Einspannung plot und Messwerte
 \subsection{eckiger Stab-einseitige Einspannung}
-\begin{figure}
+Die Berrechnung des Elastizitätsmodul des Eckigen einseitig 
+eingespannten Stabs wird analog zu der in\autoref{sec:RunderStabEinseitig} 
+durchgeführten Berechnung bestimmt. Das Flächenträgheitsmoment eines Eckigen Stabes
+ist jedoch
+\begin{equation}
+  \symbf{I} = \frac{h**4}{12}
+\end{equation}
+
+\begin{figure}[H]
   \centering
   \includegraphics{ploteSeinseit.pdf}
   \caption{Einseitiger Aufhang-eckiger Stab.}
   \label{fig:ploteSeinseit}
 \end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Werte zur bestimmung von E(Eckiger Stab)}
+  \label{tab:t2}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S S S},
+      row{1} = {guard, mode=math},
+      row{2} = {guard, mode=math},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    m_{gewicht}\unit{\kilo\gram} & g_{erde}\unit{\meter\per\second\squared} & h\unit{\meter} & I & a \\
+    \midrule
+    0.2 & 9.81 &0.01 & \num{8.33e10} & \num{ 0.0059 +- 0.0003} \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+Mit dem Parameter a Der Ausgleichsrechnung in \autoref{fig:ploteSeinseit} und den werten aus \autoref{tab:t2}
+ergibt sich das Elastizitätsmodul
+\begin{equation*}
+    \symbf{E} = \qty{1.99(0.1)e11}{\newton\per\meter\squared}
+\end{equation*}
 
 \begin{table}[H]
   \centering
@@ -153,6 +198,95 @@ mit Linearisierung $f_b(x)=3L^2x-4x^3$ gegeben durch:
 %   \label{fig:ploteSeinseit}
 % \end{figure}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Beidseitige Aufhängung Links vom gewicht}
+Bei der bestimmung des Elastizitätsmodul bei beidseitiger aufhängung werden die Ausgleichsrechnungen
+in eine rechnung für die linke Seite und eine für die Rechte Seite von dem Þunkt an dem das Gewicht hängt
+aufgeteilt. Das resultiert aus den unterschiedlichen Ausdrücken für $\symbf{D}(x)$, wie man es \autoref{eqn:linksDx} und 
+\autoref{eqn:RechtsDx} entnehmen kann.Für den bereich $(x\leq\frac{L}{2})$ wird die x Achse also mit dem Term
+\begin{equation*}
+  x = (3L^2-4x^3)
+\end{equation*}
+liniarisiert, sowie im bereich $(\frac{L}{2}\leq x \leq L)$ mit dem Term
+\begin{equation}
+  x =(4x^3-12Lx^3+9L^2x-L^3)
+\end{equation}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{beidseitigLinks.pdf}
+  \caption{Beidseitige aufhängung linke Seite.}
+  \label{fig:linksBeidseitig}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%
+Für die linke Seite Ergeben sich die Elastizitätsmodule zu 
+\begin{equation*}
+  E_{linksRund} = \qty{1.71(0.12)e11}{\newton\per\meter\squared}
+\end{equation*}
+
+\begin{equation*}
+  E_{linkseckig} = \qty{1.29(0.04)e11}{\newton\per\meter\squared}
+\end{equation*}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{"rechtsBeidseitig.pdf"}
+  \caption{Beidseitige aufhängung Rechte Seite.}
+  \label{fig:rechtsBeidseitig}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%
+Für die linke rechte Seite Ergeben sich die Elastizitätsmodule zu 
+\begin{equation*}
+  E_{RechtsRund} = \qty{1.11(0.04)e11}{\newton\per\meter\squared}
+\end{equation*}
+
+\begin{equation*}
+  E_{RechtsEckig} = \qty{9.01(0.26)e10}{\newton\per\meter\squared}
+\end{equation*}
+
+
+
+%\begin{figure}
+%  \centering
+%  \includegraphics{beidseitigRechts.pdf}
+%  \caption{Beidseitige Aufhängung-runder Stab rechte Seite.}
+%  \label{fig:rundBeidseitigRechts}
+%\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte a, D\textsubscript{0,l}, D\textsubscript{x,l}, D\textsubscript{0,r}, D\textsubscript{x,r}}
+  \label{tab:at}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S S S},
+      row{1} = {guard, mode=math},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    a(mm), D\textsubscript{0,l}(mm), D\textsubscript{x,l}(mm), D\textsubscript{0,r}(mm), D\textsubscript{x,r}(mm)\\
+    \midrule
+    20  & 8.44 & 7.88 & 9.51  & 8.89  \\
+    40  & 8.34 & 7.75 & 9.66  & 9.05  \\
+    60  & 8.21 & 7.61 & 9.80  & 9.25  \\
+    80  & 8.08 & 7.52 & 9.96  & 9.45  \\
+    100 & 7.98 & 7.44 & 10.11 & 9.63  \\
+    120 & 7.86 & 7.37 & 10.26 & 9.81  \\
+    140 & 7.76 & 7.29 & 10.40 & 10.00 \\
+    160 & 7.63 & 7.23 & 10.55 & 10.21 \\
+    180 & 7.54 & 7.16 & 10.68 & 10.40 \\
+    200 & 7.43 & 7.12 & 10.81 & 10.61 \\
+    \midrule
+    $\overline{a}$ & $\overline{D_{0,l}}$ & $\overline{D_{x,l}}$ & $\overline{D_{0,r}}$ & $\overline{D_{x,r}}$\\
+    \midrule
+    1 \pm 2 & 1 \pm 2 & 1 \pm 2 & 1 \pm 2 & 1 \pm 2\\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
 \begin{table}[H]
   \centering
   \caption{Messwerte a, D\textsubscript{0,l}, D\textsubscript{x,l}, D\textsubscript{0,r}, D\textsubscript{x,r}}
@@ -183,13 +317,4 @@ mit Linearisierung $f_b(x)=3L^2x-4x^3$ gegeben durch:
     \bottomrule
   \end{tblr}
 \end{table}
-
-%\begin{figure}
-%  \centering
-%  \includegraphics{"eckigbeidseit.pdf"}
-%  \caption{Plot.}
-%  \label{fig:plotbeidseitig}
-%\end{figure}
-
-
 
