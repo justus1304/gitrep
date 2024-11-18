@@ -96,3 +96,29 @@ def eckigerStabBeidseitigRechts():
     
     print(E,"E modul eckig beidseitig Rechts")
 eckigerStabBeidseitigRechts()
+
+
+Ere = ufloat(1.00 * 10**(11), 0.05 * 10**(11))
+Erl = ufloat(8.6 * 10**(10), 0.6 * 10**(10))
+Err = ufloat(1.30 * 10**(11), 0.04 * 10**(11))
+
+Eee = ufloat(2.00 * 10**(11), 0.01 * 10**(11))
+Eel = ufloat(5.57 * 10**(10), 0.21 * 10**(10))
+Eer = ufloat(9.02 * 10**(10), 0.27 * 10**(10))
+
+Erund = (Ere + Erl + Err)/3
+Eeckig = (Eee + Eel + Eer)/3
+
+print(Erund)
+print(Eeckig)
+
+
+print(390 / (60 * np.pi * 0.5**2))
+print(500 / (60 * 1),"Dichte Eckig")
+
+print(Erund/10**9)
+print(Eeckig/10**9)
+abweichungRund = (Erund/10**9) / 100
+abweichungEckig = (Eeckig/10**9) / 100
+print(abweichungRund,"abweichung Rund")
+print(abweichungEckig,"abweichung Eckig")
