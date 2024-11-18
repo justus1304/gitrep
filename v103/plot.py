@@ -44,7 +44,7 @@ def lrRunder():
     #Legende anzeigen lassen (labels)
     ax.legend()
     #Achsenbeschriftungen
-    ax.set(xlabel=r"$Lx^2-x^3/3 / \unit{\milli\meter}$", ylabel=r"$\symbf{D} / \unit{\milli\meter}$");
+    ax.set(xlabel=r"$(Lx^2-x^3/3) / \unit{\milli\meter}$", ylabel=r"$\symbf{D} / \unit{\milli\meter}$");
     fig.savefig("build/plotrSeinseit.pdf")
 
 
@@ -91,7 +91,7 @@ def lrEckiger():
     #Legende anzeigen lassen (labels)
     ay.legend()
     #Achsenbeschriftungen
-    ay.set(xlabel=r"$Lx^2-x^3/3 / \unit{\milli\meter}$", ylabel=r"$\symbf{D} / \unit{\milli\meter}$");
+    ay.set(xlabel=r"$(Lx^2-x^3/3) / \unit{\milli\meter}$", ylabel=r"$\symbf{D} / \unit{\milli\meter}$");
     fig.savefig("build/ploteSeinseit.pdf")
 
 
@@ -160,7 +160,7 @@ def beidseitigLinks():
     
     ay.legend(fontsize = 10)
     #Achsenbeschriftungen
-    ay.set(xlabel=r"$3L^2x-4x^3 / \unit{\milli\meter}$", ylabel=r"$\symbf{D} / \unit{\milli\meter}$");
+    ay.set(xlabel=r"$(3L^2x-4x^3) / \unit{\milli\meter}$", ylabel=r"$\symbf{D} / \unit{\milli\meter}$");
 
     ##################################################################################################################################
     
@@ -235,7 +235,7 @@ def beidseitigRechts():
     
     ay.legend(fontsize = 10)
     #Achsenbeschriftungen
-    ay.set(xlabel=r"$(4x^3-12Lx^3+9L^2x-L^3) / \unit{\milli\meter}$", ylabel=r"$\symbf{D} / \unit{\milli\meter}$");
+    ay.set(xlabel=r"$(3L^2x-4x^3) / \unit{\milli\meter}$", ylabel=r"$\symbf{D} / \unit{\milli\meter}$");
 
     ##################################################################################################################################
     

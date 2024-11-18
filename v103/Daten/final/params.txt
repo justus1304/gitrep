@@ -1,0 +1,8 @@
+a = 0.00243 ± 0.00018 Parameter Runder Stab beidseitig links
+b = 0.00008 ± 0.00003 Parameter Runder Stab beidseitig links
+a = 0.00189 ± 0.00006 parameter eckiger stab beidseitig links
+b = 0.00005 ± 0.00001 parameter eckiger stab beidseitig links
+a = 0.00374 ± 0.00014 Parameter Runder Stab beidseitig rechts
+b = -0.00020 ± 0.00003 Parameter Runder Stab beidseitig rechts
+a = 0.00272 ± 0.00008 parameter eckiger stab beidseitig rechts
+b = -0.00021 ± 0.00001 parameter eckiger stab beidseitig rechts

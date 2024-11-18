@@ -13,10 +13,10 @@ def runderStabEinseitig():
     G = 9.81
     F = mg*G
     r = 0.005
-    I = (r**4 * np.pi)/4
+    I = (r**4 * np.pi)/2
     E = F / (2*a*I)
     print(I,"Flt rund")
-    print(repr(E),"E modul rund einseitig")
+    print(E,"E modul rund einseitig")
 runderStabEinseitig()
 
 def eckigerStabEinseitig():
@@ -30,7 +30,7 @@ def eckigerStabEinseitig():
     I = (h**4)/12
     E = F / (2*a*I)
     print(I,"Flt eckig")
-    print(repr(E),"E modul eckig einseitig")
+    print(E,"E modul eckig einseitig")
 eckigerStabEinseitig()
 
 
@@ -45,10 +45,10 @@ def runderStabBeidseitigLinks():
     G = 9.81
     F = mg*G
     r = 0.005
-    I = (r**4 * np.pi)/4
+    I = (r**4 * np.pi)/2
     E = F / (48*a*I)
     
-    print(repr(E),"E modul rund beidseitig links")
+    print(E,"E modul rund beidseitig links")
 runderStabBeidseitigLinks()
 
 print(" ")
@@ -63,7 +63,7 @@ def eckigerStabBeidseitigLinks():
     I = (h**4)/12
     E = F / (48*a*I)
     
-    print(repr(E),"E modul eckig beidseitig links")
+    print(E,"E modul eckig beidseitig links")
 eckigerStabBeidseitigLinks()
 
 
@@ -77,10 +77,10 @@ def runderStabBeidseitigRechts():
     G = 9.81
     F = mg*G
     r = 0.005
-    I = (r**4 * np.pi)/4
+    I = (r**4 * np.pi)/2
     E = F / (48*a*I)
     
-    print(repr(E),"E modul rund beidseitig Rechts")
+    print(E,"E modul rund beidseitig Rechts")
 runderStabBeidseitigRechts()
 print(" ")
 def eckigerStabBeidseitigRechts():
@@ -94,5 +94,5 @@ def eckigerStabBeidseitigRechts():
     I = (h**4)/12
     E = F / (48*a*I)
     
-    print(repr(E),"E modul eckig beidseitig Rechts")
+    print(E,"E modul eckig beidseitig Rechts")
 eckigerStabBeidseitigRechts()
