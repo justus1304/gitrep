@@ -1,31 +1,147 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+\subsection{Verdampfungswärme L im bereich bis 1 Bar}
+Hier soll die Verdampfungswärme $\symbf{L}$ für Wasser im Bereich von 
+$30 - 1000$ mBar experiementell ermittelt werden. Bei der Verdampfung von Wasser
+ wurden folgende Werte für die Dampftemperatur $\symbf{T}/\unit{\celsius}$ und
+  den zugehörigen Druck $\symbf{p}/\unit{\milli\bar}$
 
-\begin{table}
-  \centering
-  \caption{Eine Beispieltabelle mit Messdaten.}
-  \label{tab:tabelle}
-  \sisetup{table-format=1.1, per-mode=reciprocal}
-  \begin{tblr}{
-      colspec = {S[table-format=3.0] S[table-format=2.1] S},
+  
+
+  \begin{longtblr}{
+      colspec = {S S },
       row{1} = {guard, mode=math},
-      vline{4} = {2}{-}{text=\clap{$\pm$}},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
     }
     \toprule
-    U \mathbin{/} \unit{\volt} & I \mathbin{/} \unit{\micro\ampere} & \SetCell[c=2]{c} N \mathbin{/} \unit{\per\second} & \\
+    T/\unit{\celsius} & p/\unit{\milli\bar}\\
     \midrule
-    360 & 0.1 & 98.3 & 0.9 \\
-    400 & 0.2 & 99.8 & 1.0 \\
-    420 & 0.2 & 99.1 & 0.9 \\
-    \bottomrule
-  \end{tblr}
-\end{table}
+    19  & 48      \\   
+    20  & 51      \\   
+    21  & 53      \\   
+    22  & 56      \\   
+    24  & 59      \\   
+    24  & 60      \\   
+    25  & 63      \\   
+    26  & 64      \\   
+    27  & 66      \\   
+    28  & 67      \\   
+    29  & 67      \\   
+    26  & 71      \\   
+    27  & 75      \\   
+    28  & 80      \\   
+    29  & 83      \\   
+    30  & 85      \\   
+    31  & 87      \\   
+    32  & 90      \\   
+    33  & 96      \\   
+    34  & 99      \\   
+    35  & 102     \\   
+    36  & 105     \\   
+    37  & 109     \\   
+    38  & 113     \\   
+    39  & 117     \\   
+    40  & 121     \\   
+    41  & 125     \\   
+    42  & 129     \\   
+    43  & 134     \\   
+    44  & 137     \\   
+    45  & 142     \\   
+    46  & 147     \\   
+    47  & 151     \\   
+    48  & 156     \\   
+    49  & 162     \\   
+    50  & 167  \\
+    51  & 172\\
+    52  & 177\\
+    53  & 183\\
+    54  & 189\\
+    55  & 195\\
+    56  & 200\\
+    57  & 206\\
+    58  & 212\\
+    59  & 220\\
+    60  & 226\\
+    61  & 234\\
+    62  & 242\\
+    63  & 250\\
+    64  & 259\\
+    65  & 268\\
+    66  & 277\\
+    67  & 287\\
+    68  & 298\\
+    69  & 309\\
+    70  & 322\\
+    71  & 336\\
+    72  & 349\\
+    73  & 363\\
+    74  & 378\\
+    75  & 394\\
+    76  & 410\\
+    77  & 427\\
+    78  & 443\\
+    79  & 460\\
+    80  & 476\\
+    81  & 497\\
+    82  & 517\\
+    83  & 536\\
+    84  & 557\\
+    85  & 575\\
+    86  & 594\\
+    87  & 633\\
+    88  & 646\\
+    89  & 658\\
+    90  & 690\\
+    91  & 713\\
+    92  & 741\\
+    93  & 765\\
+    94  & 794\\
+    95  & 821\\
+    96  & 852\\
+    97  & 881\\
+    98  & 911\\
+    99  & 948\\
+    100 & 975     \\   
+   \bottomrule
+  \end{longtblr}
 
-Siehe \autoref{fig:plot} und \autoref{tab:tabelle}!
+Um aus diesem Messwerten einen Ausdruck für die Verdampfungswärme
+ $\symbf{L}$ zu bekommen, nutzen wir die in der Theorie erwähnte 
+ Gleichung
+ \begin{equation}
+  \ln \left(\frac{p}{p_0}\right) = -\frac{\symbf{L}}{R} * \frac{1}{T}
+ \end{equation}
+Da wir annehmen, dass $\symbf{L}$ im Druckbereich von bis zu ein Bar 
+als konstant angesehen werden kann, kann man die Verdmpfungswärme über
+ eine lineare Ausgleichsrechnung der abhängigkeit
+  $\ln\left(\frac{p}{p_0}\right)$ von $\frac{1}{T}$ berechnen.
+  für den Parameter $a$ der Ausgleichsgeraden mit der Geradengleichung
+  \begin{equation}
+    y = m * x + b
+  \end{equation}
+  gillt dann 
+  \begin{equation*}
+    \label{eqn:a}
+    a = -\frac{L}{R}
+  \end{equation*}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics{linreg.pdf}
+    \label{fig:1}
+    \caption{Liniare Ausgleichsrechnung}
+  \end{figure}
+
+  Mit den Parametern der Ausgleichsgeraden $a = \num{-72.90 +- 3.54}
+ $ und $b = \num{0.07 +- 0.08}$ ergibt sich mit \autoref{eqn:a}
+  umgestellt zu
+  \begin{equation}
+    \symbf{L} = -R * a
+  \end{equation}
+  bei einem wert von $R =  8,314/[\unit{\joule\per\mol\per\kelvin}] $ folgender Wert für die Verdampfungswärme L 
+  \begin{equation*}
+    L = 
+  \end{equation*}
+
+
