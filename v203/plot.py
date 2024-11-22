@@ -9,7 +9,10 @@ def liniareRegression():
     x , y = np.genfromtxt("Daten/hmesswerte.txt", unpack=True)
     #x aus differenz bilden(Aufgabenspezifisch)
     y0 = 967
-    x = 1/x 
+    x = (x + 273.15)
+    x = 1/x
+    y = y * (10**5)
+ 
     y = np.log(y/y0)
 
     fig, ax = plt.subplots(1, 1, layout="constrained")
@@ -20,7 +23,7 @@ def liniareRegression():
         print(f"{name} = {value:.4f} ± {error:.4f}")
 
     #x-Achse anzeigebereich
-    x_plot = np.linspace(0.01, 0.05)
+    x_plot = np.linspace(0.0026, 0.0034)
     # ??
     fig, ax = plt.subplots(1, 1, layout="constrained")
     #label der Messwerte
