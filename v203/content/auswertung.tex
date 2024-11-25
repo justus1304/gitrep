@@ -4,10 +4,8 @@
 \subsection{Verdampfungswärme L im bereich bis 1 Bar}
 Hier soll die Verdampfungswärme $\symbf{L}$ für Wasser im Bereich von 
 $30 - 1000$ mBar experiementell ermittelt werden. Bei der Verdampfung von Wasser
- wurden folgende Werte für die Dampftemperatur $\symbf{T}/\unit{\celsius}$ und
-  den zugehörigen Druck $\symbf{p}/\unit{\milli\bar}$ gemessen.
-
-  
+wurden folgende Werte für die Dampftemperatur $\symbf{T}/\unit{\celsius}$ und
+den zugehörigen Druck $\symbf{p}/\unit{\milli\bar}$ gemessen.  
 
   \begin{longtblr}{
       colspec = {S S },
@@ -106,77 +104,76 @@ $30 - 1000$ mBar experiementell ermittelt werden. Bei der Verdampfung von Wasser
    \bottomrule
   \end{longtblr}
 
-Um aus diesem Messwerten einen Ausdruck für die Verdampfungswärme
+\noindent Um aus diesen Messwerten einen Ausdruck für die Verdampfungswärme
  $\symbf{L}$ zu bekommen, nutzen wir die in der Theorie erwähnte 
  Gleichung
  \begin{equation}
-  \ln \left(\frac{p}{p_0}\right) = -\frac{\symbf{L}}{R} \cdot \frac{1}{T}
+  \ln \left(\frac{p}{p_0}\right) = -\frac{L}{R} \cdot \frac{1}{T}.
  \end{equation}
-Da wir annehmen, dass $\symbf{L}$ im Druckbereich von bis zu ein Bar 
-als konstant angesehen werden kann, kann man die Verdmpfungswärme über
- eine lineare Ausgleichsrechnung der abhängigkeit
-  $\ln\left(\frac{p}{p_0}\right)$ von $\frac{1}{T}$ berechnen.
-  für den Parameter $a$ der Ausgleichsgeraden mit der Geradengleichung
-  \begin{equation}
-    y = m \cdot x + b
-  \end{equation}
-  gillt dann 
-  \begin{equation*}
-    \label{eqn:a}
-    a = -\frac{L}{R}
-  \end{equation*}
+Da angenommen wird, dass $\symbf{L}$ im Druckbereich von bis zu ein Bar 
+als konstant angesehen werden kann, kann Verdmpfungswärme über
+eine lineare Ausgleichsrechnung mit $\ln\left(\frac{p}{p_0}\right)$ in 
+Abhängigkeit von $\frac{1}{T}$ berechnet werden.
+für den Parameter $a$ der Ausgleichsgeraden mit der Geradengleichung
+\begin{equation}
+  y = m \cdot x + b
+\end{equation}
+gillt dann 
+\begin{equation*}
+  \label{eqn:a}
+  a = -\frac{L}{R}
+\end{equation*}
 
-  \begin{figure}[H]
-    \centering
-    \includegraphics{linreg.pdf}
-    \label{fig:1}
-    \caption{Liniare Ausgleichsrechnung}
-  \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics{linreg.pdf}
+  \label{fig:1}
+  \caption{Liniare Ausgleichsrechnung}
+\end{figure}
 
-  Mit den Parametern der Ausgleichsgeraden $a = \num{-3874.9574 +- 33.1933}
- $ und $b = \num{21.787 +- 0.10}$ ergibt sich mit \autoref{eqn:a}
-  umgestellt zu
-  \begin{equation}
-    \symbf{L} = -R * a
-  \end{equation}
-  bei einem Wert von $R =  8,314/[\unit{\joule\per\mol\per\kelvin}] $ 
-  folgender Wert für die Verdampfungswärme L.
-  \begin{equation*}
-    \label{eqn:vdw}
-    L = \num{3.22 +- 0.02 e4} \unit{\joule\per\mol}
-  \end{equation*}
-  Nun wird die äußere Verdampfungswärme $L_a$ mithilfe der Idealen 
-  Gasgleichung \autoref{iqn:igg} Abgeschätzt. $L_a$ ist die Arbeit, welche 
-  in form von Wärme an einem Mol Wasser verrichtet werden muss, um es
-  ins Gasförmige zu überführen. 
-  \begin{equation}
-    L_a = RT
-  \end{equation}
-  Für eine Temperatur von $373 \unit{\kelvin}$ ergibt sich eine äußere 
-  Verdampfungswärme von $ L_a = \qty{3101.12}{\joule\per\mol}$
+Mit den Parametern der Ausgleichsgeraden $a = \num{-3874.9574 +- 33.1933}
+$ und $b = \num{21.787 +- 0.10}$ ergibt sich mit \autoref{eqn:a}
+umgestellt zu
+\begin{equation}
+  \symbf{L} = -R * a
+\end{equation}
+bei einem Wert von $R =  8,314/[\unit{\joule\per\mol\per\kelvin}] $ 
+folgender Wert für die Verdampfungswärme L.
+\begin{equation*}
+  \label{eqn:vdw}
+  L = \num{3.22 +- 0.02 e4} \unit{\joule\per\mol}
+\end{equation*}
+Nun wird die äußere Verdampfungswärme $L_a$ mithilfe der Idealen 
+Gasgleichung \autoref{iqn:igg} Abgeschätzt. $L_a$ ist die Arbeit, welche 
+in form von Wärme an einem Mol Wasser verrichtet werden muss, um es
+ins Gasförmige zu überführen. 
+\begin{equation}
+  L_a = RT
+\end{equation}
+Für eine Temperatur von $373 \unit{\kelvin}$ ergibt sich eine äußere 
+Verdampfungswärme von $ L_a = \qty{3101.12}{\joule\per\mol}$
 
-  Damit lässt sich durch einsetzen in \autoref{eqn:l} jene Arbeit $L_i$
-  berechnen, welche notwendig ist um die Molekularen Anziehungskräfte 
-  bei der Verdampfung zu überwinden.
-  \begin{equation}
-    \label{eqn:l}
-    L_i = L - L_a
-  \end{equation}
-  Einsetzen der Werte für die Verdampfungswärme aus \autoref{eqn:vdw} und der 
-  eben berechneten äußeren Verdampfungswärme ergibt den Wert $L_i = \qty{2.912(0.028)e04}{\joule\per\mol}$
-  Um das Ergebnis in Elektronenvolt $(\unit{\eV})$ pro Molekül angeben zu können, wird es durch die 
-  Avogadro Konstante $N_A = 6.022 \cdot 10^23 \unit{\per\mol}$,
-  die Anzahl der Moleküle pro einem Mol, geteilt und in Elektronenvolt 
-  umgerechnet.($\qty{1}{\eV} = \qty{1.602e-19}{\joule}$)
-  das ergibt den Wert \qty{0.301(0.002)}{\eV}
+Damit lässt sich durch einsetzen in \autoref{eqn:l} jene Arbeit $L_i$
+berechnen, welche notwendig ist um die Molekularen Anziehungskräfte 
+bei der Verdampfung zu überwinden.
+\begin{equation}
+  \label{eqn:l}
+  L_i = L - L_a
+\end{equation}
+Einsetzen der Werte für die Verdampfungswärme aus \autoref{eqn:vdw} und der 
+eben berechneten äußeren Verdampfungswärme ergibt den Wert $L_i = \qty{2.912(0.028)e04}{\joule\per\mol}$
+Um das Ergebnis in Elektronenvolt $(\unit{\eV})$ pro Molekül angeben zu können, wird es durch die 
+Avogadro Konstante $N_A = 6.022 \cdot 10^23 \unit{\per\mol}$,
+die Anzahl der Moleküle pro einem Mol, geteilt und in Elektronenvolt 
+umgerechnet.($\qty{1}{\eV} = \qty{1.602e-19}{\joule}$)
+das ergibt den Wert \qty{0.301(0.002)}{\eV}
 
-  \begin{equation}
-    \label{qun:igg}
-    pV = RT
-  \end{equation}
+\begin{equation}
+  \label{qun:igg}
+  pV = RT
+\end{equation}
 
-
-  \subsection{Verdampfungswärme im Bereich 1-15 Bar}
+\subsection{Verdampfungswärme im Bereich 1-15 Bar}
 
 Nun wird die Verdampfungswärme im Bereich von 1 - 15 Bar Bestimmt. 
 Da in diesem Bereich $V_D$ in \autoref{eqn:2} nicht mehr durch die Ideale 
