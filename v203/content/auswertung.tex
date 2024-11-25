@@ -5,7 +5,7 @@
 Hier soll die Verdampfungswärme $\symbf{L}$ für Wasser im Bereich von 
 $30 - 1000$ mBar experiementell ermittelt werden. Bei der Verdampfung von Wasser
  wurden folgende Werte für die Dampftemperatur $\symbf{T}/\unit{\celsius}$ und
-  den zugehörigen Druck $\symbf{p}/\unit{\milli\bar}$
+  den zugehörigen Druck $\symbf{p}/\unit{\milli\bar}$ gemessen.
 
   
 
@@ -110,7 +110,7 @@ Um aus diesem Messwerten einen Ausdruck für die Verdampfungswärme
  $\symbf{L}$ zu bekommen, nutzen wir die in der Theorie erwähnte 
  Gleichung
  \begin{equation}
-  \ln \left(\frac{p}{p_0}\right) = -\frac{\symbf{L}}{R} * \frac{1}{T}
+  \ln \left(\frac{p}{p_0}\right) = -\frac{\symbf{L}}{R} \cdot \frac{1}{T}
  \end{equation}
 Da wir annehmen, dass $\symbf{L}$ im Druckbereich von bis zu ein Bar 
 als konstant angesehen werden kann, kann man die Verdmpfungswärme über
@@ -118,7 +118,7 @@ als konstant angesehen werden kann, kann man die Verdmpfungswärme über
   $\ln\left(\frac{p}{p_0}\right)$ von $\frac{1}{T}$ berechnen.
   für den Parameter $a$ der Ausgleichsgeraden mit der Geradengleichung
   \begin{equation}
-    y = m * x + b
+    y = m \cdot x + b
   \end{equation}
   gillt dann 
   \begin{equation*}
@@ -139,11 +139,41 @@ als konstant angesehen werden kann, kann man die Verdmpfungswärme über
   \begin{equation}
     \symbf{L} = -R * a
   \end{equation}
-  bei einem wert von $R =  8,314/[\unit{\joule\per\mol\per\kelvin}] $ 
+  bei einem Wert von $R =  8,314/[\unit{\joule\per\mol\per\kelvin}] $ 
   folgender Wert für die Verdampfungswärme L.
   \begin{equation*}
-    L = \num{3.22 +- 0.02 e4} \unit{\joule\per\kilo\gram}
+    \label{eqn:vdw}
+    L = \num{3.22 +- 0.02 e4} \unit{\joule\per\mol}
   \end{equation*}
+  Nun wird die äußere Verdampfungswärme $L_a$ mithilfe der Idealen 
+  Gasgleichung \autoref{iqn:igg} Abgeschätzt. $L_a$ ist die Arbeit, welche 
+  in form von Wärme an einem Mol Wasser verrichtet werden muss, um es
+  ins Gasförmige zu überführen. 
+  \begin{equation}
+    L_a = RT
+  \end{equation}
+  Für eine Temperatur von $373 \unit{\kelvin}$ ergibt sich eine äußere 
+  Verdampfungswärme von $ L_a = \qty{3101.12}{\joule\per\mol}$
+
+  Damit lässt sich durch einsetzen in \autoref{eqn:l} jene Arbeit $L_i$
+  berechnen, welche notwendig ist um die Molekularen Anziehungskräfte 
+  bei der Verdampfung zu überwinden.
+  \begin{equation}
+    \label{eqn:l}
+    L_i = L - L_a
+  \end{equation}
+  Einsetzen der Werte für die Verdampfungswärme aus \autoref{eqn:vdw} und der 
+  eben berechneten äußeren Verdampfungswärme ergibt den Wert $L_i = \qty{2.912(0.028)e04}{\joule\per\mol}$
+  Um das Ergebnis in Elektronenvolt $(\unit{\eV})$ pro Molekül angeben zu können, wird es durch die 
+  Avogadro Konstante $N_A = 6.022 \cdot 10^23 \unit{\per\mol}$,
+  die Anzahl der Moleküle pro einem Mol, geteilt und in Elektronenvolt 
+  umgerechnet.($\qty{1}{\eV} = \qty{1.602e-19}{\joule}$)
+  das ergibt den Wert \qty{0.301(0.002)}{\eV}
+
+  \begin{equation}
+    \label{qun:igg}
+    pV = RT
+  \end{equation}
 
 
   \subsection{Verdampfungswärme im Bereich 1-15 Bar}
@@ -202,11 +232,11 @@ zu können, leiten wir das Ausgleichpolynom nach der Temperatur ab.
 
 so ergibt sich das Ausgleichspolynom der Form 
 \begin{equation*}
-  p(T) = a * x^3 + b * x^2 + c * x + d 
+  p(T) = a \cdot x^3 + b \cdot x^2 + c \cdot x + d 
 \end{equation*}
 und die resultierende Ableitung
 \begin{equation*}
-  \frac{dp(T)}{dT} = 3a * x^2 + 2b * x + c 
+  \frac{dp(T)}{dT} = 3a \cdot x^2 + 2b \cdot x + c 
 \end{equation*}
 mit den werten der Parameter des Ausgleichspolynoms in
 \begin{align*}
@@ -222,12 +252,24 @@ diese in abhängigkeit der temperatur bestimmen.
 \begin{equation}
 L(T) = T * \left(\frac{RT}{2p}\pm\sqrt{\left(\frac{RT}{2p}\right)^2-\frac{k}{p}}\right) * \frac{dp}{dT}
 \end{equation}
+Diese Werte sind in \autoref{fig:e} und \autoref{fig:3} 
+Für die Fälle der Addition, sowie der Subtraktion der 
+Wurzel Aufgetragen.
 
+%negative wurzel
 \begin{figure}[H]
   \centering
   \includegraphics{minus.pdf}
-  \label{fig:2}
-  \caption{Ausgleichspolynom 3. Grades}
+  \label{fig:e}
+  \caption{Verdampfungswärme bei Subrtaktion der Wurzel}
+\end{figure}
+
+%positive wurzel
+\begin{figure}[H]
+  \centering
+  \includegraphics{plus.pdf}
+  \label{fig:3}
+  \caption{Verdampfungswärme bei Addition der Wurzel}
 \end{figure}
 
 
