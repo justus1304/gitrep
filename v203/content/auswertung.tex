@@ -114,11 +114,11 @@ Da angenommen wird, dass $\symbf{L}$ im Druckbereich von bis zu ein Bar
 als konstant angesehen werden kann, kann Verdmpfungswärme über
 eine lineare Ausgleichsrechnung mit $\ln\left(\frac{p}{p_0}\right)$ in 
 Abhängigkeit von $\frac{1}{T}$ berechnet werden.
-für den Parameter $a$ der Ausgleichsgeraden mit der Geradengleichung
+Für den Parameter $a$ der Ausgleichsgeraden mit der Geradengleichung
 \begin{equation}
   y = m \cdot x + b
 \end{equation}
-gillt dann 
+gilt dann 
 \begin{equation*}
   \label{eqn:a}
   a = -\frac{L}{R}
@@ -128,71 +128,74 @@ gillt dann
   \centering
   \includegraphics{linreg.pdf}
   \label{fig:1}
-  \caption{Liniare Ausgleichsrechnung}
+  \caption{Lineare Ausgleichsrechnung}
 \end{figure}
 
-Mit den Parametern der Ausgleichsgeraden $a = \num{-3874.9574 +- 33.1933}
+\noindent Mit den Parametern der Ausgleichsgeraden $a = \num{-3874.9574 +- 33.1933}
 $ und $b = \num{21.787 +- 0.10}$ ergibt sich mit \autoref{eqn:a}
 umgestellt zu
 \begin{equation}
-  \symbf{L} = -R * a
+  L = -Ra
 \end{equation}
-bei einem Wert von $R =  8,314/[\unit{\joule\per\mol\per\kelvin}] $ 
-folgender Wert für die Verdampfungswärme L.
-\begin{equation*}
+mit der idealen Gaskonstante $R =  8,314[\unit{\joule\per\mol\per\kelvin}] $ 
+folgender Wert für die Verdampfungswärme:
+\begin{equation}
   \label{eqn:vdw}
   L = \num{3.22 +- 0.02 e4} \unit{\joule\per\mol}
-\end{equation*}
-Nun wird die äußere Verdampfungswärme $L_a$ mithilfe der Idealen 
-Gasgleichung \autoref{iqn:igg} Abgeschätzt. $L_a$ ist die Arbeit, welche 
-in form von Wärme an einem Mol Wasser verrichtet werden muss, um es
-ins Gasförmige zu überführen. 
+\end{equation}
+Nun wird die äußere Verdampfungswärme $\symbf{L_a}$ mithilfe der idealen 
+Gasgleichung (\autoref{eqn:igg}) abgeschätzt. $L_a$ ist die Arbeit, welche 
+in Form von Wärme an einem Mol Wasser verrichtet werden muss, um es
+in den gasförmigen Aggregatzustand zu überführen. 
 \begin{equation}
   L_a = RT
 \end{equation}
 Für eine Temperatur von $373 \unit{\kelvin}$ ergibt sich eine äußere 
-Verdampfungswärme von $ L_a = \qty{3101.12}{\joule\per\mol}$
-
-Damit lässt sich durch einsetzen in \autoref{eqn:l} jene Arbeit $L_i$
-berechnen, welche notwendig ist um die Molekularen Anziehungskräfte 
+Verdampfungswärme von 
+\begin{equation*}
+  L_a = \qty{3101.12}{\joule\per\mol}.
+\end{equation*}
+Damit lässt sich durch Einsetzen in \autoref{eqn:l} jene Arbeit $\symbf{L_i}$
+berechnen, welche notwendig ist um die molekularen Anziehungskräfte 
 bei der Verdampfung zu überwinden.
 \begin{equation}
   \label{eqn:l}
   L_i = L - L_a
 \end{equation}
 Einsetzen der Werte für die Verdampfungswärme aus \autoref{eqn:vdw} und der 
-eben berechneten äußeren Verdampfungswärme ergibt den Wert $L_i = \qty{2.912(0.028)e04}{\joule\per\mol}$
+eben berechneten äußeren Verdampfungswärme ergibt den Wert $L_i = \qty{2.912(0.028)e04}{\joule\per\mol}$.
 Um das Ergebnis in Elektronenvolt $(\unit{\eV})$ pro Molekül angeben zu können, wird es durch die 
-Avogadro Konstante $N_A = 6.022 \cdot 10^23 \unit{\per\mol}$,
-die Anzahl der Moleküle pro einem Mol, geteilt und in Elektronenvolt 
-umgerechnet.($\qty{1}{\eV} = \qty{1.602e-19}{\joule}$)
-das ergibt den Wert \qty{0.301(0.002)}{\eV}
+Avogadro Konstante $N_A = 6.022 \cdot 10^23 \quad \unit{\per\mol}$,
+die Anzahl der Moleküle pro einem Mol, geteilt, was den Wert den Wert 
+\qty{0.301(0.002)}{\eV} ergibt (mit $\qty{1}{\eV} = \qty{1.602e-19}{\joule}$)
 
+Zusätzlich die ideale Gasgleichung:
 \begin{equation}
-  \label{qun:igg}
+  \label{eqn:igg}
   pV = RT
 \end{equation}
 
-\subsection{Verdampfungswärme im Bereich 1-15 Bar}
 
-Nun wird die Verdampfungswärme im Bereich von 1 - 15 Bar Bestimmt. 
-Da in diesem Bereich $V_D$ in \autoref{eqn:2} nicht mehr durch die Ideale 
+
+\subsection{Verdampfungswärme im Bereich 1-15 Bar}
+Nun wird die Verdampfungswärme im Bereich von 1 - 15 Bar bestimmt. 
+Da in diesem Bereich $V_D$ in \autoref{eqn:2} nicht mehr durch die ideale 
 Gasgleichung beschrieben werden kann, wird die Verdampfungswärme in diesem 
-Druckbereich Temperaturabhängig. $V_D$ kann nun über folgende Formel bestimmt 
+Druckbereich temperaturabhängig. $V_D$ kann nun über folgende Formel bestimmt 
 werden.
 \begin{equation}
   \left(p + \frac{a}{V^2}\right)V = RT \Leftrightarrow V_D = \frac{RT}{2p} \pm \sqrt{\left(\frac{RT}{2p}\right)^2-\frac{a}{p}}
 \end{equation}
-mit der Konstanten $a = 0.9 \unit{\joule\cubic\meter\per\square\mole}$
+Dabei ist $a$ eine Konstante der Größe $0.9 \unit{\joule\cubic\meter\per\square\mole}$.
 
   %Tabelle Messwerte
-  \begin{table}
-    \centering 
-    \label{tab:messwerte2}
-    \caption{}
-    \begin{tblr}{
-    colspec = {S S },
-    row{1} = {guard, mode=math},
+\begin{table}[h]
+  \centering 
+  \caption{}
+  \label{tab:messwerte2}
+  \begin{tblr}{
+  colspec = {S S },
+  row{1} = {guard, mode=math},
     %vline{4} = {2}{-}{text=\clap{$\pm$}},
   }
   \toprule
@@ -216,26 +219,27 @@ mit der Konstanten $a = 0.9 \unit{\joule\cubic\meter\per\square\mole}$
   \end{tblr}
 \end{table}
 
-Die Messwerte aus Tabelle \autoref{tab:messwerte2} werden nun in einem T/p diagramm Durch ein 
-Ausgleichspolynom vom Grad 3 genähert. um daraus den Differentialkoeffizienten $dp/dT$ bestimmen 
-zu können, leiten wir das Ausgleichpolynom nach der Temperatur ab.
+\noindent Die Messwerte aus Tabelle \autoref{tab:messwerte2} werden nun in einem T/p 
+Diagramm durch ein Ausgleichspolynom vom Grad 3 genähert. um daraus den 
+Differentialkoeffizienten $dp/dT$ bestimmen zu können, wird das 
+Ausgleichpolynom nach der Temperatur abgeleitet.
 
 \begin{figure}[H]
   \centering
-  \includegraphics{ausgleichspolynom.pdf}
+  \includegraphics[width=0.7\textwidth]{ausgleichspolynom.pdf}
   \label{fig:2}
   \caption{Ausgleichspolynom 3. Grades}
 \end{figure}
 
-so ergibt sich das Ausgleichspolynom der Form 
+\noindent Es ergibt sich das Ausgleichspolynom der Form 
 \begin{equation*}
   p(T) = a \cdot x^3 + b \cdot x^2 + c \cdot x + d 
 \end{equation*}
-und die resultierende Ableitung
+\noindent und die resultierende Ableitung
 \begin{equation*}
   \frac{dp(T)}{dT} = 3a \cdot x^2 + 2b \cdot x + c 
 \end{equation*}
-mit den werten der Parameter des Ausgleichspolynoms in
+mit den Werten der Parameter des Ausgleichspolynoms:
 \begin{align*}
   a &= \num{-1.057 +- 0.737}\\
   b &= \num{1531.298 +- 959.786}\\
@@ -243,30 +247,53 @@ mit den werten der Parameter des Ausgleichspolynoms in
   d &= \num{108512685.516 +- 59968812.507}\\
 \end{align*}
 
-Damit haben wir den Differentialkoeffizienten $dp/dT$ über die Ausgleichsrechnung dargestellt. 
-nun können wir durch einsetzen in \autoref{eqn:2} und umgestellt nach der Verdampfungswärme $\symbf{L}$
-diese in abhängigkeit der temperatur bestimmen.
+Damit ist der Differentialkoeffizienten $dp/dT$ über die
+Ausgleichsrechnung dargestellt. Nun ist es möglich, durch Einsetzen in
+\autoref{eqn:2}, umgestellt nach der Verdampfungswärme $L$,
+diese in Abhängigkeit der Temperatur bestimmen.
 \begin{equation}
-L(T) = T * \left(\frac{RT}{2p}\pm\sqrt{\left(\frac{RT}{2p}\right)^2-\frac{k}{p}}\right) * \frac{dp}{dT}
+L(T) = T \left(\frac{RT}{2p}\pm\sqrt{\left(\frac{RT}{2p}\right)^2-\frac{k}{p}}\right) \frac{dp}{dT}
 \end{equation}
-Diese Werte sind in \autoref{fig:e} und \autoref{fig:3} 
-Für die Fälle der Addition, sowie der Subtraktion der 
-Wurzel Aufgetragen.
+\noindent Diese Werte sind in \autoref{fig:e} und \autoref{fig:3} 
+für die Fälle der Addition, sowie der Subtraktion der 
+Wurzel aufgetragen.
 
-%negative wurzel
+% \begin{figure}[h]
+%   \centering
+%   \begin{minipage}{0.45\textwidth}
+%       \centering
+%       \includegraphics[width=\textwidth]{minus.pdf}
+%       \caption{Verdampfungswärme bei Subrtaktion der Wurzel}
+%       \label{fig:e}
+%   \end{minipage}
+%   \hfill
+%   \begin{minipage}{0.45\textwidth}
+%       \centering
+%       \includegraphics[width=\textwidth]{plus.jpg}
+%       \caption{Verdampfungswärme bei Addition der Wurzel}
+%       \label{fig:3}
+%   \end{minipage}
+% \end{figure}
+
+
+
+
+
+
+negative wurzel
 \begin{figure}[H]
   \centering
-  \includegraphics{minus.pdf}
-  \label{fig:e}
+  \includegraphics[width=0.5\textwidth]{minus.pdf}
   \caption{Verdampfungswärme bei Subrtaktion der Wurzel}
+  \label{fig:e}
 \end{figure}
 
 %positive wurzel
 \begin{figure}[H]
   \centering
-  \includegraphics{plus.pdf}
-  \label{fig:3}
+  \includegraphics[width=0.5\textwidth]{plus.pdf}
   \caption{Verdampfungswärme bei Addition der Wurzel}
+  \label{fig:3}
 \end{figure}
 
 
