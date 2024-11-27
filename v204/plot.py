@@ -1,18 +1,43 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+from uncertainties import ufloat
 
-fig, (ax1, ax2) = plt.subplots(1, 2, layout="constrained")
-ax1.plot(x, y, label="Kurve")
-ax1.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
-ax1.set_ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
-ax1.legend(loc="best")
+import uncertainties.unumpy as unp
+from scipy.stats import sem
 
-ax2.plot(x, y, label="Kurve")
-ax2.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
-ax2.set_ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
-ax2.legend(loc="best")
+def verlaufT1T4():
+    # 1. Daten einlesen mit genfromtxt
+    # Angenommen, die Datei hat Spalten: Zeit, Temperatur T1, Temperatur T4.
+    # Überspringen der Kopfzeile (falls vorhanden) mit `skip_header=1`.
 
-fig.savefig("build/plot.pdf")
+    daten = np.genfromtxt('Daten/T1T4.txt', unpack=True)
+
+    # 2. Spalten in Variablen speichern
+    zeit = daten[:, 0]   # Erste Spalte: Zeit t in s
+    temp_t1 = daten[:, 1]  # Zweite Spalte: Temperatur T1 in °C
+    temp_t4 = daten[:, 2]  # Dritte Spalte: Temperatur T4 in °C
+
+    # 3. Figure und Achse explizit erstellen
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    # 4. Daten plotten
+    ax.plot(zeit, temp_t1, label='Temperatur T1 (°C)', color='red', marker='o')
+    ax.plot(zeit, temp_t4, label='Temperatur T4 (°C)', color='blue', marker='x')
+
+    ax.set_xlim(0, 1500)  # x-Achse von 0 bis 1500
+    ax.set_ylim(0, 45)    # y-Achse von 0 bis 45
+
+    # 5. Diagramm beschriften
+    ax.set_title('Temperaturverlauf über die Zeit')
+    ax.set_xlabel('Zeit (s)')
+    ax.set_ylabel('Temperatur (°C)')
+    ax.legend()
+    ax.grid(True)
+
+    # 5. Plot speichern
+    fig.savefig("build/tempverlaufT1T4.pdf")
+
+verlaufT1T4()
+
+
