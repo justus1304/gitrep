@@ -29,7 +29,7 @@ def liniareRegression():
         print(f"{name} = {value:.4f} ± {error:.4f}")
 
     #x-Achse anzeigebereich
-    x_plot = np.linspace(0.0026, 0.0034)
+    x_plot = np.linspace(0.0024, 0.0036)
     # ??
     fig, ax = plt.subplots(1, 1, layout="constrained")
     #label der Messwerte
@@ -48,7 +48,7 @@ def liniareRegression():
     #Legende anzeigen lassen (labels)
     ax.legend()
     #Achsenbeschriftungen
-    ax.set(xlabel=r"$\frac{1}{L} \unit{\per\celsius}$ ", ylabel=r"$\ln\left(\frac{L}{R}\right)$");
+    ax.set(xlabel=r"$\frac{1}{T} \unit{\per\kelvin}$ ", ylabel=r"$\ln\left(\frac{p/p_0}{R}\right)$");
     fig.savefig("build/linreg.pdf")
 
 
@@ -78,7 +78,7 @@ def ausgleichspolynom():
     fig = plt.figure(layout="constrained")
     ax = fig.add_subplot()
 
-    ax.errorbar(x, y, yerr=0, fmt="k.", label="data")
+    ax.errorbar(x, y, yerr=0, fmt="k.", label="Messwerte")
 
     t = np.linspace(380, 490, 490)
     ax.plot(t, f(t, *parameters), label="Fit")
@@ -128,7 +128,7 @@ def minusWurzel():
 
     x = np.linspace(380, 490)
     
-    ax.plot(x, x*(((R*x)/(2*(a*x**3+b*x**2+c*x+d)))+np.sqrt(((R*x)/(2*(a*x**3+b*x**2+c*x+d)))**2 -(k/(a*x**3+b*x**2+c*x+d)))) * (3*a*x**2+2*b*x+c) , "--", label="Original")
+    ax.plot(x, x*(((R*x)/(2*(a*x**3+b*x**2+c*x+d)))-np.sqrt(((R*x)/(2*(a*x**3+b*x**2+c*x+d)))**2 -(k/(a*x**3+b*x**2+c*x+d)))) * (3*a*x**2+2*b*x+c) , "--", label="Original")
 
     #ax.set_xlim(t[0], t[-1])
     ax.set_xlabel(r"$T/\unit{\kelvin}$")
