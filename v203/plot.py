@@ -29,7 +29,7 @@ def liniareRegression():
         print(f"{name} = {value:.4f} ± {error:.4f}")
 
     #x-Achse anzeigebereich
-    x_plot = np.linspace(0.0024, 0.0036)
+    x_plot = np.linspace(0.0026, 0.0035)
     # ??
     fig, ax = plt.subplots(1, 1, layout="constrained")
     #label der Messwerte
@@ -45,6 +45,7 @@ def liniareRegression():
         #Farbe
         color="tab:red",
     )
+    ax.set_xlim(0.0026,0.0035)
     #Legende anzeigen lassen (labels)
     ax.legend()
     ax.set_xlim(0.0026, 0.00345)
