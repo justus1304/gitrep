@@ -48,8 +48,9 @@ def liniareRegression():
     ax.set_xlim(0.0026,0.0035)
     #Legende anzeigen lassen (labels)
     ax.legend()
+    ax.set_xlim(0.0026, 0.00345)
     #Achsenbeschriftungen
-    ax.set(xlabel=r"$\frac{1}{T} \unit{\per\kelvin}$ ", ylabel=r"$\ln\left(\frac{p/p_0}{R}\right)$");
+    ax.set(xlabel=r"$\frac{1}{T} \unit{\per\kelvin}$ ", ylabel=r"$\ln\left(\frac{p}{p_0}\right)$");
     fig.savefig("build/linreg.pdf")
 
 
