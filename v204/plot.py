@@ -66,7 +66,7 @@ verlaufT5T8()
 def plot_temperaturdifferenz():
    # Ergebnisse laden
    t, T1, T2 = np.genfromtxt("Daten/T1T2diff.txt", unpack = True)
-   Delta_T = T8 - T7
+   Delta_T = T2 - T1
    # Plot erstellen
    plt.figure(figsize=(10, 6))
    plt.plot(t, Delta_T, label='Temperaturdifferenz $\Delta T = T1 - T2$', color='blue')

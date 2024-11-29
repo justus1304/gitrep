@@ -1,4 +1,4 @@
-Zeit (s)	Temperatur 1 (°C)	Temperatur 2 (°C)
+#Zeit (s)	Temperatur 1 (°C)	Temperatur 2 (°C)
 0.0000	    19.41	19.87
 10.0000	    19.87	23.69
 20.0000	    21.13	27.16
