@@ -27,3 +27,16 @@ r_E = 8000
 c_M = 385
 c_A = 830
 c_E = 400
+
+import numpy as np
+
+def berechne_temperaturdifferenz():
+    # Daten einlesen
+    zeit, T1, T2 = np.genfromtxt("T1T4.txt", unpack = True)
+    # Temperaturdifferenz berechnen
+    delta_T = T1 - T2
+    # Ergebnisse speichern (Zeit, Delta T)
+    ergebnis = np.column_stack((zeit, delta_T))
+    np.savetxt("T1T4NEU.txt", ergebnis, header='Zeit, Delta T', comments='')
+berechne_temperaturdifferenz()
+

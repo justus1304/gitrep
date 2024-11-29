@@ -8,12 +8,14 @@ $L$, Querschnitt $A$, Dichte $\rho$ und jeweils spezifische Wärme $c$. Kommt
 es nun zu einem Wärmetransport, fließt die Wärmemenge $dQ$ durch die Querschnittsfläche
 $A$. Diese Wärmemenge lässt sich beschreiben durch:
 \begin{equation}
+    \label{eqn:1}
     dQ = - \kappa A \frac{\partial T}{\partial x} dt.
 \end{equation}
 Das $\kappa$ ist die materialabhängige Wärmeleitfähigkeit. Mithilfe der 
 Kontinuitätsgleichung folgt daraus eine Differentialgleichung, welche als 
 Wärmeleitungsgleichung bezeichnet wird:
 \begin{equation}
+    \label{eqn:2}
     \frac{\partial T}{\partial t} = \frac{\kappa}{\rho c} \frac{\partial ^2 T}{\partial x^2}
 \end{equation}
 Diese Gleichung gibt Aufschluss darüber, wie sich die Temperaturverteilung 
@@ -23,20 +25,40 @@ wie schnell ein Temperaturungleichgewicht ausgeglichen wird. Die Lösung dieser
 DGL für einen langen Stab, welcher abwechselnd erhitzt und abgekühlt wird, ist 
 eine Temperaturwelle, gegeben durch die Gleichung 
 \begin{equation}
+    \label{eqn:3}
     T(x,t)=T_{max}e^{-\sqrt{\frac{\omega \rho c}{2\kappa}}x}cos(\omega t - \sqrt{\frac{\omega \rho c}{2\kappa}}x).
 \end{equation}
 $T_{max}$ ist die Maximalamplitude und $\omega$ die Kreisfrequenz. Nach der 
 Dispersionsrelation
 \begin{equation}
+    \label{eqn:4}
     \omega = v |k|
 \end{equation}
 ergibt sich für die Phasengeschwindigkeit
 \begin{equation}
+    \label{eqn:5}
     v = \frac{\omega}{k} = \sqrt{\frac{2\kappa \omega}{\rho c}}.
 \end{equation}
 Die Wärmeleitfähigkeit ist gegeben durch 
 \begin{equation}
+    \label{eqn:6}
     \kappa = \frac{\rho c(\Delta x)^2}{2 \Delta t \, ln(\frac{A_{nah}}{A_{fern}})}
 \end{equation}
 mit $\Delta = x_{fern} - x_{nah}$ und den Amplituden an diesen Stellen, sowie 
 $\Delta t$, der Phasendifferenz.
+
+\subsection{Fehlerrechnung}
+Die gemessenen Werte für die Temperatur unterliegen 
+Messunsicherheiten und werden demnach im Folgenden nicht als fehlerfrei 
+angesehen. Die Fehler entstehen bei der Bildung der Mittelwerte durch den 
+Fehler des Mittelwerts und bei der Regressionsrechnung sowie der Fehlerforpflanzung 
+durch Python. Der Fehler des Mittelwerts ist gegeben durch 
+\begin{equation}
+    \label{eqn:7}
+    \Delta \overline{x} = \sqrt{\overline{x^2} - \overline{x}^2}.
+\end{equation}
+Um Fehler einzubeziehen, wird die Gauß'sche Fehlerfortpflanzung verwendet:
+\begin{equation}
+    \label{eqn:8}
+    \Delta f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 \cdot \left(\Delta x\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 \cdot \left(\Delta y\right)^2 + .... + \left(\frac{\partial f}{\partial z}\right)^2 \cdot \left(\Delta z\right)^2}
+\end{equation}

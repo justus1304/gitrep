@@ -9,45 +9,73 @@ der Wärmestrom zu jeder Messzeit. Letztlich werden noch die Temperaturdifferenz
 $\Delta T_{ST}=T7-T8$ und $T_{ST}=T2-T1$ als Funktionen der Messzeit t dargestellt.
 
 \subsubsection{Temperaturverläufe und Wärmeleitung}
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics{tempverlaufT1T4.pdf}
-
+    \includegraphics[width=\textwidth]{tempverlaufT1T4.pdf}
+    \caption{Temperaturverläufe von T1 und T4.}
+    \label{fig:f1}
 \end{figure}
-
-\subsection{Dynamische Methode}
-Hier wird die Wärmeleitfähigkeit für den Breiten Messingstab, den Aluminiumstab und den Elelstahlstab
-mithilfe der in der \autoref{sec:Auswertung} erwähnten Dynamischen methode ermittelt.
-
-\subsubsection{Wärmeleitfähigkeit Messing}
-Zur berechnung der Wärmeleitfähigkeit von messung werden Die messwerte des dicken Messsingstabes
-mit den Temperaturmesselementen $T_1$ und $T_2$ benutzt. Jene Wärmeleitfähigkeit lässt sich mit
-\autoref{} bestimmen. Darin sind $\Delta x$ der Abstand der Temperaturmesselemente, $c$ die Materialabhängige
-Wärmekapazität, $\rho $ die Dichte des Stabes, $\Delta t$ die Phasendifferenz
-zwischen der Temperaturwelle am Ersten und zweiten Temperaturelement und $A_{nah(fern)}$ 
-die Amplitude der Jewailigen Temperaturwellle. Die Ampituden werden durch die 
-funktion "find_peaks" aus der bibiliothek SciPy, angewendet aus die Messdaten, bereitgestellt. 
-
-\begin{table}[H]
+Bei den beiden Stäben aus \autoref{fig:f1} handelt es sich um Messingstäbe. Der 
+Temperaturverlauf verhält sich demnach ziemlich ähnlich. Die Abweichung zwischen 
+beiden Verläufen ist mit dem Flächenunterschied zu begründen; die Stäbe von 
+T1 und T4 sind unterschiedlicher Größe und da nach \autoref{eqn:1} die Fläche
+$A$ proportional zu der Wärmemenge $dQ$ ist, weist T1 eine etwas höhere Temperatur 
+auf. Die Abweichung nach oben ist mit einem Messfehler verbunden, welcher noch 
+zu diskutieren ist.
+\\
+In \autoref{fig:f2} befindt sich der Temperaturverlauf des Aluminiumstabs(T5)
+und des Edelstahlstabs(T8).
+\begin{figure}[H]
     \centering
-    \caption{Ermittelte Amplituden und Phasendifferenz}
-    \label{tab:maßePuppe}
-    %\sisetup{table-format=1.1, per-mode=reciprocal}
-    \begin{tblr}{
-        colspec = {S S S S},
-        row{1} = {guard, mode=math},
-        row{14} = {guard},
-        %vline{4} = {2}{-}{text=\clap{$\pm$}},
-      }
-      \toprule
-        A_{nah} & A_{fern} & \log{\frac{A_{nah}}{A_{fern}}}
-      \midrule
-      \bottomrule
-    \end{tblr}
-  \end{table}
+    \includegraphics[width=\textwidth]{tempverlaufT5T8.pdf}
+    \caption{Temperaturverläufe von T5 und T8.}
+    \label{fig:f2}
+\end{figure}
+Es ist zunächst zu erkennen, dass der Temperaturverlauf des Aluminiumstabs recht 
+stark von dem des Edelstahlstabs abweicht. Dieser Verlauf lässt sich mit der 
+höheren Wärmeleitfähigkeit des Aluminiums erklären. Im Vergleich mit den anderen 
+Werten zum Zeitpunkt $t$ = 700s:
+\begin{center}
+  $T1$ = 43,65°C\\
+  $T4$ = 41,41°C\\
+  $T5$ = 46,24°C\\
+  $T8$ = 33,62°C
+\end{center}
 
-  \begin{figure}
-    \centering
-    \includegraphics{messingPot}
-  \end{figure}
+
+% \subsection{Dynamische Methode}
+% Hier wird die Wärmeleitfähigkeit für den Breiten Messingstab, den Aluminiumstab und den Elelstahlstab
+% mithilfe der in der \autoref{sec:Auswertung} erwähnten Dynamischen methode ermittelt.
+
+% \subsubsection{Wärmeleitfähigkeit Messing}
+% Zur berechnung der Wärmeleitfähigkeit von messung werden Die messwerte des dicken Messsingstabes
+% mit den Temperaturmesselementen $T_1$ und $T_2$ benutzt. Jene Wärmeleitfähigkeit lässt sich mit
+% \autoref{} bestimmen. Darin sind $\Delta x$ der Abstand der Temperaturmesselemente, $c$ die Materialabhängige
+% Wärmekapazität, $\rho $ die Dichte des Stabes, $\Delta t$ die Phasendifferenz
+% zwischen der Temperaturwelle am Ersten und zweiten Temperaturelement und $A_{nah(fern)}$ 
+% die Amplitude der Jewailigen Temperaturwellle. Die Ampituden werden durch die 
+% funktion "find_peaks" aus der bibiliothek SciPy, angewendet aus die Messdaten, bereitgestellt. 
+
+% \begin{table}[H]
+%     \centering
+%     \caption{Ermittelte Amplituden und Phasendifferenz}
+%     \label{tab:maßePuppe}
+%     %\sisetup{table-format=1.1, per-mode=reciprocal}
+%     \begin{tblr}{
+%         colspec = {S S S S},
+%         row{1} = {guard, mode=math},
+%         row{14} = {guard},
+%         %vline{4} = {2}{-}{text=\clap{$\pm$}},
+%       }
+%       \toprule
+%         A_{nah} & A_{fern} & \log{\frac{A_{nah}}{A_{fern}}}
+%       \midrule
+%       \bottomrule
+%     \end{tblr}
+%   \end{table}
+
+%   \begin{figure}
+%     \centering
+%     \includegraphics{messingPot}
+%   \end{figure}
   
