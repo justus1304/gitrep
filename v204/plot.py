@@ -63,22 +63,24 @@ def verlaufT5T8():
 verlaufT5T8()
 
 
-#def plot_temperaturdifferenz():
-#    # Ergebnisse laden
-#    daten = np.genfromtxt("Daten/T1T4NEU.txt", unpack = True)
-#    
-#    # Plot erstellen
-#    plt.figure(figsize=(10, 6))
-#    plt.plot(zeit, delta_T, label='Temperaturdifferenz $\Delta T = T1 - T2$', color='blue')
-#    plt.xlabel('Zeit [s]')
-#    plt.ylabel('Temperaturdifferenz [°C]')
-#    plt.title('Temperaturdifferenz über die Zeit')
-#    plt.legend()
-#    plt.grid(True)
-#    
-#    # Plot speichern
-#    plt.savefig('plot_differenz.pdf')
-#plot_temperaturdifferenz()
+def plot_temperaturdifferenz():
+   # Ergebnisse laden
+   t, T1, T2 = np.genfromtxt("Daten/T1T2diff.txt", unpack = True)
+   Delta_T = T8 - T7
+   # Plot erstellen
+   plt.figure(figsize=(10, 6))
+   plt.plot(t, Delta_T, label='Temperaturdifferenz $\Delta T = T1 - T2$', color='blue')
+   plt.xlabel('Zeit [s]')
+   plt.ylabel('Temperaturdifferenz [°C]')
+   plt.title('Temperaturdifferenz über die Zeit')
+   plt.legend()
+   plt.grid(True)
+   
+   # Plot speichern
+   plt.savefig("plot_differenz.pdf")
+plot_temperaturdifferenz()
+
+
 
 #Dynamische methode Messing
 def messing():
