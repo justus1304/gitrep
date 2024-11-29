@@ -65,3 +65,52 @@ verlaufT5T8()
 
 #test
 
+
+
+#Dynamische methode Messing
+def messing():
+    #Liniare regression Runder Stab Einseitig
+    plt.rcParams["figure.figsize"] = (6, 4)
+    plt.rcParams["font.size"] = 16
+    # daten aus txt laden
+    t, T_1, T_2,c,d,e,f,x,y = np.genfromtxt("Daten/d80.txt", unpack=True)
+    #x aus differenz bilden(Aufgabenspezifisch)
+    
+    
+    
+
+    #fig, ax = plt.subplots(1, 1, layout="constrained")
+#
+    #params, covariance_matrix = np.polyfit(x, y, deg=1, cov=True)
+    #errors = np.sqrt(np.diag(covariance_matrix))
+    #for name, value, error in zip("ab", params, errors):
+    #    print(f"{name} = {value:.4f} ± {error:.4f}")
+
+    #x-Achse anzeigebereich
+    x_plot = np.linspace(0,1000)
+    # ??
+    fig, ax = plt.subplots(1, 1, layout="constrained")
+    #label der Messwerte
+    ax.plot(t, T_1, "kx", label="T_1",markersize=1,)
+    ax.plot(t, T_2, "kx", label="T_2",markersize=1,)
+    ax.grid(True)
+    #ploten der Ausgleichsgeraden
+    #ax.plot(
+    #    x_plot,
+    #    params[0] * x_plot + params[1],
+    #    label="Lineare Regression",
+    #    #Dicke der linie
+    #    linewidth=1.5,
+    #    #Farbe
+    #    color="tab:red",
+    #)
+    #ax.set_xlim(0.0026,0.0035)
+    #Legende anzeigen lassen (labels)
+    ax.legend()
+    #ax.set_xlim(0.0026, 0.00345)
+    #Achsenbeschriftungen
+    ax.set(xlabel=r"t/\unit{\sec}$ ", ylabel=r"$T/unit{\degree\celsius}$");
+    fig.savefig("build/messingPlot.pdf")
+
+
+messing()
