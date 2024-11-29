@@ -11,7 +11,7 @@ def verlaufT1T4():
     # Angenommen, die Datei hat Spalten: Zeit, Temperatur T1, Temperatur T4.
     # Überspringen der Kopfzeile (falls vorhanden) mit `skip_header=1`.
 
-    zeit, temp_T1, temp_T4 = np.genfromtxt('Daten/messing.txt', unpack=True)
+    zeit, temp_T1, temp_T4 = np.genfromtxt('Daten/T1T4.txt', unpack=True)
 
     # 3. Figure und Achse explizit erstellen
     fig, ax = plt.subplots(figsize=(10, 6))
