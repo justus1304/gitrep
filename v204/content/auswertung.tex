@@ -31,16 +31,46 @@ und des Edelstahlstabs(T8).
     \caption{Temperaturverläufe von T5 und T8.}
     \label{fig:f2}
 \end{figure}
-Es ist zunächst zu erkennen, dass der Temperaturverlauf des Aluminiumstabs recht 
-stark von dem des Edelstahlstabs abweicht. Dieser Verlauf lässt sich mit der 
-höheren Wärmeleitfähigkeit des Aluminiums erklären. Im Vergleich mit den anderen 
-Werten zum Zeitpunkt $t$ = 700s:
+\noindent Es ist zunächst zu erkennen, dass der Temperaturverlauf des
+Aluminiumstabs recht stark von dem des Edelstahlstabs abweicht. Dieser Verlauf
+lässt sich mit der höheren Wärmeleitfähigkeit des Aluminiums erklären. Im 
+Vergleich mit den anderen Werten zum Zeitpunkt $t$ = 700s:
 \begin{center}
   $T1$ = 43,65°C\\
   $T4$ = 41,41°C\\
   $T5$ = 46,24°C\\
   $T8$ = 33,62°C
 \end{center}
+Der Aluminiumstab verfügt demnach offenbar über die stärkste Wärmeleitfähigkeit.
+Nun lässt sich der Wärmestrom berechnen, indem \autoref{eqn:1} umgeformt wird nach:
+\begin{equation}
+  \frac{\Delta Q}{\Delta t} = - \kappa A \frac{\partial T}{\partial x}
+\end{equation}
+Dabei ist $\partial T = T_i - T_j$ und $\partial x$ die ausgemessene Größe von 
+0,03m.
+
+\begin{table}
+  \centering
+  \caption{Wärmestrom für 5 Zeiten}
+  \label{tab:1}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S},
+      row{1} = {guard, mode=math},
+      %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    % t/s & $\Delta Q_{T1-T2}/ \Delta t$ & $\Delta Q_{T8-T7}/ \Delta t$\\
+    t/s & \Delta Q_{T1-T2} / \Delta t & \Delta Q_{T8-T7} / \Delta t \\
+    \midrule
+    100 & 1 & 2 \\
+    200 & 1 & 2 \\
+    400 & 1 & 2 \\
+    600 & 1 & 2 \\
+    800 & 1 & 2 \\
+    \bottomrule
+  \end{tblr}
+\end{table}
 
 
 % \subsection{Dynamische Methode}
