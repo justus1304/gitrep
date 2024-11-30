@@ -73,39 +73,68 @@ Dabei ist $\partial T = T_i - T_j$ und $\partial x$ die ausgemessene Größe von
 \end{table}
 
 
-% \subsection{Dynamische Methode}
-% Hier wird die Wärmeleitfähigkeit für den Breiten Messingstab, den Aluminiumstab und den Elelstahlstab
-% mithilfe der in der \autoref{sec:Auswertung} erwähnten Dynamischen methode ermittelt.
+\subsection{Dynamische Methode}
+Hier wird die Wärmeleitfähigkeit für den Breiten Messingstab, den Aluminiumstab und den Elelstahlstab
+mithilfe der in der \autoref{sec:Auswertung} erwähnten Dynamischen methode ermittelt.
+\subsubsection{Wärmeleitfähigkeit Messing}
+Zur berechnung der Wärmeleitfähigkeit von Messing werden Die messwerte des dicken Messsingstabes
+mit den Temperaturmesselementen $T_1$ und $T_2$ benutzt. Jene Wärmeleitfähigkeit lässt sich mit
+\autoref{} bestimmen. Darin sind $\Delta x = 0.03/\unit{\meter}$ der Abstand der Temperaturmesselemente, $c$ die Materialabhängige
+Wärmekapazität, $\rho $ die Dichte des Stabes, $\Delta t$ die Phasendifferenz
+zwischen der Temperaturwelle am Ersten und zweiten Temperaturelement und $A_{nah(fern)}$ 
+die Amplitude der Jewailigen Temperaturwellle. Die Ampituden werden durch die 
+funktion "find\_peaks" aus der bibiliothek SciPy, angewendet auf die Messdaten, bereitgestellt. 
 
-% \subsubsection{Wärmeleitfähigkeit Messing}
-% Zur berechnung der Wärmeleitfähigkeit von messung werden Die messwerte des dicken Messsingstabes
-% mit den Temperaturmesselementen $T_1$ und $T_2$ benutzt. Jene Wärmeleitfähigkeit lässt sich mit
-% \autoref{} bestimmen. Darin sind $\Delta x$ der Abstand der Temperaturmesselemente, $c$ die Materialabhängige
-% Wärmekapazität, $\rho $ die Dichte des Stabes, $\Delta t$ die Phasendifferenz
-% zwischen der Temperaturwelle am Ersten und zweiten Temperaturelement und $A_{nah(fern)}$ 
-% die Amplitude der Jewailigen Temperaturwellle. Die Ampituden werden durch die 
-% funktion "find_peaks" aus der bibiliothek SciPy, angewendet aus die Messdaten, bereitgestellt. 
+\begin{table}[H]
+  \centering
+  \caption{Ermittelte Amplituden und Phasendifferenz}
+  \label{tab:2}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S S},
+      row{1} = {guard, mode=math},
+    }
+    \toprule
+    A_{nah} & A_{fern} & \ln{\frac{A_{nah}}{A_{fern}}} & \Delta t \unit{\second}\\
+    \midrule
+    1.00  &1.91  &-0.648 &28\\
+    0.89  &1.87  &-0.734 &20\\
+    0.72  &1.69  &-0.847 &18\\
+    0.77  &1.83  &-0.863 &14\\
+    0.60  &1.59  &-0.966 &14\\
+    0.62  &1.63  &-0.956 &14\\
+    0.57  &1.60  &-1.020 &12\\
+    0.48  &1.50  &-1.144 &14\\
+    0.52  &1.52  &-1.066 &12\\
+    0.52  &1.52  &-1.059 &12\\
+    \bottomrule
+  \end{tblr}
+\end{table}
+\noindent in \autoref{tab:2} sind die nach \autoref{eqn:} ermittelten Amplituden, sowie der Logarythmus der Amplituden und 
+die Phasendifferenz $\Delta t$ aufgeführt. Des weiteren sind in \autoref{abb:mp} die Messwerte, sowie die ermittelten
+Hoch und Tiefpunkte Grafisch dargestellt.
 
-% \begin{table}[H]
-%     \centering
-%     \caption{Ermittelte Amplituden und Phasendifferenz}
-%     \label{tab:maßePuppe}
-%     %\sisetup{table-format=1.1, per-mode=reciprocal}
-%     \begin{tblr}{
-%         colspec = {S S S S},
-%         row{1} = {guard, mode=math},
-%         row{14} = {guard},
-%         %vline{4} = {2}{-}{text=\clap{$\pm$}},
-%       }
-%       \toprule
-%         A_{nah} & A_{fern} & \log{\frac{A_{nah}}{A_{fern}}}
-%       \midrule
-%       \bottomrule
-%     \end{tblr}
-%   \end{table}
+\begin{figure}[H]
+  \label{abb:mp}
+  \centering
+  \caption{Graphische Darstellung der gemessenen Temperaturen $T_1$ und $T_2$ pro vergangener Sekunde}
+  \includegraphics{messingPlot}
+\end{figure}
 
-%   \begin{figure}
-%     \centering
-%     \includegraphics{messingPot}
-%   \end{figure}
-  
+\noindent Mit den Folgenden Materialeigenschaften $\rho$ und $c$, dem Abstand $\Delta x$, sowie den 
+Gemittelten Größen $\Delta t $ und $ \ln{\frac{A_nah}{A_fern}}$ aus den im vorherigen ermittelten Größen, 
+lässt sich Das Die Wärmeleitfähigkeit von Messing über \autoref{eqn:} bestimmen. Die Mittelwerte und 
+der zugehörige Fehler wurden nach \autoref{} bestimmt.
+\begin{align*}
+  \rho_M                                &= \qty{8520}{\kilo\gram\per\cubic\meter}\\
+  \Delta x                              &= \qty{0.03}{\meter}\\
+  c_M                                   &= \qty{385}{\joule\per\kilo\gram\kelvin}\\
+  \overline{\ln{\frac{A_nah}{A_fern}}}  &= \qty{-0.93(0.04)}{}\\
+  \overline{\Delta t}                   &= \qty{15.45(1.4)}{\second}
+\end{align*}
+
+\noindent Die Berechnung der Wärmekapazität Ergibt nach einsetzen der Werte
+\begin{equation}
+  \kappa_{Messing} = \qty{-103(11)}{\watt\per\meter\kelvin}.
+\end{equation}
+
