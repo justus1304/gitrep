@@ -12,7 +12,7 @@ $\Delta T_{ST}=T7-T8$ und $T_{ST}=T2-T1$ als Funktionen der Messzeit t dargestel
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{tempverlaufT1T4.pdf}
-    \caption{Temperaturverläufe von T1 und T4.}
+    \caption{Temperaturverläufe von $T1$ und $T4$.}
     \label{fig:f1}
 \end{figure}
 Bei den beiden Stäben aus \autoref{fig:f1} handelt es sich um Messingstäbe. Der 
@@ -28,7 +28,7 @@ und des Edelstahlstabs(T8).
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{tempverlaufT5T8.pdf}
-    \caption{Temperaturverläufe von T5 und T8.}
+    \caption{Temperaturverläufe von $T5$ und $T8$.}
     \label{fig:f2}
 \end{figure}
 \noindent Es ist zunächst zu erkennen, dass der Temperaturverlauf des
@@ -49,7 +49,10 @@ Nun lässt sich der Wärmestrom berechnen, indem \autoref{eqn:1} umgeformt wird 
 Dabei ist $\partial T = T_i - T_j$ und $\partial x$ die ausgemessene Größe von 
 0,03m.
 
-\begin{table}
+In folgender Tabelle wird der Wärmestrom zu 5 unterschiedlichen Zeiten dargestellt.
+$\Delta Q_{T1-T2}$ steht für den Wärmestrom zwischen $T1$ und $T2$, analog ergibt 
+sich der Wärmestrom $\Delta Q_{T8-T7}$ zwischen den Thermoelementen $T7$ und $T8$.
+\begin{table}[H]
   \centering
   \caption{Wärmestrom für 5 Zeiten}
   \label{tab:1}
@@ -72,6 +75,30 @@ Dabei ist $\partial T = T_i - T_j$ und $\partial x$ die ausgemessene Größe von
   \end{tblr}
 \end{table}
 
+\subsubsection{Temperaturdifferenz}
+In \autoref{fig:f3} ist die Temperaturdifferenz der ersten beiden Thermoelemente 
+zu sehen.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{plotdiff12.pdf}
+  \caption{Temperaturdifferenz $T1$ und $T2$.}
+  \label{fig:f3}
+\end{figure}
+In folgender Abbildung befindet sich die Differenz der letzten beiden Thermoelemente.
+Dabei fällt auf, dass sich die zeitlichen Entwicklungen ähneln; nach Erreichen 
+einer Maximaltemperatur fällt der Graph asymptotisch, wobei der Graph aus 
+\autoref{fig:f4} temperaturmäßig weiter oben liegt und nicht so stark sinkt, wie 
+der Graph aus \autoref{fig:f3}, was durch die bessere Wärmeleitfähigkeit des Messings 
+im Gegensatz zum Edelstahl zu begründen ist. Die erste maximale
+Temperaturdifferenz liegt dabei bei etwa 7,3°C und beim Zweiten Graphen bei 
+knapp 12,1°C. Auffällig bei beiden Graphen ist wieder der Messfehler am rechten
+Ende des Graphen. Dieser wird in der Diskussion behandelt. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{plotdiff78.pdf}
+  \caption{Temperaturdifferenz $T7$ und $T8$.}
+  \label{fig:f4}
+\end{figure}
 
 \subsection{Dynamische Methode}
 Hier wird die Wärmeleitfähigkeit für den Breiten Messingstab, den Aluminiumstab und den Elelstahlstab
