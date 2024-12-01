@@ -104,85 +104,180 @@ Ende des Graphen. Dieser wird in der Diskussion behandelt.
   \label{fig:f4}
 \end{figure}
 
-% \subsection{Dynamische Methode}
-% Hier wird die Wärmeleitfähigkeit für den Breiten Messingstab, den Aluminiumstab und den Elelstahlstab
-% mithilfe der in der \autoref{sec:Auswertung} erwähnten Dynamischen methode ermittelt.
-% \subsubsection{Wärmeleitfähigkeit Messing}
-% Zur berechnung der Wärmeleitfähigkeit von Messing werden Die messwerte des dicken Messsingstabes
-% mit den Temperaturmesselementen $T_1$ und $T_2$ benutzt. Jene Wärmeleitfähigkeit lässt sich mit
-% \autoref{} bestimmen. Darin sind $\Delta x = 0.03/\unit{\meter}$ der Abstand der Temperaturmesselemente, $c$ die Materialabhängige
-% Wärmekapazität, $\rho $ die Dichte des Stabes, $\Delta t$ die Phasendifferenz
-% zwischen der Temperaturwelle am Ersten und zweiten Temperaturelement und $A_{nah(fern)}$ 
-% die Amplitude der Jewailigen Temperaturwellle. Die Ampituden werden durch die 
-% funktion "find\_peaks" aus der bibiliothek SciPy, angewendet auf die Messdaten, bereitgestellt. 
+\subsection{Dynamische Methode}
+Hier wird die Wärmeleitfähigkeit für den Breiten Messingstab, den Aluminiumstab und den Elelstahlstab
+mithilfe der in der \autoref{sec:Auswertung} erwähnten Dynamischen methode ermittelt.
+\subsubsection{Wärmeleitfähigkeit Messing}
+Zur berechnung der Wärmeleitfähigkeit von Messing werden Die messwerte des dicken Messsingstabes
+mit den Temperaturmesselementen $T_1$ und $T_2$ benutzt. Jene Wärmeleitfähigkeit lässt sich mit
+\autoref{eqn:6} bestimmen. Darin sind $\Delta x = 0.03/\unit{\meter}$ der Abstand der Temperaturmesselemente, $c$ die Materialabhängige
+Wärmekapazität, $\rho $ die Dichte des Stabes, $\Delta t$ die Phasendifferenz
+zwischen der Temperaturwelle am Ersten und zweiten Temperaturelement und $A_{nah(fern)}$
+die Amplitude der Jewailigen Temperaturwellle. Die Ampituden werden durch die
+funktion "find\_peaks" aus der bibiliothek SciPy, angewendet auf die Messdaten, bereitgestellt.
 
-% \begin{table}[H]
-%   \centering
-%   \caption{Ermittelte Amplituden und Phasendifferenz}
-%   \label{tab:2}
-%   %\sisetup{table-format=1.1, per-mode=reciprocal}
-%   \begin{tblr}{
-%       colspec = {S S S S},
-%       row{1} = {guard, mode=math},
-%     }
-%     \toprule
-%     A_{nah} & A_{fern} & \ln{\frac{A_{nah}}{A_{fern}}} & \Delta t \unit{\second}\\
-%     \midrule
-%     1.00  &1.91  &-0.648 &28\\
-%     0.89  &1.87  &-0.734 &20\\
-%     0.72  &1.69  &-0.847 &18\\
-%     0.77  &1.83  &-0.863 &14\\
-%     0.60  &1.59  &-0.966 &14\\
-%     0.62  &1.63  &-0.956 &14\\
-%     0.57  &1.60  &-1.020 &12\\
-%     0.48  &1.50  &-1.144 &14\\
-%     0.52  &1.52  &-1.066 &12\\
-%     0.52  &1.52  &-1.059 &12\\
-%     \bottomrule
-%   \end{tblr}
-% \end{table}
-% \noindent in \autoref{tab:2} sind die nach \autoref{eqn:} ermittelten Amplituden, sowie der Logarythmus der Amplituden und 
-% die Phasendifferenz $\Delta t$ aufgeführt. Des weiteren sind in \autoref{abb:mp} die Messwerte, sowie die ermittelten
-% Hoch und Tiefpunkte Grafisch dargestellt.
+\begin{table}[H]
+  \centering
+  \caption{Ermittelte Amplituden und Phasendifferenz für Messing}
+  \label{tab:2}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S S},
+      row{1} = {guard, mode=math},
+    }
+    \toprule
+    A_{fern} & A_{nah} & \ln{\frac{A_{nah}}{A_{fern}}} & \Delta t \unit{\second}\\
+    \midrule
+    1.00  &1.91  &0.648 &28\\
+    0.89  &1.87  &0.734 &20\\
+    0.72  &1.69  &0.847 &18\\
+    0.77  &1.83  &0.863 &14\\
+    0.60  &1.59  &0.966 &14\\
+    0.62  &1.63  &0.956 &14\\
+    0.57  &1.60  &1.020 &12\\
+    0.48  &1.50  &1.144 &14\\
+    0.52  &1.52  &1.066 &12\\
+    0.52  &1.52  &1.059 &12\\
+    \bottomrule
+  \end{tblr}
+\end{table}
+\noindent in \autoref{tab:2} sind die nach \autoref{eqn:mp} ermittelten Amplituden, sowie der Logarythmus der Amplituden und
+die Phasendifferenz $\Delta t$ aufgeführt. Des weiteren sind in \autoref{fig:mp} die Messwerte, sowie die ermittelten
+Hoch und Tiefpunkte Grafisch dargestellt.
 
-% \begin{figure}[H]
-%   \label{abb:mp}
-%   \centering
-%   \caption{Graphische Darstellung der gemessenen Temperaturen $T_1$ und $T_2$ pro vergangenen zwei Sekunden}
-%   \includegraphics{messingPlot}
-% \end{figure}
+\begin{figure}[H]
+  \label{fig:mp}
+  \centering
+  \caption{Graphische Darstellung der gemessenen Temperaturen $T_1$ und $T_2$ pro vergangenen zwei Sekunden}
+  \includegraphics{messingPlot}
+\end{figure}
 
-% \noindent Mit den Folgenden Materialeigenschaften $\rho$ und $c$, dem Abstand $\Delta x$, sowie den 
-% Gemittelten Größen $\Delta t $ und $ \ln{\frac{A_nah}{A_fern}}$ aus den im vorherigen ermittelten Größen, 
-% lässt sich Das Die Wärmeleitfähigkeit von Messing über \autoref{eqn:} bestimmen. Die Mittelwerte und 
-% der zugehörige Fehler wurden nach \autoref{} bestimmt.
-% \begin{align*}
-%   \rho_M                                &= \qty{8520}{\kilo\gram\per\cubic\meter}\\
-%   \Delta x                              &= \qty{0.03}{\meter}\\
-%   c_M                                   &= \qty{385}{\joule\per\kilo\gram\kelvin}\\
-%   \overline{\ln{\frac{A_nah}{A_fern}}}  &= \qty{-0.93(0.04)}{}\\
-%   \overline{\Delta t}                   &= \qty{15.45(1.4)}{\second}
-% \end{align*}
+\noindent Mit den Folgenden Materialeigenschaften $\rho$ und $c$, dem Abstand $\Delta x$, sowie den
+Gemittelten Größen $\Delta t $ und $ \ln{\frac{A_nah}{A_fern}}$ aus den im vorherigen ermittelten Größen,
+lässt sich Das Die Wärmeleitfähigkeit von Messing über \autoref{eqn:6} bestimmen. Die Mittelwerte und
+der zugehörige Fehler wurden nach \autoref{eqn:7} bestimmt.
+\begin{align*}
+  \rho_{Messing}                                &= \qty{8520}{\kilo\gram\per\cubic\meter}\\
+  \Delta x                              &= \qty{0.03}{\meter}\\
+  c_{Messing}                                   &= \qty{385}{\joule\per\kilo\gram\kelvin}\\
+  \overline{\ln{\frac{A_nah}{A_fern}}}  &= \qty{0.93(0.04)}{}\\
+  \overline{\Delta t}                   &= \qty{15.45(1.4)}{\second}
+\end{align*}
 
-% \noindent Die Berechnung der Wärmekapazität Ergibt nach einsetzen der Werte
-% \begin{equation}
-%   \kappa_{Messing} = \qty{-103(11)}{\watt\per\meter\kelvin}.
-% \end{equation}
+\noindent Die Berechnung der Wärmekapazität Ergibt nach einsetzen der Werte
+\begin{equation}
+  \kappa_{Messing} = \qty{103(11)}{\watt\per\meter\kelvin}.
+\end{equation}
 
-% \subsubsection{Wärmeleitfähigkeit Aluminium}
+\subsubsection{Wärmeleitfähigkeit Aluminium}
+Auch für Aluminium wird die Wärmeleitfähigkeit anhand von \autoref{eqn:6} bei einer Heiß- und 
+kühlperiodendauer von 80 sekunden ermittelt. In \autoref{fig:ap} ist der Verlauf der gemessenen 
+Temperaturelemente an $T_5$ und $T_6$ mit den zugehörigen Extrema zu entnehmen.
+\begin{figure}[H]
+  \label{fig:ap}
+  \centering
+  \caption{Graphische Darstellung der gemessenen Temperaturen $T_5$ und $T_6$ pro vergangenen zwei Sekunden}
+  \includegraphics{AluminiumPlot}
+\end{figure}
 
-% \begin{figure}[H]
-%   \label{abb:ap}
-%   \centering
-%   \caption{Graphische Darstellung der gemessenen Temperaturen $T_5$ und $T_6$ pro vergangenen zwei Sekunden}
-%   \includegraphics{AluminiumPlot}
-% \end{figure}
+\begin{table}[H]
+  \centering
+  \caption{Ermittelte Amplituden und Phasendifferenz für Aluminium}
+  \label{tab:3}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S S},
+      row{1} = {guard, mode=math},
+    }
+    \toprule
+    A_{nah} & A_{fern} & \ln{\frac{A_{nah}}{A_{fern}}} & \Delta t \unit{\second}\\
+    \midrule
+    1.5275 &2.0725  & 0.3051232   &     14\\
+    1.3675 &1.96    & 0.35996022  &     12\\
+    1.1225 &1.745   & 0.44119622  &     10\\
+    1.225  &1.87    & 0.42299759  &     8\\
+    1.0025 &1.645   & 0.4952435   &     10\\
+    1.04   &1.675   & 0.47659245  &     8\\
+    0.995  &1.645   & 0.50275293  &     8\\
+    0.845  &1.535   & 0.59694903  &     6\\
+    0.9275 &1.5675  & 0.52474448  &     8\\
+    0.95   &1.58    & 0.50871814  &     8\\
+    \bottomrule
+  \end{tblr}
+\end{table}
+Nun lassen sich wieder unter berücksichtigung der Materialspezifischen werte \autoref{eqn:} und den gemittelten
+grÖßen aus \autoref{tab:3} 
 
-% \subsubsection{Wärmeleitfähigkeit Edelstahl}
+\noindent Mit den Folgenden Materialeigenschaften $\rho$ und $c$, dem Abstand $\Delta x$, sowie den
+Gemittelten Größen $\Delta t $ und $ \ln{\frac{A_nah}{A_fern}}$ aus den im vorherigen ermittelten Größen,
+lässt sich Das Die Wärmeleitfähigkeit von Messing über \autoref{eqn:} bestimmen. Die Mittelwerte und
+der zugehörige Fehler wurden nach \autoref{eqn:a} bestimmt.
+\begin{align*}
+  \label{eqn:a}
+  \rho_{Aluminium}                      &= \qty{2800}{\kilo\gram\per\cubic\meter}\\
+  \Delta x                              &= \qty{0.03}{\meter}\\
+  c_{Aluminium}                         &= \qty{380}{\joule\per\kilo\gram\kelvin}\\
+  \overline{\ln{\frac{A_nah}{A_fern}}}  &= \qty{0.46(0.02)}{}\\
+  \overline{\Delta t}                   &= \qty{9.09(0.06)}{\second}
+\end{align*}
+Durch einsetzen aller Werte in \autoref{eqn:6} ergibt die Wärmekapazität
+\begin{equation}
+\kappa_{Aluminium} = \qty{248(23)}{\watt\per\meter\kelvin}.
+\end{equation}
+\subsubsection{Wärmeleitfähigkeit Edelstahl}
+\noindent Da für Edelstahl eine sehr viel geringere Wärmeleitfähigkeit erwartet wird, werden zur Bestimmung 
+der Wärmeleitfähigkeit von Edelstahl eine Heiz- und Kühlperiode von $200\unit{second}$ gewählt, da 
+sonst am Äußeren Temperaturelement nahezu keine Welle mehr ankommen würde. Ansonsten ist der ablauf 
+identisch zu dem bei der Bestimmung von Messing und Aluminium.
+\begin{figure}[H]
+  \label{fig:ep}
+  \centering
+  \caption{Graphische Darstellung der gemessenen Temperaturen $T_8$ und $T_7$ pro vergangenen zwei Sekunden}
+  \includegraphics{EdelstahlPlot}
+\end{figure}
+\noindent iIn \autoref{fig:ep} sind die Temperaturen pro vergangener zeit $t[\unit{second}] $ 
+aufgetragen, dort ist auch schon erkennbar, dass die Amplituden für $T_8$, trotz großer Periodendauer, 
+immernoch ziemlich gering sind. Dies deutet schon auf eine niedrige Wärmeleitfähigkeit.
 
-%\begin{figure}[H]
-%  \label{abb:ap}
-%  \centering
-%  \caption{Graphische Darstellung der gemessenen Temperaturen $T_8$ und $T_7$ pro vergangenen zwei Sekunden}
-%  \includegraphics{EdelstahlPlot}
-%\end{figure}
+\begin{table}[H]
+  \centering
+  \caption{Ermittelte Amplituden und Phasendifferenz für Edelstahl}
+  \label{tab:3}
+  %\sisetup{table-format=1.1, per-mode=reciprocal}
+  \begin{tblr}{
+      colspec = {S S S S},
+      row{1} = {guard, mode=math},
+    }
+    \toprule
+    A_{fern} & A_{nah} & \ln{\frac{A_{nah}}{A_{fern}}} & \Delta t \unit{\second}\\
+    \midrule
+    1.5425 &5.9875 &1.35626949 &78\\
+    1.2725 &5.6525 &1.49111446 &66\\
+    1.095  &5.445  &1.60394339 &54\\
+    0.995  &5.3475 &1.6816417  &50\\
+    0.8575 &5.3025 &1.82191251 &48\\
+    0.8275 &5.2125 &1.84040576 &48\\
+    0.8    &5.18   &1.86794861 &44\\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+Als nächstes werden wieder die Materialspezifischen werte und die Mittelwerte eingesetzt.
+\begin{align*}
+  \label{eqn:a}
+  \rho_{Edelstahl}                      &= \qty{8000}{\kilo\gram\per\cubic\meter}\\
+  \Delta x                              &= \qty{0.03}{\meter}\\
+  c_{Edelstahl}                         &= \qty{400}{\joule\per\kilo\gram\kelvin}\\
+  \overline{\ln{\frac{A_nah}{A_fern}}}  &= \qty{1.67(0.07)}{}\\
+  \overline{\Delta t}                   &= \qty{54.5(4.1)}{\second}
+\end{align*}
+Daraus resultiert nach einsetzen in \autoref{eqn:6}
+\begin{equation}
+  \kappa_{Edelstahl} = \qty{15.9(1.4)}{\watt\per\meter\kelvin}.
+\end{equation}
+
+\subsection{fehlerrechnung}
+Bei einsetzen von fehlerbehafteten Größen in eine Formel wird der resultierende Fehler nach 
+\autoref{eqn:8} (Fehlerfortpflanzung) ermittelt. Dies übernimmt die Bibiliothek uncertainties
+beim rechnen mit fehlerbehafteten Größen in Python.
+
