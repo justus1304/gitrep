@@ -65,5 +65,8 @@ print("dQ2 nach 800s = ", dQ_dt25)
 
 
 
-#abweichung aluminium
+#abweichung Aluminium
 print("Abweichung Alu: ", 248/235)
+
+#abweichung Edelstahl
+print("Abweichung Ede: ", 15.9/15)
