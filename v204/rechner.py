@@ -60,5 +60,10 @@ print("dQ2 nach 400s = ", dQ_dt23)
 dQ_dt24 = -120 * 0.004 * 0.012 * (40.60-32.59)/0.03
 print("dQ2 nach 600s = ", dQ_dt24)
 #zu 800
-dQ_dt25 = -120 * 0.004 * 0.012 * (44.1-34.89)/0.03
+dQ_dt25 = -120 * 0.09 * 0.012 * (44.1-34.89)/0.03
 print("dQ2 nach 800s = ", dQ_dt25)
+
+
+
+#abweichung aluminium
+print(248/235)
