@@ -144,13 +144,13 @@ def messing():
     # ??
     fig, ax = plt.subplots(1, 1, layout="constrained")
     #ploten der Meswerte und Maxima/Minima
-    ax.plot(t, T_1, "kx", label="Temperatur $T_1$",markersize=0.5,)
-    ax.plot(t, T_2, "rx", label="Temperatur $T_2$",markersize=0.5,)
+    ax.plot(t, T_1, "kx", label="Temperatur $T_2$",markersize=1,)
+    ax.plot(t, T_2, "rx", label="Temperatur $T_1$",markersize=1,)
     ax.plot(t[T_1peaks], T_1[T_1peaks], "rx", label='Maxima')
-    ax.plot(t[T_1lows], T_1[T_1lows], "kx", label='Minima')
+    ax.plot(t[T_1lows], T_1[T_1lows], "bx", label='Minima')
 
     ax.plot(t[T_2peaks], T_2[T_2peaks], "rx")
-    ax.plot(t[T_2lows], T_2[T_2lows], "kx")
+    ax.plot(t[T_2lows], T_2[T_2lows], "bx")
     ax.grid(True)
 
     #phasendifferenz in (s)
@@ -197,7 +197,7 @@ def messing():
     #berechnung der wärmeleitfähigkeit k
     k = (r_M * c_M * (dx)**2)/(2 * Mwpd * Mwln)
     print(k)
-    ax.legend()
+    ax.legend(markerscale = 2)
     ax.set(xlabel=r"$t/\unit{\second}$ ", ylabel=r"$T/\unit{\kelvin}$");
     fig.savefig("build/messingPlot.pdf")
 messing()
@@ -228,13 +228,14 @@ def Aluminium():
     # ??
     fig, ax = plt.subplots(1, 1, layout="constrained")
     #ploten der Meswerte und Maxima/Minima
-    ax.plot(t, T_5, "kx", label="Temperatur $T_5$",markersize=0.5,)
-    ax.plot(t, T_6, "rx", label="Temperatur $T_6$",markersize=0.5,)
+    ax.plot(t, T_5, "kx", label="Temperatur $T_6$",markersize=1,)
+    ###umgekehrte T1,T2 weil erst falsch und zu faul zum korrigieren 
+    ax.plot(t, T_6, "rx", label="Temperatur $T_5$",markersize=1,)
     ax.plot(t[T_5peaks], T_5[T_5peaks], "rx", label='Maxima')
-    ax.plot(t[T_5lows], T_5[T_5lows], "kx", label='Minima')
+    ax.plot(t[T_5lows], T_5[T_5lows], "bx", label='Minima')
 
     ax.plot(t[T_6peaks], T_6[T_6peaks], "rx")
-    ax.plot(t[T_6lows], T_6[T_6lows], "kx")
+    ax.plot(t[T_6lows], T_6[T_6lows], "bx")
     ax.grid(True)
 
     #phasendifferenz in (s)
@@ -279,7 +280,7 @@ def Aluminium():
     #berechnung der wärmeleitfähigkeit k
     k = (r_A * c_A * (dx)**2)/(2 * Mwpd * Mwln)
     print(k)
-    ax.legend()
+    ax.legend(markerscale = 2)
     ax.set(xlabel=r"$t/\unit{\second}$ ", ylabel=r"$T/\unit{\kelvin}$");
     fig.savefig("build/AluminiumPlot.pdf")
 Aluminium()
@@ -311,13 +312,13 @@ def Edelstahl():
     # ??
     fig, ax = plt.subplots(1, 1, layout="constrained")
     #ploten der Meswerte und Maxima/Minima
-    ax.plot(t, T_8, "kx", label="Temperatur $T_8$",markersize=0.5,)
-    ax.plot(t, T_7, "rx", label="Temperatur $T_7$",markersize=0.5,)
+    ax.plot(t, T_8, "kx", label="Temperatur $T_8$",markersize=1,)
+    ax.plot(t, T_7, "rx", label="Temperatur $T_7$",markersize=1,)
     ax.plot(t[T_8peaks], T_8[T_8peaks], "rx", label='Maxima')
-    ax.plot(t[T_8lows], T_8[T_8lows], "kx", label='Minima')
+    ax.plot(t[T_8lows], T_8[T_8lows], "bx", label='Minima')
 
     ax.plot(t[T_7peaks], T_7[T_7peaks], "rx")
-    ax.plot(t[T_7lows], T_7[T_7lows], "kx")
+    ax.plot(t[T_7lows], T_7[T_7lows], "bx")
     ax.grid(True)
 
     print(t[T_8peaks])
@@ -367,7 +368,7 @@ def Edelstahl():
     #berechnung der wärmeleitfähigkeit k
     k = (r_E * c_E * (dx)**2)/(2 * Mwpd * Mwln)
     print(k)
-    ax.legend()
+    ax.legend(markerscale = 2)
     ax.set(xlabel=r"$t/\unit{\second}$ ", ylabel=r"$T/\unit{\kelvin}$");
     fig.savefig("build/EdelstahlPlot.pdf")
 Edelstahl()
