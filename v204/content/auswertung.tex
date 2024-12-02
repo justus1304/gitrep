@@ -111,10 +111,15 @@ mit den Temperaturmesselementen $T_1$ und $T_2$ benutzt. Jene Wärmeleitfähigke
 \autoref{eqn:6} bestimmen. Darin sind $\Delta x = 0.03\unit{\meter}$ der Abstand der Temperaturmesselemente, $c$ die Materialabhängige
 Wärmekapazität, $\rho $ die Dichte des Stabes, $\Delta t$ die Phasendifferenz
 zwischen der Temperaturwelle am ersten und zweiten Temperaturelement und $A_{nah/fern}$
-die Amplituden der jeweiligen Temperaturwellle. Die Minima und Maxima werden
+die Amplituden der jeweiligen Temperaturwelle. Die Minima und Maxima werden
 durch die Funktion "find$\_$peaks" aus der Bibiliothek SciPy auf
-die Messdaten angewendet. Daraus lassen sich  mithilfe von \autoref{}
+die Messdaten angewendet. Daraus lassen sich  mithilfe von \autoref{eqn:A}
 die Amplituden berechnen.
+
+\begin{equation}
+  \label{eqn:A}
+  A_{pos} = \frac{1}{2}\left(A_{max,i+1}-\frac{1}{2}\left(A_{min,i-1}-A_{min,i}\right)-A_{min}\right)
+\end{equation}
 
 \begin{table}[H]
   \centering
@@ -141,7 +146,7 @@ die Amplituden berechnen.
     \bottomrule
   \end{tblr}
 \end{table}
-\noindent In \autoref{tab:t2} sind die nach \autoref{eqn:mp} ermittelten 
+\noindent In \autoref{tab:t2} sind die nach \autoref{eqn:A} ermittelten 
 Amplituden, sowie der Logarithmus der Amplituden und die Phasendifferenz 
 $\Delta t$ aufgeführt. Des weiteren sind in \autoref{fig:mp} die Messwerte 
 sowie die ermittelten Hoch-und Tiefpunkte grafisch dargestellt.
@@ -155,8 +160,8 @@ sowie die ermittelten Hoch-und Tiefpunkte grafisch dargestellt.
 
 \noindent Mit den Folgenden Materialeigenschaften $\rho$ und $c$, dem Abstand $\Delta x$, sowie den
 Gemittelten Größen $\Delta t $ und $ \ln{\frac{A_nah}{A_fern}}$ aus den im vorherigen ermittelten Größen,
-lässt sich Das Die Wärmeleitfähigkeit von Messing über \autoref{eqn:6} bestimmen. Die Mittelwerte und
-der zugehörige Fehler wurden nach \autoref{eqn:7} bestimmt.
+lässt sich die Wärmeleitfähigkeit von Messing über \autoref{eqn:6} bestimmen. Der fehler des Mittelwertes
+lässt sich nach \autoref{eqn:7} bestimmen.
 \begin{align*}
   \rho_{Messing}                                &= \qty{8520}{\kilo\gram\per\cubic\meter}\\
   \Delta x                              &= \qty{0.03}{\meter}\\
@@ -193,26 +198,23 @@ Temperaturelemente an $T_5$ und $T_6$ mit den zugehörigen Extrema zu entnehmen.
     \toprule
     A_{nah} & A_{fern} & \ln{\frac{A_{nah}}{A_{fern}}} & \Delta t \unit{\second}\\
     \midrule
-    1.5275 &2.0725  & 0.3051232   &     14\\
-    1.3675 &1.96    & 0.35996022  &     12\\
-    1.1225 &1.745   & 0.44119622  &     10\\
-    1.225  &1.87    & 0.42299759  &     8\\
-    1.0025 &1.645   & 0.4952435   &     10\\
-    1.04   &1.675   & 0.47659245  &     8\\
-    0.995  &1.645   & 0.50275293  &     8\\
-    0.845  &1.535   & 0.59694903  &     6\\
-    0.9275 &1.5675  & 0.52474448  &     8\\
-    0.95   &1.58    & 0.50871814  &     8\\
+    1.52 &2.07  & 0.305  &     14\\
+    1.36 &1.96  & 0.359  &     12\\
+    1.12 &1.74  & 0.441  &     10\\
+    1.22 &1.87  & 0.422  &     8\\
+    1.00 &1.64  & 0.495  &     10\\
+    1.04 &1.67  & 0.476  &     8\\
+    0.99 &1.64  & 0.502  &     8\\
+    0.84 &1.53  & 0.596  &     6\\
+    0.92 &1.56  & 0.524  &     8\\
+    0.95 &1.58  & 0.508  &     8\\
     \bottomrule
   \end{tblr}
 \end{table}
-Nun lassen sich wieder unter berücksichtigung der Materialspezifischen werte \autoref{eqn:} und den gemittelten
-grÖßen aus \autoref{tab:3} 
 
-\noindent Mit den Folgenden Materialeigenschaften $\rho$ und $c$, dem Abstand $\Delta x$, sowie den
-Gemittelten Größen $\Delta t $ und $ \ln{\frac{A_nah}{A_fern}}$ aus den im vorherigen ermittelten Größen,
-lässt sich Das Die Wärmeleitfähigkeit von Messing über \autoref{eqn:} bestimmen. Die Mittelwerte und
-der zugehörige Fehler wurden nach \autoref{eqn:a} bestimmt.
+
+\noindent Nun lässt sich wieder unter berücksichtigung der Materialspezifischen werten für Aluminium und den gemittelten
+Größen aus \autoref{tab:t3} die Wärmeleitfähigkeit für Aluminium bestimmen.
 \begin{align*}
   \label{eqn:a}
   \rho_{Aluminium}                      &= \qty{2800}{\kilo\gram\per\cubic\meter}\\
@@ -226,24 +228,24 @@ Durch einsetzen aller Werte in \autoref{eqn:6} ergibt die Wärmekapazität
 \kappa_{Aluminium} = \qty{248(23)}{\watt\per\meter\kelvin}.
 \end{equation}
 \subsubsection{Wärmeleitfähigkeit Edelstahl}
-\noindent Da für Edelstahl eine sehr viel geringere Wärmeleitfähigkeit erwartet wird, werden zur Bestimmung 
-der Wärmeleitfähigkeit von Edelstahl eine Heiz- und Kühlperiode von $200\unit{second}$ gewählt, da 
-sonst am Äußeren Temperaturelement nahezu keine Welle mehr ankommen würde. Ansonsten ist der ablauf 
+\noindent Da für Edelstahl eine sehr viel geringere Wärmeleitfähigkeit erwartet wird, wird zur Bestimmung 
+der Wärmeleitfähigkeit von Edelstahl eine Heiz- und Kühlperiode von $200 \unit{\second}$ gewählt, da 
+sonst am Äußeren Temperaturelement nahezu keine Welle mehr ankommen würde. Ansonsten ist der Ablauf 
 identisch zu dem bei der Bestimmung von Messing und Aluminium.
 \begin{figure}[H]
-  \label{fig:ep}
   \centering
   \caption{Graphische Darstellung der gemessenen Temperaturen $T_8$ und $T_7$ pro vergangenen zwei Sekunden}
+  \label{fig:ep}
   \includegraphics{EdelstahlPlot}
 \end{figure}
-\noindent iIn \autoref{fig:ep} sind die Temperaturen pro vergangener zeit $t[\unit{second}] $ 
-aufgetragen, dort ist auch schon erkennbar, dass die Amplituden für $T_8$, trotz großer Periodendauer, 
+\noindent iIn \autoref{fig:ep} sind die Temperaturen pro vergangener zeit $t[\unit{\second}] $ 
+aufgetragen. Dort ist auch schon erkennbar, dass die Amplituden für $T_8$, trotz großer Periodendauer, 
 immernoch ziemlich gering sind. Dies deutet schon auf eine niedrige Wärmeleitfähigkeit.
 
 \begin{table}[H]
   \centering
   \caption{Ermittelte Amplituden und Phasendifferenz für Edelstahl}
-  \label{tab:t3}
+  \label{tab:t4}
   %\sisetup{table-format=1.1, per-mode=reciprocal}
   \begin{tblr}{
       colspec = {S S S S},
@@ -252,18 +254,18 @@ immernoch ziemlich gering sind. Dies deutet schon auf eine niedrige Wärmeleitf�
     \toprule
     A_{fern} & A_{nah} & \ln{\frac{A_{nah}}{A_{fern}}} & \Delta t \unit{\second}\\
     \midrule
-    1.5425 &5.9875 &1.35626949 &78\\
-    1.2725 &5.6525 &1.49111446 &66\\
-    1.095  &5.445  &1.60394339 &54\\
-    0.995  &5.3475 &1.6816417  &50\\
-    0.8575 &5.3025 &1.82191251 &48\\
-    0.8275 &5.2125 &1.84040576 &48\\
-    0.8    &5.18   &1.86794861 &44\\
+    1.54 &5.98 &1.356 &78\\
+    1.27 &5.65 &1.491 &66\\
+    1.09 &5.44 &1.603 &54\\
+    0.99 &5.34 &1.681 &50\\
+    0.85 &5.30 &1.821 &48\\
+    0.82 &5.21 &1.840 &48\\
+    0.8  &5.18 &1.867 &44\\
     \bottomrule
   \end{tblr}
 \end{table}
 
-Als nächstes werden wieder die Materialspezifischen werte und die Mittelwerte eingesetzt.
+Als nächstes werden wieder die Materialspezifischen werte und die Mittelwerte aus \autoref{tab:t4} eingesetzt.
 \begin{align*}
   \label{eqn:a}
   \rho_{Edelstahl}                      &= \qty{8000}{\kilo\gram\per\cubic\meter}\\
