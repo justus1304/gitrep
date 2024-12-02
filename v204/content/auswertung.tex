@@ -55,7 +55,7 @@ sich der Wärmestrom $\Delta Q_{T8-T7}$ zwischen den Thermoelementen $T7$ und $T
 \begin{table}[H]
   \centering
   \caption{Wärmestrom für 5 Zeiten}
-  \label{tab:1}
+  \label{tab:t1}
   %\sisetup{table-format=1.1, per-mode=reciprocal}
   \begin{tblr}{
       colspec = {S S S},
@@ -64,20 +64,16 @@ sich der Wärmestrom $\Delta Q_{T8-T7}$ zwischen den Thermoelementen $T7$ und $T
     }
     \toprule
     % t/s & $\Delta Q_{T1-T2}/ \Delta t$ & $\Delta Q_{T8-T7}/ \Delta t$\\
-    t/s & \Delta Q_{T1-T2} / \Delta t & \Delta Q_{T8-T7} / \Delta t \\
+    t/s & \frac{\Delta Q_{T1-T2}}{\Delta t}/W & \frac{\Delta Q_{T8-T7}}{\Delta t}/W \\
     \midrule
-    100 & 1 & 2 \\
-    200 & 1 & 2 \\
-    400 & 1 & 2 \\
-    600 & 1 & 2 \\
-    800 & 1 & 2 \\
+    100 & -0,62 & -0,97 \\
+    200 & -0,35 & -0,88 \\
+    400 & -0,21 & -0,71 \\
+    600 & -0,11 & -0,64 \\
+    800 & -0,24 & -0,77 \\
     \bottomrule
   \end{tblr}
 \end{table}
-
-
-
-
 
 \subsubsection{Temperaturdifferenz}
 In \autoref{fig:f3} ist die Temperaturdifferenz der ersten beiden Thermoelemente 
@@ -88,7 +84,7 @@ zu sehen.
   \caption{Temperaturdifferenz $T1$ und $T2$.}
   \label{fig:f3}
 \end{figure}
-In folgender Abbildung befindet sich die Differenz der letzten beiden Thermoelemente.
+\noindent In folgender Abbildung befindet sich die Differenz der letzten beiden Thermoelemente.
 Dabei fällt auf, dass sich die zeitlichen Entwicklungen ähneln; nach Erreichen 
 einer Maximaltemperatur fällt der Graph asymptotisch, wobei der Graph aus 
 \autoref{fig:f4} temperaturmäßig weiter oben liegt und nicht so stark sinkt, wie 
@@ -104,22 +100,26 @@ Ende des Graphen. Dieser wird in der Diskussion behandelt.
   \label{fig:f4}
 \end{figure}
 
+
+
 \subsection{Dynamische Methode}
-Hier wird die Wärmeleitfähigkeit für den Breiten Messingstab, den Aluminiumstab und den Elelstahlstab
-mithilfe der in der \autoref{sec:Auswertung} erwähnten Dynamischen methode ermittelt.
+Hier wird die Wärmeleitfähigkeit für den breiten Messingstab, den Aluminiumstab und den Elelstahlstab
+mithilfe der in der \autoref{sec:Auswertung} erwähnten dynamischen Methode ermittelt.
 \subsubsection{Wärmeleitfähigkeit Messing}
-Zur berechnung der Wärmeleitfähigkeit von Messing werden Die messwerte des dicken Messsingstabes
+Zur Berechnung der Wärmeleitfähigkeit von Messing werden die Messwerte des breiten Messsingstabes
 mit den Temperaturmesselementen $T_1$ und $T_2$ benutzt. Jene Wärmeleitfähigkeit lässt sich mit
-\autoref{eqn:6} bestimmen. Darin sind $\Delta x = 0.03/\unit{\meter}$ der Abstand der Temperaturmesselemente, $c$ die Materialabhängige
+\autoref{eqn:6} bestimmen. Darin sind $\Delta x = 0.03\unit{\meter}$ der Abstand der Temperaturmesselemente, $c$ die Materialabhängige
 Wärmekapazität, $\rho $ die Dichte des Stabes, $\Delta t$ die Phasendifferenz
-zwischen der Temperaturwelle am Ersten und zweiten Temperaturelement und $A_{nah(fern)}$
-die Amplitude der Jewailigen Temperaturwellle. Die Ampituden werden durch die
-funktion "find\_peaks" aus der bibiliothek SciPy, angewendet auf die Messdaten, bereitgestellt.
+zwischen der Temperaturwelle am ersten und zweiten Temperaturelement und $A_{nah/fern}$
+die Amplituden der jeweiligen Temperaturwellle. Die Minima und Maxima werden
+durch die Funktion "find$\_$peaks" aus der Bibiliothek SciPy auf
+die Messdaten angewendet. Daraus lassen sich  mithilfe von \autoref{}
+die Amplituden berechnen.
 
 \begin{table}[H]
   \centering
-  \caption{Ermittelte Amplituden und Phasendifferenz für Messing}
-  \label{tab:2}
+  \caption{Ermittelte Amplituden und Phasendifferenz für Messing.}
+  \label{tab:t2}
   %\sisetup{table-format=1.1, per-mode=reciprocal}
   \begin{tblr}{
       colspec = {S S S S},
@@ -141,9 +141,10 @@ funktion "find\_peaks" aus der bibiliothek SciPy, angewendet auf die Messdaten, 
     \bottomrule
   \end{tblr}
 \end{table}
-\noindent in \autoref{tab:2} sind die nach \autoref{eqn:mp} ermittelten Amplituden, sowie der Logarythmus der Amplituden und
-die Phasendifferenz $\Delta t$ aufgeführt. Des weiteren sind in \autoref{fig:mp} die Messwerte, sowie die ermittelten
-Hoch und Tiefpunkte Grafisch dargestellt.
+\noindent In \autoref{tab:t2} sind die nach \autoref{eqn:mp} ermittelten 
+Amplituden, sowie der Logarithmus der Amplituden und die Phasendifferenz 
+$\Delta t$ aufgeführt. Des weiteren sind in \autoref{fig:mp} die Messwerte 
+sowie die ermittelten Hoch-und Tiefpunkte grafisch dargestellt.
 
 \begin{figure}[H]
   \label{fig:mp}
@@ -183,7 +184,7 @@ Temperaturelemente an $T_5$ und $T_6$ mit den zugehörigen Extrema zu entnehmen.
 \begin{table}[H]
   \centering
   \caption{Ermittelte Amplituden und Phasendifferenz für Aluminium}
-  \label{tab:3}
+  \label{tab:t3}
   %\sisetup{table-format=1.1, per-mode=reciprocal}
   \begin{tblr}{
       colspec = {S S S S},
@@ -242,7 +243,7 @@ immernoch ziemlich gering sind. Dies deutet schon auf eine niedrige Wärmeleitf�
 \begin{table}[H]
   \centering
   \caption{Ermittelte Amplituden und Phasendifferenz für Edelstahl}
-  \label{tab:3}
+  \label{tab:t3}
   %\sisetup{table-format=1.1, per-mode=reciprocal}
   \begin{tblr}{
       colspec = {S S S S},
