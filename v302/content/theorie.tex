@@ -1,4 +1,41 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+Die Messung von durch Widerstände ausdrückbare Größen kann durch Brückenschaltungen 
+möglich gemacht werden. In diesem Versuch geht es demnach um ohmsche Widerstände
+und komplexe Widerstände, wie es bei Kondensatoren und Spulen der Fall ist.
+Um das Prinzip von Brückenschaltungen näherzubringen, ist eine in \autoref{fig:f1}
+dargestellt.
+\begin{figure}[H]
+    \centering
+        \centering
+        \includegraphics[width=0.35\textwidth]{Bilder/Brueckenschaltung.png}
+        \caption{Allgemeine Brückenschaltung. \cite{anleitung}}
+    \hfill
+    \label{fig:f1}
+\end{figure}
+\noindent Zwischen den Punkten A und B, welche wiederum zwischen den vier Widerständen 
+$R1$, $R2$, $R3$ und $R4$ liegen besteht eine Verbindung über ein Messgerät. 
+Diese Verbindung wird als Brücke bezeichnet. Es gelten die Kirchhoffschen Gesetze:
+\begin{enumerate}
+    \item Die Summe aller Ströme, die an einem Knoten ein- und ausgehen, ist Null.
+    \begin{equation}
+        \sum\limits_{n}^N I_n = 0
+    \end{equation}
+    \item Die Summe aller Spannungen in einem abgeschlossenen Stromkreis ist Null 
+    (unter Berücksichtigung der Vorzeichen).
+    \begin{equation}
+        \sum\limits_{n}^N U_n = 0
+    \end{equation}
+\end{enumerate}
+\par\vspace{0.5em}
+\noindent Die Punkte A und B befinden sich im Falle des Nullabgleichs (Das 
+Messgerät dokumentiert keinen Strom, I=0) auf gleichem Potential.
+Es kann eine Abgleichbedingung aufgestellt werden:
+\begin{equation}
+    R_1 R_4 = R_2 R_3
+\end{equation}
+Das gleiche gilt analog für komplexe Widerstände. Ist einer der Widerstände 
+von unbekannter Größe, kann er trivialerweise mithilfe der anderen Komponenten 
+bestimmt werden. Jenes wird als Kompensationsmethode bezeichnet und soll im 
+Folgenden gezeigt werden.
