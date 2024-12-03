@@ -112,9 +112,8 @@ mit den Temperaturmesselementen $T_1$ und $T_2$ benutzt. Jene Wärmeleitfähigke
 Wärmekapazität, $\rho $ die Dichte des Stabes, $\Delta t$ die Phasendifferenz
 zwischen der Temperaturwelle am ersten und zweiten Temperaturelement und $A_{nah/fern}$
 die Amplituden der jeweiligen Temperaturwelle. Die Minima und Maxima werden
-durch die Funktion "find$\_$peaks" aus der Bibiliothek SciPy auf
-die Messdaten angewendet. Daraus lassen sich  mithilfe von \autoref{eqn:A}
-die Amplituden berechnen.
+durch die Funktion "find$\_$peaks " , aus der Bibiliothek SciPy, bestimmt. Daraus
+lassen sich  mithilfe von \autoref{eqn:A} die Amplituden berechnen.
 
 \begin{equation}
   \label{eqn:A}
@@ -146,49 +145,51 @@ die Amplituden berechnen.
     \bottomrule
   \end{tblr}
 \end{table}
-\noindent In \autoref{tab:t2} sind die nach \autoref{eqn:A} ermittelten 
-Amplituden, sowie der Logarithmus der Amplituden und die Phasendifferenz 
-$\Delta t$ aufgeführt. Des weiteren sind in \autoref{fig:mp} die Messwerte 
-sowie die ermittelten Hoch-und Tiefpunkte grafisch dargestellt.
+\noindent In \autoref{tab:t2} sind die durch \autoref{eqn:A} ermittelten 
+Amplituden, sowie der Logarithmus dieser und die Phasendifferenz 
+$\Delta t$ aufgeführt. Des Weiteren sind in \autoref{fig:mp} die Messwerte 
+mit den ermittelten Hoch-und Tiefpunkte grafisch dargestellt.
 
 \begin{figure}[H]
   \centering
-  \caption{Graphische Darstellung der gemessenen Temperaturen $T_1$ und $T_2$ pro vergangenen zwei Sekunden}
+  \caption{Graphische Darstellung der gemessenen Temperaturen $T_1$ und $T_2$ pro vergangenen zwei Sekunden.}
   \label{fig:mp}
   \includegraphics{messingPlot}
 \end{figure}
 
-\noindent Mit den Folgenden Materialeigenschaften $\rho$ und $c$, dem Abstand $\Delta x$, sowie den
-Gemittelten Größen $\Delta t $ und $ \ln{\frac{A_nah}{A_fern}}$ aus den im vorherigen ermittelten Größen,
-lässt sich die Wärmeleitfähigkeit von Messing über \autoref{eqn:6} bestimmen. Der fehler des Mittelwertes
-lässt sich nach \autoref{eqn:7} bestimmen.
+\noindent Zusammen mit den Materialeigenschaften $\rho$ und $c$, dem Abstand 
+$\Delta x$, sowie den gemittelten Größen $\Delta t $ und 
+$ \ln{\frac{A_{nah}}{A_{fern}}}$ aus den im Vorherigen ermittelten Größen,
+lässt sich die Wärmeleitfähigkeit von Messing über \autoref{eqn:6} bestimmen.
+Der fehler des Mittelwertes lässt sich über \autoref{eqn:7} berechnen.
 \begin{align*}
   \rho_{Messing}                                &= \qty{8520}{\kilo\gram\per\cubic\meter}\\
   \Delta x                              &= \qty{0.03}{\meter}\\
   c_{Messing}                                   &= \qty{385}{\joule\per\kilo\gram\kelvin}\\
-  \overline{\ln{\frac{A_nah}{A_fern}}}  &= \qty{0.93(0.04)}{}\\
+  \overline{\ln{\frac{A_{nah}}{A_{fern}}}}  &= \qty{0.93(0.04)}{}\\
   \overline{\Delta t}                   &= \qty{15.45(1.4)}{\second}
 \end{align*}
 
-\noindent Die Berechnung der Wärmekapazität Ergibt nach einsetzen der Werte
+\noindent Die Berechnung der Wärmekapazität ergibt nach Einsetzen der Werte:
 \begin{equation}
-  \kappa_{Messing} = \qty{103(11)}{\watt\per\meter\kelvin}.
+  \kappa_{Messing} = \qty{103(11)}{\watt\per\meter\kelvin}
 \end{equation}
 
 \subsubsection{Wärmeleitfähigkeit Aluminium}
-Auch für Aluminium wird die Wärmeleitfähigkeit anhand von \autoref{eqn:6} bei einer Heiß- und 
-kühlperiodendauer von 80 sekunden ermittelt. In \autoref{fig:ap} ist der Verlauf der gemessenen 
-Temperaturelemente an $T_5$ und $T_6$ mit den zugehörigen Extrema zu entnehmen.
+Auch für Aluminium wird die Wärmeleitfähigkeit anhand von \autoref{eqn:6} bei
+einer Heiz- und Kühlungsperiodendauer von 80 sekunden ermittelt. In 
+\autoref{fig:ap} ist der Verlauf der gemessenen Temperaturelemente an $T_5$ 
+und $T_6$ mit den zugehörigen Extrema zu entnehmen.
 \begin{figure}[H]
   \centering
-  \caption{Graphische Darstellung der gemessenen Temperaturen $T_5$ und $T_6$ pro vergangenen zwei Sekunden}
+  \caption{Graphische Darstellung der gemessenen Temperaturen $T_5$ und $T_6$ pro vergangenen zwei Sekunden.}
   \label{fig:ap}
   \includegraphics{AluminiumPlot}
 \end{figure}
 
 \begin{table}[H]
   \centering
-  \caption{Ermittelte Amplituden und Phasendifferenz für Aluminium}
+  \caption{Ermittelte Amplituden und Phasendifferenz für Aluminium.}
   \label{tab:t3}
   %\sisetup{table-format=1.1, per-mode=reciprocal}
   \begin{tblr}{
@@ -213,8 +214,9 @@ Temperaturelemente an $T_5$ und $T_6$ mit den zugehörigen Extrema zu entnehmen.
 \end{table}
 
 
-\noindent Nun lässt sich wieder unter berücksichtigung der Materialspezifischen werten für Aluminium und den gemittelten
-Größen aus \autoref{tab:t3} die Wärmeleitfähigkeit für Aluminium bestimmen.
+\noindent Nun lässt sich wieder unter Berücksichtigung der materialspezifischen
+Werten für Aluminium und den gemittelten Größen aus \autoref{tab:t3} die
+Wärmeleitfähigkeit für Aluminium bestimmen.
 \begin{align*}
   \label{eqn:a}
   \rho_{Aluminium}                      &= \qty{2800}{\kilo\gram\per\cubic\meter}\\
@@ -223,28 +225,30 @@ Größen aus \autoref{tab:t3} die Wärmeleitfähigkeit für Aluminium bestimmen.
   \overline{\ln{\frac{A_nah}{A_fern}}}  &= \qty{0.46(0.02)}{}\\
   \overline{\Delta t}                   &= \qty{9.09(0.06)}{\second}
 \end{align*}
-Durch einsetzen aller Werte in \autoref{eqn:6} ergibt die Wärmekapazität
+Durch Einsetzen aller Werte in \autoref{eqn:6} ergibt sich die Wärmekapazität:
 \begin{equation}
-\kappa_{Aluminium} = \qty{248(23)}{\watt\per\meter\kelvin}.
+\kappa_{Aluminium} = \qty{248(23)}{\watt\per\meter\kelvin}
 \end{equation}
+
 \subsubsection{Wärmeleitfähigkeit Edelstahl}
-\noindent Da für Edelstahl eine sehr viel geringere Wärmeleitfähigkeit erwartet wird, wird zur Bestimmung 
-der Wärmeleitfähigkeit von Edelstahl eine Heiz- und Kühlperiode von $200 \unit{\second}$ gewählt, da 
-sonst am Äußeren Temperaturelement nahezu keine Welle mehr ankommen würde. Ansonsten ist der Ablauf 
-identisch zu dem bei der Bestimmung von Messing und Aluminium.
+\noindent Da für Edelstahl eine sehr viel geringere Wärmeleitfähigkeit erwartet
+wird, wird zur Bestimmung der Wärmeleitfähigkeit eine Heiz- und Kühlungsperiode
+von $200 \unit{\second}$ gewählt, da sonst am äußeren Temperaturelement nahezu
+keine Welle mehr ankommen würde. Ansonsten ist der Ablauf analog zu dem bei
+der Bestimmung von Messing und Aluminium.
 \begin{figure}[H]
   \centering
-  \caption{Graphische Darstellung der gemessenen Temperaturen $T_8$ und $T_7$ pro vergangenen zwei Sekunden}
+  \caption{Graphische Darstellung der gemessenen Temperaturen $T_8$ und $T_7$ pro vergangene zwei Sekunden.}
   \label{fig:ep}
   \includegraphics{EdelstahlPlot}
 \end{figure}
-\noindent iIn \autoref{fig:ep} sind die Temperaturen pro vergangener zeit $t[\unit{\second}] $ 
-aufgetragen. Dort ist auch schon erkennbar, dass die Amplituden für $T_8$, trotz großer Periodendauer, 
-immernoch ziemlich gering sind. Dies deutet schon auf eine niedrige Wärmeleitfähigkeit.
-
+\noindent iIn \autoref{fig:ep} sind die Temperaturen pro vergangene Zeit 
+$t [\unit{\second}] $ aufgetragen. Dort ist schon erkennbar, dass die
+Amplituden für $T_8$, trotz großer Periodendauer, immernoch ziemlich gering 
+sind. Das deutet schon auf eine niedrige Wärmeleitfähigkeit hin.
 \begin{table}[H]
   \centering
-  \caption{Ermittelte Amplituden und Phasendifferenz für Edelstahl}
+  \caption{Ermittelte Amplituden und Phasendifferenz für Edelstahl.}
   \label{tab:t4}
   %\sisetup{table-format=1.1, per-mode=reciprocal}
   \begin{tblr}{
@@ -265,22 +269,23 @@ immernoch ziemlich gering sind. Dies deutet schon auf eine niedrige Wärmeleitf�
   \end{tblr}
 \end{table}
 
-Als nächstes werden wieder die Materialspezifischen werte und die Mittelwerte aus \autoref{tab:t4} eingesetzt.
+Als nächstes werden wie zuvor die materialspezifischen Werte und die Mittelwerte aus
+\autoref{tab:t4} eingesetzt.
 \begin{align*}
   \label{eqn:a}
   \rho_{Edelstahl}                      &= \qty{8000}{\kilo\gram\per\cubic\meter}\\
   \Delta x                              &= \qty{0.03}{\meter}\\
   c_{Edelstahl}                         &= \qty{400}{\joule\per\kilo\gram\kelvin}\\
-  \overline{\ln{\frac{A_nah}{A_fern}}}  &= \qty{1.67(0.07)}{}\\
+  \overline{\ln{\frac{A_{nah}}{A_{fern}}}}  &= \qty{1.67(0.07)}{}\\
   \overline{\Delta t}                   &= \qty{54.5(4.1)}{\second}
 \end{align*}
-Daraus resultiert nach einsetzen in \autoref{eqn:6}
+Daraus resultiert nach Einsetzen in \autoref{eqn:6} :
 \begin{equation}
-  \kappa_{Edelstahl} = \qty{15.9(1.4)}{\watt\per\meter\kelvin}.
+  \kappa_{Edelstahl} = \qty{15.9(1.4)}{\watt\per\meter\kelvin}
 \end{equation}
 
-\subsection{fehlerrechnung}
-Bei einsetzen von fehlerbehafteten Größen in eine Formel wird der resultierende Fehler nach 
-\autoref{eqn:8} (Fehlerfortpflanzung) ermittelt. Dies übernimmt die Bibiliothek uncertainties
-beim rechnen mit fehlerbehafteten Größen in Python.
+\subsection{Fehlerrechnung}
+Bei Einsetzen von fehlerbehafteten Größen in eine Formel wird der resultierende 
+Fehler nach \autoref{eqn:8} (Fehlerfortpflanzung) ermittelt. Dies übernimmt
+die Bibiliothek uncertainties beim Rechnen mit fehlerbehafteten Größen in Python.
 
