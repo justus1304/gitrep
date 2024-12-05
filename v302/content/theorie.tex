@@ -16,7 +16,9 @@ dargestellt.
 \end{figure}
 \noindent Zwischen den Punkten A und B, welche wiederum zwischen den vier Widerständen 
 $R1$, $R2$, $R3$ und $R4$ liegen besteht eine Verbindung über ein Messgerät. 
-Diese Verbindung wird als Brücke bezeichnet. Es gelten die Kirchhoffschen Gesetze:
+Diese Verbindung wird als Brücke bezeichnet. Um Fehlströme zu vermeiden und damit 
+die Messung nicht fälschlicherweise beeinflusst werden kann, wird eine erdungsfreie 
+Speisespannung genutzt. Es gelten die Kirchhoffschen Gesetze:
 \begin{enumerate}
     \item Die Summe aller Ströme, die an einem Knoten ein- und ausgehen, ist Null.
     \begin{equation}
@@ -39,3 +41,22 @@ Das gleiche gilt analog für komplexe Widerstände. Ist einer der Widerstände
 von unbekannter Größe, kann er trivialerweise mithilfe der anderen Komponenten 
 bestimmt werden. Jenes wird als Kompensationsmethode bezeichnet und soll im 
 Folgenden gezeigt werden.
+
+\subsection{Fehlerrechnung}
+Die gemessenen Werte unterliegen Messunsicherheiten und werden demnach im
+Folgenden nicht als fehlerfrei angesehen. Die Fehler entstehen bei der
+Bildung der Mittelwerte durch den Fehler des Mittelwerts und bei der
+Regressionsrechnung sowie der Fehlerforpflanzung durch Python.
+Der Fehler des Mittelwerts ist gegeben durch 
+\begin{equation}
+    \begin{aligned}
+        \Delta \overline{x} &= \sqrt{\overline{x^2} - \overline{x}^2} \\
+                            &= \frac{\sqrt{\frac{1}{N-1} \sum\limits_{i=1}^N (x_i - \overline{x})^2}}{\sqrt{N}}.
+    \end{aligned}
+\end{equation}
+
+Um Fehler einzubeziehen, wird die Gauß'sche Fehlerfortpflanzung verwendet:
+\begin{equation}
+    \label{eqn:8}
+    \Delta f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 \cdot \left(\Delta x\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 \cdot \left(\Delta y\right)^2 + .... + \left(\frac{\partial f}{\partial z}\right)^2 \cdot \left(\Delta z\right)^2}
+\end{equation}
