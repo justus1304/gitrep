@@ -2,6 +2,9 @@
 \label{sec:Auswertung}
 
 \subsection{Wheatstone Brücke}
+Mithilfe der Wheatstone Brücke wird ausgehend von drei 
+bekannten Wiederständen $R_2, R_3 $ und $R_4$ und einer ausgeglichenen Brückenspannung 
+Der Wiederstand $R_x$ mithilfe von \autoref{eqn:1} Berechnet werden. 
 \begin{table}[H]
     \centering
     \caption{Werte der Widerstände zur Wheatstone Brücke.}
@@ -29,6 +32,19 @@
         \hline
     \end{tabular}
 \end{table}
+Für die Bestimmung eines Wiederstands $R_x$ werden $R_3$ und $R_4$ bei ausgeglichener Brückenspannung drei 
+mal für drei unterschiedliche $R_2$ bestimmt. daraus werden die drei wiederstände berechnet und gemittelt.
+Als baubedingte Fehler für die gegebenen Wiederstände nehmen wir $0.2\% $ an.
+
+Nach einsetzen der Messwerte und der zugehöroen Fehler in \autoref{eqn:1} und mittelun demnachErgebnisse 
+erhalten wir folende Werte für die unbekannten Wiederstände.
+\begin{alin}
+       R_{11} &= \qty{492.4(1)}{\ohm}
+       R_{14} &= \qty{900.9(1.8)}{\ohm}
+       R_{12} &= \qty{390.7(0.8)}{\ohm}
+\end{align}
+
+
 
 
 \subsection{Kapazitätsmessbrücke}
@@ -59,6 +75,11 @@
       \hline
   \end{tabular}
 \end{table}
+Hier werden die Werte für drei unbekannte Kapazitäten ähnlich wie im letzten Abschnitt bestimmt. 
+Es wird der Wert für die Kapazität mit drei unterschiedlichen Wiederständen $R_2$ über \autoref{eqn:2} berechnet 
+und die Ergebnise werden gemittelt. Mit den Werten aus \autoref{tab:t2} ergeben sich
+\begin
+
 
 \subsection{Induktivitätsmessbrücke}
 \begin{table}[H]
@@ -88,6 +109,7 @@
       \hline
   \end{tabular}
 \end{table}
+
 
 \subsection{Wien-Robinson Messbrücke}
 % \begin{longtblr}[caption = {Wien-Robinson Messbrücke}]{
@@ -157,11 +179,17 @@
 Mit hilfe der Wien-Robinson Messbrücke kann der Klirrfaktor der Speisespannung ermittelt 
 werden. Dazu tragen wir in einem halblogarythmischen Diagramm Die Brückenspannung, bzw das 
 verhältnis der Brückenspannung zur Speisespannung $(\frac{U_{Br}}{U_s})$, in abhängigkeit von 
-der Frequenz $\omega$ auf.
+der Frequenz $v$ auf.
 \begin{figure}
        \caption{Verhältnis Brückenspannung zu Speisespannung abhängig von der Frequenz und errechnete Funktion}
        \label{fig:ub}
        \centering
        \includegraphics{"build/plot.pdf"}
 \end{figure}
-Die Messwerte für $\frac{U_{Br}}{U_s}\left(\omega\right)$ in \autoref{fig:ub}
+Die Messwerte für $\frac{U_{Br}}{U_s}\left(\omega\right)$ sind in \autoref{fig:ub} zusammen mit einer Theoriefunktion
+bestimmt aus \autoref{eqn:omega} abgebildet.
+In \autoref{eqn:omega} entspricht $\Omega$ der normierten frequenz.
+\begin{equation}
+       \Omega = \frac{\omega}{\omega_0} 
+\end{equation}
+Wenn die Frequenz $\omega$ =
