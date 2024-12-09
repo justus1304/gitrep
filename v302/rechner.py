@@ -192,4 +192,7 @@ def induktivitaet():
     print("")
 induktivitaet()  
 
-print("g(2)", np.sqrt(   (1/9) * (2**2-1)**2 / ((1-2**2)**2 + 9*2**2)    ))
+g2 = np.sqrt(   (1/9) * (2**2-1)**2 / ((1-2**2)**2 + 9*2**2)    )
+print("g(2) = ", g2)
+U2 = v0 * g2
+print("k = ", U2/1000)

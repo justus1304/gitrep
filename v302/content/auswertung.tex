@@ -207,7 +207,7 @@ und nach \autoref{eqn:3} für die Induktivität
 ermittelt werden. Dazu wird in einem halblogarithmischen Diagramm das
 Verhältnis der Brückenspannung zur Speisespannung $(\frac{U_{Br}}{U_s})$ in 
 Abhängigkeit von der normierten Frequenz $\Omega$ aufgetragen.
-\begin{figure}
+\begin{figure}[H]
        \caption{Verhältnis Brückenspannung zu Speisespannung, abhängig von der Frequenz und errechnete Funktion}
        \label{fig:ub}
        \centering
@@ -217,13 +217,20 @@ Die Messwerte für $\frac{U_{Br}}{U_s}\left(\omega\right)$ sind in
 \autoref{fig:ub} zusammen mit einer Theoriefunktion, bestimmt aus
 \autoref{eqn:omega}, abgebildet.
 
-Aus diesen Messwerten soll der Klirrfaktor der Speisespannung ermittelt werden. 
+\noindent Aus diesen Messwerten soll der Klirrfaktor der Speisespannung ermittelt werden. 
 Dies geschieht durch das Ermitteln der Restspannung $U_{Rest}$. Diese 
-Restspannung wird dem Koeffizienten $g(2)$ multipliziert, welcher dem 
-Verhältnis $\frac{U_Br}{U_s}$ aus \autoref{eqn:1} mit dem Wert $\Omega = 2$ entspricht, um so 
+Restspannung wird mit dem Koeffizienten $g(2)$ multipliziert, welcher dem 
+Verhältnis $\frac{U_{Br}}{U_s}$ aus \autoref{eqn:1} bei $\Omega = 2$ entspricht, um so 
 einen Wert für die Amplitude der zweiten Oberwelle $U_2$ zu erhalten.
-daraus lässt sich durch \autoref{eqn:Klirrfaktor} der Klirrfaktor berechnen, wenn man die annahme trifft,
+daraus lässt sich durch \autoref{eqn:Klirrfaktor} der Klirrfaktor berechnen, wenn man die Annahme trifft,
 dass nur die Zweite Oberwelle wesentlich zum Klirrfaktor beiträgt. Des weiteren 
-nimmt man an, dass der klirrfaktor klein ist und nähert somit $U_1 = U_s$.
-
+nimmt man an, dass der klirrfaktor klein ist und nähert somit $U_1 = U_s$. 
+die Restspannung bei $\Omega = 0 $ entspricht 
+\begin{equation*}
+       U_{rest} = 240 \unit{\volt}
+\end{equation*}
+das ergibt eine  Klirrfaktor von 
+\begin{equation*}
+       k = \frac{U_2}{U_1} = \frac{U_{rest} \cdot \frac{U_{Br}}{U_s}(\Omega = 2)}{U_s} = \qty{3.57e-2}{}
+\end{equation*}
 
