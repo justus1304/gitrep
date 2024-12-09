@@ -2,9 +2,9 @@
 \label{sec:Auswertung}
 
 \subsection{Wheatstone Brücke}
-Mithilfe der Wheatstone Brücke wird ausgehend von drei 
-bekannten Wiederständen $R_2, R_3 $ und $R_4$ und einer ausgeglichenen Brückenspannung 
-Der Wiederstand $R_x$ mithilfe von \autoref{eqn:1} Berechnet werden. 
+Mithilfe der Wheatstone Brücke wird ausgehend von drei bekannten Widerständen
+$R_2, R_3 $ und $R_4$ und einer ausgeglichenen Brückenspannung 
+Der Widerstand $R_x$ mithilfe von \autoref{eqn:1} berechnet.
 \begin{table}[H]
     \centering
     \caption{Werte der Widerstände zur Wheatstone Brücke.}
@@ -32,22 +32,23 @@ Der Wiederstand $R_x$ mithilfe von \autoref{eqn:1} Berechnet werden.
         \hline
     \end{tabular}
 \end{table}
-Für die Bestimmung eines Wiederstands $R_x$ werden $R_3$ und $R_4$ bei ausgeglichener Brückenspannung drei 
-mal für drei unterschiedliche $R_2$ bestimmt. daraus werden die drei wiederstände berechnet und gemittelt.
-Als baubedingte Fehler für die gegebenen Wiederstände nehmen wir $0.2\% $ an.
+\noindent Für die Bestimmung eines Widerstands $R_x$ werden $R_3$ und $R_4$
+bei ausgeglichener Brückenspannung für drei unterschiedliche $R_2$ bestimmt.
+Daraus werden die drei Widerstände er-und anschließend gemittelt.
+Als baubedingte Fehler für die gegebenen Wiederstände werden $2\% $ angenommen.
 
-Nach einsetzen der Messwerte und der zugehöroen Fehler in \autoref{eqn:1} und mittelun demnachErgebnisse 
-erhalten wir folende Werte für die unbekannten Wiederstände.
-\begin{align}
-       R_{11} &= \qty{492.4(1)}{\ohm}\\
-       R_{14} &= \qty{900.9(1.8)}{\ohm}\\
-       R_{12} &= \qty{390.7(0.8)}{\ohm}
-\end{align}
-
-
+Nach Einsetzen der Messwerte und der zugehörigen Fehler in \autoref{eqn:1}
+und Mittelung der Ergebnisse ergeben sich für die unbekannten
+Wiederstände die Werte:
+\begin{align*}
+       R_{x,11} &= \qty{629(13.0)}{\ohm}\\
+       R_{x,14} &= \qty{901(18.0)}{\ohm}\\
+       R_{x,12} &= \qty{391(8.0)}{\ohm}
+\end{align*}
 
 
 \subsection{Kapazitätsmessbrücke}
+\label{subsec:kapbru}
 \begin{table}[H]
   \centering
   \caption{Werte der Widerstände zur Kapazitätsmessbrücke.}
@@ -75,9 +76,22 @@ erhalten wir folende Werte für die unbekannten Wiederstände.
       \hline
   \end{tabular}
 \end{table}
-Hier werden die Werte für drei unbekannte Kapazitäten ähnlich wie im letzten Abschnitt bestimmt. 
-Es wird der Wert für die Kapazität mit drei unterschiedlichen Wiederständen $R_2$ über \autoref{eqn:2} berechnet 
-und die Ergebnise werden gemittelt. Mit den Werten aus \autoref{tab:t2} ergeben sich
+Hier werden die Werte für drei unbekannte Kapazitäten ähnlich wie im letzten
+Abschnitt bestimmt. Analog wird der Wert für die Kapazität mit drei unterschiedlichen
+Wiederständen für $R_2$ über \autoref{eqn:2} berechnet und Ergebnisse gemittelt.
+Mit den Werten aus \autoref{tab:t2} ergeben sich einerseits für die Widerstande
+nach \autoref{eqn:1} die Werte 
+\begin{align*}
+       R_{x,8}  &= \qty{865(19.0)}{\ohm}\\
+       R_{x,15} &= \qty{469(9.0)}{\ohm}\\
+       R_{x,9}  &= \qty{461(9.0)}{\ohm}
+\end{align*}
+und nach \autoref{eqn:2} für die Kapazität
+\begin{align*}
+       C_{x,8}  &= \qty{294(6.0)}{\nano\farad}\\
+       C_{x,15} &= \qty{639(13.0)}{\nano\farad}\\
+       C_{x,9}  &= \qty{435(9.0)}{\nano\farad}.
+\end{align*}
 
 
 
@@ -109,87 +123,102 @@ und die Ergebnise werden gemittelt. Mit den Werten aus \autoref{tab:t2} ergeben 
       \hline
   \end{tabular}
 \end{table}
+Zusammen mit den Werten aus \autoref{tab:t3} können die Werte die für erneut 
+3 unterschiedliche Widerstände analog zu \autoref{subsec:kapbru}
+errechnet werden. An Widerständen ergibt sich inklusive Fehlern
+\begin{align*}
+       R_{x,19} &= \qty{104.3(2.1)}{\ohm}\\
+       R_{x,16} &= \qty{427(9.0)}{\ohm}\\
+       R_{x,18} &= \qty{349(7.0)}{\ohm}
+\end{align*}
+und nach \autoref{eqn:3} für die Induktivität
+\begin{align*}
+       L_{x,19} &= \qty{26.9(0.5)}{\milli\henry}\\
+       L_{x,16} &= \qty{134.2(2.7)}{\milli\henry}\\
+       L_{x,18} &= \qty{49.9(1.0)}{\milli\henry}.
+\end{align*}
 
 
-\subsection{Wien-Robinson Messbrücke}
-% \begin{longtblr}[caption = {Wien-Robinson Messbrücke}]{
-%     colspec = {S S },
-%     row{1} = {guard, mode=math},
-%     vline{2} = {2}{-}{text=\clap{$\pm$}},
-%     vline{4} = {2}{-}{text=\clap{$\pm$}},
-%     %vline{4} = {2}{-}{text=\clap{$\pm$}},
-%     }
-%     \toprule
-%     \SetCell[c=2]{c} \nu /\unit{\Hz}& &\SetCell[c=2]{c} U/\unit{\mV} \\
-%     \midrule
-%     50   & 300 \\
-%     70   & 260 \\
-%     90   & 230 \\
-%     110  & 190 \\
-%     130  & 150 \\
-%     150  & 115 \\
-%     170  & 80  \\
-%     190  & 55  \\
-%     210  & 35  \\
-%     230  & 10  \\
-%     250  & 10  \\
-%     270  & 27  \\
-%     290  & 44  \\
-%     310  & 60  \\
-%     330  & 70  \\
-%     350  & 85  \\
-%     370  & 100 \\
-%     390  & 110 \\
-%     410  & 120 \\
-%     430  & 130 \\
-%     450  & 140 \\
-%     470  & 150 \\
-%     490  & 160 \\
-%     510  & 170 \\
-%     530  & 175 \\
-%     550  & 180 \\
-%     570  & 185 \\
-%     590  & 195 \\
-%     610  & 200 \\
-%     630  & 210 \\
-%     650  & 215 \\
-%     670  & 225 \\
-%     690  & 230 \\
-%     710  & 230 \\
-%     730  & 225 \\
-%     750  & 240 \\
-%     770  & 245 \\
-%     790  & 250 \\
-%     810  & 245 \\
-%     830  & 250 \\
-%     850  & 250 \\
-%     870  & 255 \\
-%     890  & 250 \\
-%     910  & 255 \\
-%     930  & 260 \\
-%     950  & 265 \\
-%     970  & 265 \\
-%     990  & 270 \\
-%     1100 & 275 \\
-%     \bottomrule
-%   \end{tblr}
-% \end{table}
 
 \subsection{Wien-Robinson Messbrücke}
-Mit hilfe der Wien-Robinson Messbrücke kann der Klirrfaktor der Speisespannung ermittelt 
-werden. Dazu tragen wir in einem halblogarythmischen Diagramm Die Brückenspannung, bzw das 
-verhältnis der Brückenspannung zur Speisespannung $(\frac{U_{Br}}{U_s})$, in abhängigkeit von 
-der Frequenz $v$ auf.
+\begin{longtblr}[caption = {Wien-Robinson Messbrücke.}]{
+    colspec = {S S},
+    row{1} = {guard, mode=math},
+    vline{4} = {2}{-}{text=\clap{$\pm$}},
+    %vline{4} = {2}{-}{text=\clap{$\pm$}},
+    }
+    \toprule
+    \nu /\unit{\Hz} & U/\unit{\mV} \\
+    \midrule
+    50   & 300 \\
+    70   & 260 \\
+    90   & 230 \\
+    110  & 190 \\
+    130  & 150 \\
+    150  & 115 \\
+    170  & 80  \\
+    190  & 55  \\
+    210  & 35  \\
+    230  & 10  \\
+    250  & 10  \\
+    270  & 27  \\
+    290  & 44  \\
+    310  & 60  \\
+    330  & 70  \\
+    350  & 85  \\
+    370  & 100 \\
+    390  & 110 \\
+    410  & 120 \\
+    430  & 130 \\
+    450  & 140 \\
+    470  & 150 \\
+    490  & 160 \\
+    510  & 170 \\
+    530  & 175 \\
+    550  & 180 \\
+    570  & 185 \\
+    590  & 195 \\
+    610  & 200 \\
+    630  & 210 \\
+    650  & 215 \\
+    670  & 225 \\
+    690  & 230 \\
+    710  & 230 \\
+    730  & 225 \\
+    750  & 240 \\
+    770  & 245 \\
+    790  & 250 \\
+    810  & 245 \\
+    830  & 250 \\
+    850  & 250 \\
+    870  & 255 \\
+    890  & 250 \\
+    910  & 255 \\
+    930  & 260 \\
+    950  & 265 \\
+    970  & 265 \\
+    990  & 270 \\
+    1100 & 275 \\
+    \bottomrule
+\end{longtblr}
+
+
+\noindent Mithilfe der Wien-Robinson Messbrücke kann der Klirrfaktor der Speisespannung 
+ermittelt werden. Dazu wird in einem halblogarithmischen Diagramm das
+Verhältnis der Brückenspannung zur Speisespannung $(\frac{U_{Br}}{U_s})$ in 
+Abhängigkeit von der normierten Frequenz $\Omega$ aufgetragen.
 \begin{figure}
-       \caption{Verhältnis Brückenspannung zu Speisespannung abhängig von der Frequenz und errechnete Funktion}
+       \caption{Verhältnis Brückenspannung zu Speisespannung, abhängig von der Frequenz und errechnete Funktion}
        \label{fig:ub}
        \centering
        \includegraphics{"build/plot.pdf"}
 \end{figure}
-Die Messwerte für $\frac{U_{Br}}{U_s}\left(\omega\right)$ sind in \autoref{fig:ub} zusammen mit einer Theoriefunktion
-bestimmt aus \autoref{eqn:omega} abgebildet.
-In \autoref{eqn:omega} entspricht $\Omega$ der normierten frequenz.
-\begin{equation}
-       \Omega = \frac{\omega}{\omega_0} 
-\end{equation}
-Wenn die Frequenz $\omega$ =
+Die Messwerte für $\frac{U_{Br}}{U_s}\left(\omega\right)$ sind in
+\autoref{fig:ub} zusammen mit einer Theoriefunktion, bestimmt aus
+\autoref{eqn:omega}, abgebildet.
+
+Aus diesen Messwerten soll der Klirrfaktor der Speisespannung ermittelt werden. 
+Dies geschieht durch das Ermitteln der Restspannung $U_{Rest}$. Diese 
+Restspannung wird dem Koeffizienten $g(2)$ multipliziert, welcher dem 
+Verhältnis $\frac{U_Br}{U_s}$ an der Stelle $\omega = 2$ entspricht.
+
