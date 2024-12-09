@@ -15,9 +15,9 @@ def wiederstandmessung():
     R4 = []
     i = 0
     while i < 9:
-        R2.append(ufloat(arrR2[i], arrR2[i] * 0.002))
-        R3.append(ufloat(arrR3[i], arrR3[i] * 0.002))
-        R4.append(ufloat(arrR4[i], arrR4[i] * 0.002))
+        R2.append(ufloat(arrR2[i], arrR2[i] * 0.02))
+        R3.append(ufloat(arrR3[i], arrR3[i] * 0.02))
+        R4.append(ufloat(arrR4[i], arrR4[i] * 0.02))
         i = i + 1
 
     sumR11 = 0
@@ -69,10 +69,10 @@ def kapazitätsmessung():
     C2 = []
     i = 0
     while i < 9:
-        R2.append(ufloat(arrR2[i], arrR2[i] * 0.002))
-        R3.append(ufloat(arrR3[i], arrR3[i] * 0.002))
-        R4.append(ufloat(arrR4[i], arrR4[i] * 0.002))
-        C2.append(ufloat(arrC2[i], arrC2[i] * 0.002))
+        R2.append(ufloat(arrR2[i], arrR2[i] * 0.02))
+        R3.append(ufloat(arrR3[i], arrR3[i] * 0.02))
+        R4.append(ufloat(arrR4[i], arrR4[i] * 0.02))
+        C2.append(ufloat(arrC2[i], arrC2[i] * 0.02))
         i = i + 1
 
     sumR8 = 0
@@ -139,10 +139,10 @@ def induktivitaet():
     L2 = []
     i = 0
     while i < 9:
-        R2.append(ufloat(arrR2[i], arrR2[i] * 0.002))
-        R3.append(ufloat(arrR3[i], arrR3[i] * 0.002))
-        R4.append(ufloat(arrR4[i], arrR4[i] * 0.002))
-        L2.append(ufloat(arrL2[i], arrL2[i] * 0.002))
+        R2.append(ufloat(arrR2[i], arrR2[i] * 0.02))
+        R3.append(ufloat(arrR3[i], arrR3[i] * 0.02))
+        R4.append(ufloat(arrR4[i], arrR4[i] * 0.02))
+        L2.append(ufloat(arrL2[i], arrL2[i] * 0.02))
         i = i + 1
 
     sumR18 = 0
@@ -192,3 +192,4 @@ def induktivitaet():
     print("")
 induktivitaet()  
 
+print("g(2)", np.sqrt(   (1/9) * (2**2-1)**2 / ((1-2**2)**2 + 9*2**2)    ))

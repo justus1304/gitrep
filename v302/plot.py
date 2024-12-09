@@ -23,7 +23,7 @@ x_plot = np.linspace(0, 0.6)
 
 fig, ax = plt.subplots(1, 1, layout="constrained")
 ax.set_yscale("log")
-ax.plot(x/v0, np.sqrt((1/9)*((((x*2*np.pi)/w0)**2-1)**2 / ((1-((x*2*np.pi)/w0)**2)**2+9*((x*2*np.pi)/w0)**2))))
+ax.plot(x/v0, np.sqrt((1/9)*((((x*2*np.pi)/w0)**2-1)**2 / ((1-((x*2*np.pi)/w0)**2)**2+9*((x*2*np.pi)/w0)**2))), label = "Errechnete Funktion")
 ax.plot(x/v0, 0.001*y, "k.", label="Messwerte")
 
 
