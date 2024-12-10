@@ -202,7 +202,6 @@ und nach \autoref{eqn:3} für die Induktivität
     \bottomrule
 \end{longtblr}
 
-
 \noindent Mithilfe der Wien-Robinson Messbrücke kann der Klirrfaktor der Speisespannung 
 ermittelt werden. Dazu wird in einem halblogarithmischen Diagramm das
 Verhältnis der Brückenspannung zur Speisespannung $(\frac{U_{Br}}{U_s})$ in 
@@ -213,7 +212,7 @@ Abhängigkeit von der normierten Frequenz $\Omega$ aufgetragen.
        \centering
        \includegraphics{"build/plot.pdf"}
 \end{figure}
-Die Messwerte für $\frac{U_{Br}}{U_s}\left(\omega\right)$ sind in
+\noindent Die Messwerte für $\frac{U_{Br}}{U_s}\left(\omega\right)$ sind in
 \autoref{fig:ub} zusammen mit einer Theoriefunktion, bestimmt aus
 \autoref{eqn:omega}, abgebildet.
 
@@ -222,15 +221,16 @@ Dies geschieht durch das Ermitteln der Restspannung $U_{Rest}$. Diese
 Restspannung wird mit dem Koeffizienten $g(2)$ multipliziert, welcher dem 
 Verhältnis $\frac{U_{Br}}{U_s}$ aus \autoref{eqn:1} bei $\Omega = 2$ entspricht, um so 
 einen Wert für die Amplitude der zweiten Oberwelle $U_2$ zu erhalten.
-daraus lässt sich durch \autoref{eqn:Klirrfaktor} der Klirrfaktor berechnen, wenn man die Annahme trifft,
-dass nur die Zweite Oberwelle wesentlich zum Klirrfaktor beiträgt. Des weiteren 
-nimmt man an, dass der klirrfaktor klein ist und nähert somit $U_1 = U_s$. 
-die Restspannung bei $\Omega = 0 $ entspricht 
+Daraus lässt sich durch \autoref{eqn:Klirrfaktor} der Klirrfaktor berechnen,
+wenn die Annahme getroffen wird, dass nur die zweite Oberwelle wesentlich zum
+Klirrfaktor beiträgt. Des Weiteren wird angenommen, dass der Klirrfaktor klein
+ist. Es wird  $U_1 = U_s$ genähert.
+Die Restspannung bei $\Omega = 0 $ entspricht 
 \begin{equation*}
-       U_{rest} = 240 \unit{\volt}
+       U_{rest} = 240 \unit{\volt},
 \end{equation*}
-das ergibt eine  Klirrfaktor von 
+was zu einem Klirrfaktor von 
 \begin{equation*}
        k = \frac{U_2}{U_1} = \frac{U_{rest} \cdot \frac{U_{Br}}{U_s}(\Omega = 2)}{U_s} = \qty{3.57e-2}{}
 \end{equation*}
-
+führt.
