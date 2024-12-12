@@ -1,4 +1,63 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+Der gesamte Versuch basiert auf der Tatsache, dass bewegte Ladungen magnetische 
+Felder erzeugen. Aufgrund von Elektronenbewegungen verfügen Atome über ein 
+magnetisches Moment. Es gilt die Verknüpfung
+\begin{equation}
+    \label{eqn:1}
+    \vec{B} = \mu \vec{H},
+\end{equation}
+wenn sich diese Momente statistisch im Raum verteilen. Der Faktor $\mu$ wird 
+dabei als Permeabilität bezeichnet und setzt sich durch die Vakuum-Permeabilität
+$\mu_0$ und die relative Permeabilität $\mu_r$ (in Materie) mittels des Produkts
+Beider zusammen.
+Bei jedem stromdurchflossenen Leiter sind die Feldlinien konzentrische Kreise, 
+welche senkrecht zu dem Stromfluss stehen. Die dazugehörige Magnetfeldstärke 
+$\vec{B}$ mit einem Abstand $r$ zum Leiter lässt sich über das Biot-Savart-Gesetz
+bestimmen.
+\begin{equation}
+    \label{eqn:2}
+    \vec{B}(\vec{r}) = \frac{\mu_0}{4 \pi}
+        \int_V j(\vec{r'}) \times \frac{\vec{r}-\vec{r'}}{(\lvert \vec{r}- \vec{r'} \rvert)^3} dV'
+\end{equation}
+Damit lässt sich ein Zusammenhang für die magnetische Flussdichte im Mittelpunkt 
+eines Leiterrings mit $n$ Windungen erstellen:
+\begin{equation}
+    \label{eqn:3}
+    |\vec{B}(x)| = \frac{\mu_0 n I}{2} \frac{R^2}{(R^2+x^2)^{\frac{3}{2}}}
+\end{equation}
+Das Magnetfeld innerhalb eines Solenoids gilt als homogen, solange die Bedingung 
+$R<<l$ erfüllt ist (R: Radius, l: Länge). Die Feldlinien verlaufen parallel zu 
+der Symmetrieachse und sing geschlossen. Es lässt sich festhalten:
+\begin{equation}
+    \label{eqn:4}
+    B = \mu_r \mu_0 \frac{n}{l} I
+\end{equation}
+Handelt es sich um eine Spule mit Eisenkern, so fließt noch die Magnetisierung 
+$\vec{M}$ mit ein. Der Magnetische Fluss ergibt sich dann als 
+\begin{equation}
+    \vec{B} = \mu_0 (\vec{H} + \vec{M}).
+\end{equation}
+
+\subsection{Hysteresekurve}
+Die Hysteresekurve zeigt das Verhalten eines ferromagnetischen Materials unter
+Einfluss eines wechselnden Magnetfelds. Bei Anlegung eines äußeren Magnetfeldes 
+steigt die Magnetisierung des Materials an. Der anschließend erreichte Wert wird
+auch Sättigungswert $B_S$ genannt.
+
+Verschwindet das Feld, bleibt die Remanenz $B_R$, eine Restmagnetisierung, welche 
+bei Visualisierung als y-Achsenabschnitt zu verstehen wäre. Um diese aufzuheben,
+kann die Koerzitivkraft $H_C$, ein Gegenfeld, genutzt werden. Durch diese Umpolung 
+zeigt diese Magnetisierung symmetrisch in die andere Richtung, effektiv wird 
+$-B_S$ erreicht. Es ergibt sich die Hysteresekurve.
+
+Dabei ist wichtig, dass diese nicht allgemeingültig ist und von Material zu 
+Material unterschiedliches Ausmaß annimmt. Die Kurve hängt vom Ausganszustand
+der Probe ab, so sollte das Material auch zu Beginn nicht magnetisiert sein.
+Die relative Permeabilität $\mu_r$ ferromagnetischer Materialien abhängig von 
+der magnetischen Feldstärke $H$, welche das Außenfeld erzeugt. Demfolgend wird 
+die differentielle Permeabilität eingeführt.
+\begin{equation}
+    \mu_diff = \frac{1}{\mu_0} \frac{dB}{dH}
+\end{equation}
