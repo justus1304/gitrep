@@ -63,6 +63,7 @@ def ausgleichspolynom():
 
     # The solution starts here
     x, y = np.genfromtxt("Daten/teil2.txt", unpack=True)
+    
     x = (x + 273.15)
     
     y = y * (10**5)
@@ -82,7 +83,7 @@ def ausgleichspolynom():
 
     ax.errorbar(x, y, yerr=0, fmt="k.", label="Messwerte")
 
-    t = np.linspace(380, 490, 490)
+    t = np.linspace(380, 480, 490)
     ax.plot(t, f(t, *parameters), label="Fit")
     
 
@@ -102,16 +103,22 @@ ausgleichspolynom()
 
 def minusWurzel():
     # begin solution
-    #a = ufloat(-1.057 , 0.737)
-    #b = ufloat(1531.298 , 959.786)
-    #c = ufloat(-714342.798 , 415959.850)
-    #d = ufloat(108512685.516 , 59968812.507)
+    a = ufloat(-1.057 , 0.737)
+    b = ufloat(1531.298 , 959.786)
+    c = ufloat(-714342.798 , 415959.850)
+    d = ufloat(108512685.516 , 59968812.507)
 
 
     a = -1.057 
     b = 1531.298 
     c = -714342.798 
     d = 108512685.516 
+
+    #a = -0.069
+    #b = 119.646
+    #c = -77106.92
+    #d = 22020141.506
+    #e = -2352273515.481
 
     R = 8.314
     k = 0.9
@@ -129,8 +136,9 @@ def minusWurzel():
     #print(np.sqrt((R*x/(2*(a*x**3+b*x**2+c*x+d)))**2 + 30000000000000000))
 
     x = np.linspace(380, 490)
-    
+    #f(x) = a*x**3+b*x**2
     ax.plot(x, x*(((R*x)/(2*(a*x**3+b*x**2+c*x+d)))-np.sqrt(((R*x)/(2*(a*x**3+b*x**2+c*x+d)))**2 -(k/(a*x**3+b*x**2+c*x+d)))) * (3*a*x**2+2*b*x+c) , "--", label="Original")
+    #ax.plot(x, x*(((R*x)/(2*(a*x**4+b*x**3+c*x**2+d*x+e)))-np.sqrt(((R*x)/(2*(a*x**4+b*x**3+c*x**2+d*x+e)))**2 -(k/(a*x**4+b*x**3+c*x**2+d*x+e)))) * (4*a*x**3+3*b*x**2+2*c*x+d) , "--", label="Original")
 
     #ax.set_xlim(t[0], t[-1])
     ax.set_xlabel(r"$T/\unit{\kelvin}$")
@@ -152,10 +160,21 @@ def plusWurzel():
     #d = ufloat(108512685.516 , 59968812.507)
 
 
+    #a = -3.999
+    #b = 5474.980
+    #c = -2474994.276
+    #d = 370252765.725
+
     a = -1.057 
     b = 1531.298 
     c = -714342.798 
     d = 108512685.516 
+
+    #a = -0.069
+    #b = 119.646
+    #c = -77106.92
+    #d = 22020141.506
+    #e = -2352273515.481
 
     R = 8.314
     k = 0.9
@@ -172,9 +191,10 @@ def plusWurzel():
     #print((R*x/2*(a*x**3+b*x**2+c*x+d)))
     #print(np.sqrt((R*x/(2*(a*x**3+b*x**2+c*x+d)))**2 + 30000000000000000))
 
-    x = np.linspace(380, 490)
+    x = np.linspace(380,490)
     
     ax.plot(x, x*(((R*x)/(2*(a*x**3+b*x**2+c*x+d)))+np.sqrt(((R*x)/(2*(a*x**3+b*x**2+c*x+d)))**2 -(k/(a*x**3+b*x**2+c*x+d)))) * (3*a*x**2+2*b*x+c) , "--", label="Original")
+    #ax.plot(x, x*(((R*x)/(2*(a*x**4+b*x**3+c*x**2+d*x+e)))+np.sqrt(((R*x)/(2*(a*x**4+b*x**3+c*x**2+d*x+e)))**2 -(k/(a*x**4+b*x**3+c*x**2+d*x+e)))) * (4*a*x**3+3*b*x**2+2*c*x+d) , "--", label="Original")
 
     #ax.set_xlim(t[0], t[-1])
     ax.set_xlabel(r"$T/\unit{\kelvin}$")
