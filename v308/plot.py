@@ -69,7 +69,7 @@ def hysterese():
     z = (n*x)/(2*np.pi*r)
     fig, ax = plt.subplots(1, 1, layout="constrained")
     x_plot = np.linspace(0, 0.6)
-    ax.plot(z, y, "b.", label="Messwerte")
+    ax.plot(z, y, "bx", label="Messwerte")
 
     x,y = np.genfromtxt("Daten/kurve.txt" ,unpack=True, skip_header=7, skip_footer=10)
     I = x #Ampere
@@ -112,21 +112,22 @@ hysterese()
 def spulenpaar():
     xw,yw = np.genfromtxt("Daten/hhgroßaI.txt" ,unpack=True)
     
-    d = 190 # millimeter
+    d = 200 # millimeter
     R = (125/2) # millimeter
     I = 1# Ampere
     n = 100#windungen
-    yw = yw * (1)
+    yw = yw * -(1)
     xw = xw*(10)
     xw = xw - (d/2) + (33/2)
     x_plot = np.linspace(0, 0.6)
-    x = -50
-    y = ((I*R**2)/2) *(1/(((x)**2+R**2)**(3/2))+1/((-(x)**2+R**2)**(3/2)))
-    print(y)
+    
     fig, ax = plt.subplots(1, 1, layout="constrained")
 
     x = np.linspace(-80, 180)
-    ax.plot(x,  ((n*I*R**2)/2)*(1/(((x)**2+R**2)**(3/2))+1/(((-x)**2+R**2)**(3/2))), "k-", label="Theoriekurve")
+    #ax.plot(x,  ((n*I*R**2)/2)*(1/(((x)**2+R**2)**(3/2))+1/(((-x)**2+R**2)**(3/2))), "k-", label="Theoriekurve")
+    #ax.plot(x,  (mu0 * I * R**2)/(R**2+x**2)**(3/2))
+    ax.plot(x,  100*( I * R**2)/(2 * (R**2+( (d/2)+x  )**2)**(3/2)) + 100*(I * R**2)/(2 * (R**2+( -(d/2)+x  )**2)**(3/2)))
+   
     ax.plot(xw, yw, "r.", label="gemessene Magnetfeldstärke")
     ax.grid(True)
     ax.legend()
@@ -152,8 +153,9 @@ def spulenpaarkurz():
     
     fig, ax = plt.subplots(1, 1, layout="constrained")
 
-    x = np.linspace(-80, 180)
-    ax.plot(x,  ((n*I*R**2)/2)*(1/(((x)**2+R**2)**(3/2))+1/(((-x)**2+R**2)**(3/2))), "k-", label="Theoriekurve")
+    x = np.linspace(-20, 100)
+    ax.plot(x,  100*( I * R**2)/(2 * (R**2+( (d/2)+x  )**2)**(3/2)) + 100*(I * R**2)/(2 * (R**2+( -(d/2)+x  )**2)**(3/2)))
+   
     ax.plot(xw, yw, "r.", label="gemessene Magnetfeldstärke")
     ax.grid(True)
     ax.legend()
