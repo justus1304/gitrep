@@ -43,13 +43,13 @@ erwartete Magnetfeldstärke verglichen.
 der kleinen Spule zu entnehmen. x ist der Abstand von einem Punkt 5 
 \unit{\centi\meter} vor der Spule bis 5 \unit{\centi\meter} hinter der Spule.
 Des weiteren sind die Messwerte in \autoref{fig:1} graphisch dargestellt.
-\begin{figure}
+\begin{figure}[H]
     \caption{Magnetische Feldstärke auf der Achse der kurzen Spule}
     \label{fig:1}
     \centering
     \includegraphics{"build/plot1.pdf"}
 \end{figure}
-In Anbetracht der Tatsache, dass der Eintritt der Hall-Sonde in das Magnetfeld
+\noindent In Anbetracht der Tatsache, dass der Eintritt der Hall-Sonde in das Magnetfeld
 5 \unit{\centi\meter} von $x = 0$ entfernt liegt und genau so nach dem Austritt
 $5$ weitere Messwerte aufgenommen wurden, können wir die restlichen Messwerte, 
 die in der Spule aufgenommen wurden, mitteln. Jenes dient dazu, das Magnetfeld 
@@ -116,7 +116,7 @@ verfahren, wie schon in \autoref{sec:1}.
     \end{tblr}
 \end{table}
 
-\begin{figure}
+\begin{figure}[H]
     \caption{Magnetische Feldstärke auf der Achse der langen Spule.}
     \label{fig:1}
     \centering
@@ -196,22 +196,24 @@ die Sättigungsmagnetisierung, Remanenz und Koerzitivkraft bestimmt werden.
     H_{S2} =& -540 \unit{\mega\ampere\per\meter}\\
 \end{align*}
 
-\noindent Die Koerzitivkraft kann mit einer linearen Ausgleichsgeraden durch die jewails zwei nächsten 
-Messpunkte zum Nulldurchgang der Magnetischen Feldstärke $B $ bestimmt werden. Es werden die Punkte
-$(0:123),(-1:-80)$ sowie $(0:-117),(1:79)$ verwendet. Daraus ergibt sich
+\noindent Die Koerzitivkraft kann mit einer linearen Ausgleichsgeraden durch
+die jeweils zwei nächsten Messpunkte zum Nulldurchgang der magnetischen
+Feldstärke $B$ bestimmt werden. Es werden die Punkte
+$(0:123),(-1:-80)$ sowie $(0:-117),(1:79)$ verwendet. Daraus ergibt sich:
 \begin{align*}
     H_{K} =& 0.344 \unit{\kilo\ampere\per\meter}\\
     H_{K} =& 0.324 \unit{\kilo\ampere\per\meter}\\
 \end{align*}
 
-\noindent Die differenzielle relative Permeabilität kann mit\autoref{eqn:10}
-mit hilfe der Messwerte aus \autoref{tab:10} berechnet werden. 
+\noindent Die differentielle relative Permeabilität kann mit \autoref{eqn:10}
+und den Messwerte aus \autoref{tab:10} berechnet werden. 
 \begin{equation}
     \mu_{diff} = \frac{1}{\mu_0} \frac{B_2 - B_1}{H_2 - H_1}
 \end{equation}
-\noindent Durch einsetzen der Werte ergibt sich die Differenzielle magnetische permeabilität zu
+\noindent Durch Einsetzen der Werte ergibt sich die differentielle magnetische
+Permeabilität zu
 \begin{equation}
-    \mu_{diff} = \frac{1}{\mu_0} \frac{0.00539 \unit{\tesla}}{3507 \unit{\ampere\per\meter}}
+    \mu_{diff} = \frac{1}{\mu_0} \frac{0.00539 \unit{\tesla}}{3507 \unit{\ampere\per\meter}} = 1.223
 \end{equation}
 
 
@@ -229,7 +231,7 @@ jeweils in der Mitte der beiden Spulen liegt.
 
 \begin{table}[H]
     \centering
-    \caption{Gemessene Magnetfeldstärke im Abstand $x$ vom inneren Rand Der linken Spule aus(also ohne Verschiebung) Für Spulenabstand $d = 8\unit{\centi\meter}$.}
+    \caption{Gemessene Magnetfeldstärke im Abstand $x$ vom inneren Rand der linken Spule aus (also ohne Verschiebung) für Spulenabstand $d = 8\unit{\centi\meter}$.}
     \label{tab:12}
     %\sisetup{table-format=1.1, per-mode=reciprocal}
     \begin{tblr}{
@@ -264,7 +266,7 @@ jeweils in der Mitte der beiden Spulen liegt.
 
 \begin{table}[H]
     \centering
-    \caption{Gemessene Magnetfeldstärke im Abstand $x$ vom inneren Rand Der linken Spule aus(also ohne Verschiebung) Für Spulenabstand $d = 20\unit{\centi\meter}$.}
+    \caption{Gemessene Magnetfeldstärke im Abstand $x$ vom inneren Rand der linken Spule aus (also ohne Verschiebung) für Spulenabstand $d = 20\unit{\centi\meter}$.}
     \label{tab:11}
     %\sisetup{table-format=1.1, per-mode=reciprocal}
     \begin{tblr}{
@@ -295,11 +297,12 @@ jeweils in der Mitte der beiden Spulen liegt.
     \bottomrule
     \end{tblr}
 \end{table}
-\noindent Die Messwerte sind jewails in \autoref{fig:10} für $d = 20\unit{\centi\meter}$ und in 
-\autoref{fig:11} für $d = 8\unit{\centi\meter}$ zusammen mit einer nach \autoref{eqn:2} 
-berechneten Theoriekurve für den jewailigen Abstand und eine Windungsanzahl von $ 100 $ , sowie 
-einen Radius von $\qty{62.5}{\milli\meter} $ und $\mu_0 = 4 \pi \cdot 10^{-7}\unit{\newton\per\ampere\squared}$
-grafisch dargestellt.
+\noindent Die Messwerte sind in \autoref{fig:10} für $d = 20 \unit{\centi\meter}$
+und in \autoref{fig:11} für $d = 8 \unit{\centi\meter}$ zusammen mit einer nach
+\autoref{eqn:2} berechneten Theoriekurve für den entsprechenden Abstand und
+einer Windungsanzahl von $100$, sowie einem Radius von $\qty{62.5}{\milli\meter}$ 
+und $\mu_0 = 4 \pi \cdot 10^{-7}\unit{\newton\per\ampere\squared}$
+graphisch dargestellt.
 
 \begin{figure}
     \caption{Magnetfeldstärke Spulenpaar $19\unit{\centi\meter}$ Abstand.}

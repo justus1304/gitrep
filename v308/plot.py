@@ -126,9 +126,14 @@ def spulenpaar():
     x = np.linspace(-80, 180)
     #ax.plot(x,  ((n*I*R**2)/2)*(1/(((x)**2+R**2)**(3/2))+1/(((-x)**2+R**2)**(3/2))), "k-", label="Theoriekurve")
     #ax.plot(x,  (mu0 * I * R**2)/(R**2+x**2)**(3/2))
-    ax.plot(x,  100*( I * R**2)/(2 * (R**2+( (d/2)+x  )**2)**(3/2)) + 100*(I * R**2)/(2 * (R**2+( -(d/2)+x  )**2)**(3/2)))
-   
-    ax.plot(xw, yw, "r.", label="gemessene Magnetfeldstärke")
+    ax.plot(
+        x,
+        100 * (I * R**2) / (2 * (R**2 + ((d / 2) + x)**2)**(3/2)) +
+        100 * (I * R**2) / (2 * (R**2 + (-(d / 2) + x)**2)**(3/2)),
+        label="Theoriekurve",
+    )
+
+    ax.plot(xw, yw, "r.", label="Gemessene Magnetfeldstärke")
     ax.grid(True)
     ax.legend()
     ax.set(xlabel=r"$x(\unit{\milli\meter}$)", ylabel=r"$B(\unit{\milli\tesla})$");
@@ -154,9 +159,14 @@ def spulenpaarkurz():
     fig, ax = plt.subplots(1, 1, layout="constrained")
 
     x = np.linspace(-20, 100)
-    ax.plot(x,  100*( I * R**2)/(2 * (R**2+( (d/2)+x  )**2)**(3/2)) + 100*(I * R**2)/(2 * (R**2+( -(d/2)+x  )**2)**(3/2)))
-   
-    ax.plot(xw, yw, "r.", label="gemessene Magnetfeldstärke")
+    ax.plot(
+        x,
+        100 * (I * R**2) / (2 * (R**2 + ((d / 2) + x)**2)**(3 / 2))
+        + 100 * (I * R**2) / (2 * (R**2 + (-(d / 2) + x)**2)**(3 / 2)),
+        label="Theoriekurve"
+    )
+
+    ax.plot(xw, yw, "r.", label="Gemessene Magnetfeldstärke")
     ax.grid(True)
     ax.legend()
     ax.set(xlabel=r"$x(\unit{\milli\meter}$)", ylabel=r"$B(\unit{\milli\tesla})$");
