@@ -17,7 +17,7 @@ erwartete Magnetfeldstärke verglichen.
         row{1} = {guard, mode=math},
       }
       \toprule
-      \text{x} (\unit{\centi\meter}) & \text{Magnetfeldstärke} (\unit{\tesla}) \\
+      \text{x} (\unit{\centi\meter}) & \text{Magnetfeldstärke} (\unit{\milli\tesla}) \\
       \midrule
       0   &0.083\\
       1   &0.112\\
@@ -77,7 +77,7 @@ in \autoref{sec:1}.
         row{1} = {guard, mode=math},
       }
       \toprule
-      x (\unit{\centi\meter}) & Magnetfeldstärke (\unit{\tesla}) \\
+      x (\unit{\centi\meter}) & Magnetfeldstärke (\unit{\milli\tesla}) \\
       \midrule
       0   &0.019\\
       1   &0.041\\
@@ -133,6 +133,7 @@ Der Theoretische Wert der Spule mit Länge $l = 19\unit{\centi\meter} $ wird nac
 \end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Hysteresekurve}
 \begin{table}[H]
     \centering
     \caption{Messwerte Hysteresekurve.}
@@ -174,7 +175,7 @@ Der Theoretische Wert der Spule mit Länge $l = 19\unit{\centi\meter} $ wird nac
     \bottomrule
     \end{tblr}
 \end{table}
-\subsection{Hysteresekurve}
+
 Über die aufgenommenen Messwerte der Magnetfeldstärke im Luftspalt der ringspule soll hier 
 die Sättigungsmagnetisierung, Remanenz und Koerzitivkraft bestimmt werden.
 \begin{figure}[H]
@@ -183,7 +184,14 @@ die Sättigungsmagnetisierung, Remanenz und Koerzitivkraft bestimmt werden.
     \centering
     \includegraphics{"build/plot3.pdf"}
 \end{figure}
-Die Werte der Remananz kann man der Tabellle \autoref{}
+Die Werte der Remananz, sowie den Settigungswert kann man der Tabellle \autoref{tab:3} entnehmen.
+\begin{align*}
+    B_{R1} =& 122 \unit{\milli\tesla}\\
+    B_{R2} =& -117\\
+&\\
+    B_{s1} =& 540 \unit{\mega\ampere\per\meter}\\
+    B_{s2} =& -540\\
+\end{align*}
 
 
 
