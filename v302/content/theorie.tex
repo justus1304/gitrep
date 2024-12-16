@@ -2,7 +2,7 @@
 \label{sec:Theorie}
 
 Die Messung von durch Widerstände ausdrückbare Größen kann durch Brückenschaltungen 
-möglich gemacht werden. In diesem Versuch geht es demnach um ohmsche Widerstände
+möglich gemacht werden. In diesem Versuch geht es um ohmsche Widerstände
 und komplexe Widerstände, wie es bei Kondensatoren und Spulen der Fall ist.
 Um das Prinzip von Brückenschaltungen näherzubringen, ist eine in \autoref{fig:f1}
 dargestellt.
@@ -15,7 +15,7 @@ dargestellt.
     \label{fig:f1}
 \end{figure}
 \noindent Zwischen den Punkten A und B, welche wiederum zwischen den vier Widerständen 
-$R1$, $R2$, $R3$ und $R4$ liegen besteht eine Verbindung über ein Messgerät. 
+$R_1$, $R_2$, $R_3$ und $R_4$ liegen besteht eine Verbindung über ein Messgerät. 
 Diese Verbindung wird als Brücke bezeichnet. Um Fehlströme zu vermeiden und damit 
 die Messung nicht fälschlicherweise beeinflusst werden kann, wird eine erdungsfreie 
 Speisespannung genutzt. Es gelten die Kirchhoffschen Gesetze:
@@ -31,9 +31,8 @@ Speisespannung genutzt. Es gelten die Kirchhoffschen Gesetze:
     \end{equation}
 \end{enumerate}
 \par\vspace{0.5em}
-\noindent Die Punkte A und B befinden sich im Falle des Nullabgleichs (Das 
-Messgerät dokumentiert keinen Strom, I=0) auf gleichem Potential.
-Es kann eine Abgleichbedingung aufgestellt werden:
+\noindent Die Punkte A und B befinden sich im Falle des Nullabgleichs auf
+gleichem Potential. Es kann eine Abgleichbedingung aufgestellt werden:
 \begin{equation}
     R_1 R_4 = R_2 R_3
 \end{equation}
@@ -50,7 +49,7 @@ Regressionsrechnung sowie der Fehlerforpflanzung durch Python.
 Der Fehler des Mittelwerts ist gegeben durch 
 \begin{equation}
     \begin{aligned}
-        \Delta \overline{x} &= \sqrt{\overline{x^2} - \overline{x}^2} \\
+        \increment \overline{x} &= \sqrt{\overline{x^2\kern-0.1em} - \overline{x}^2} \\
                             &= \frac{\sqrt{\frac{1}{N-1} \sum\limits_{i=1}^N (x_i - \overline{x})^2}}{\sqrt{N}}.
     \end{aligned}
 \end{equation}
@@ -58,5 +57,5 @@ Der Fehler des Mittelwerts ist gegeben durch
 Um Fehler einzubeziehen, wird die Gauß'sche Fehlerfortpflanzung verwendet:
 \begin{equation}
     \label{eqn:8}
-    \Delta f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 \cdot \left(\Delta x\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 \cdot \left(\Delta y\right)^2 + .... + \left(\frac{\partial f}{\partial z}\right)^2 \cdot \left(\Delta z\right)^2}
+    \increment f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 \cdot \left(\increment x\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 \cdot \left(\increment y\right)^2 + .... + \left(\frac{\partial f}{\partial z}\right)^2 \cdot \left(\increment z\right)^2}
 \end{equation}
