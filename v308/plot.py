@@ -62,14 +62,14 @@ großeSpule()
 
 ##Hysterese
 def hysterese():
-    x,y = np.genfromtxt("Daten/kurve.txt" ,unpack=True, skip_footer=18)
+    x,y = np.genfromtxt("Daten/kurve.txt" ,unpack=True, skip_footer=20)
     I = x #Ampere
     r = 0.135 #meter
     n = 595 #Windungen 
     z = (n*x)/(2*np.pi*r)
     fig, ax = plt.subplots(1, 1, layout="constrained")
     x_plot = np.linspace(0, 0.6)
-    ax.plot(z, y, "bx", label="Messwerte")
+    ax.plot(z, y, "bx", label="Neukurve")
 
     x,y = np.genfromtxt("Daten/kurve.txt" ,unpack=True, skip_header=7, skip_footer=10)
     I = x #Ampere
@@ -78,7 +78,7 @@ def hysterese():
     z = (n*x)/(2*np.pi*r)
     #fig, ax = plt.subplots(1, 1, layout="constrained")
     x_plot = np.linspace(0, 0.6)
-    ax.plot(z, y, "k.", label="Messwerte")
+    ax.plot(z, y, "r.")
 
     x,y = np.genfromtxt("Daten/kurve.txt" ,unpack=True, skip_header=17, skip_footer=0)
     I = x #Ampere
@@ -87,10 +87,10 @@ def hysterese():
     z = (n*x)/(2*np.pi*r)
     #fig, ax = plt.subplots(1, 1, layout="constrained")
     x_plot = np.linspace(0, 0.6)
-    ax.plot(z, y, "r.", label="Messwerte")
+    ax.plot(z, y, "r.", label="Hysteresekurve")
     
     ax.legend()
-    ax.set(xlabel=r"$H(\unit{\kilo\ampere\per\meter}$)", ylabel=r"$B(\unit{\milli\tesla})$");
+    ax.set(xlabel=r"$H(\unit{\ampere\per\meter}$)", ylabel=r"$B(\unit{\milli\tesla})$");
     fig.savefig("build/plot3.pdf")
 
     ###mittelwert berechnen

@@ -17,7 +17,7 @@ erwartete Magnetfeldstärke verglichen.
         row{1} = {guard, mode=math},
       }
       \toprule
-      \text{x} (\unit{\centi\meter}) & \text{Magnetfeldstärke} (\unit{\milli\tesla}) \\
+      \text{x} (\unit{\centi\meter}) & B (\unit{\milli\tesla}) \\
       \midrule
       0   &0.083\\
       1   &0.112\\
@@ -51,7 +51,7 @@ Des weiteren sind die Messwerte in \autoref{fig:1} graphisch dargestellt.
 \end{figure}
 In Anbetracht der Tatsache, dass der Eintritt der Hall-Sonde in das Magnetfeld
 5 \unit{\centi\meter} von $x = 0$ entfernt liegt und genau so nach dem Austritt
-$5$ weitere Messwerte aufgenommen wurden, können die restlichen Messwerte, 
+$5$ weitere Messwerte aufgenommen wurden, können wir die restlichen Messwerte, 
 die in der Spule aufgenommen wurden, mitteln. Jenes dient dazu, das Magnetfeld 
 im Inneren der Spule zu berechnen. Damit wird eine Feldstärke von 
 \begin{equation*}
@@ -79,7 +79,7 @@ verfahren, wie schon in \autoref{sec:1}.
         row{1} = {guard, mode=math},
       }
       \toprule
-      x (\unit{\centi\meter}) & Magnetfeldstärke (\unit{\milli\tesla}) \\
+      x (\unit{\centi\meter}) & B (\unit{\milli\tesla}) \\
       \midrule
       0   &0.019\\
       1   &0.041\\
@@ -138,47 +138,47 @@ nach \autoref{eqn:4} bestimmt und beläuft sich auf
 \subsection{Hysteresekurve}
 \begin{table}[H]
     \centering
-    \caption{Messwerte Hysteresekurve.}
-    \label{tab:t3}
+    \caption{Messwerte Hysteresekurve und resultierendes $H$-Feld.}
+    \label{tab:10}
     %\sisetup{table-format=1.1, per-mode=reciprocal}
     \begin{tblr}{
-        colspec = {S S },
+        colspec = {S S S},
         row{1} = {guard, mode=math},
       }
       \toprule
-      I (\unit{\ampere}) & B(\unit{\milli\tesla}) \\
+      I (\unit{\ampere}) & B(\unit{\milli\tesla}) & H \unit{\ampere\meter}\\
       \midrule
-      0 &  1\\
-    1  & 90\\
-    2  & 260\\
-    3  & 390\\
-    4  & 479\\
-    5  & 540\\
-    4  & 516\\
-    3  & 483\\
-    2  & 430\\
-    1  & 308\\
-    0  & 122\\
-    -1 & -80\\
-    -2 & -258\\
-    -3 & -395\\
-    -4 & -482\\
-    -5 & -540\\
-    -4 & -515\\
-    -3 & -483\\
-    -2 & -429\\
-    -1 & -305\\
-    0  & -117\\
-    1  & 79\\
-    2  & 259\\
-    3  & 392\\
-    4  & 479\\
-    5  & 340 \\
+      0 &  1   & 0.      \\
+    1  & 90    & 701.   \\
+    2  & 260   & 1402.   \\
+    3  & 390   & 2104.   \\
+    4  & 479   & 2805.   \\
+    5  & 540   & 3507.   \\
+    4  & 516   & 2805.   \\
+    3  & 483   & 2104.   \\
+    2  & 430   & 1402.   \\
+    1  & 308   & 701.  \\
+    0  & 122   & 0.      \\
+    -1 & -80   & -701.   \\
+    -2 & -258  & -1402   \\
+    -3 & -395  & -2104   \\
+    -4 & -482  & -2805   \\
+    -5 & -540  & -3507   \\
+    -4 & -515  & -2805   \\
+    -3 & -483  & -2104   \\
+    -2 & -429  & -1402   \\
+    -1 & -305  & -701.   \\
+    0  & -117  & 0.      \\
+    1  & 79    & 701.   \\
+    2  & 259   & 1402.   \\
+    3  & 392   & 2104.   \\
+    4  & 479   & 2805.   \\
+    5  & 340   & 3507.   \\
     \bottomrule
     \end{tblr}
 \end{table}
 
-Über die aufgenommenen Messwerte der Magnetfeldstärke im Luftspalt der ringspule soll hier 
+Über die aufgenommenen Messwerte der Magnetfeldstärke im Luftspalt der Ringspule soll hier 
 die Sättigungsmagnetisierung, Remanenz und Koerzitivkraft bestimmt werden.
 \begin{figure}[H]
     \caption{Hysteresekurve}
@@ -186,40 +186,131 @@ die Sättigungsmagnetisierung, Remanenz und Koerzitivkraft bestimmt werden.
     \centering
     \includegraphics{"build/plot3.pdf"}
 \end{figure}
-Die Werte der Remananz, sowie der Sättigungswert können der Tabellle 
-\autoref{tab:3} entnommen werden.
+\noindent Die Werte der Remananz, sowie der Sättigungswert können der Tabellle 
+\autoref{tab:10} entnommen werden.
 \begin{align*}
     B_{R1} =& 122 \unit{\milli\tesla}\\
-    B_{R2} =& -117\\
+    B_{R2} =& -117 \unit{\milli\tesla}\\
 &\\
-    B_{S1} =& 540 \unit{\mega\ampere\per\meter}\\
-    B_{S2} =& -540\\
+    H_{S1} =& 540 \unit{\mega\ampere\per\meter}\\
+    H_{S2} =& -540 \unit{\mega\ampere\per\meter}\\
 \end{align*}
+
+\noindent Die Koerzitivkraft kann mit einer linearen Ausgleichsgeraden durch die jewails zwei nächsten 
+Messpunkte zum Nulldurchgang der Magnetischen Feldstärke $B $ bestimmt werden. Es werden die Punkte
+$(0:123),(-1:-80)$ sowie $(0:-117),(1:79)$ verwendet. Daraus ergibt sich
+\begin{align*}
+    H_{K} =& 0.344 \unit{\kilo\ampere\per\meter}\\
+    H_{K} =& 0.324 \unit{\kilo\ampere\per\meter}\\
+\end{align*}
+
+\noindent Die differenzielle relative Permeabilität kann mit\autoref{eqn:10}
+mit hilfe der Messwerte aus \autoref{tab:10} berechnet werden. 
+\begin{equation}
+    \mu_{diff} = \frac{1}{\mu_0} \frac{B_2 - B_1}{H_2 - H_1}
+\end{equation}
+\noindent Durch einsetzen der Werte ergibt sich die Differenzielle magnetische permeabilität zu
+\begin{equation}
+    \mu_{diff} = \frac{1}{\mu_0} \frac{0.00539 \unit{\tesla}}{3507 \unit{\ampere\per\meter}}
+\end{equation}
 
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Den Tabellen \autoref{} und \autoref{} sind die Werte für die Magnetfeldstärke auf der 
+\subsection{Helmholtz-Spulen}
+Den Tabellen \autoref{tab:12} und \autoref{tab:11} sind die Werte für die Magnetfeldstärke auf der 
 Symetrieachse eines Helmholzspulenpaares einmal für große und einmal für kleine 
 Abstände der Spulen zu entnehmen. $x$ in $\unit{\milli\meter} $ ist dabei der
 Abstand vom linken Ende der Skala zu der Hall-Sonde. Um die Darstellung und den Vergleich mit der 
 Theoriekurve zu vereinfachen wurde die $x$-Skala so verschoben, dass der Nullpunkt
 jeweils in der Mitte der beiden Spulen liegt.
 
-\subsection{Helmholtz-Spulen}
+\begin{table}[H]
+    \centering
+    \caption{Gemessene Magnetfeldstärke im Abstand $x$ vom inneren Rand Der linken Spule aus(also ohne Verschiebung) Für Spulenabstand $d = 8\unit{\centi\meter}$.}
+    \label{tab:12}
+    %\sisetup{table-format=1.1, per-mode=reciprocal}
+    \begin{tblr}{
+        colspec = {S S },
+        row{1} = {guard, mode=math},
+      }
+      \toprule
+      x (\unit{\milli\meter}) & B(\unit{\milli\tesla}) \\
+      \midrule
+      10 & 1.200\\
+      11 & 1.199\\
+      12 & 1.199\\
+      13 & 1.197\\
+      14 & 1.196\\
+      15 & 1.195\\
+      16 & 1.195\\
+      17 & 1.193\\
+      18 & 1.191\\
+      19 & 1.190\\
+      20 & 1.195\\
+      21 & 1.196\\
+      22 & 1.196\\
+      23 & 1.197\\
+      24 & 1.197\\
+      25 & 1.198\\
+      90  &-0.808\\
+      100 &-0.664\\
+      110 &-0.537\\
+    \bottomrule
+    \end{tblr}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Gemessene Magnetfeldstärke im Abstand $x$ vom inneren Rand Der linken Spule aus(also ohne Verschiebung) Für Spulenabstand $d = 20\unit{\centi\meter}$.}
+    \label{tab:11}
+    %\sisetup{table-format=1.1, per-mode=reciprocal}
+    \begin{tblr}{
+        colspec = {S S },
+        row{1} = {guard, mode=math},
+      }
+      \toprule
+      x (\unit{\centi\meter}) & B(\unit{\milli\tesla}) \\
+      \midrule
+      1  &-0.713\\
+      2  &-0.606\\
+      3  &-0.509\\
+      4  &-0.429\\
+      5  &-0.369\\
+      6  &-0.330\\
+      7  &-0.308\\
+      8  &-0.304\\
+      9  &-0.318\\
+      10 &-0.350\\
+      11 &-0.400\\
+      12 &-0.474\\
+      13 &-0.562\\
+      14 &-0.666\\
+      15 &-0.770\\
+      21 &-0.665\\
+      23 &-0.434\\
+      25 &-0.267\\
+    \bottomrule
+    \end{tblr}
+\end{table}
+\noindent Die Messwerte sind jewails in \autoref{fig:10} für $d = 20\unit{\centi\meter}$ und in 
+\autoref{fig:11} für $d = 8\unit{\centi\meter}$ zusammen mit einer nach \autoref{eqn:2} 
+berechneten Theoriekurve für den jewailigen Abstand und eine Windungsanzahl von $ 100 $ , sowie 
+einen Radius von $\qty{62.5}{\milli\meter} $ und $\mu_0 = 4 \pi \cdot 10^{-7}\unit{\newton\per\ampere\squared}$
+grafisch dargestellt.
 
 \begin{figure}
     \caption{Magnetfeldstärke Spulenpaar $19\unit{\centi\meter}$ Abstand.}
-    \label{fig:4}
+    \label{fig:10}
     \centering
     \includegraphics{"build/plot4.pdf"}
 \end{figure}
 
 \begin{figure}
     \caption{Magnetfeldstärke Spulenpaar $8\unit{\centi\meter}$ Abstand.}
-    \label{fig:5}
+    \label{fig:11}
     \centering
     \includegraphics{"build/plot5.pdf"}
 \end{figure}
