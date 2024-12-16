@@ -90,7 +90,7 @@ def hysterese():
     ax.plot(z, y, "r.", label="Messwerte")
     
     ax.legend()
-    ax.set(xlabel=r"$x(\unit{\centi\meter}$)", ylabel=r"$B(\unit{\milli\tesla})$");
+    ax.set(xlabel=r"$H(\unit{\kilo\ampere\per\meter}$)", ylabel=r"$B(\unit{\milli\tesla})$");
     fig.savefig("build/plot3.pdf")
 
     ###mittelwert berechnen
