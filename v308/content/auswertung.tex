@@ -5,7 +5,7 @@
 \subsubsection{Kurze Spule}
 \label{sec:1}
 In diesem Abschnitt wird die gemessene Magnetfeldstärke auf der radialsymmetrischen 
-Achse von der kleinen und einer großen Spule mit den theoretischen Werten für die 
+Achse von der kleinen und der großen Spule mit den theoretischen Werten für die 
 erwartete Magnetfeldstärke verglichen.
 \begin{table}[H]
     \centering
@@ -39,34 +39,36 @@ erwartete Magnetfeldstärke verglichen.
       \bottomrule
     \end{tblr}
 \end{table}
-\autoref{tab:t1} sind die aufgenommenen Messwerte der Magnetfeldstärke auf der Achse 
-der kleinen Spule zu entnehmen. x ist der Abstand von einem Punkt aus, welcher 5 \unit{\centi\meter} von 
-der Spule entfernt liegt, durch die Spule durch bis 5 \unit{\centi\meter} aus der Spule herraus. Des weiteren 
-sind die Messwerte in \autoref{fig:1} graphisch dargestellt.
+\noindnet In \autoref{tab:t1} sind die aufgenommenen Messwerte der Magnetfeldstärke auf der Achse 
+der kleinen Spule zu entnehmen. x ist der Abstand von einem Punkt 5 
+\unit{\centi\meter} vor der Spule bis 5 \unit{\centi\meter} hinter der Spule.
+Des weiteren sind die Messwerte in \autoref{fig:1} graphisch dargestellt.
 \begin{figure}
     \caption{Magnetische Feldstärke auf der Achse der kurzen Spule}
     \label{fig:1}
     \centering
     \includegraphics{"build/plot1.pdf"}
 \end{figure}
-Wenn man bedenkt, dass der eintrit der Hall sonde in das Magnetfeld fünf \unit{\centi\meter} 
-von $x = 0$ entfernt liegt und auch nach dem Austritt $5$ weitere Messwerte aufgenommen wurden, 
-kann man die restlichen Messwerte, die in der Spule aufgenommen, Mitteln um das Magnetfeld im 
-innern der Spule zu berechnen. Damit kommt man zu einer Feldstärke von 
+In Anbetracht der Tatsache, dass der Eintritt der Hall-Sonde in das Magnetfeld
+5 \unit{\centi\meter} von $x = 0$ entfernt liegt und genau so nach dem Austritt
+$5$ weitere Messwerte aufgenommen wurden, können die restlichen Messwerte, 
+die in der Spule aufgenommen wurden, mitteln. Jenes dient dazu, das Magnetfeld 
+im Inneren der Spule zu berechnen. Damit wird eine Feldstärke von 
 \begin{equation*}
-    \symbf{B}_{exp} = \qty{1.63(0.18)}{\milli\tesla}.
+    B_{exp} = \qty{1.63(0.18)}{\milli\tesla}
 \end{equation*}
-Die Theoretische Magnetfeldstärke im inneren der Spule kann mit \autoref{eqn:4} Bestimmt werden.
-Mit den Werten $ I = 1\unit{\ampere}$,$ n = 100 $ und einer Länge von ca 8\unit{\centi\meter}
+erreicht. Die theoretische Magnetfeldstärke im Inneren der Spule kann mit
+\autoref{eqn:4} bestimmt werden. Mit den Werten $I = 1 \unit{\ampere}$,
+$n = 100$ und einer Länge von etwa 8 \unit{\centi\meter}
 ergibt sich 
 \begin{equation*}
-    \symbf{B}_{theo} = \qty{1.57e-3}{\tesla} = \qty{1.57}{\milli\tesla}
+    B_{theo} = \qty{1.57e-3}{\tesla} = \qty{1.57}{\milli\tesla}
 \end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Lange Spule}
-Bei der Ermittlung der Magnetfeldstärke in der Langen Spule wird genauso verfahren, wie schon 
-in \autoref{sec:1}.
+Bei der Ermittlung der Magnetfeldstärke in der langen Spule wird genauso
+verfahren, wie schon in \autoref{sec:1}.
 \begin{table}[H]
     \centering
     \caption{Messwerte der langen Spule.}
@@ -77,7 +79,7 @@ in \autoref{sec:1}.
         row{1} = {guard, mode=math},
       }
       \toprule
-      x (\unit{\centi\meter}) & Magnetfeldstärke (\unit{\tesla}) \\
+      \text{x} (\unit{\centi\meter}) & \text{Magnetfeldstärke} (\unit{\tesla}) \\
       \midrule
       0   &0.019\\
       1   &0.041\\
@@ -115,21 +117,21 @@ in \autoref{sec:1}.
 \end{table}
 
 \begin{figure}
-    \caption{Magnetische Feldstärke auf der Achse der langen Spule}
+    \caption{Magnetische Feldstärke auf der Achse der langen Spule.}
     \label{fig:1}
     \centering
     \includegraphics{"build/plot2.pdf"}
 \end{figure}
-Aus den Messwerten kann analog zu der kleinen  Spule das Magnetfeld innerhalb der Spule 
-gemitelt werden, um so einen experimentellen wert für die Magnetfeldstärke im inneren 
-der Spule zu erhalten.So erhällt man
+\noindent Aus den Messwerten kann analog zu der kleinen  Spule das Magnetfeld
+innerhalb der Spule gemittelt werden, um einen experimentellen Wert für die 
+Magnetfeldstärke im inneren der Spule zu erhalten. Es ergibt sich
 \begin{equation*}
-    \symbf{B}_{exp,lang} = \qty{1.90(0.13)}{\milli\tesla}.
+    B_{exp,lang} = \qty{1.90(0.13)}{\milli\tesla}.
 \end{equation*}
-Der Theoretische Wert der Spule mit Länge $l = 19\unit{\centi\meter} $ wird nach 
-\autoref{eqn:4} bestimmt.
+Der Theoretische Wert der Spule mit Länge $l = 19\unit{\centi\meter}$ wird
+nach \autoref{eqn:4} bestimmt und beläuft sich auf
 \begin{equation*}
-    \symbf{B}_{exp,lang} = \qty{1.98e-3}{\tesla} = \qty{1.98}{\milli\tesla}.
+    B_{exp,lang} = \qty{1.98e-3}{\tesla} = \qty{1.98}{\milli\tesla}.
 \end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -175,8 +177,9 @@ Der Theoretische Wert der Spule mit Länge $l = 19\unit{\centi\meter} $ wird nac
     \end{tblr}
 \end{table}
 \subsection{Hysteresekurve}
-Über die aufgenommenen Messwerte der Magnetfeldstärke im Luftspalt der ringspule soll hier 
-die Sättigungsmagnetisierung, Remanenz und Koerzitivkraft bestimmt werden.
+Über die aufgenommenen Messwerte der Magnetfeldstärke im Luftspalt der Ringspule
+soll hier die Sättigungsmagnetisierung, Remanenz und Koerzitivkraft bestimmt
+werden.
 \begin{figure}[H]
     \caption{Hysteresekurve}
     \label{fig:3}
