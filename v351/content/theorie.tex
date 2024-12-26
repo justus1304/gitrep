@@ -1,4 +1,57 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+\subsection{Fouriersche Theorem}
+Unter periodischen Funktionen definiert man jene, welche sich in einem bestimmten 
+Maß wiederholen. So gilt für eine Funktion, welche räumlich periodisch ist die 
+Gleichung
+\begin{equation}
+    \label{eqn:1}
+    f(x+D) = f(x)
+\end{equation}
+mit einem Periodenabstand $T$. Diese Gleichung gilt ebenso für zeitlich periodische 
+Funktionen, dabei wird das $x$ durch die Zeit $t$ ersetzt und der Periodenabstand 
+mit der Periodendauer:
+\begin{equation}
+    \label{eqn:2}
+    f(t+T) = f(t).
+\end{equation}
+Die beiden Funktionen, welche physikalisch am relevantesten sind, sind die 
+geometrischen Funktionen Sinus und Cosinus. Mithilfe beider lässt sich das 
+Fouriersche Theorem aufstellen. Darunter ist zu versetehen, dass jede Welle 
+aus einer Reihe an sinusförmigen Komponenten besteht. Allgemein ist die 
+Fourierreihe aus einem konstanten Term und der Summe aus zeit- und 
+frequenzabhängigen Sinus- und Cosinusfunktionen, multipliziert mit deren 
+Amplitude, definiert.
+\begin{equation}
+    \label{eqn:3}
+    f(t) = \frac{a_0}{2} + \sum\limits_{n=1}^\infty a_n cos \left(n \omega t\right) + b_n sin \left(n \omega t\right)
+\end{equation}
+Hierbei entspricht $\omega$ der Frequenz und ist definiert als $\frac{2 \pi}{T}$.
+Es ist wichtig, dass die Reihe gleichmäßig konvergiert, was der Fall ist, wenn 
+$f(t)$ überall stetig ist. Sobald eine Stelle $t_0$ existiert, an der die Funktion 
+nicht stetig ist, kann diese nicht mehr mithilfe der Fourierreihe angenähert 
+werden. Es kommt zu einer Abweichung. Diese wird als Gibbsches Phänomen bezeichnet, 
+anschaulich beschreibt dieses Überschwingungen, welche bei der Approximation 
+von Funktionen mit sprunghaften Verhalten durch Fourierreihen auftreten. Diese 
+Überschwingungen sind unabhängig von der Anzahl der Terme, welche die Summe ergibt.
+
+Die Amplituden sowie der konstante Term werden Fourierkoeffizienten genannt und 
+sind definiert als 
+\begin{align}
+    a_0 &= \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) dt \label{eqn:4.1} \\
+    a_k &= \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) cos(k \omega t) dt \label{eqn:4.2} \\
+    b_k &= \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) sin(k \omega t) dt \label{eqn:4.3}
+\end{align}
+Grundsätzlich treten damit im Allgemeinen nur Vielfache der Grundfrequenz 
+$\nu_1 = \frac{1}{T}$ auf, jene sind als harmonische Oberschwingungen zu bezeichnen.
+Die Ermittlung der Koeffizienten wird als Fourieranalyse bezeichnet, diese kann 
+in einigen Spezialfällen einfacher werden. Ist $f(t)$ eine gerade Funktion, so 
+gilt $b_n = 0, \forall n \in \mathbb{N}$. Im Umkehrschluss folgt 
+$a_n = 0, \forall n \in \mathbb{N}$, sofern $f(t)$ eine ungerade Funktion ist.
+Werden die Amplituden einer periodischen Funktion gegen die Frequenz aufgetragen,
+ergibt sich ein Linienspektrum, welches bei der Grundfrequenz am größten ist
+und darauffolgend exponentiell abnimmt. Bei Funktionen, welche nicht periodisch 
+sind, stellt sich lückenloses Spektrum ein.
+
+\subsection{Fourier-Transformation}
