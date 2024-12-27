@@ -55,3 +55,41 @@ und darauffolgend exponentiell abnimmt. Bei Funktionen, welche nicht periodisch
 sind, stellt sich lückenloses Spektrum ein.
 
 \subsection{Fourier-Transformation}
+Während mit der Berechnung der Fourierkoeffizienten die Bestimmung der einzelnen 
+Komponenten einer periodischen Funktion $f(t)$ stattfindet, kann ebenso das 
+ganze Spektrum bestimmt werden. Das fällt unter den Namen der Fourier-
+Transformation und ist unabhängig von der Periodizität der Funktion. Die 
+Transformation $g(\nu)$ wird gegeben durch
+\begin{equation}
+    \label{eqn:5}
+    g(\nu) = \int_{-\infty}^\infty f(t) e^{i \nu t} dt.
+\end{equation}
+Sollte $f(t)$ doch periodisch sein, so kommt es zu einem ähnlichen Spektrum 
+wie im Vorherigen geschildert. Analog verfügen nicht-periodische Funktionen 
+über ein kontinuierliches Spektrum.
+
+Die Fourier-Trafo ist umkehrbar, eine Rücktransformation nimmt die Gestalt
+\begin{equation}
+    \label{eqn:6}
+    \tilde{g}(\nu) = \frac{1}{2 \pi} \int_{-\infty}^\infty g(\nu) e^{-i \nu t} d\nu
+\end{equation}
+an.
+
+\subsection{Fehlerrechnung}
+Die gemessenen Werte unterliegen Messunsicherheiten und werden demnach im
+Folgenden nicht als fehlerfrei angesehen. Die Fehler entstehen bei der
+Bildung der Mittelwerte durch den Fehler des Mittelwerts und bei der
+Regressionsrechnung sowie der Fehlerforpflanzung durch Python.
+Der Fehler des Mittelwerts ist gegeben durch 
+\begin{equation}
+    \begin{aligned}
+        \increment \overline{x} &= \sqrt{\overline{x^2\kern-0.1em} - \overline{x}^2} \\
+                            &= \frac{\sqrt{\frac{1}{N-1} \sum\limits_{i=1}^N (x_i - \overline{x})^2}}{\sqrt{N}}.
+    \end{aligned}
+\end{equation}
+
+Um Fehler einzubeziehen, wird die Gauß'sche Fehlerfortpflanzung verwendet:
+\begin{equation}
+    \label{eqn:9}
+    \increment f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 \cdot \left(\increment x\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 \cdot \left(\increment y\right)^2 + .... + \left(\frac{\partial f}{\partial z}\right)^2 \cdot \left(\increment z\right)^2}
+\end{equation}
