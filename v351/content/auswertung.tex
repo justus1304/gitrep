@@ -1,22 +1,26 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Fourier-Synthese}
+
+
 \subsection{Fourier-Analyse}
-Bei der Furier-Analyse werden Am Oberwellengeneratur einmal die Rechtecksfunktion,
+Bei der Fourier-Analyse werden am Oberwellengeneratur die Rechtecksfunktion,
 die Dreiecksfunktion und die Sägezahnfunktion generiert. Am Amperemeter werden 
-die Amplituden bei den jewailigen frequenzen der oberwelle 
-abgeesen, um so auf die abhängigkeit der Spaannung der n-ten Oberwelle von n schließen zu können.
+die Amplituden bei den jewailigen Frequenzen der Oberwelle abgelesen, um so
+auf die Abhängigkeit der Spannung der $n$-ten Oberwelle von $n$ schließen zu
+können.
 \subsubsection{Rechteckspannung}
 \begin{table}[H]
     \centering
-    \caption{Amplituden der Oberschwingungen Rechtecksfunktion}
+    \caption{Amplituden der Oberschwingungen Rechtecksfunktion.}
     \label{tab:j1}
     \begin{tblr}{
         colspec = {S S S},
         row{1} = {guard, mode=math},
       }
     \toprule
-    f (\unit{\hertz}) &  \\
+    f (\unit{\hertz}) &  A (\unit{\deci\bel})\\
     \midrule
     10 & 17.8\\
     30  & 9.01\\
@@ -32,11 +36,65 @@ abgeesen, um so auf die abhängigkeit der Spaannung der n-ten Oberwelle von n sc
     \end{tblr}
 \end{table}
 
-\begin{figure}
+\subsubsection{Dreieckspannung}
+\begin{table}[H]
     \centering
-    \caption{}
-    \includegraphics{rechteck.pdf}
-\end{figure}
+    \caption{Amplituden der Oberschwingungen Dreiecksfunktion.}
+    \label{tab:j1}
+    \begin{tblr}{
+        colspec = {S S S},
+        row{1} = {guard, mode=math},
+      }
+    \toprule
+    f (\unit{\hertz}) &  A (\unit{\deci\bel})\\
+    \midrule
+    10  & 14.2  \\
+    30  & -4.59 \\
+    50  & -13.4 \\
+    70  & -19.4 \\
+    90  & -23.4 \\
+    110 & -27.0 \\
+    130 & -29.4 \\
+    \bottomrule
+    \end{tblr}
+\end{table}
+
+\subsubsection{Sägezahnspannung}
+\begin{table}[H]
+    \centering
+    \caption{Amplituden der Oberschwingungen Sägezahnfunktion.}
+    \label{tab:j1}
+    \begin{tblr}{
+        colspec = {S S S},
+        row{1} = {guard, mode=math},
+      }
+    \toprule
+    f (\unit{\hertz}) &  A (\unit{\deci\bel})\\
+    \midrule
+    10  & 11.8  \\
+    20  &  7.01 \\
+    30  &  3.01 \\
+    40  &  1.01 \\
+    50  & -1.39 \\
+    60  & -2.99 \\
+    70  & -4.00 \\
+    80  & -5.79 \\
+    90  & -6.19 \\
+    100 & -8.99 \\
+    110 & -7.79 \\
+    120 & -9.79 \\
+    130 & -9.39 \\
+    \bottomrule
+    \end{tblr}
+\end{table}
+
+%Auskommentiert, da es irgendwie Probleme mit "\includegraphics{rechteck.pdf}"
+%gab (bereits bei make nachdem ich direkt gepullt habe)
+% \begin{figure}
+%     \centering
+%     \caption{}
+%     \includegraphics{rechteck.pdf}
+% \end{figure}
 
 \subsubsection{Dreiecksfunktion}
 \begin{figure}
@@ -53,4 +111,3 @@ abgeesen, um so auf die abhängigkeit der Spaannung der n-ten Oberwelle von n sc
 \end{figure}
 
 
-\subsection{Fourier-Synthese}
