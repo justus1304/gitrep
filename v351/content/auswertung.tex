@@ -7,7 +7,8 @@ die Dreiecksfunktion und die Sägezahnfunktion generiert. Am Amperemeter werden
 die Amplituden bei den jewailigen frequenzen der oberwelle 
 abgeesen, um so auf die abhängigkeit der Spaannung der n-ten Oberwelle von n schließen zu können.
 \subsubsection{Rechteckspannung}
-\begin{table}
+\begin{table}[H]
+    \centering
     \caption{Amplituden der Oberschwingungen Rechtecksfunktion}
     \label{tab:j1}
     \begin{tblr}{
@@ -15,10 +16,41 @@ abgeesen, um so auf die abhängigkeit der Spaannung der n-ten Oberwelle von n sc
         row{1} = {guard, mode=math},
       }
     \toprule
-    f (\unit{}) &  \\
+    f (\unit{\hertz}) &  \\
     \midrule
+    10 & 17.8\\
+    30  & 9.01\\
+    50  & 4.61\\
+    70  & 1.81\\
+    90  &-0.19\\
+    110 &-1.79\\
+    130 &-3.39\\
+    150 &-4.59\\
+    170 &-6.19\\
+    190 &-8.19\\
+    \bottomrule
     \end{tblr}
 \end{table}
+
+\begin{figure}
+    \centering
+    \caption{}
+    \includegraphics{rechteck.pdf}
+\end{figure}
+
+\subsubsection{Dreiecksfunktion}
+\begin{figure}
+    \centering
+    \caption{}
+    \includegraphics{dreieck.pdf}
+\end{figure}
+
+\subsubsection{Sägezahnfunktion}
+\begin{figure}
+    \centering
+    \caption{}
+    \includegraphics{saegezahn.pdf}
+\end{figure}
 
 
 \subsection{Fourier-Synthese}
