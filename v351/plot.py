@@ -46,11 +46,12 @@ def rechteck():
 
     fig = plt.figure(layout="constrained")
     ax = fig.add_subplot()
-    ax.plot(x, y, "k.")
+    ax.plot(x, y, "k.",label = "Messwerte")
     #ax.errorbar(x, unp.nominal_values(y), yerr=y_err, fmt=".", label="Daten")
     ax.plot(xa, f(xa, *unp.nominal_values(params)), label="Fit")
     #ax.set_xticks([0, np.pi, 2 * np.pi, 3 * np.pi], [0, "π", "2π", "3π"])
     ax.legend()
+    ax.set(xlabel=r"$n$", ylabel=r"$\unit{\volt}$");
     #plt.savefig("loesung.pdf")
     fig.savefig("build/viereck.pdf")
     # end solution
@@ -78,11 +79,12 @@ def dreieck():
 
     fig = plt.figure(layout="constrained")
     ax = fig.add_subplot()
-    ax.plot(x, y, "k.")
+    ax.plot(x, y, "k.",label = "Messwerte")
     #ax.errorbar(x, unp.nominal_values(y), yerr=y_err, fmt=".", label="Daten")
     ax.plot(xa, f(xa, *unp.nominal_values(params)), label="Fit")
     #ax.set_xticks([0, np.pi, 2 * np.pi, 3 * np.pi], [0, "π", "2π", "3π"])
     ax.legend()
+    ax.set(xlabel=r"$n$", ylabel=r"$\unit{\volt}$");
     #plt.savefig("loesung.pdf")
     fig.savefig("build/dreieck.pdf")
     # end solution
@@ -109,11 +111,12 @@ def saege():
 
     fig = plt.figure(layout="constrained")
     ax = fig.add_subplot()
-    ax.plot(x, y, "k.")
+    ax.plot(x, y, "k.",label = "Messwerte")
     #ax.errorbar(x, unp.nominal_values(y), yerr=y_err, fmt=".", label="Daten")
     ax.plot(xa, f(xa, *unp.nominal_values(params)), label="Fit")
     #ax.set_xticks([0, np.pi, 2 * np.pi, 3 * np.pi], [0, "π", "2π", "3π"])
     ax.legend()
+    ax.set(xlabel=r"$n$", ylabel=r"$\unit{\volt}$");
     #plt.savefig("loesung.pdf")
     fig.savefig("build/saege.pdf")
     # end solution
