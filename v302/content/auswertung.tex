@@ -234,25 +234,25 @@ Abhängigkeit von der normierten Frequenz $\Omega$ aufgetragen.
        \centering
        \includegraphics{"build/plot.pdf"}
 \end{figure}
-\noindent Die Messwerte für $\frac{U_{Br}}{U_s}\left(\omega\right)$ sind in
+\noindent Die Messwerte für $\frac{U_{Br}}{U_s}\left(\Omega\right)$ sind in
 \autoref{fig:ub} zusammen mit einer Theoriefunktion, bestimmt aus
 \autoref{eqn:omega}, abgebildet.
 
 \noindent Aus diesen Messwerten soll der Klirrfaktor der Speisespannung ermittelt werden. 
-Dies geschieht durch das Ermitteln der Restspannung $U_{Rest}$. Diese 
+Dies geschieht durch das Ermitteln der Restspannung $U_\text{Rest}$. Diese 
 Restspannung wird mit dem Koeffizienten $g(2)$ multipliziert, welcher dem 
-Verhältnis $\frac{U_{Br}}{U_s}$ aus \autoref{eqn:1} bei $\Omega = 2$ entspricht, um so 
+Verhältnis $\frac{U_\text{Br}}{U_\text{s}}$ aus \autoref{eqn:1} bei $\Omega = 2$ entspricht, um so 
 einen Wert für die Amplitude der zweiten Oberwelle $U_2$ zu erhalten.
 Daraus lässt sich durch \autoref{eqn:Klirrfaktor} der Klirrfaktor berechnen,
 wenn die Annahme getroffen wird, dass nur die zweite Oberwelle wesentlich zum
 Klirrfaktor beiträgt. Des Weiteren wird angenommen, dass der Klirrfaktor klein
-ist. Es wird  $U_1 = U_s$ genähert.
+ist. Es wird  $U_1 = U_\text{s}$ genähert.
 Die Restspannung bei $\Omega = 0 $ entspricht 
 \begin{equation*}
-       U_{rest} = 240 \unit{\volt},
+       U_\text{rest} = 240 \unit{\volt},
 \end{equation*}
 was zu einem Klirrfaktor von 
 \begin{equation*}
-       k = \frac{U_2}{U_1} = \frac{U_{rest} \cdot \frac{U_{Br}}{U_s}(\Omega = 2)}{U_s} = \qty{3.57e-2}{}
+       k = \frac{U_2}{U_1} = \frac{U_\text{rest} \cdot \frac{U_\text{Br}}{U_\text{s}}(\Omega = 2)}{U_\text{s}} = \qty{0.0357}{}
 \end{equation*}
 führt.

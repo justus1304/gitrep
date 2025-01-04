@@ -28,7 +28,7 @@ ax.plot(x/v0, 0.001*y, "k.", label="Messwerte")
 
 
 ax.legend()
-ax.set(xlabel=r"$\Omega$", ylabel=r"$\frac{U_{Br}}{U_{s}}$");
+ax.set(xlabel=r"$\Omega$", ylabel=r"$\frac{U_\text{Br}}{U_\text{s}}$");
 
 
 
