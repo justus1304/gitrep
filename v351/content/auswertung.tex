@@ -2,40 +2,39 @@
 \label{sec:Auswertung}
 
 \subsection{Fourier-Synthese}
-\noindent Bei der Furier-Synthese Wurde versucht eine 
+\noindent Bei der Fourier-Synthese wurde versucht eine 
 Sägezahnspannung, eine Rechteckspannung und eine Dreiecksspannung 
 darzustelllen. 
-\noindent Wenn die Spannungen an den vielfachen der Grundfrequenz mithilfe des 
-Oberwellengenerators so eingestellt werden Kommen die folgenden Furier-Reihen dabei raus.
+\noindent Wenn die Spannungen an den Vielfachen der Grundfrequenz mithilfe des 
+Oberwellengenerators so eingestellt werden, ergeben sich die folgenden Fourier-Reihen.
 \begin{figure}[H]
     \centering
-    \caption{Furier-Reihe Sägezahnspannung}
+    \caption{Fourier-Reihe Sägezahnspannung.}
     \includegraphics{Bilder/TEK0000.JPG}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \caption{Furier-Reihe Rechteckspannung}
+    \caption{Fourier-Reihe Rechteckspannung.}
     \includegraphics{Bilder/TEK0001.JPG}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \caption{Furier-Reihe Dreieckspannung}
+    \caption{Fourier-Reihe Dreieckspannung.}
     \includegraphics{Bilder/TEK0002.JPG}
 \end{figure}
 
 
 \subsection{Fourier-Analyse}
-Bei der Fourier-Analyse werden am Oberwellengeneratur die Rechtecksfunktion,
+Bei der Fourier-Analyse werden am Oberwellengeneratur die Rechteckfunktion,
 die Dreiecksfunktion und die Sägezahnfunktion generiert. Am Amperemeter werden 
-die Amplituden bei den jewailigen Frequenzen der Oberwelle abgelesen, um so
-auf die Abhängigkeit der Spannung der $n$-ten Oberwelle von $n$ schließen zu
-können.
+die Amplituden bei den jeweiligen Frequenzen der Oberwelle abgelesen, um so
+auf die Abhängigkeit der Spannung der $n$-ten Oberwelle schließen zu können.
 \subsubsection{Rechteckspannung}
 \begin{table}[H]
     \centering
-    \caption{Amplituden der Oberschwingungen Rechtecksfunktion.}
+    \caption{Amplituden der Oberschwingungen Rechteckfunktion.}
     \label{tab:j1}
     \begin{tblr}{
         colspec = {S S S},
@@ -57,33 +56,31 @@ können.
     \bottomrule
     \end{tblr}
 \end{table}
-\noindent Die Oberwellen sind jewils die n-mal vielfachen der Grundfrequenz
-Um auf die Abhängigkeit von n schließen zu können, fitten wir die 
-in Volt umgerechneten Spannungswerte die gegen die ordnung der jewailigen 
-Oberwelle aufgetragen sind an eine Funktion der Form 
+\noindent Die Oberwellen sind $n$ Vielfache der Grundfrequenz.
+Um auf die Abhängigkeit von $n$ schließen zu können, werden die in Volt 
+umgerechnenten Spannungswerte (welche gegen die Ordnung der jeweiligen 
+Oberwelle aufgetragen sind) an eine Funktion der Form 
 \begin{equation}
     \label{eqn:1}
     U(n) = \frac{a}{n^b}
 \end{equation}
-\noindent Die umrechnung in Volt wird auf grundlage der Proportionalität $\unit{\volt} \tilde e^{\frac{\unit{\decibel}}{20}}$ ausgeführt.
+\noindent gefittet. Die Umrechnung in Volt wird auf Grundlage der Proportionalität
+$\unit{\volt} \tilde e^{\frac{\unit{\decibel}}{20}}$ ausgeführt.
 
-
-
-
+\subsubsection{Rechteckfunktion}
 \begin{figure}
     \centering
-    \caption{Curve Fit und Messwerte Rechteckspannung}
+    \caption{Curve fit und Messwerte der Rechteckspannung.}
     \includegraphics{viereck.pdf}
 \end{figure}
 
-\noindent aus dem Curve fit mithilfe der Python Bibiliothek "Pyplot" erhalten wir 
-für die Rechtecksspannung die Paarameter 
+\noindent Aus dem Curve fit (erstellt mithilfe der Python Bibiliothek "Pyplot")
+ergeben sich für die Rechtecksspannung die Parameter 
 \begin{align*}
     a = & \num{7.7 +- 1.0}\\
     b = & \num{1.34 +- 0.26}\\
 \end{align*}
-\noindent Der Ausgleichsparameter $b$ gibt und somit den Grad der abhängigkeit von n an.
-
+\noindent Der Ausgleichsparameter $b$ gibt den Grad der Abhängigkeit von $n$ an.
 
 
 \subsubsection{Dreieckspannung}
@@ -108,8 +105,9 @@ für die Rechtecksspannung die Paarameter
     \bottomrule
     \end{tblr}
 \end{table}
-\noindent Auch bei der Dreiecksspannung wird ein Curf fit durch eine Funktion der Form
-aus \autoref{eqn:1} auf die Messdaten angewendet. 
+\noindent Auch bei der Dreiecksspannung wird ein Curve fit durch eine Funktion
+der Form aus \autoref{eqn:1} auf die Messdaten angewendet. 
+
 
 \subsubsection{Dreiecksfunktion}
 \begin{figure}[H]
@@ -123,7 +121,7 @@ aus \autoref{eqn:1} auf die Messdaten angewendet.
     a = & \num{5.1 +- 1.0}\\
     b = & \num{3.0 +- 2.1}\\
 \end{align*}
-\noindent Wobei b wieder den grad der n abhängigkeit angibt.
+\noindent Dabei gibt b wieder den Grad der Abhängigkeit an.
 
 
 \subsubsection{Sägezahnspannung}
@@ -159,10 +157,10 @@ aus \autoref{eqn:1} auf die Messdaten angewendet.
 \subsubsection{Sägezahnfunktion}
 \begin{figure}[H]
     \centering
-    \caption{Curve Fit und Messwerte Sägezaahnspannung}
+    \caption{Curve fit und Messwerte Sägezahnspannung.}
     \includegraphics{saege.pdf}
 \end{figure}
-\noindent Die Ausgleichsparameter für die Sägezahnspannung lauten
+\noindent Die Ausgleichsparameter für die Sägezahnspannung lauten:
 \begin{align*}
     a = & \num{4.0 +- 0.9}\\
     b = & \num{0.94 +- 0.28}\\
