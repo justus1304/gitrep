@@ -15,11 +15,8 @@ dem Schaltkreis. Dabei liegen $R_3$ und $R_4$ am Potentiometer. Jenes ist
 Spannungsteiler, an dem ein Schleifkontakt über den Widerstandtsdraht gelegt
 wird, was es ermöglicht, den Widerstand kontinuierlich einzustellen. Um nun
 den unbekannten Widerstand $R_x$ durch die Kompensationsmethode zu bestimmen, 
-gilt
-\begin{equation}
-    \label{eqn:1}
-    R_x = R_2 \frac{R_3}{R_4}.
-\end{equation}
+gilt \autoref{eqn:2}.
+\\
 \noindent Als Einstellungen werden folgende Werte genommen:
 \begin{align*}
     \label{eqn:werte1}
@@ -45,23 +42,16 @@ das erste wird wie gehabt als Spannungsteiler für $R_3$ und $R_4$ verwendet. Da
 zweite Poti wird als Spannungsteiler für die unbekannten Komponenten $C_x$ mit 
 $R_x$ und der bekannten Kapazität $C_2$ genutzt.
 \par\vspace{0.5em}
-Die Brücke wird abgeglichen, indem alternierend die Poti so eingestellt werden, 
+\noindent Die Brücke wird abgeglichen, indem alternierend die Poti so eingestellt werden, 
 sodass die Spannung am Oszilloskop minimiert wird. Zuerst wird das eine Potentiometer 
 so justiert, dass ein Minimum erreicht wird. Daraufhin wird das andere Poti so 
 eingestellt, dass sich die Spannung weiterhin minimiert.
 Dieses Verfahren wird so häufig wiederholt, bis die Brücke abgeglichen ist.
-Für den Widerstand gilt weiterhin
-\begin{equation}
-    R_x = R_2 \frac{R_3}{R_4}.
-\end{equation}
-Für die zu bestimmende Kapazität dann:
-\begin{equation}
-    \label{eqn:2}
-    C_x = C_2 \frac{R_4}{R_3}.
-\end{equation}
+Für den Widerstand gilt weiterhin \autoref{eqn:2}.
+Für die zu bestimmende Kapazität wird \autoref{eqn:3} genutzt.
+\\
 \noindent Als Einstellungen werden folgende Werte genommen:
 \begin{align*}
-    \label{eqn:werte1}
     \text{Kapazität } C_2 &= 450;\, 597;\, 992\,\unit{\nano\farad} \\
     \text{Frequenz } \nu &= 1\,\unit{\kilo\hertz} \\
     \text{Amplitude } U_{\text{S}} &= 1\,\unit{\volt} \\
@@ -79,12 +69,8 @@ Für die zu bestimmende Kapazität dann:
 \noindent Der Aufbau erfolgt analog zu dem der zuvor angesprochenen 
 Kapazitätsmessbrücke. Es werden lediglich Kondensatoren mit Spulen ausgewechselt.
 Folglich wird der Aufbau mit Wechselstrom betrieben. Für den unbekannten
-Widerstand $R_x$ gilt erneut \autoref{eqn:1}. Eine Gleichung für die Induktivität
-ergibt sich analog zu \autoref{eqn:2}:
-\begin{equation}
-    \label{eqn:3}
-    L_x = L_2 \frac{R_4}{R_3}.
-\end{equation}
+Widerstand $R_x$ gilt erneut \autoref{eqn:1}. Für die unbekannte Induktivität 
+wird die \autoref{eqn:4} verwendet.
 
 \subsection{Wien-Robinson Messbrücke}
 \begin{figure}[H]

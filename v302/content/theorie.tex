@@ -1,6 +1,7 @@
 \section{Theorie}
 \label{sec:Theorie}
 
+\subsection{Brückenschaltungen}
 Die Messung von durch Widerstände ausdrückbare Größen kann durch Brückenschaltungen 
 möglich gemacht werden. In diesem Versuch geht es um ohmsche Widerstände
 und komplexe Widerstände, wie es bei Kondensatoren und Spulen der Fall ist.
@@ -18,7 +19,7 @@ dargestellt.
 $R_1$, $R_2$, $R_3$ und $R_4$ liegen besteht eine Verbindung über ein Messgerät. 
 Diese Verbindung wird als Brücke bezeichnet. Um Fehlströme zu vermeiden und damit 
 die Messung nicht fälschlicherweise beeinflusst werden kann, wird eine erdungsfreie 
-Speisespannung genutzt. Es gelten die Kirchhoffschen Gesetze:
+Speisespannung genutzt. Es gelten die Kirchhoffschen Gesetze \cite{kirchhoff}:
 \begin{enumerate}
     \item Die Summe aller Ströme, die an einem Knoten ein- und ausgehen, ist Null.
     \begin{equation}
@@ -34,14 +35,40 @@ Speisespannung genutzt. Es gelten die Kirchhoffschen Gesetze:
 \noindent Die Punkte A und B befinden sich im Falle des Nullabgleichs auf
 gleichem Potential. Es kann eine Abgleichbedingung aufgestellt werden:
 \begin{equation}
+    \label{eqn:1}
     R_1 R_4 = R_2 R_3
 \end{equation}
 Das gleiche gilt analog für komplexe Widerstände. Ist einer der Widerstände 
 von unbekannter Größe, kann er trivialerweise mithilfe der anderen Komponenten 
 bestimmt werden. Jenes wird als Kompensationsmethode bezeichnet und soll im 
 Folgenden gezeigt werden.
+\noindent Für die Wheatstone Brücke soll ein Widerstand $R_x$ bestimmt werden,
+unter Einbezug der gewonnen Erkenntis bezüglich des Zusammenhangs ergibt sich 
+für die unbekannte Größe \cite{anleitung}:
+\begin{equation}
+    \label{eqn:2}
+    R_x = R_2 \frac{R_3}{R_4}
+\end{equation}
+\noindent Bei der Kapazitätsmessbrücke soll zusätzlich zum unbekannten Widerstand
+eine Kapazität bestimmt werden. Anders als bei der Wheatstone Brücke (dessen 
+genauer Aufbau noch in \autoref{sec:Durchführung} geschildert wird), besteht der 
+Schaltkreis aus zwei Widerständen $R_3$, $R_4$ und darüber hinaus aus einer 
+Kapazität $C_2$. Es ergibt sich für die unbekannte gesuchte Kapazität folgender 
+Zusammenhang:
+\begin{equation}
+    \label{eqn:3}
+    C_x = C_2 \frac{R_3}{R_4}
+\end{equation}
+Diese Gleichung gilt aufgrund des ähnlichen Aufbaus analog für die Induktivitätsmessbrücke
+(Der Aufbau dieser Brücke wird ebenso noch in \autoref{sec:Durchführung} erläutert).
+Gesucht wird eine Induktivität, welche unter Einbezug der bekannten Variablen 
+$L_2$, $R_3$ und $R_4$ ermittelt wird.
+\begin{equation}
+    \label{eqn:4}
+    L_x = L_2 \frac{R_3}{R_4}
+\end{equation}
 
-Letztlich ist für dieses Experiment noch der Klirrfaktor von Relevanz. Bei dem 
+\noindent Letztlich ist für dieses Experiment noch der Klirrfaktor von Relevanz. Bei dem 
 Verhältnis von $U_{\text{Br}}$ zu $U_{\text{S}}$ wird die Gleichung
 \begin{equation}
     \label{eqn:omega}

@@ -6,76 +6,74 @@ Mithilfe der Wheatstone Brücke wird ausgehend von drei bekannten Widerständen
 $R_2, R_3 $ und $R_4$ und einer ausgeglichenen Brückenspannung 
 Der Widerstand $R_x$ mithilfe von \autoref{eqn:1} berechnet.
 \begin{table}[H]
-    \centering
-    \caption{Werte der Widerstände zur Wheatstone Brücke.}
-    \label{tab:t1}
-    \begin{tabular}{|l|c|c|c|}
-        \hline
-        & \textbf{$R_2$ / $\unit{\ohm}$} & \textbf{$R_3$ / $\unit{\ohm}$} & \textbf{$R_4$ / $\unit{\ohm}$} \\
-        \hline
-        %\multicolumn{4}{|l|}{\textbf{Daten von "Wert 10"}} \\
-        \hline
-               & 1000 & 330 & 670 \\
-        Wert11 & 664  & 426 & 574 \\
-               & 332  & 597 & 403 \\
-        \hline
-        %\multicolumn{4}{|l|}{\textbf{Daten von "Wert 11"}} \\
-        \hline
-               & 1000 & 474 & 526 \\
-        Wert14 & 664  & 574 & 426 \\
-               & 332  & 732 & 268 \\
-        \hline
-        \hline
-               & 1000 & 281 & 719 \\
-        Wert12 & 664  & 370 & 630 \\
-               & 332  & 541 & 459 \\
-        \hline
-    \end{tabular}
-\end{table}
+       \centering
+       \caption{Werte der Widerstände zur Wheatstone Brücke.}
+       \label{tab:t1}
+       \begin{tblr}{colspec={c c c c}}
+              \toprule
+               & $R_2$ / $\unit{\ohm}$ & $R_3$ / $\unit{\ohm}$ & $R_4$ / $\unit{\ohm}$ \\
+              %\multicolumn{4}{|l|}{\textbf{Daten von "Wert 10"}} \\
+              \midrule
+                     & 1000 & 330 & 670 \\
+              Wert11 & 664  & 426 & 574 \\
+                     & 332  & 597 & 403 \\
+              \midrule
+                     & 1000 & 474 & 526 \\
+              Wert14 & 664  & 574 & 426 \\
+                     & 332  & 732 & 268 \\
+              \midrule
+                     & 1000 & 281 & 719 \\
+              Wert12 & 664  & 370 & 630 \\
+                     & 332  & 541 & 459 \\
+              \midrule
+       \end{tblr}
+   \end{table}
+
 \noindent Für die Bestimmung eines Widerstands $R_x$ werden $R_3$ und $R_4$
 bei ausgeglichener Brückenspannung für drei unterschiedliche $R_2$ bestimmt.
 Daraus werden die drei Widerstände er und anschließend gemittelt.
 Als baubedingte Fehler für die gegebenen Wiederstände werden $2\% $ angenommen.
 
-\noindent Nach Einsetzen der Messwerte und der zugehörigen Fehler in \autoref{eqn:1}
-und Mittelung der Ergebnisse ergeben sich für die unbekannten
+\noindent Nach Einsetzen der Messwerte und der zugehörigen Fehler in
+\autoref{eqn:1} und Mittelung der Ergebnisse ergeben sich für die unbekannten
 Wiederstände die Werte:
 \begin{align*}
        R_{x,11} &= \qty{629(13.0)}{\ohm}\\
        R_{x,14} &= \qty{901(18.0)}{\ohm}\\
        R_{x,12} &= \qty{391(8.0)}{\ohm}
 \end{align*}
+Eine beispielhafte Rechnung für $R_{x,11}$ lautet
+\begin{equation}
+       R_{x,11}=(R_{2,1}*(R_{3,1}/R_{4,1}))
+\end{equation}
 
 
 \subsection{Kapazitätsmessbrücke}
 \label{subsec:kapbru}
 \begin{table}[H]
-  \centering
-  \caption{Werte der Widerstände zur Kapazitätsmessbrücke.}
-  \label{tab:t2}
-  \begin{tabular}{|l|c|c|c|c|}
-      \hline
-      & \textbf{$C_2$ / \unit{\nF}} & \textbf{$R_2$ / $\unit{\ohm}$} & \textbf{$R_3$ / $\unit{\ohm}$} & \textbf{$R_4$ / $\unit{\ohm}$} \\
-      \hline
-      %\multicolumn{4}{|l|}{\textbf{Daten von "Wert 10"}} \\
-      \hline
-            & 992 & 164 & 772 & 228 \\
-      Wert8 & 450 & 369 & 603 & 397 \\
-            & 597 & 728 & 670 & 330 \\
-      \hline
-      %\multicolumn{4}{|l|}{\textbf{Daten von "Wert 11"}} \\
-      \hline
-             & 992 & 285 & 620 & 380 \\
-      Wert15 & 450 & 654 & 413 & 587 \\
-             & 597 & 542 & 471 & 529 \\
-      \hline
-      \hline
-            & 992 & 204 & 693 & 307 \\
-      Wert9 & 450 & 443 & 510 & 490 \\
-            & 597 & 334 & 580 & 420 \\
-      \hline
-  \end{tabular}
-\end{table}
+       \centering
+       \caption{Werte der Widerstände zur Wheatstone Brücke.}
+       \label{tab:t2}
+       \begin{tblr}{colspec={c c c c c}}
+              \toprule
+               & \textbf{$C_2$ / \unit{\nF}} & $R_2$ / $\unit{\ohm}$ & $R_3$ / $\unit{\ohm}$ & $R_4$ / $\unit{\ohm}$ \\
+              %\multicolumn{4}{|l|}{\textbf{Daten von "Wert 10"}} \\
+              \midrule
+                    & 992 & 164 & 772 & 228 \\
+              Wert8 & 450 & 369 & 603 & 397 \\
+                    & 597 & 728 & 670 & 330 \\
+              %\multicolumn{4}{|l|}{\textbf{Daten von "Wert 11"}} \\
+              \midrule
+                     & 992 & 285 & 620 & 380 \\
+              Wert15 & 450 & 654 & 413 & 587 \\
+                     & 597 & 542 & 471 & 529 \\
+              \midrule
+                    & 992 & 204 & 693 & 307 \\
+              Wert9 & 450 & 443 & 510 & 490 \\
+                    & 597 & 334 & 580 & 420 \\
+              \midrule
+       \end{tblr}
+   \end{table}
 Hier werden die Werte für drei unbekannte Kapazitäten ähnlich wie im letzten
 Abschnitt bestimmt. Analog wird der Wert für die Kapazität mit drei unterschiedlichen
 Wiederständen für $R_2$ über \autoref{eqn:2} berechnet und die Ergebnisse gemittelt.
@@ -96,33 +94,29 @@ und nach \autoref{eqn:2} für die Kapazität
 
 \subsection{Induktivitätsmessbrücke}
 \begin{table}[H]
-  \centering
-  \caption{Werte der Widerstände zur Induktivitätsmessbrücke.}
-  \label{tab:t3}
-  \begin{tabular}{|l|c|c|c|c|}
-      \hline
-      & \textbf{$L_2$ / \unit{\mH}} & \textbf{$R_2$ / $\unit{\ohm}$} & \textbf{$R_3$ / $\unit{\ohm}$} & \textbf{$R_4$ / $\unit{\ohm}$} \\
-      \hline
-      %\multicolumn{4}{|l|}{\textbf{Daten von "Wert 10"}} \\
-      \hline
-             & 14.6 & 58  & 647 & 353 \\
-      Wert19 & 27.5 & 108 & 496 & 504 \\
-             & 20.1 & 75  & 572 & 428 \\
-      \hline
-      %\multicolumn{4}{|l|}{\textbf{Daten von "Wert 11"}} \\
-      \hline
-             & 14.6 & 51 & 901 & 99  \\
-      Wert16 & 27.5 & 86 & 831 & 169 \\
-             & 20.1 & 59 & 870 & 130 \\
-      \hline
-      \hline
-             & 14.6 & 103 & 773 & 227 \\
-      Wert18 & 27.5 & 194 & 645 & 355 \\
-             & 20.1 & 138 & 713 & 287 \\
-      \hline
-  \end{tabular}
-\end{table}
-Zusammen mit den Werten aus \autoref{tab:t3} können die Werte die für erneut 
+       \centering
+       \caption{Werte der Widerstände zur Wheatstone Brücke.}
+       \label{tab:t3}
+       \begin{tblr}{colspec={c c c c c}}
+              \toprule
+               & \textbf{$L_2$ / \unit{\mH}} & $R_2$ / $\unit{\ohm}$ & $R_3$ / $\unit{\ohm}$ & $R_4$ / $\unit{\ohm}$ \\
+              %\multicolumn{4}{|l|}{\textbf{Daten von "Wert 10"}} \\
+              \midrule
+                     & 14.6 & 58  & 647 & 353 \\
+              Wert19 & 27.5 & 108 & 496 & 504 \\
+                     & 20.1 & 75  & 572 & 428 \\
+              \midrule
+                     & 14.6 & 51 & 901 & 99  \\
+              Wert16 & 27.5 & 86 & 831 & 169 \\
+                     & 20.1 & 59 & 870 & 130 \\
+              \midrule
+                     & 14.6 & 103 & 773 & 227 \\
+              Wert18 & 27.5 & 194 & 645 & 355 \\
+                     & 20.1 & 138 & 713 & 287 \\
+              \midrule
+       \end{tblr}
+   \end{table}
+Zusammen mit den Werten aus \autoref{tab:t3} können die Werte für erneut 
 drei unterschiedliche Widerstände analog zu \autoref{subsec:kapbru}
 errechnet werden. An Widerständen ergibt sich inklusive Fehlern
 \begin{align*}
@@ -136,6 +130,7 @@ und nach \autoref{eqn:3} für die Induktivität
        L_{x,16} &= \qty{134.2(2.7)}{\milli\henry}\\
        L_{x,18} &= \qty{49.9(1.0)}{\milli\henry}.
 \end{align*}
+
 
 
 
