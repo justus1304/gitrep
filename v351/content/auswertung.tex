@@ -41,18 +41,18 @@ auf die Abhängigkeit der Spannung der $n$-ten Oberwelle schließen zu können.
         row{1} = {guard, mode=math},
       }
     \toprule
-    f (\unit{\hertz}) &  A (\unit{\deci\bel})\\
+    f (\unit{\hertz}) &  A (\unit{\deci\bel}) & A(\unit{\volt})\\
     \midrule
-    10 & 17.8\\
-    30  & 9.01\\
-    50  & 4.61\\
-    70  & 1.81\\
-    90  &-0.19\\
-    110 &-1.79\\
-    130 &-3.39\\
-    150 &-4.59\\
-    170 &-6.19\\
-    190 &-8.19\\
+    10 & 17.8  & 7.76247117\\
+    30  & 9.01 & 2.82162958\\
+    50  & 4.61 & 1.70019995\\
+    70  & 1.81 & 1.23168599\\
+    90  &-0.19 & 0.97836295\\
+    110 &-1.79 & 0.81376686\\
+    130 &-3.39 & 0.67686179\\
+    150 &-4.59 & 0.58952198\\
+    170 &-6.19 & 0.49034302\\
+    190 &-8.19 & 0.38949331\\      
     \bottomrule
     \end{tblr}
 \end{table}
@@ -65,7 +65,7 @@ Oberwelle aufgetragen sind) an eine Funktion der Form
     U(n) = \frac{a}{n^b}
 \end{equation}
 \noindent gefittet. Die Umrechnung in Volt wird auf Grundlage der Proportionalität
-$\unit{\volt} \tilde e^{\frac{\unit{\decibel}}{20}}$ ausgeführt.
+$\unit{\volt} \propto 10^{\frac{\unit{\decibel}}{20}}$ ausgeführt.
 
 \subsubsection{Rechteckfunktion}
 \begin{figure}
@@ -93,16 +93,16 @@ ergeben sich für die Rechtecksspannung die Parameter
         row{1} = {guard, mode=math},
       }
     \toprule
-    f (\unit{\hertz}) &  A (\unit{\deci\bel})\\
+    f (\unit{\hertz}) &  A (\unit{\deci\bel}) & A (\unit{\volt})\\
     \midrule
-    10  & 14.2  \\
-    30  & -4.59 \\
-    50  & -13.4 \\
-    70  & -19.4 \\
-    90  & -23.4 \\
-    110 & -27.0 \\
-    130 & -29.4 \\
-    \bottomrule
+    10  & 14.2  &5.12861384\\
+    30  & -4.59 &0.58952198\\
+    50  & -13.4 &0.21379621\\
+    70  & -19.4 &0.10715193\\
+    90  & -23.4 &0.0676083 \\
+    110 & -27.0 &0.04466836\\
+    130 & -29.4 &0.03388442\\
+    \bottomrule 
     \end{tblr}
 \end{table}
 \noindent Auch bei der Dreiecksspannung wird ein Curve fit durch eine Funktion
@@ -134,21 +134,21 @@ der Form aus \autoref{eqn:1} auf die Messdaten angewendet.
         row{1} = {guard, mode=math},
       }
     \toprule
-    f (\unit{\hertz}) &  A (\unit{\deci\bel})\\
+    f (\unit{\hertz}) &  A (\unit{\deci\bel}) & A(\unit{\volt})\\
     \midrule
-    10  & 11.8  \\
-    20  &  7.01 \\
-    30  &  3.01 \\
-    40  &  1.01 \\
-    50  & -1.39 \\
-    60  & -2.99 \\
-    70  & -4.00 \\
-    80  & -5.79 \\
-    90  & -6.19 \\
-    100 & -8.99 \\
-    110 & -7.79 \\
-    120 & -9.79 \\
-    130 & -9.39 \\
+    10  & 11.8  & 3.89045145\\
+    20  &  7.01 & 2.24130005\\
+    30  &  3.01 & 1.41416473\\
+    40  &  1.01 & 1.12331097\\
+    50  & -1.39 & 0.85211851\\
+    60  & -2.99 & 0.70876131\\
+    70  & -4.00 & 0.63095734\\
+    80  & -5.79 & 0.51345218\\
+    90  & -6.19 & 0.49034302\\
+    100 & -8.99 & 0.35522212\\
+    110 & -7.79 & 0.40784956\\
+    120 & -9.79 & 0.32396642\\
+    130 & -9.39 & 0.33923449\\          
     \bottomrule
     \end{tblr}
 \end{table}

@@ -25,7 +25,7 @@ def ucurve_fit(f, x, y, **kwargs):
 
 
 def f(x, a, b):
-    return a*(1/(x**b))
+    return a*((x**b))
 
 
 
@@ -37,6 +37,7 @@ def rechteck():
     # Solution
     u, z ,x = np.genfromtxt("Daten/viereck.txt", unpack=True)
     y = 10**(z/20)
+    print("Rechteck =", y)
     xa = np.linspace(0,15)
     #y = unp.uarray(y_0, y_err)
     params = ucurve_fit(f, x, y)
@@ -70,6 +71,7 @@ def dreieck():
     # Solution
     u, z ,x = np.genfromtxt("Daten/dreieck.txt", unpack=True)
     y = 10**(z/20)
+    print("Dreieck =", y)
     xa = np.linspace(0,15)
     #y = unp.uarray(y_0, y_err)
     params = ucurve_fit(f, x, y)
@@ -102,10 +104,11 @@ def saege():
     # Solution
     u, z ,x = np.genfromtxt("Daten/saege.txt", unpack=True)
     y = 10**(z/20)
+    print("Saege =", y)
     xa = np.linspace(0,15)
     #y = unp.uarray(y_0, y_err)
     params = ucurve_fit(f, x, y)
-    print("a*(1/(x**b))")
+    print("a*((x**b))")
     for char, p in zip("ab", params):
         print(f"{char} = {p}")
 
