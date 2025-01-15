@@ -39,27 +39,23 @@ def rechteck():
     y = 10**(z/20)
     print("Rechteck =", y)
     xa = np.linspace(0,15)
-    #y = unp.uarray(y_0, y_err)
-    params = ucurve_fit(f, x, y)
-    print("a*(1/(x**b))")
+    
+    params = ucurve_fit(f, x, y,p0 = (4,-1))
+    print("a*((x**b))")
     for char, p in zip("ab", params):
         print(f"{char} = {p}")
 
     fig = plt.figure(layout="constrained")
     ax = fig.add_subplot()
     ax.plot(x, y, "k.",label = "Messwerte")
-    #ax.errorbar(x, unp.nominal_values(y), yerr=y_err, fmt=".", label="Daten")
+    
     ax.plot(xa, f(xa, *unp.nominal_values(params)), label="Fit")
-    #ax.set_xticks([0, np.pi, 2 * np.pi, 3 * np.pi], [0, "π", "2π", "3π"])
+    
     ax.legend()
     ax.set(xlabel=r"$n$", ylabel=r"$\unit{\volt}$");
-    #plt.savefig("loesung.pdf")
+    
     fig.savefig("build/viereck.pdf")
-    # end solution
-    # def ucurve_fit(f, x, y, **kwargs):
-    #     …
-    #     … = scipy.optimize.curve_fit(…, **kwargs)
-    #     … """ """
+    
 rechteck()  
 
 
