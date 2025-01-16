@@ -44,9 +44,10 @@ Wiederstände die Werte:
 \end{align*}
 Eine beispielhafte Rechnung für $R_{x,11}$ lautet
 \begin{equation}
-       R_{x,11}= \frac{\left(R_{2,1} \cdot \frac{R_{3,1}}{R_{4,1}}+R_{2,2} \cdot \frac{R_{3,2}}{R_{4,2}}+R_{2,3} \cdot \frac{R_{3,3}}{R_{4,3}}\right)}{3}
+       R_{x,11}= 629 = \frac{\left(R_{2,1}=1000 \cdot \frac{R_{3,1}=330}{R_{4,1}=670}+R_{2,2}=664 \cdot \frac{R_{3,2}=426}{R_{4,2}=574}+R_{2,3}=332 \cdot \frac{R_{3,3}=597}{R_{4,3}=403}\right)}{3}
 \end{equation}
-Dabei werden die Wiederstände der Einzelmessungen berrechnet, aufaddiert und dann durch die Anzahl der Messungen geteilt um den Mittelwert zu erhalten.
+Dabei werden die Wiederstände der Einzelmessungen berrechnet, aufaddiert und dann durch die Anzahl der Messungen geteilt um den Mittelwert zu erhalten. Der Fehler 
+Ergibt sich durch die Fehlerfortpflanzung durch python und dem Standartfehler des Mittelwertes bei der annahme einer Messungenauigkeit von Zwei Prozent .
 
 
 \subsection{Kapazitätsmessbrücke}
@@ -232,7 +233,10 @@ Abhängigkeit von der normierten Frequenz $\Omega$ aufgetragen.
 \end{figure}
 \noindent Die Messwerte für $\frac{U_{Br}}{U_s}\left(\Omega\right)$ sind in
 \autoref{fig:ub} zusammen mit einer Theoriefunktion, bestimmt aus
-\autoref{eqn:omega}, abgebildet.
+\autoref{eqn:omega}, abgebildet. Die Theoriefunktion bildet $\Omega$ auf die Funktion
+\begin{equation}
+       \frac{U_\text{Br}}{U_\text{s}} = \sqrt{\frac{1}{9} \frac{\left(\Omega^2-1\right)^2}{\left(1-\Omega^2\right)^2+9\Omega^2}} , \Omega = \omega \cdot R \cdot C
+\end{equation}
 
 \noindent Aus diesen Messwerten soll der Klirrfaktor der Speisespannung ermittelt werden. 
 Dies geschieht durch das Ermitteln der Restspannung $U_\text{Rest}$. Diese 

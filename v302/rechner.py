@@ -28,13 +28,14 @@ def wiederstandmessung():
     i = 0
     
     arr = []
-    arr.append(R2[1] * (R3[1] / R4[1]))
-    arr.append(R2[2] * (R3[2] / R4[2]))
-    arr.append(R2[3] * (R3[3] / R4[3]))
+    #arr.append(R2[1] * (R3[1] / R4[1]))
+    arr.append((R2[1] * (R3[1] / R4[1]))**2)
+    arr.append((R2[2] * (R3[2] / R4[2]))**2)
+    arr.append((R2[3] * (R3[3] / R4[3]))**2)
         
     wertR11 = np.mean(arr)
     print("R11 = ", wertR11)
-
+    print(np.sqrt(432000-629))
 
 ### wiederstand R 14
     i = 3
