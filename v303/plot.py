@@ -1,18 +1,85 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import scipy.optimize
+import uncertainties as unc
+import uncertainties.unumpy as unp
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+from scipy.optimize import curve_fit
 
-fig, (ax1, ax2) = plt.subplots(1, 2, layout="constrained")
-ax1.plot(x, y, label="Kurve")
-ax1.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
-ax1.set_ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
-ax1.legend(loc="best")
+def ucurve_fit(f, x, y, **kwargs):
+    if np.any(unp.std_devs(y) == 0):
+        sigma = None
+    else:
+        sigma = unp.std_devs(y)
 
-ax2.plot(x, y, label="Kurve")
-ax2.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
-ax2.set_ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
-ax2.legend(loc="best")
+    popt, pcov = scipy.optimize.curve_fit(
+        f, x, unp.nominal_values(y), sigma=sigma, absolute_sigma=True, **kwargs
+    )
 
-fig.savefig("build/plot.pdf")
+    return unc.correlated_values(popt, pcov)
+
+
+def f(x, a, b, c, d):
+    return a*np.sin(b*x + c) + d
+
+def g(x, a, b):
+    return a*1/(x**2) + b
+
+def teil1():
+    # Solution
+    phi, U = np.genfromtxt("Daten/Teil1.txt", unpack=True)
+
+    
+
+    
+    
+    xa = np.linspace(0,190)
+    
+    params = ucurve_fit(f, phi, U)
+    #err = np.sqrt(np.diag(cov))
+    print("a*((x**b))")
+    for char, p in zip("abcd", params):
+        print(f"{char} = {p}")
+
+    fig = plt.figure(layout="constrained")
+    ax = fig.add_subplot()
+    ax.plot(phi, U, "k.",label = "Messwerte")
+    
+    ax.plot(xa, f(xa, *unp.nominal_values(params)), label="Fit")
+    
+    ax.legend()
+    ax.set(xlabel=r"$f \unit{\hertz}$", ylabel=r"$\unit{\volt}$");
+    
+    fig.savefig("build/teil1.pdf")
+    
+teil1()  
+
+
+def teil2():
+    # Solution
+    r, U = np.genfromtxt("Daten/Teil2.txt", unpack=True)
+
+    
+
+    
+    
+    xa = np.linspace(0,190)
+    
+    params = ucurve_fit(g, r, U)
+    #err = np.sqrt(np.diag(cov))
+    print("a*((x**b))")
+    for char, p in zip("ab", params):
+        print(f"{char} = {p}")
+
+    fig = plt.figure(layout="constrained")
+    ax = fig.add_subplot()
+    ax.plot(r, U, "k.",label = "Messwerte")
+    
+    ax.plot(xa, f(xa, *unp.nominal_values(params)), label="Fit")
+    
+    ax.legend()
+    ax.set(xlabel=r"$f \unit{\hertz}$", ylabel=r"$\unit{\volt}$");
+    
+    fig.savefig("build/teil2.pdf")
+    
+teil2()  
