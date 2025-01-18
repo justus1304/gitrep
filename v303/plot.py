@@ -20,10 +20,10 @@ def ucurve_fit(f, x, y, **kwargs):
 
 
 def f(x, a, b, c, d):
-    return a*np.sin(b*x + c) + d
+    return a * np.cos(b*x + c) + d 
 
-def g(x, a, b):
-    return a*1/(x**2) + b
+def g(x, a, b, c):
+    return a*(1/(x**b)) + c 
 
 def teil1():
     # Solution
@@ -31,9 +31,9 @@ def teil1():
 
     
 
+    phi = ((2*np.pi)/360) * phi
     
-    
-    xa = np.linspace(0,190)
+    xa = np.linspace(0,2*np.pi,1000)
     
     params = ucurve_fit(f, phi, U)
     #err = np.sqrt(np.diag(cov))
@@ -48,8 +48,8 @@ def teil1():
     ax.plot(xa, f(xa, *unp.nominal_values(params)), label="Fit")
     
     ax.legend()
-    ax.set(xlabel=r"$f \unit{\hertz}$", ylabel=r"$\unit{\volt}$");
-    
+    ax.set(xlabel=r"$\phi (\unit{\radian})$", ylabel=r"$U(\unit{\volt})$");
+    ax.set_xticks([0, np.pi, 2 * np.pi], [0, "$\pi$", "$2\pi$"])
     fig.savefig("build/teil1.pdf")
     
 teil1()  
@@ -63,22 +63,22 @@ def teil2():
 
     
     
-    xa = np.linspace(0,190)
+    xa = np.linspace(0,50)
     
     params = ucurve_fit(g, r, U)
     #err = np.sqrt(np.diag(cov))
     print("a*((x**b))")
-    for char, p in zip("ab", params):
+    for char, p in zip("abc", params):
         print(f"{char} = {p}")
 
     fig = plt.figure(layout="constrained")
     ax = fig.add_subplot()
     ax.plot(r, U, "k.",label = "Messwerte")
     
-    ax.plot(xa, f(xa, *unp.nominal_values(params)), label="Fit")
+    ax.plot(xa, g(xa, *unp.nominal_values(params)), label="Fit")
     
     ax.legend()
-    ax.set(xlabel=r"$f \unit{\hertz}$", ylabel=r"$\unit{\volt}$");
+    ax.set(xlabel=r"$r (\unit{\centi\meter})$", ylabel=r"$U (\unit{\volt}$)");
     
     fig.savefig("build/teil2.pdf")
     

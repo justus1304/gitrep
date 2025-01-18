@@ -1,10 +1,13 @@
 \section{Auswertung}
-Zuerst wird die Schaltung aus \autoref{fig:3} in der \autoref{sec:Theorie} aufgebaut und wie in der \autoref{sec:Theorie} beschrieben
-Die Spannungsamplitude in abhängigkeit der Phase betrachtet.
+\subsection{Verifizierung der Funktionsweise des Lock-In-Verstärkers.}
+Zuerst wird die Schaltung aus \autoref{fig:f3} aufgebaut und wie 
+in der \autoref{sec:Theorie} beschrieben Die Spannungsamplitude in abhängigkeit der 
+Phasenverschiebung $\phi$ betrachtet. Die Werte Der Spannungsamplitude in abhängigkeit 
+von $\phi$ sind in \autoref{tab:10} aufgetragen und in \autoref{fig:10} graphisch dargestellt.
 \begin{table}[H]
     \centering
     \caption{}
-    \label{tab:t2}
+    \label{tab:10}
     \begin{tblr}{
         colspec = {S S },
         row{1} = {guard, mode=math},}
@@ -34,12 +37,31 @@ Die Spannungsamplitude in abhängigkeit der Phase betrachtet.
     \centering
     \includegraphics{"build/teil1.pdf"}
 \end{figure}
+Des weiteren Wurden die Werte aus \autoref{tab:10} in \autoref{fig:10} durch eine Funktion 
+folgender Form geplottet.
+\begin{equation}
+    f\left(\phi\right) = a \cdot \sin \left(b \cdot \phi + c\right) + d
+\end{equation}
+Die ausgleichsrechnung mithilfe eines Curve Fits aus der Python Bibiliothek Scipy gibt 
+die Ausgleichsparameter 
+\begin{align*}
+    a = & \qty{-6.1(0.4)}{\volt}   \\
+    b = & \qty{1.00(0.04)}{}     \\
+    c = & \qty{164(0.16)}{}    \\
+    d = & \qty{0.00(0.31)}{\volt}      
+\end{align*}
+Die Parameter sind Für den Versuch uninteressant. Wichtiger ist der gut erkennbare 
+sinusförmige Verlauf der Spannungsamplitude, der das eingangssignal wiedergibt. Die Parameter 
+wären für einen vergleich interessant, sovern man die Messungen bei eingeschaltetem Rauschen 
+noch einmal durchführen würde, was aucb der Hintergedanke dieses Experiemntes wäre, jedoch wird 
+das nicht Durchgeführt, da die Geräte zu fehleranfällig sind.
+
 
 
 %Intensität/Abstand
 \begin{figure}[H]
     \caption{}
-    \label{fig:10}
+    \label{fig:11}
     \centering
     \includegraphics{"build/teil2.pdf"}
 \end{figure}
