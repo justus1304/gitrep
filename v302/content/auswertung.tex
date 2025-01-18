@@ -42,13 +42,20 @@ Wiederstände die Werte:
        R_{x,14} &= \qty{901(18.0)}{\ohm}\\
        R_{x,12} &= \qty{391(8.0)}{\ohm}
 \end{align*}
-Eine beispielhafte Rechnung für $R_{x,11}$ lautet
-\begin{equation}
-       R_{x,11}= 629 = \frac{\left(R_{2,1}=1000 \cdot \frac{R_{3,1}=330}{R_{4,1}=670}+R_{2,2}=664 \cdot \frac{R_{3,2}=426}{R_{4,2}=574}+R_{2,3}=332 \cdot \frac{R_{3,3}=597}{R_{4,3}=403}\right)}{3}
-\end{equation}
-Dabei werden die Wiederstände der Einzelmessungen berrechnet, aufaddiert und dann durch die Anzahl der Messungen geteilt um den Mittelwert zu erhalten. Der Fehler 
-Ergibt sich durch die Fehlerfortpflanzung durch python und dem Standartfehler des Mittelwertes bei der annahme einer Messungenauigkeit von Zwei Prozent .
+Eine beispielhafte Rechnung für $R_{x,11}$ lautet:
+\begin{align*}
+       R_{x,11}&= \frac{\left(R_{2,1}=1000 \unit{\ohm} \cdot
+              \frac{R_{3,1}=330 \unit{\ohm}}{R_{4,1}=670 \unit{\ohm} }+R_{2,2}=664 \unit{\ohm} \cdot 
+              \frac{R_{3,2}=426 \unit{\ohm}}{R_{4,2}=574 \unit{\ohm} }+R_{2,3}=332 \unit{\ohm} \cdot
+              \frac{R_{3,3}=597 \unit{\ohm}}{R_{4,3}=403 \unit{\ohm} }\right)}{3} \\
+               &= 629 \unit{\ohm}
+\end{align*}
 
+\noindent Es werden die Widerstände der Einzelmessungen berrechnet, aufaddiert und
+durch die Anzahl der Messungen geteilt um den Mittelwert zu erhalten. 
+Der Fehler ergibt sich durch die Fehlerfortpflanzung durch Python und dem
+Standartfehler des Mittelwertes bei der Annahme einer Messungenauigkeit von
+zwei Prozent (siehe \autoref{subsec:fehler} ).
 
 \subsection{Kapazitätsmessbrücke}
 \label{subsec:kapbru}
