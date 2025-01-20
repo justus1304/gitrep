@@ -51,7 +51,9 @@ def teil1():
     ax.set(xlabel=r"$\phi (\unit{\radian})$", ylabel=r"$U(\unit{\volt})$");
     ax.set_xticks([0, np.pi, 2 * np.pi], [0, "$\pi$", "$2\pi$"])
     fig.savefig("build/teil1.pdf")
-    
+    U_0 = (np.pi/(2*np.cos(xa))) * f(xa, *unp.nominal_values(params))
+    MWU_0 = np.mean(U_0)
+    print(MWU_0)
 teil1()  
 
 
