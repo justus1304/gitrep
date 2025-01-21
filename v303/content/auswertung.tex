@@ -43,7 +43,7 @@ eine Funktion folgender Form geplottet:
 \begin{equation}
     f\left(\phi\right) = a \cdot \sin \left(b \cdot \phi + c\right) + d
 \end{equation}
-Die Ausgleichsrechnung mit einer Fit-Funktion aus der Python Bibiliothek 
+Die Ausgleichsrechnung mit einem UcurveFit aus der Python Bibiliothek 
 Scipy gibt die Ausgleichsparameter
 \begin{align*}
     a = & \qty{-6.1(0.4)}{\volt}   \\
@@ -80,8 +80,9 @@ Scipy gibt die Ausgleichsparameter
 \noindent Um die Parameter wieder auf die Ausgangsspannung zurückzuführen wird 
 \autoref{eqn:4} nach der Amplitude der Eingangsspannung $U_0$ umgestellt.
 \begin{equation}
-    U_0 = U_{\text{out}} \cdot \frac{\pi}{2} 
+    U_0 = U_{0,\text{out}} \cdot \frac{\pi}{2} 
 \end{equation}
+Damit kommt man auf eine Amplitude der Eingangsspannung $U_0 = 9.58 \unit{\volt}$
 
 
 
@@ -133,9 +134,9 @@ Scipy gibt die Ausgleichsparameter
     \includegraphics{"build/teil2.pdf"}
 \end{figure}
 In \autoref{tab:11} ist die Intensität des Lichts, welches von der Leuchtdiode ausgesendet wird 
-zusammen mit dem jewailigen Abstand des Detektors zur Leuchdiode aufgetragen. In \autoref{fig:11}
-ist die Intensität als Funktion des Abstandes geplottet und durch eine Ausgleichsrechnung 
-durch Eine Funktion der Form 
+zusammen mit dem jeweiligen Abstand des Detektors zur Leuchdiode aufgetragen. In \autoref{fig:11}
+ist die Intensität in abhängigkeit des Abstandes aufgetragen und durch eine Ausgleichsrechnung 
+der Funktion der Form 
 \begin{equation}
     I \left(r\right) = a \cdot \frac{1}{x^b} + c
 \end{equation}
@@ -146,8 +147,8 @@ Die Ausgleichsparameter $a, b, c$ der Funktion lauten
     b = & \qty{0.80(0.32)}{}     \\
     c = & \qty{-1.7(1.8)}{\watt}       
 \end{align*}
-Eigentlich sollte hier eine $\frac{1}{x^2}$ Abhängigkeit rauskommen, da diese nicht einmal 
-näherungsweise im Fehlerbereich des Parameters b liegt, lässt dies auf grobe Ungenauigkeiten
-im Experiment hindeuten.
+%Eigentlich sollte hier eine $\frac{1}{x^2}$ Abhängigkeit rauskommen, da diese nicht einmal 
+%näherungsweise im Fehlerbereich des Parameters b liegt, lässt dies auf grobe Ungenauigkeiten
+%im Experiment schließen.
 
 \label{sec:Auswertung}
