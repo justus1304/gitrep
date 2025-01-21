@@ -1,12 +1,13 @@
 \section{Auswertung}
 \subsection{Verifizierung der Funktionsweise des Lock-In-Verstärkers.}
 Zuerst wird die Schaltung aus \autoref{fig:f3} aufgebaut und wie 
-in der \autoref{sec:Theorie} beschrieben Die Spannungsamplitude in abhängigkeit der 
-Phasenverschiebung $\phi$ betrachtet. Die Werte Der Spannungsamplitude in abhängigkeit 
-von $\phi$ sind in \autoref{tab:10} aufgetragen und in \autoref{fig:10} graphisch dargestellt.
+in \autoref{sec:Theorie} beschrieben, die Spannungsamplitude in Abhängigkeit
+der Phasenverschiebung $\phi$ betrachtet. Die Werte der Spannungsamplitude in
+Abhängigkeit von $\phi$ sind in \autoref{tab:10} aufgetragen und in
+\autoref{fig:10} graphisch dargestellt.
 \begin{table}[H]
     \centering
-    \caption{Meswerte Stromstärke pro phasenverschiebung}
+    \caption{Messwerte Stromstärke pro Phasenverschiebung.}
     \label{tab:10}
     \begin{tblr}{
         colspec = {S S },
@@ -32,23 +33,23 @@ von $\phi$ sind in \autoref{tab:10} aufgetragen und in \autoref{fig:10} graphisc
 
 %Plot Phase/Spannung
 \begin{figure}[H]
-    \caption{}
+    \caption{Spannung in Abhängigkeit der Phase.}
     \label{fig:10}
     \centering
     \includegraphics{"build/teil1.pdf"}
 \end{figure}
-Des weiteren Wurden die Werte aus \autoref{tab:10} in \autoref{fig:10} durch eine Funktion 
-folgender Form geplottet.
+\noindent Die Werte aus \autoref{tab:10} wurden in \autoref{fig:10} durch
+eine Funktion folgender Form geplottet:
 \begin{equation}
     f\left(\phi\right) = a \cdot \sin \left(b \cdot \phi + c\right) + d
 \end{equation}
-Die ausgleichsrechnung mithilfe eines Curve Fits aus der Python Bibiliothek Scipy gibt 
-die Ausgleichsparameter 
+Die Ausgleichsrechnung mit einer Fit-Funktion aus der Python Bibiliothek 
+Scipy gibt die Ausgleichsparameter
 \begin{align*}
     a = & \qty{-6.1(0.4)}{\volt}   \\
-    b = & \qty{1.00(0.04)}{}     \\
-    c = & \qty{164(0.16)}{}    \\
-    d = & \qty{0.00(0.31)}{\volt}      
+    b = & \qty{1.00(0.04)}{}       \\
+    c = & \qty{164(0.16)}{}        \\
+    d = & \qty{0.00(0.31)}{\volt}.
 \end{align*}
 
 \begin{figure}
@@ -76,8 +77,8 @@ die Ausgleichsparameter
     \includegraphics[width=0.5\textwidth]{"Bilder/360.jpg"}
 \end{figure}
 
-Um die Parameter wieder auf die Ausgangsspannung zurückzuführen wird \autoref{eqn:e4} nach der 
-Amplitude der Eingangsspannung $U_0$ umgestellt.
+\noindent Um die Parameter wieder auf die Ausgangsspannung zurückzuführen wird 
+\autoref{eqn:4} nach der Amplitude der Eingangsspannung $U_0$ umgestellt.
 \begin{equation}
     U_0 = U_{\text{out}} \cdot \frac{\pi}{2} 
 \end{equation}
@@ -136,7 +137,7 @@ zusammen mit dem jewailigen Abstand des Detektors zur Leuchdiode aufgetragen. In
 ist die Intensität als Funktion des Abstandes geplottet und durch eine Ausgleichsrechnung 
 durch Eine Funktion der Form 
 \begin{equation}
-    \symbf{I}\left(r\right) = a \cdot \frac{1}{x^b} + c
+    I \left(r\right) = a \cdot \frac{1}{x^b} + c
 \end{equation}
 genähert.
 Die Ausgleichsparameter $a, b, c$ der Funktion lauten
