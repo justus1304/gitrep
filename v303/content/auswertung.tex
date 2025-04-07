@@ -46,7 +46,7 @@ eine Funktion folgender Form geplottet:
 Die Ausgleichsrechnung mit einem UcurveFit aus der Python Bibiliothek 
 Scipy gibt die Ausgleichsparameter
 \begin{align*}
-    a = & \qty{-6.1(0.4)}{\volt}   \\
+    a = & \qty{6.1(0.4)}{\volt}   \\
     b = & \qty{1.00(0.04)}{}       \\
     c = & \qty{164(0.16)}{}        \\
     d = & \qty{0.00(0.31)}{\volt}.
@@ -82,12 +82,10 @@ Scipy gibt die Ausgleichsparameter
 \begin{equation}
     U_0 = U_{0,\text{out}} \cdot \frac{\pi}{2} 
 \end{equation}
-Damit kommt man auf eine Amplitude der Eingangsspannung $U_0 = 9.58 \unit{\volt}$
-
-
-
-
-
+Die Amplitude der Eingangsspannung ergibt sich zu 
+\begin{align*}
+    U_0 = 9.58 \unit{\volt}
+\end{align*}
 
 
 %Intensität/Abstand
@@ -128,15 +126,16 @@ Damit kommt man auf eine Amplitude der Eingangsspannung $U_0 = 9.58 \unit{\volt}
     \end{tblr}
 \end{table}
 \begin{figure}[H]
-    \caption{}
+    \caption{Intensität in Abhängigkeit des Abstands}
     \label{fig:11}
     \centering
     \includegraphics{"build/teil2.pdf"}
 \end{figure}
-In \autoref{tab:11} ist die Intensität des Lichts, welches von der Leuchtdiode ausgesendet wird 
-zusammen mit dem jeweiligen Abstand des Detektors zur Leuchdiode aufgetragen. In \autoref{fig:11}
-ist die Intensität in abhängigkeit des Abstandes aufgetragen und durch eine Ausgleichsrechnung 
-der Funktion der Form 
+In \autoref{tab:11} ist die Intensität des Lichts, welches von der Leuchtdiode
+ausgesendet wird zusammen mit dem jeweiligen Abstand des Detektors zur
+Leuchdiode aufgetragen. In \autoref{fig:11} ist die Intensität in Abhängigkeit
+des Abstandes aufgetragen und durch eine Ausgleichsrechnung der Funktion der
+Form 
 \begin{equation}
     I \left(r\right) = a \cdot \frac{1}{x^b} + c
 \end{equation}
