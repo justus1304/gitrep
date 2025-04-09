@@ -38,7 +38,7 @@ def teil1():
     #for i in range(len(x)):
     #    phi1[i] = np.arctan((x[i])/1.26)
     #Ucurve fit ausführen
-    params, covariance_matrix = curve_fit(g, x, I,p0 = (0.00015,1000))
+    params, covariance_matrix = curve_fit(g, phi1, I,p0 = (0.00015,1000))
     #err = np.sqrt(np.diag(cov))
     print("a*((x**b))")
     for char, p in zip("Ab", params):
