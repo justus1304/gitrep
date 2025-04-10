@@ -68,7 +68,7 @@ teil1()
 def teil2():
     # Solution
     x, I = np.genfromtxt("Daten/DSNeu.txt", unpack=True)
-    x = x*10**(-3)
+    x = x*10**(-3) #- 0.025
     I = I*10**(-6)
     #phi2 = x/1.26
     phi2 = np.full_like(x,0)
