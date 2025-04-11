@@ -2,8 +2,9 @@
 \subsection{Einfachspalt}
 Es soll die Spaltbreite ermittelt werden, indem man die Apperturfunktion der Blende auf das 
 Beugungsbild zurückführt. Das Intensitätsmuster des Beugungsbildes wurde Punktweise aufgenommen und 
-die Messwerte befinden sich in \autoref{tab:10}.
-\begin{table}
+die Messwerte befinden sich in \autoref{tab:10}. Die Meswerte,sowie die Ausgleichsfunktion nach \autoref{eqn:8},
+sind \autoref{abb:10} zu entnehmen.
+\begin{table}[H]
     \centering
     \caption{Messwerte Intensitätsverteilung für den festen Einfachspalt}
     \label{tab:10}
@@ -40,17 +41,42 @@ die Messwerte befinden sich in \autoref{tab:10}.
 \end{table}
 
 \label{sec:Auswertung}
-\begin{figure}
+\begin{figure}[H]    
     \centering
-    \includegraphics{teil1.pdf}
+    \caption{Ausgleichsrechnung Intensitätsverteilung des festen Einfachspaltes}
     \label{abb:10}
-    \caption{}
+    \includegraphics{teil1.pdf}
 \end{figure}
+
+Durch die Ausgleichsrechnung erhalten wir folgende Parameter 
+\begin{align}
+    \text{A} = & 0.715 \unit{\micro\ampere} \\
+    \text{b} = & 0.21 \unit{\milli\meter}
+\end{align}
+Dabei gibt der Parameter b die breite des Spaltes an an dem das Licht gebeugt wurde. 
+Somit beträgt die experimentell ermittelte breite des Spaltes $0.21 \unit{\milli\meter}$.
 
 
 
 \subsection{Doppelspalt}
-\begin{table}
+Ein ähnliches Vorgehen wird bei der Bestimmung der Breite des Doppelspaltes angewandt. Dort wird 
+jedoch eine etwas andere Funktion für die Ausgleichsrechnung verwndet. Diese befindet sich in \autoref{eqn:10}.
+
+\begin{equation}
+    \label{eqn:10}
+    I\left(\Phi\right) = A^2 \cdot \text{sinc}^2\left(b \cdot \left(x - d\right)\right) ^2 \cdot \cos^2{\left(c \cdot \left(x - d\right)\right)}
+\end{equation}
+
+Die Messdaten sind \autoref{tab:11} zu entnehmen und die Ausgleichsrechnung ist in \autoref{abb:11} visualisiert.
+Die Ausgleichsrechnung durch einen ""curve Fit" des python paketes skipy ergibt die Parameter 
+\begin{align}
+    \text{A} = & 0.61 \unit{\micro\ampere} \\
+    \text{b} = & 0.09 \unit{\milli\meter}\\
+    \text{c} = & 2.23     \\
+    \text{d} = & -0.20   \unit{\milli\meter}
+\end{align}
+
+\begin{table}[H]
     \centering
     \caption{Messwerte Intensitätsverteilung für den festen Doppelspalt}
     \label{tab:11}
@@ -100,10 +126,12 @@ die Messwerte befinden sich in \autoref{tab:10}.
     \end{tblr}
 \end{table}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
+    \caption{Ausgleichsrechnung Intensitätsverteilung des festen Doppelspaltes}
     \includegraphics{teil2.pdf}
-    \label{abb:10}
-    \caption{}
+    \label{abb:11}
 \end{figure}
+
+
 
