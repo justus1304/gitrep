@@ -24,23 +24,23 @@ def g(phi1, A, b):
     return A**2 * (np.sinc(b * phi1))**2
     #return A**2 * b**2 * ((600*10**(-9))/(np.pi * b * phi1))**2 * (np.sin((np.pi * b * phi1) / (600*10**(-9))))**2
 
-def f(x, A, b, c):
-    return A**2 * (np.sinc(b * x))**2 * (np.cos(c * x))**2
+def f(x, A, b, s, d):
+    return A**2 * (np.sinc(b * (x-d)))**2 * (np.cos(s * (x-d)))**2 
     #return 4 * (np.cos( (np.pi * 1.26 * np.sin(phi) ) /633*10**(-9) ) )**2 * (633*10**(-9) / (np.pi * b * np.sin(phi)))**2 * (np.sin((np.pi * b * np.sin(phi)) / 633*10**(-9)))**2
 
 
 def teil1():
     # Solution
     x, I = np.genfromtxt("Daten/ESfix.txt", unpack=True)
-    x = x*10**(-3)
-    I = I*10**(-6)
+    x = x*10**(0)
+    I = I*10**(0)
     phi1 = x/1.26
-    xa = np.linspace(-0.025,0.025, 2000)
+    xa = np.linspace(-25,25, 2000)
     #phi1 = np.full_like(x,0)
     #for i in range(len(x)):
     #    phi1[i] = np.arctan((x[i])/1.26)
     #Ucurve fit ausführen
-    params, covariance_matrix = curve_fit(g, phi1, I,p0 = (0.00015,1000))
+    params, covariance_matrix = curve_fit(g, phi1, I,p0 = (0.15,0.1))
     #params, covariance_matrix = curve_fit(g, phi1, I,p0 = (26,77))
     #err = np.sqrt(np.diag(cov))
     print("a*((x**b))")
@@ -68,22 +68,22 @@ teil1()
 def teil2():
     # Solution
     x, I = np.genfromtxt("Daten/DSNeu.txt", unpack=True)
-    x = x*10**(-3) #- 0.025
-    I = I*10**(-6)
+    x = x*10**(0) #- 25
+    I = I*10**(0)
     #phi2 = x/1.26
     phi2 = np.full_like(x,0)
     for i in range(len(x)):
         phi2[i] = np.arctan((x[i]) / 1.26)
-    xa = np.linspace(-0.025,0.025,200000)
+    xa = np.linspace(-25,25,200000)
     #phi1 = np.full_like(x,0)
     #for i in range(len(x)):
     #    phi1[i] = np.arctan((x[i])/1.26)
     #Ucurve fit ausführen
-    params, covariance_matrix = curve_fit(f, x, I,p0 = (5.5*10**(-4),1*10**(3),10000))
+    params, covariance_matrix = curve_fit(f, x, I,p0 = (60,1,1, -0.1))
     #params, covariance_matrix = curve_fit(f, phi2, I,p0 = (5 * 10**(-7),1, 1))
     #err = np.sqrt(np.diag(cov))
     print("a*((x**b))")
-    for char, p in zip("Abc", params):
+    for char, p in zip("Absd", params):
         print(f"{char} = {p}")
 
     fig = plt.figure(layout="constrained")
