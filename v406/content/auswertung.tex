@@ -2,8 +2,21 @@
 \subsection{Einfachspalt}
 Es soll die Spaltbreite ermittelt werden, indem man die Apperturfunktion der Blende auf das 
 Beugungsbild zurückführt. Das Intensitätsmuster des Beugungsbildes wurde Punktweise aufgenommen und 
-die Messwerte befinden sich in \autoref{tab:10}. Die Meswerte,sowie die Ausgleichsfunktion nach \autoref{eqn:8},
+die Messwerte befinden sich in \autoref{tab:10}. Die Meswerte,sowie die Ausgleichsfunktion nach \autoref{eqn:11},
 sind \autoref{abb:10} zu entnehmen.
+
+\begin{equation}
+    \label{eqn:11}
+    I\left(\Phi\right) = A^2 \cdot \text{sinc}^2\left(b \cdot \Phi\right) 
+\end{equation}
+
+Durch die Ausgleichsrechnung erhalten wir folgende Parameter 
+\begin{align}
+    \text{A} = & 0.71 \unit{\micro\ampere} \\
+    \text{b} = & 216.0 \unit{\micro\meter}
+\end{align}
+Dabei gibt der Parameter b die breite des Spaltes an an dem das Licht gebeugt wurde. 
+Somit beträgt die experimentell ermittelte breite des Spaltes $0.21 \unit{\milli\meter}$.
 \begin{table}[H]
     \centering
     \caption{Messwerte Intensitätsverteilung für den festen Einfachspalt}
@@ -48,13 +61,7 @@ sind \autoref{abb:10} zu entnehmen.
     \includegraphics{teil1.pdf}
 \end{figure}
 
-Durch die Ausgleichsrechnung erhalten wir folgende Parameter 
-\begin{align}
-    \text{A} = & 0.715 \unit{\micro\ampere} \\
-    \text{b} = & 0.21 \unit{\milli\meter}
-\end{align}
-Dabei gibt der Parameter b die breite des Spaltes an an dem das Licht gebeugt wurde. 
-Somit beträgt die experimentell ermittelte breite des Spaltes $0.21 \unit{\milli\meter}$.
+
 
 
 
@@ -64,17 +71,22 @@ jedoch eine etwas andere Funktion für die Ausgleichsrechnung verwndet. Diese be
 
 \begin{equation}
     \label{eqn:10}
-    I\left(\Phi\right) = A^2 \cdot \text{sinc}^2\left(b \cdot \left(x - d\right)\right) ^2 \cdot \cos^2{\left(c \cdot \left(x - d\right)\right)}
+    I\left(\Phi\right) = A^2 \cdot \text{sinc}^2\left(b \cdot \left(x - d\right)\right)  \cdot \cos^2{\left(c \cdot \left(x - d\right)\right)}
 \end{equation}
 
 Die Messdaten sind \autoref{tab:11} zu entnehmen und die Ausgleichsrechnung ist in \autoref{abb:11} visualisiert.
 Die Ausgleichsrechnung durch einen ""curve Fit" des python paketes skipy ergibt die Parameter 
 \begin{align}
     \text{A} = & 0.61 \unit{\micro\ampere} \\
-    \text{b} = & 0.09 \unit{\milli\meter}\\
-    \text{c} = & 2.23     \\
-    \text{d} = & -0.20   \unit{\milli\meter}
+    \text{b} = & 119.5 \unit{\micro\meter}\\
+    \text{c} = & 2809.9     \\
+    \text{d} = & -0.0001   \unit{\milli\meter}
 \end{align}
+
+Daraus ergibt sich für die experimentellen Spaltbreiten des Doppelspalts 
+\begin{equation}
+    b_{Doppelspalt} = 0.09 \unit{\milli\meter}.
+\end{equation}
 
 \begin{table}[H]
     \centering
@@ -133,5 +145,11 @@ Die Ausgleichsrechnung durch einen ""curve Fit" des python paketes skipy ergibt 
     \label{abb:11}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \caption{Vergleich der Intensitätsverteilungen Doppelspalt und einfachspalt}
+    \includegraphics{teil3.pdf}
+    \label{abb:11}
+\end{figure}
 
 
