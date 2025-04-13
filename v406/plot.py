@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy.optimize
 import uncertainties as unc
+from uncertainties import ufloat
 #import uncertainties.unumpy as unp
 from uncertainties import ufloat
 from scipy.optimize import curve_fit
@@ -40,12 +41,18 @@ def teil1():
     #for i in range(len(x)):
     #    phi1[i] = np.arctan((x[i])/1.26)
     #Ucurve fit ausführen
+    
     params, covariance_matrix = curve_fit(g, phi1, I,p0 = (0.15,0.1))
+
+    uncertainties = np.sqrt(np.diag(covariance_matrix))
     #params, covariance_matrix = curve_fit(g, phi1, I,p0 = (26,77))
     #err = np.sqrt(np.diag(cov))
     print("a*((x**b))")
-    for char, p in zip("Ab", params):
-        print(f"{char} = {p}")
+    #for char, p in zip("Ab", params,uncertainties):
+    #    print(f"{char} = {p}")
+
+    for name, value, uncertainties in zip("ab", params, uncertainties):
+        print(f"{name} = {value:.4f} ± {uncertainties:.4f}")
 
     fig = plt.figure(layout="constrained")
     ax = fig.add_subplot()
@@ -55,7 +62,7 @@ def teil1():
     
     ax.legend()
     #Achsenbeschriftungen für den Plot
-    ax.set(xlabel=r"$x (\unit{\milli\meter})$", ylabel=r"$I(\unit{\micro\ampere})$");
+    ax.set(xlabel=r"$\Phi (\unit{rad})$", ylabel=r"$I(\unit{\micro\ampere})$");
     ax.grid(True)
     #x achsen abstände (wahlweise)
     #ax.set_xticks([0, np.pi, 2 * np.pi], [0, "$\pi$", "$2\pi$"])
@@ -97,7 +104,7 @@ def teil2():
     
     ax.legend()
     #Achsenbeschriftungen für den Plot
-    ax.set(xlabel=r"$x (\unit{\milli\meter})$", ylabel=r"$I(\unit{\micro\ampere})$");
+    ax.set(xlabel=r"$\Phi (\unit{rad})$", ylabel=r"$I(\unit{\micro\ampere})$");
     ax.grid(True)
     #x achsen abstände (wahlweise)
     #ax.set_xticks([0, np.pi, 2 * np.pi], [0, "$\pi$", "$2\pi$"])
@@ -158,7 +165,7 @@ def teil3():
     
     ax.legend()
     #Achsenbeschriftungen für den Plot
-    ax.set(xlabel=r"$x (\unit{\milli\meter})$", ylabel=r"$I(\unit{\micro\ampere})$");
+    ax.set(xlabel=r"$\Phi (\unit{rad})$", ylabel=r"$I(\unit{\micro\ampere})$");
     ax.grid(True)
     #x achsen abstände (wahlweise)
     #ax.set_xticks([0, np.pi, 2 * np.pi], [0, "$\pi$", "$2\pi$"])
