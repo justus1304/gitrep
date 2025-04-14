@@ -89,11 +89,13 @@ def teil2():
     #    phi1[i] = np.arctan((x[i])/1.26)
     #Ucurve fit ausführen
     params, covariance_matrix = curve_fit(f, x, I,p0 = (8,10,0.1, -0.0001))
+    uncertainties = np.sqrt(np.diag(covariance_matrix))
     #params, covariance_matrix = curve_fit(f, phi2, I,p0 = (5 * 10**(-7),1, 1))
     #err = np.sqrt(np.diag(cov))
     print("a*((x**b))")
-    for char, p in zip("Absd", params):
-        print(f"{char} = {p}")
+    
+    for name, value, uncertainties in zip("Absd", params, uncertainties):
+        print(f"{name} = {value:.4f} ± {uncertainties:.4f}")
 
     fig = plt.figure(layout="constrained")
     ax = fig.add_subplot()
