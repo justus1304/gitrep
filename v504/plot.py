@@ -94,8 +94,8 @@ def afak():
     ax = fig.add_subplot()
     ax.plot(U, I, "k.", label="Messwerte")
     ax.plot(U_fit, I_fit, label="Fit")
-    ax.set(xlabel=r"$U (\unit{\volt})$", ylabel=r"$I (\unit{\ampere})$")
+    ax.set(xlabel=r"$U (\unit{\volt})$", ylabel=r"$I (\unit{\milli\ampere})$")
     ax.legend()
-    fig.savefig("build/g.pdf")
+    fig.savefig("build/f.pdf")
 
 afak()
