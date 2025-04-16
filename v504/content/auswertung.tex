@@ -128,10 +128,64 @@ ablesen, diese lauten wiefolgt:
     \end{tblr}
 \end{table}
 
-\subsection{Bestimmung der Kathodentemperatur}
-
 \subsection{Langmuir-Schottky'sche Raumladungsgesetz}
+In dieser Sektion soll der Gültigkeitsbereich des Langmuir-Schottkyschen 
+Raumladungsgesetzes bestimmt werden. Dafür essentiell ist die Strom-Spannungs-
+Beziehung mit der Form
+\begin{equation}
+    j = \frac{4}{9} \varepsilon_0 \sqrt{2 \frac{e_0}{m_0}} \frac{U^b}{a^2}
+\end{equation}
+Die nicht-lineare Regeression dazu wird in Python mithilfe eines Curve fits 
+erstellt und verfügt über die Form: $a \cdot U^b$. Um mit der Theorie
+übereinzustimmen, sollte $b$ dem Wert $\frac{3}{2}$ möglichst nahe kommen.
+Nach Einsetzen der Parameter und Erstellung des Fits ergeben sich die Parameter 
+zu:
+\begin{align*}
+    a &= 0.009 \pm 0.019 \\
+    b &= 1.0 \pm 0.4 \\
+\end{align*}
+Die Kurve ist in \autoref{fig:2} dargestellt. Es fällt auf, dass die Erwartung 
+nicht erfüllt wird. Die Messwerte liegen zu dicht beieinander, als dass der Fit 
+eine Kurve erstellen würde.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{langmuir.pdf}
+    \caption{Langmuir-Schottky.}
+    \label{fig:2}  % <- Label NACH der Caption!
+\end{figure}
+\noindent Der Wendepunkt der Messwerte ist bei etwa $110 \unit{\volt}$ abzulesen.
+Demzufolge findet die Raumladungsgleichung im Interval [0,110] Anwendung.
 
-\subsection{Bestimmung der Austrittsarbeit aus dem Kathodenmaterial}
+\subsection{Anlaufstromgebiet}
+
+
+\subsection{Kathodentemperatur}
 
 \subsection{Berechnung der Austrittsarbeit}
+Die Austrittsarbeit des Kathodenmaterials wird mithilfe von \autoref{eqn:12}
+errechnet. Da diese $W_A = e_0 \Phi$ ist, ergibt sich diese mit Abkürzung 
+der spezifischen Stromdichte als $j_S = \frac{I_S}{f}$ als:
+\begin{equation*}
+    W_A = -T k_B \ln\left(\frac{j_S h^3}{4 \pi e_0 m_0 k_B^2 T^2}\right)
+\end{equation*}
+Die Austrittsarbeit aus dem Wolfram zu allen Kennlinien befindet sich in
+Tabelle \autoref{tab:3}
+\begin{table}[H]
+    \centering
+    \caption{Ermittelte Sättigungsströme.}
+    \label{tab31}
+    \begin{tblr}{
+        colspec = {S S},
+        row{1} = {guard, mode=math},
+      }
+    \toprule
+    \text{Kennlinie} & W_A / \unit{\electronvolt}\\
+    \midrule
+    1 & 0.007 \\
+    2 & 0.066 \\
+    3 & 0.120 \\
+    4 & 0.593 \\
+    5 & 2.140 \\
+    \bottomrule 
+    \end{tblr}
+\end{table}

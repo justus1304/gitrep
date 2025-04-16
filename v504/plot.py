@@ -1,5 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import scipy.optimize
+import uncertainties as unc
+import uncertainties.unumpy as unp
 
 # Figure erstellen
 fig, ax = plt.subplots(figsize=(10, 6))  # Größe anpassbar
@@ -34,3 +37,40 @@ ax.grid(True, linestyle="--", alpha=0.5)  # Gitterlinien
 
 # Speichern
 fig.savefig("build/mw_plot.pdf")
+
+
+
+def ucurve_fit(f, x, y, **kwargs):
+    try:
+        sigma = unp.std_devs(y) if np.any(unp.std_devs(y) != 0) else None
+    except AttributeError:
+        sigma = None
+    popt, pcov = scipy.optimize.curve_fit(f, x, unp.nominal_values(y), sigma=sigma, absolute_sigma=True, **kwargs)
+    return unc.correlated_values(popt, pcov)
+
+def g(x, a, b):
+    return a * x**b 
+
+def langmuir():
+    # Daten laden (I in mA, U in V)
+    U, I = np.genfromtxt("Daten/KL_5.txt", unpack=True)
+
+    # Fit: I = a * U^b
+    params = ucurve_fit(g, U, I)  # U auf x-Achse, I auf y-Achse
+    print("Fit-Parameter: a * U^b")
+    print(f"a = {params[0]}, b = {params[1]}")
+
+    # Plot
+    U_fit = np.linspace(min(U), 110, 100)
+    I_fit = g(U_fit, *unp.nominal_values(params))
+
+    fig = plt.figure(layout="constrained")
+    ax = fig.add_subplot()
+    ax.plot(U, I, "k.", label="Messwerte")
+    ax.plot(U_fit, I_fit, label="Fit")
+    ax.set(xlabel=r"$U (\unit{\volt})$", ylabel=r"$I (\unit{\ampere})$")
+    ax.legend()
+    fig.savefig("build/langmuir.pdf")
+
+langmuir()
+
