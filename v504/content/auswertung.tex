@@ -1,7 +1,7 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\subsection{Kennliene der Hochvakuumdiode}
+\subsection{Kennliene der Hochvakuumdiode und Sättigungsströme}
 Die verschiedenen Werte für die Heizströme $I_H$ und Saugspannungen $U_S$ 
 befinden sich in den Tabellen \autoref{tab:1} und \autoref{tab:2}. Tabelle 
 1 stellt die Werte für die erste Messung bei einem Heizstrom von $I_H = 1,8 \unit{\ampere}$
@@ -96,16 +96,37 @@ dar. Die restlichen Messungen mit mehr Messdaten befinden sich in Tabelle 2.
     \bottomrule
     \end{tblr}
 \end{table}
-
-
-\label{sec:Auswertung}
-\begin{figure}[H]    
+\noindent In \autoref{fig:REFDUHS} ist die Saugspannung gegen den detektierten Strom 
+Strom aufgetragen. Dabei ist das sigmoidale Wachstum einigermaßen erkennbar, 
+vor Allem jedoch bei den höheren Heizspannungen fällt es einfacher, den Verlauf 
+zu identifizieren.
+\noindent Mithilfe dieser Daten lassen sich die unterschiedlichen Sättigungsströme 
+ablesen, diese lauten wiefolgt:
+\begin{figure}[H]
     \centering
-    \label{fig:1}
     \includegraphics[width=0.95\textwidth]{mw_plot.pdf}
     \caption{Kennlinien bei unterschiedlichen Heizströmen.}
+    \label{fig:REFDUHS}  % <- Label NACH der Caption!
 \end{figure}
-
+\begin{table}[H]
+    \centering
+    \caption{Ermittelte Sättigungsströme.}
+    \label{tab:t1}
+    \begin{tblr}{
+        colspec = {S S},
+        row{1} = {guard, mode=math},
+      }
+    \toprule
+    I / \si{\volt} & I_H / \si{\milli\ampere}\\
+    \midrule
+    1.8 & 0.007 \\
+    2.0 & 0.066 \\
+    2.1 & 0.120 \\
+    2.3 & 0.593 \\
+    2.5 & 2.140 \\
+    \bottomrule 
+    \end{tblr}
+\end{table}
 
 \subsection{Bestimmung der Kathodentemperatur}
 
