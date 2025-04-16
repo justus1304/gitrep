@@ -157,7 +157,43 @@ eine Kurve erstellen würde.
 Demzufolge findet die Raumladungsgleichung im Interval [0,110] Anwendung.
 
 \subsection{Anlaufstromgebiet}
-
+In \autoref{tab:3} ist einerseits die Spannung des Gleichstromspannungsgeräts
+und andererseits die detektierte Spannung am Amperemeter dargelegt. Die dazugehörige 
+Heizstromstärke und Heizspannung betragen $I_H = 5 \unit{volt}$ und $U_H = 2.5 \unit{ampere}$.
+\begin{table}[H]
+    \centering
+    \caption{Anlaufstromgebiet-Messwerte.}
+    \label{tab:3}
+    \begin{tblr}{
+        colspec = {S S},
+        row{1} = {guard, mode=math},
+      }
+    \toprule
+    U / \unit{volt} & I / \unit{\ampere}\\
+    \midrule
+    84   & 0.95 \\
+    105  & 0.90 \\
+    135  & 0.85 \\
+    183  & 0.80 \\
+    243  & 0.75 \\
+    250  & 0.70 \\
+    340  & 0.65 \\
+    450  & 0.60 \\
+    600  & 0.55 \\
+    770  & 0.50 \\
+    980  & 0.45 \\
+    1080 & 0.40 \\
+    1380 & 0.35 \\
+    1830 & 0.30 \\
+    2370 & 0.25 \\
+    2970 & 0.20 \\
+    3100 & 0.15 \\
+    4000 & 0.10 \\
+    5000 & 0.05 \\
+    6200 & 0.00 \\
+    \bottomrule 
+    \end{tblr}
+\end{table}
 
 \subsection{Kathodentemperatur}
 
@@ -169,11 +205,11 @@ der spezifischen Stromdichte als $j_S = \frac{I_S}{f}$ als:
     W_A = -T k_B \ln\left(\frac{j_S h^3}{4 \pi e_0 m_0 k_B^2 T^2}\right)
 \end{equation*}
 Die Austrittsarbeit aus dem Wolfram zu allen Kennlinien befindet sich in
-Tabelle \autoref{tab:3}
+Tabelle \autoref{tab:x} %REF BEARBEITEN
 \begin{table}[H]
     \centering
     \caption{Ermittelte Sättigungsströme.}
-    \label{tab31}
+    \label{tab:x}
     \begin{tblr}{
         colspec = {S S},
         row{1} = {guard, mode=math},

@@ -74,3 +74,28 @@ def langmuir():
 
 langmuir()
 
+
+
+def g(x, a, b):
+    return  a * np.exp(-1.602e-19 * x / (1.381e-23 * b))
+
+def afak():
+    U, I = np.genfromtxt("Daten/afak1.txt", unpack=True)
+
+    params = ucurve_fit(g, U, I)  # U auf x-Achse, I auf y-Achse
+    print("Fit-Parameter: a * U^b")
+    print(f"a1 = {params[0]}, b1 = {params[1]}")
+
+    # Plot
+    U_fit = np.linspace(min(U), max(U), 100)
+    I_fit = g(U_fit, *unp.nominal_values(params))
+
+    fig = plt.figure(layout="constrained")
+    ax = fig.add_subplot()
+    ax.plot(U, I, "k.", label="Messwerte")
+    ax.plot(U_fit, I_fit, label="Fit")
+    ax.set(xlabel=r"$U (\unit{\volt})$", ylabel=r"$I (\unit{\ampere})$")
+    ax.legend()
+    fig.savefig("build/g.pdf")
+
+afak()
