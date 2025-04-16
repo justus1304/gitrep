@@ -76,19 +76,19 @@ langmuir()
 
 
 
-def g(x, a, b):
-    return  a * np.exp(-1.602e-19 * x / (1.381e-23 * b))
+def f(x, a, b):
+    return  a * np.exp((-1.602e-19 * x) / (1.381e-23 * b))
 
 def afak():
     U, I = np.genfromtxt("Daten/afak1.txt", unpack=True)
 
-    params = ucurve_fit(g, U, I)  # U auf x-Achse, I auf y-Achse
-    print("Fit-Parameter: a * U^b")
+    params = ucurve_fit(f, U, I, p0 =(3*10**(3),1000))  # U auf x-Achse, I auf y-Achse
+    print("Fit-Parameter: e")
     print(f"a1 = {params[0]}, b1 = {params[1]}")
 
     # Plot
     U_fit = np.linspace(min(U), max(U), 100)
-    I_fit = g(U_fit, *unp.nominal_values(params))
+    I_fit = f(U_fit, *unp.nominal_values(params))
 
     fig = plt.figure(layout="constrained")
     ax = fig.add_subplot()
