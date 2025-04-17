@@ -141,25 +141,26 @@ erstellt und verfügt über die Form: $a \cdot U^b$. Um mit der Theorie
 Nach Einsetzen der Parameter und Erstellung des Fits ergeben sich die Parameter 
 zu:
 \begin{align*}
-    a &= 0.009 \pm 0.019 \\
-    b &= 1.0 \pm 0.4 \\
+    a &= 0.001 \pm 0.007 \\
+    b &= 1.4 \pm 1.8 \\
 \end{align*}
-Die Kurve ist in \autoref{fig:2} dargestellt. Es fällt auf, dass die Erwartung 
-nicht erfüllt wird. Die Messwerte liegen zu dicht beieinander, als dass der Fit 
-eine Kurve erstellen würde.
+Die Kurve ist in \autoref{fig:2} dargestellt. Aufgrund technischer Schwierigkeiten
+konnten keine verwertbaren eignen Messwerte für diesen Teil verwendet werden. 
+Daher wurden die Messdaten des Tutors zur Verfügung gestellt, um eine vernünftige 
+Auswertung zu ermöglichen.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{langmuir.pdf}
     \caption{Langmuir-Schottky.}
     \label{fig:2}  % <- Label NACH der Caption!
 \end{figure}
-\noindent Der Wendepunkt der Messwerte ist bei etwa $110 \unit{\volt}$ abzulesen.
-Demzufolge findet die Raumladungsgleichung im Interval [0,110] Anwendung.
+\noindent Der Wendepunkt der Messwerte ist bei etwa $100 \unit{\volt}$ abzulesen.
+Demzufolge findet die Raumladungsgleichung im Interval [0,100] Anwendung.
 
 \subsection{Anlaufstromgebiet}
 In \autoref{tab:3} ist einerseits die Spannung des Gleichstromspannungsgeräts
 und andererseits die detektierte Spannung am Amperemeter dargelegt. Die dazugehörige 
-Heizstromstärke und Heizspannung betragen $I_H = 5 \unit{volt}$ und $U_H = 2.5 \unit{ampere}$.
+Heizstromstärke und Heizspannung betragen $I_H = 5 \unit{\volt}$ und $U_H = 2.5 \unit{\ampere}$.
 \begin{table}[H]
     \centering
     \caption{Anlaufstromgebiet-Messwerte.}
@@ -213,6 +214,39 @@ erstellt werden. Mit den eingesetzten Werten ergibt sich folgender Fit:
 Die gesuchte Temperatur entspricht dem Parameter $b = (2782.9 \pm 0.5) \unit{\kelvin}$.
 
 \subsection{Kathodentemperatur}
+Wie in \autoref{sec:Theorie} hergleitet, gilt für die Kathodentemperatur der 
+Zusammenhang:
+\begin{equation*}
+    T= \left(\frac{I_H U_H - N_{WL}}{f \eta \sigma}\right)^{1/4}
+\end{equation*}
+$I_H$ und $U_H$ sind die Heizspannungen (deren Werte können \autoref{tab:4} 
+entnommen werden), $N_{WL}$ ist die Wärmeleistung mit 
+einem Wert von $N_{WL} = 0.95 \unit{\watt}$. $f$ ist die Kathodenoberfläche, 
+welche durch $3.5 \cdot 10^{-5} \unit{\meter}^2$ gegeben ist. Der Wert $\eta$ 
+ist der Emissionsgrad der Oberfläche und beträgt $\eta = 0.28$. Das $\sigma$ 
+steht für die Stefan-Boltzmannsche Strahlungskonstante, diese beläuft sich auf:
+$\sigma = 5.7 \cdot 10^{-12} \frac{\unit{\watt}}{\unit{\centi\meter}^2 \unit{\kelvin}^4}$.
+Mit allen eingesetzten Werten ergeben sich die folgenden Temperaturen:
+\begin{table}[H]
+    \centering
+    \caption{Ermittelte Sättigungsströme.}
+    \label{tab:t4}
+    \begin{tblr}{
+        colspec = {S S S},
+        row{1} = {guard, mode=math},
+      }
+    \toprule
+    I_H / \unit{\ampere} & U_H / \unit{\volt} & T / \unit{\kelvin}\\
+    \midrule
+    1.8 & 3 & 1\\
+    2.0 & 4 & 1\\
+    2.1 & 4 & 1\\
+    2.3 & 5 & 1\\
+    2.5 & 5 & 1\\
+    \bottomrule 
+    \end{tblr}
+\end{table}
+
 
 \subsection{Berechnung der Austrittsarbeit}
 Die Austrittsarbeit des Kathodenmaterials wird mithilfe von \autoref{eqn:12}

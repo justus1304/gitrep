@@ -53,22 +53,24 @@ def g(x, a, b):
 
 def langmuir():
     # Daten laden (I in mA, U in V)
-    U, I = np.genfromtxt("Daten/KL_5.txt", unpack=True)
-
+    U, I = np.genfromtxt("Daten/max.txt", unpack=True)
+    
     # Fit: I = a * U^b
-    params = ucurve_fit(g, U, I)  # U auf x-Achse, I auf y-Achse
+    schranke = 100
+    params = ucurve_fit(g, U[U<=schranke], I[U<=schranke], p0 = (0.004, 1.5))  # U auf x-Achse, I auf y-Achse
     print("Fit-Parameter: a * U^b")
     print(f"a = {params[0]}, b = {params[1]}")
 
     # Plot
-    U_fit = np.linspace(min(U), 110, 100)
+    U_fit = np.linspace(min(U), schranke, 100)
     I_fit = g(U_fit, *unp.nominal_values(params))
+
 
     fig = plt.figure(layout="constrained")
     ax = fig.add_subplot()
     ax.plot(U, I, "k.", label="Messwerte")
     ax.plot(U_fit, I_fit, label="Fit")
-    ax.set(xlabel=r"$U (\unit{\volt})$", ylabel=r"$I (\unit{\ampere})$")
+    ax.set(xlabel=r"$U (\unit{\volt})$", ylabel=r"$I (\unit{\milli\ampere})$")
     ax.legend()
     fig.savefig("build/langmuir.pdf")
 
