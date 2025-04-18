@@ -4,9 +4,9 @@ import uncertainties.unumpy as unp
 from scipy.stats import sem
 
 N = 0.95
-f = 3.5*10^(-7)
+f = 0.35
 eta = 0.28
-sigma = 5.7*10^(-12)
+sigma = 5.7*10**(-12)
 
 U1 = 3
 U2 = 4
@@ -19,9 +19,8 @@ I3 = 2.1
 I4 = 2.3
 I5 = 2.5
 
-
 def T(U,I):
-    return ((U * I - N)/f * eta * sigma)**(1/4)
+    return ((U * I - N)/(f * eta * sigma))**(0.25)
 
 result1 = T(U1, I1)
 print("T1: ", result1)
