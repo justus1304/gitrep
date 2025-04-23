@@ -19,6 +19,6 @@ print()
 
 
 def steigung(a):
-    print(a * 0.0775/2)
+    print(a * 0.000875/1)
     return 0
-steigung(2.8)
+steigung(0.3)
