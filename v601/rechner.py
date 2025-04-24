@@ -2,6 +2,7 @@ from uncertainties import ufloat
 import numpy as np
 import uncertainties.unumpy as unp
 from scipy.stats import sem
+from scipy.constants import h, c, e
 
 def mfwl(T):
     w = 0.0029 / (5.5 * 10**7 * np.exp(-6876/T)) *0.1
@@ -19,6 +20,14 @@ print()
 
 
 def steigung(a):
-    print(a * 0.0775/2)
+    print(a * 0.000875/1)
     return 0
-steigung(2.8)
+steigung(0.3)
+
+
+def xwert(b):
+    print((50/184) * (b - 1))
+    return 0
+xwert(183.5)
+
+print((h*c)/(5.5*e))
