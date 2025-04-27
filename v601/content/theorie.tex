@@ -18,6 +18,13 @@ folgendermaßen kalkulieren:
 \end{align}
 \noindent $m_0$ sei die Ruhemasse des Elektrons. Die Energien werden mithilfe 
 einer Gegenfeldmethode bestimmt, welche im folgenden noch erläutert wird.
+Die Atome verweilen jedoch nicht in diesem angeregten Zustand. Stattdessen 
+geben sie die gewonnene Energie in Form von emittierten Lichtquanten ab. Die 
+Wellenlänge $\lambda$ dieses Lichts beträgt
+\begin{equation}
+    \label{eqn:lambda}
+    \lambda = \frac{ch}{\increment E}.
+\end{equation}
 
 \subsection{Idealisierter Franck-Hertz Versuch}
 Der schematische Aufbau des Franck-Hertz Versuches befindet sich in \autoref{fig:1}.
@@ -41,6 +48,7 @@ Gleichspannung $U_B$ versehen, sie hat den Zweck, die Elektronen zu beschleunige
 Auf ihrem Beschleunigungsweg beläuft sich die kinetische Energie der Elektronen 
 betragsmäßig auf
 \begin{align}
+    \label{eqn:2}
     E_1 &= E_{Beschleunigung} \\
     \Longleftrightarrow \frac{1}{2} m_0 v_{vor}^2 &= e_0 U_B.
 \end{align}
@@ -52,6 +60,7 @@ durchlässt. Dementsprechend wird die anschließende Darstellung der Anregungsen
 verbessert. Mathematisch festgehalten schaffen es nur Elektronen an die 
 Anode, welche die Ungleichung 
 \begin{align}
+    \label{eqn:3}
                                     E_{Flucht} &\geq E_{A} \\
     \Longleftrightarrow \frac{1}{2} m_0 v_z ^2 &\geq e_0 U_A
 \end{align}
@@ -66,6 +75,7 @@ kommt es zu inelastischen Stößen und $I_A$ sinkt wie zuvor. Jenes Verfahren
 setzt sich in $U_{1}$-periodischem Abstand fort. Für die Distanz zwischen den 
 Maxima gilt der Zusammenhang
 \begin{equation}
+    \label{eqn:4}
     U_1 = \frac{1}{e_0} \increment E.
 \end{equation}
 \noindent Jedoch unterliegt der Versuch einigen unvermeidbaren Einflussfaktoren, 
@@ -92,6 +102,7 @@ vor.
 \noindent Die Spannung, welche sich letztendlich ergibt, besteht aus der
 Beschleuningungsspannungund dem Kontaktpotential.
 \begin{align}
+    \label{eqn:5}
     U_{B,eff} &= U_B - K \\
               &= U_B - \frac{W_B-W_G}{e_0}
 \end{align}
@@ -111,7 +122,12 @@ Hg-Atomen stattfinden. Wenn nun die Temperatur zu hoch oder zu klein ist,
 treten dementsprechend viele elastische Stöße auf, wodurch das Hg-Atom 
 nicht angeregt wird, da die Elektronen keine Zeit haben genügend Energie 
 aufzunehmen oder sie fliegen ungebremst durch das Feld, da es zu keinen 
-Kollisionen kommt.
+Kollisionen kommt. Es gilt als Zusammenhang
+\begin{equation}
+    \label{eqn:6}
+    \overline{w} = 5.5 \cdot 10^7 \exp \left(-\frac{6876}{T} \right).
+\end{equation}
+\noindent Dabei sei die mittlere freie Weglänge angegeben in $\unit{\centi\meter}$.
 
 \subsection{Fehlerrechnung}
 Die gemessenen Werte unterliegen Messunsicherheiten und werden demnach im

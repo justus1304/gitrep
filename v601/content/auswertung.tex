@@ -1,10 +1,13 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-\subsection{Mitlere Freie Weglänge}
+
+\subsection{Mittlere freie Weglänge}
 \label{sec:mfw}
-Zerst wird die in der \autoref{sec:Theorie} erwähnte Mittlere Freie Weglänge  der lektronen bestimmt, die die Elektronen 
-in dem Quecksilbergas zurücklegen, bis es zu einem Stoß kommt. Daz werden die Temperaturen bei denen Messungen von uns durchgeführt wurden 
-in \autoref{eqn:...} eingesetzt und in \autoref{tab:10} Aufgelistet.
+Zuerst wird die in der \autoref{sec:Theorie} erwähnte mittlere freie Weglänge
+der Elektronen bestimmt, welche die Elektronen in dem Quecksilbergas zurücklegen,
+wenn es zu einem Stoß kommt. Dazu werden die Temperaturen der Messungen 
+in \autoref{eqn:6} eingesetzt. Die Resultate sind in \autoref{tab:10} 
+aufgelistet.
 \begin{table}[H]
   \centering
   \caption{Mittlere Freie Weglängen.}
@@ -22,35 +25,40 @@ in \autoref{eqn:...} eingesetzt und in \autoref{tab:10} Aufgelistet.
           \bottomrule
   \end{tblr}
 \end{table}
-Es ist erkennbar, dass Mehr stöße passieren, je höher die Temperatur ist. bei temperaturen im Bereich 
-von $400\unit{\kelvin}$ bis $500 \unit{\kelvin}$ ist das verhältnis der Mittleren freien Weglänge zu dem 
-Abstand von Kathode zu Anode von $a = 1\unit{\centi\meter} $sehr gering, was den Frank Herz Versuch ermöglicht.
+\noindent Es ist erkennbar, dass die Anzahl an Stößen proportional zur Temperatur 
+ist. Bei Temperaturen im Bereich von $400\unit{\kelvin}$ bis $500 \unit{\kelvin}$ 
+ist das Verhältnis der mittleren freien Weglänge zu dem Abstand von Kathode
+zu Anode mit $a = 1 \unit{\centi\meter}$ sehr gering, was letztendlich den 
+Franck-Hertz Versuch ermöglicht.
 
 \subsection{Kontaktpotential}
 In diesem Teil des Versuchs geht es darum das Kontaktpotential zu berechnen. 
-in den Abbildungen \autoref{fig:10} sowie \autoref{fig:11} sind die Strom-Gegenspannungs Messkurven
-abgebildet, welche mit einem x-y Schreiber aufgezeichnet wurden. Einmal bei einer Temperatur von 296.15\unit{\kelvin}
-und einmal bei 419.15\unit{\kelvin}
+In den Abbildungen \autoref{fig:10} und \autoref{fig:11} sind die Strom-
+Gegenspannungs Messkurven abgebildet, welche mit dem XY-Schreiber 
+aufgezeichnet wurden. Einersteits bei einer Temperatur von $296.15\unit{\kelvin}$
+und einmal bei $419.15\unit{\kelvin}$.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{Bilder/1.jpg}
+  \includegraphics[width=0.7\linewidth]{Bilder/1.jpg}
   \caption{Strom-Spannungs Kurve bei 296.15\unit{\kelvin}}
   \label{fig:10}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{Bilder/1.jpg}
+  \includegraphics[width=0.7\linewidth]{Bilder/1.jpg}
   \caption{Strom-Spannungs Kurve bei 419.15\unit{\kelvin}}
   \label{fig:11}
 \end{figure}
 
-\noindent Aus diesen Graphischen Daten muss der Differenzenquotient für einige Werte gebildet werden, 
-um auf den Spannungspunkt mit der größten Steigung, also den Wendepunkt zu schließen. Daraus lässt sich dann 
-nach \autoref{eqn:...} das Kontaktpotential berechnen.
+\noindent Aus diesen graphischen Daten muss der Differenzenquotient für bestimmte
+Werte gebildet werden, um auf den Spannungspunkt mit der größten Steigung 
+(Wendepunkt) zu schließen. Daraus lässt sich dann nach \autoref{eqn:5} 
+das Kontaktpotential berechnen.
 
-\noindent In \autoref{tab:11} sind die händisch ermittelten Differenzenquotienten einiger Messpunkte für 
-beide Tempeeraturen aufgeführt. Außerdem sind sie in \autoref{fig:12} und \autoref{fig:13} Graphisch dargestellt.
+\noindent In \autoref{tab:11} sind die händisch ermittelten Differenzenquotienten
+einiger Messpunkte für beide Tempeeraturen aufgetragen. Zusätzlich sind diese in
+\autoref{fig:12} und \autoref{fig:13} graphisch dargestellt.
 \begin{table}[H]
   \centering
   \caption{Differentiation der Messdaten.}
@@ -87,11 +95,14 @@ beide Tempeeraturen aufgeführt. Außerdem sind sie in \autoref{fig:12} und \aut
   \label{fig:12}
 \end{figure}
 
-\noindent Aus \autoref{fig:12} kann entnommen werden, dass die Größte Steigung (negative Steigung) am Punkt $U = 7.3\unit{\volt}$ vorliegt. daraus 
-berechnet sich das Kontaktpotential zu  
-\begin{equation}
-  U_\text{kontakt} = U_\text{B} - U_\text{B,eff} = 10 \unit{\volt} - 7.3 \unit{\volt} = 2.7 \unit{\volt}
-\end{equation}
+\noindent Aus \autoref{fig:12} kann entnommen werden, dass die größte Steigung
+(negative Steigung) am Punkt $U = 7.3\unit{\volt}$ vorliegt. Daraus berechnet
+sich das Kontaktpotential zu
+\begin{align*}
+  U_\text{Kontakt} &= U_\text{B} - U_\text{B,eff} \\
+                   &= 10 \unit{\volt} - 7.3 \unit{\volt} \\
+                   &= 2.7 \unit{\volt}.
+\end{align*}
 
 \begin{figure}[H]
   \centering
@@ -101,25 +112,28 @@ berechnet sich das Kontaktpotential zu
 \end{figure}
 
 \subsection{Franck-Hertz Kurven}
-Für die Auswertung der Franck-Hertz Kurven wurden eine Kurve bei $436.15\unit{\kelvin}$ und eine bei $448.15\unit{\kelvin}$
-Aufgenommen. Diese sind in \autoref{fig:14} abgebildet.
+Für die Auswertung der Franck-Hertz Kurven wurden $I_A$-Werte bei 
+$436.15\unit{\kelvin}$ und $448.15\unit{\kelvin}$ aufgenommen. Diese sind in
+\autoref{fig:14} abgebildet.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{Bilder/3.jpg}
-  \caption{Franck-Hertz Kurven}
+  \includegraphics[width=0.85\linewidth]{Bilder/3.jpg}
+  \caption{Franck-Hertz Kurven.}
   \label{fig:14}
 \end{figure}
-Relevant für die Auswertung sind die x-Werte der Maxima der Frank-Hertz Kurven, daher wird die blaue Kurve zur Auswertung herrangezogen, 
-da dort die meisten Maxima gut zu erkennen sind. Die x-Werte des n-ten Maximums sind Tabelle \autoref{tab:13} zu entnehmen. 
+\noindent Relevant für die Auswertung sind die x-Werte der Maxima der
+Frank-Hertz Kurven. Dementsprechend wird die blaue Kurve zur Auswertung 
+herrangezogen, da bei dieser die Maxima deutlicher vorligen. Die x-Werte des
+n-ten Maximums sind Tabelle \autoref{tab:12} zu entnehmen. 
 \begin{table}[H]
   \centering
   \caption{Mittlere Freie Weglängen.}
-  \label{tab:10}
+  \label{tab:12}
   \begin{tblr}{
       colspec = {S S },
       row{1} = {guard, mode=math},}
          \toprule
-         n & U_\text{gegen}\unit{\volt} \\
+         n & U_\text{gegen} \, / \, \unit{\volt} \\
          \midrule
           1 & 13.04\\
           2 & 17.39\\
@@ -135,25 +149,27 @@ da dort die meisten Maxima gut zu erkennen sind. Die x-Werte des n-ten Maximums 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{build/plot3.pdf}
-  \caption{Maxima der blauen Franck-Hertz Kurve und Regression}
+  \includegraphics[width=0.8\linewidth]{build/plot3.pdf}
+  \caption{Maxima der blauen Franck-Hertz Kurve und Regression.}
   \label{fig:15}
 \end{figure}
-Die parameter der linearen Ausgleichsrechnung sind 
+Die Parameter der linearen Ausgleichsrechnung sind
 \begin{align}
   a =& \qty{5.5 (0.2)}{\volt} \\
-  b =& \qty{6.7 (1)}{\volt}
+  b =& \qty{6.7 (1)}{\volt},
 \end{align}
-wobei $a$ die Steigung und somit die durchschnittliche Beschleunigungsspannung $U_\text{B} = \qty{5.5(0.2)}{\volt} $ angibt.
-aus $U_\text{B}$ kann mit 
+wobei $a$ die Steigung und somit die durchschnittliche Beschleunigungsspannung
+$U_\text{B} = \qty{5.5(0.2)}{\volt}$ angibt.
+Aus $U_\text{B}$ kann mit 
 \begin{equation}
   \lambda = \frac{\text{h} \cdot \text{c}}{U_\text{B} \cdot \text{e}}
 \end{equation}
-die Wellenlänge \lambda bestimmt werden. Das ergibt eine Wellenlänge von 
+die Wellenlänge $\lambda$ bestimmt werden (siehe auch \autoref{eqn:lambda}).
+Das ergibt eine Wellenlänge von 
 \begin{equation}
-  \lambda = \qty{2.25e-7}{\meter}
+  \lambda = \qty{2.25e-7} {\meter}
 \end{equation}
-Auch die Anregungsenergie lässt sich mit $U_\text{B}$ bestimmen.
+Auch die Anregungsenergie lässt sich mit $U_\text{B}$ bestimmen:
 \begin{equation}
-  E_1 - E_0 = \qty{8.81e-19}{\volt}
+  E_1 - E_0 = \qty{8.81e-19}{\volt}.
 \end{equation}
