@@ -31,3 +31,7 @@ def xwert(b):
 xwert(183.5)
 
 print((h*c)/(5.5*e))
+
+print(4.9/5.5)
+
+4.9/5.5
