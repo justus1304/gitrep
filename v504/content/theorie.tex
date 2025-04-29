@@ -1,5 +1,6 @@
 \section{Theorie}
 \label{sec:Theorie}
+
 \subsection{Austrittsarbeit und Energieverteilung von Elektronen}
 Metalle sind kristalline Festkörper. Sie bilden ein Gitter von 
 ionisierten Atomen, welches von nahezu kräftefrei bewegten Elektronen 
@@ -15,23 +16,23 @@ des Metalls verschieden ist.
     \hfill
     \label{fig:phasendiagramm}
 \end{figure}
-\noindent Anhand des Potentialtopfmodells lässt sich verdeutlichen, dass die Elektronen eine 
-Austritsarbeit von $\exp e_0 \xi$ verrichten müssen.
+\noindent Anhand des Potentialtopfmodells lässt sich verdeutlichen, dass die
+Elektronen eine Austritsarbeit von $e_0 \xi$ verrichten müssen.
 \noindent Elektronen unterliegen dem Pauli Prinzip: Das bedeutet, dass nur Elektronen mit
 entgegengesetzten Spinstellungen einen möglichen Zustand besetzen können.
-Folglich wird die Energieverteilung der Elektronen in einem Metall durch die Fermi-Dirac Verteilung
-beschrieben.
+Es gilt der Zusammenhang:
 \begin{equation}
     \label{eqn:1}
-    f\left(E\right) = \frac{1}{\exp{\frac{\zeta-E}{k_b T} + 1}}
+    f\left(E\right) = \frac{1}{\exp{\frac{\zeta-E}{k_b T} + 1}}.
 \end{equation}
 \noindent In \autoref{eqn:1} ist die Fermi-Dirac Verteilungsfunktion mit der Fermi-Energie
-$\zeta$ gegeben. Diese kann für eine hohe Energie $\zeta$, welche die Austritsarbeit überwinden kann,
-genähert werden. die Näherung ist in \autoref{eqn:2} 
-gegeben. Des weiteren ist der Verlauf der Verteilungsfunktion in \autoref{fig:fermi} dargestellt.
+$\zeta$ gegeben. Diese kann für eine hohe Energie $\zeta$, welche die Austrittsarbeit überwinden kann,
+genähert werden. Die Näherung ist in \autoref{eqn:2} 
+gegeben. Des Weiteren ist der Verlauf der Verteilungsfunktion in 
+\autoref{fig:fermi} dargestellt
 \begin{equation}
     \label{eqn:2}
-    f\left(E\right) \approx \exp{\frac{\zeta-E}{k_b T}}
+    f\left(E\right) \approx \exp{\left(\frac{\zeta-E}{k_b T}\right)}.
 \end{equation}
 \begin{figure}[H]
     \centering
@@ -45,10 +46,10 @@ gegeben. Des weiteren ist der Verlauf der Verteilungsfunktion in \autoref{fig:fe
 \subsection{Sättigungsstromdichte der thermischen Elektronenemission}
 Aus \autoref{eqn:2} lässt sich die Anzahl der pro Zeit austretenden Elektronen
 ableiten. Diese ist temperaturabhängig und wird durch die Richardson-Gleichung
-in \autoref{eqn:3} beschrieben.
+in \autoref{eqn:3} beschrieben
 \begin{equation}
     \label{eqn:3}
-    j_s \left(T\right) = 4\pi \frac{e_0m_0k_B^2}{h^3}T^2\exp{-\frac{e_0\Phi}{k_b T}}
+    j_s \left(T\right) = 4\pi \frac{e_0m_0k_B^2}{h^3}T^2\exp{\left(-\frac{e_0\Phi}{k_b T}\right)}.
 \end{equation}
 
 \subsection{Die Hochvakuum-Diode und Langmuir-Schottkysche Raumladungsgleichung}
@@ -73,16 +74,16 @@ der Anode kommen. Die Kontinuitätsbedingung der Stromdichte,
 j = -\rho v
 \end{equation}
 mit der Stromdichte $j$ und der Raumladungsdichte $\rho$, führt nun zu einer
-unterschiedlichen Geschwindigkeitsverteilung der Elekrtonen und damit auch zu
+unterschiedlichen Geschwindigkeitsverteilung der Elektronen und damit auch zu
 einer Ladungsverteilung, welche von der Kathode hin zur Anode abnimmt. Durch
 die unterschiedliche Ladungsdichte wird die Kathode abgeschirmt. Folglich erreichen 
-nicht mehr alle Feldlinien ausgehend von der Anode, die Kathode. Damit ist der
+nicht mehr alle Feldlinien ausgehend von der Anode die Kathode. Damit ist der
 gemessene Diodenstrom kleiner als der erwartete Sättigungsstrom.
 
 \subsection{Kathodentemperatur}
 \label{sec:kattemp}
 Die Kathodentemperaturen werden über die Leistungsbilanz ermittelt. Mit dem 
-Energiesatz und den Identitäten für die zugeführte Leistung $N_zu$ und dem 
+Energiesatz und den Identitäten für die zugeführte Leistung $N_{zu}$ und dem 
 Stefan-Boltzmannschen Gesetz ($N_W$), welches die Wärmestrahlung festlegt,
 ergibt sich:
 \begin{align*}
@@ -96,7 +97,11 @@ Die gemessenen Werte unterliegen Messunsicherheiten und werden demnach im
 Folgenden nicht als fehlerfrei angesehen. Die Fehler entstehen bei der
 Bildung der Mittelwerte durch den Fehler des Mittelwerts und bei der
 Regressionsrechnung sowie der Fehlerforpflanzung durch Python.
-Der Fehler des Mittelwerts ist gegeben durch 
+Der Mittelwert ist definiert durch
+\begin{equation}
+    \overline{x} = \frac{1}{N} \sum\limits_{i=1}^N x_i.
+\end{equation}
+\noindent Der Fehler des Mittelwerts ist somit gegeben durch 
 \begin{equation}
     \begin{aligned}
         \increment \overline{x} &= \sqrt{\overline{x^2\kern-0.1em} - \overline{x}^2} \\
