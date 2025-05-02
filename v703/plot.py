@@ -1,18 +1,48 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import scipy.optimize
+import uncertainties as unc
+import uncertainties.unumpy as unp
+from scipy.constants import c,h, m_e, e
+from uncertainties import ufloat
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
 
-fig, (ax1, ax2) = plt.subplots(1, 2, layout="constrained")
-ax1.plot(x, y, label="Kurve")
-ax1.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
-ax1.set_ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
-ax1.legend(loc="best")
+x = np.linspace(320,640,10000)
 
-ax2.plot(x, y, label="Kurve")
-ax2.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
-ax2.set_ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
-ax2.legend(loc="best")
+U,I,N = np.genfromtxt("Daten/M1.txt",unpack = True)
+fig, ax =plt.subplots()
+ax.plot(U,N,"k.",label = 'Messwerte')
 
-fig.savefig("build/plot.pdf")
+params,cov = np.polyfit(U[1:-1], N[1:-1], 1,cov=True) 
+m, b = params 
+m_err, b_err = np.sqrt(np.diag(cov))
+print(f"Steigung: {m:.4f} ± {m_err:.4f}")
+print(f"Achsenabschnitt: {b:.4f} ± {b_err:.4f}")
+ax.plot(x,m * x + b)
+ax.set(xlabel='U',ylabel='R')
+ax.legend()
+
+fig.savefig("build/plot1.pdf")
+
+#m = ufloat(m,m_err)
+#b = ufloat(b,b_err)
+#steigung = m * 100 
+#print("s_1= ",steigung)
+
+U_A = 560
+z = 3632
+s_2 = (z*(U_A + 50)-z*(U_A - 50)) / (z * U_A)
+print("s_2= ",s_2)
+
+Q = I/((N/60)*e)
+print(Q) 
+
+fig2, ax =plt.subplots()
+ax.plot(U,Q,"k.",label = 'Messwerte')
+
+
+
+ax.set(xlabel='U',ylabel='Q')
+ax.legend()
+
+fig2.savefig("build/plot2.pdf")
