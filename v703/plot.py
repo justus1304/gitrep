@@ -21,7 +21,8 @@ print(f"Achsenabschnitt: {b:.4f} ± {b_err:.4f}")
 ax.plot(x,m * x + b)
 ax.set(xlabel='U',ylabel='R')
 ax.legend()
-
+ax.grid(True)
+ax.axvline(x = 560,color = 'red', linestyle='--')
 fig.savefig("build/plot1.pdf")
 
 #m = ufloat(m,m_err)
@@ -35,7 +36,7 @@ s_2 = (z*(U_A + 50)-z*(U_A - 50)) / (z * U_A)
 print("s_2= ",s_2)
 
 Q = I/((N/60)*e)
-print(Q) 
+
 
 fig2, ax =plt.subplots()
 ax.plot(U,Q,"k.",label = 'Messwerte')
