@@ -49,7 +49,7 @@ die Steigung des Plateaus bestimmt. Diese Steigung ist ein Maß
 für die güte des Plateaus. Eine geringe Steigung bedeutet das Pateau 
 ist gut. 
 \begin{equation}
-    s = \frac{z\left(U_\text{A} + 50\unit{\volt}\right) - z\left(U_\text{A} - 50\unit{\volt}\right)}{z \cdot U_\text{A}} \cdot \frac{100\%}{100\unit{\volt}}
+    s = \frac{z\left(U_\text{A} + 50\unit{\volt}\right) - z\left(U_\text{A} - 50\unit{\volt}\right)}{z \cdot U_\text{A}} \cdot \frac{100\%}{100\unit{\volt}} = \qty{0.178}{\%}
 \end{equation}
 
 Neben der Zählrate $N$ wurde auch der Strom $I$ in Abhängigkeit 
@@ -79,10 +79,10 @@ durch Folgende Formel.
 \begin{equation}
     \tau = \frac{N_\text{1} + N_\text{2} - N_\text{12}}{N_\text{12}^2  N_\text{2}^2 - N_\text{2}^2}
 \end{equation}
-Mit den Werten $N_\text{1} = 11936, N_\text{2} = 15383 $und$ N_\text{12} = 27556$ ergibt sich eine 
+Mit den Werten $N_\text{1} = \frac{11936}{200\unit{\second}} , N_\text{2} = \frac{15383}{200\unit{\second}} $und$ N_\text{12} = \frac{27556}{200\unit{\second}}$ ergibt sich eine 
 experimentelle Todzeit bei Messung mit der Zwei Quellen Methode von 
 \begin{equation}
-    \tau = \qty{-6.23e-7}{\second} 
+    \tau = \qty{129.0}{\micro\second} 
 \end{equation}
 
 Bei der Bestimmung der Todzeit am Osziloskopbild wird der Abstand von zwei Impulsen am Osziloskop 
