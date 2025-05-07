@@ -1,5 +1,5 @@
-# Lochnummer , oben[mm] , unten[mm]
-#1   13.8    44.0
+# Lochnummer , Laufzeit oben[mcrs] , unten[mcrs]
+1   13.8    44.0
 2   15.3    45.1
 3   45.1    10.4
 4   39.7    16.5
