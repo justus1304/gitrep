@@ -1,4 +1,88 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+Unter Schall versteht sich eine, durch Druckschwankungen fortbewegende, 
+longitudinale Welle.
+In dem Versuch relevanten Schall handelt es sich um Ultraschall, dieser liegt
+im Bereich von $20 \unit{\kilo\hertz} - 1 \unit{\giga\hertz}$.
+Ultraschallwellen verfügen über ähnliche Eigenschaften wie elektromagnetische
+Wellen und finden demnach breite Anwendung in der Medizin und der
+zerstörungsfreien Werkstoffprüfung. Die Phasengeschwindigkeit ist materialabhängig,
+was im späteren Verlauf (siehe \autoref{sec:Auswertung}) auch noch untersucht
+werden soll. Grund dafür sind Druck- sowie Dichteänderungen.
+Eine Ultraschallwelle (inklusive akustischer Impedanz von $Z=c \rho$) hat die 
+Form
+\begin{equation}
+    \label{eqn:1}
+    p(x,t) = p_0 + v_0 c \rho \cos(\omega t - kx).
+\end{equation}
+Für die unterschiedlichen Schallgeschwindigkeiten $c_{Fl}$ in einer Flüssigkeit 
+und $c_{Fe}$ in einem Festkörper sind die Zusammenhänge gegeben:
+\begin{align}
+    \label{eqn:2}
+    c_{Fl} &= \sqrt{\frac{1}{\kappa \cdot \rho}}, & c_{Fe} &= \sqrt{\frac{E}{\rho}}
+\end{align}
+\noindent Dabei seien $\kappa$ die Kompressibilität und $E$ die das 
+Elastizitätsmodul. Zusätzlich geht bei der Schallausbreitung Energie durch 
+Absorbtion verloren, die Intensität nimmt exponentiell mit der Strecke ab.
+Da Luft bereits stark absorbiert, wird als Präventativmaßnahme ein 
+Kontaktmittel verwendet.
+\vspace{0.5em}
+\\
+\noindent Ultraschall wird häufig mithilfe des piezoelektrischen Effekts erzeugt.
+Piezokristalle wie Quarz schwingen in einem elektrischen Wechselfeld und
+emittieren bei Resonanzfrequenz intensive Ultraschallwellen. Umgekehrt können
+diese Kristalle auch als Empfänger dienen, indem sie eintreffende Schallwellen
+in elektrische Signale umwandeln.
+\vspace{0.5em}
+\\
+\noindent In der Medizin wird Ultraschall, etwa durch Laufzeitmessungen, zur Diagnostik
+genutzt. Bei dem Durchschallungs-Verfahren gibt es einen Ultraschallsender,
+der das Gewebe durchdringt. Trifft das Wellensignal auf eine Fehlstelle $s$, so 
+ist ein Echo gesehen. Dieses wird an den Empfänger gesendet. Die Schallgeschwindigkeit 
+an der Fehlstelle kann als
+\begin{equation}
+    \label{eqn:3}
+    c = \frac{2s}{t}
+\end{equation}
+beschrieben werden.
+Bei dem Impuls-Echo-Verfahren werden Reflexionen an der Grenzfläche gemessen, hier 
+ist der Sender gleich dem Empfänger. Beide Methoden liefern Informationen über
+die Struktur und Beschaffenheit des untersuchten Materials, ohne es zu schädigen.
+In diesem Versuch soll letzteres verwendet werden, dabei wird erneut zwischen 
+drei Arten von Scans unterschieden.
+\vspace{0.5em}
+\\
+\noindent Der A-Scan (Amplituden-Scan) wird genutzt um ein Tiefenprofil des 
+Materials zu erstellen. Er stellt die Echoamplituden als Funktion der Laufzeit
+der.
+\vspace{0.5em}
+\\
+\noindent Der B-Scan (Brightness-Scan) stellt die Messdaten als 2-dimensionales 
+Bild dar, wobei die höheren Amplituden als helle Pixel und die tieferen als 
+dunklere Amplituden dargestellt werden. Für ein Schnittbild wird die Sonde also 
+über die Probe bewegt.
+\vspace{0.5em}
+\\
+\noindent Der TM-Scan (Time-Motion-Scan) stellt Bewegungen als Bildfolge in 
+Abhängigkeit der Zeit dar. Demnach können beispielsweise Organregungen 
+detektiert werden.
+
+\subsection{Fehlerrechnung}
+Die gemessenen Werte unterliegen Messunsicherheiten und werden demnach im
+Folgenden nicht als fehlerfrei angesehen. Die Fehler entstehen bei der
+Bildung der Mittelwerte durch den Fehler des Mittelwerts und bei der
+Regressionsrechnung sowie der Fehlerforpflanzung durch Python.
+Der Fehler des Mittelwerts ist gegeben durch 
+\begin{equation}
+    \begin{aligned}
+        \increment \overline{x} &= \sqrt{\overline{x^2\kern-0.1em} - \overline{x}^2} \\
+                            &= \frac{\sqrt{\frac{1}{N-1} \sum\limits_{i=1}^N (x_i - \overline{x})^2}}{\sqrt{N}}.
+    \end{aligned}
+\end{equation}
+
+Um Fehler einzubeziehen, wird die Gauß'sche Fehlerfortpflanzung verwendet:
+\begin{equation}
+    \label{eqn:9}
+    \increment f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 \cdot \left(\increment x\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 \cdot \left(\increment y\right)^2 + .... + \left(\frac{\partial f}{\partial z}\right)^2 \cdot \left(\increment z\right)^2}
+\end{equation}
