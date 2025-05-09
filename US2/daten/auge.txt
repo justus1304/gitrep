@@ -1,0 +1,5 @@
+# iris,eingeng,ausgang, Retina [mcrs]
+11.0
+17.0
+24.9
+70.0

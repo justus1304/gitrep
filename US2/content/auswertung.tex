@@ -49,33 +49,54 @@ Die parameter der Ausgleichsrechnung lauten
   m &= \qty{1374(14)}{\meter\per\second}\\
   b &= \qty{-0.0012(0.0004)}{\meter}
 \end{align}
-Daraus er gibt sich eine Schallgeschwindigkeit von $v_\text{s,acryl} = m \cdot 2 = \qty{2748(28)}{\meter\per\second}$
+Daraus er gibt sich eine Schallgeschwindigkeit von $v_\text{s,acryl} = m \cdot 2 = \qty{2748(28)}{\meter\per\second}$, welche in 
+die Berechnung der Abmessungen schon einfließt.
 
 \begin{table}[H]
   \centering
   \caption{Laufzeiten im Acryl und daraus ermittelte Abmessungen.}
   \label{tab:10}
   \begin{tblr}{
-          colspec = {S S S S S },
+          colspec = {S S S S S S},
           row{1} = {guard, mode = math},
       }
       \toprule
-      Loch & t_\text{Oben} \, \unit{\micro\second}& s_\text{Oben} \, \unit{\mm} & t_\text{Unten} \, \unit{\micro\second}& s_\text{Unten} \, \unit{\mm}\\
+      Loch & t_\text{Oben} \, \unit{\micro\second}& s_\text{Oben} \, \unit{\mm} & t_\text{Unten} \, \unit{\micro\second}& s_\text{Unten} \, \unit{\mm}& d \, \unit{\mm}\\
       \midrule
-      1   &13.8  & & 44.0&  \\
-      2   &15.3  & & 45.1&  \\
-      3   &45.1  & & 10.4&  \\
-      4   &39.7  & & 16.5&  \\
-      5   &34.0  & & 23.6&  \\
-      6   &28.6  & & 29.0&  \\
-      7   &22.6  & & 34.9&  \\
-      8   &16.8  & & 40.0&  \\
-      9   &10.9  & & 46.8&  \\
-      10  &5.1   & & 0   &  \\
-      11  &0     & & 11.9&  \\
+      1   &13.8  &18.96+-0.19 & 44.0&60.5+-0.6        &1.924+-0.020\\
+      2   &15.3  &21.02+-0.21 & 45.1&62.0+-0.6        &-1.649+-0.017\\
+      3   &45.1  &62.0+-0.6   & 10.4&  14.29+-0.15    &5.08+-0.05\\
+      4   &39.7  &54.5+-0.6   & 16.5&  22.67+-0.23    &4.12+-0.04\\
+      5   &34.0  &46.7+-0.5   & 23.6&  32.43+-0.33    &2.198+-0.022\\
+      6   &28.6  &39.3+-0.4   & 29.0&  39.8+-0.4      &2.198+-0.022\\
+      7   &22.6  &31.05+-0.32 & 34.9&48.0+-0.5        &2.336+-0.024\\
+      8   &16.8  &23.08+-0.24 & 40.0&55.0+-0.6        &3.298+-0.034\\
+      9   &10.9  &14.98+-0.15 & 46.8&64.3+-0.7        &2.061+-0.021\\
+      10  &5.1   &7.01+-0.07  & 0   & 0.0+-0          &74.3+-0.8\\
+      11  &0     &0.0+-0      & 11.9&     16.35+-0.17 &65.0+-0.7\\
       \bottomrule
   \end{tblr}
 \end{table}
 
+\subsection{Das Auge}
+Als Nächstes werden durch das Selbe verfahren die Abmessungen in einem Auge bestimmt.
+\begin{table}[H]
+  \centering
+  \caption{Abmessungen Schiebleere}
+  \label{tab:10}
+  \begin{tblr}{
+          colspec = {S S S},
+          row{1} = {guard, mode = math},
+      }
+      \toprule
+      \text{part} & t \, \unit{\micro\second}& Abstand x \, \unit{\mm}\\
+      \midrule
+      \text{Iris}  &   11.0&   15.11+-0.15\\
+      \text{Linseneingang}  &   17.0&   23.36+-0.24\\
+      \text{Linsenausgang}  &   24.9&   34.21+-0.35 \\
+      \text{Retina}  &   70.0&   96.2+-1.0\\
+      \bottomrule 
+  \end{tblr}
+\end{table}
 
 

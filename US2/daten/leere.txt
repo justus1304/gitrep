@@ -1,5 +1,5 @@
-#Lochzahl , abstand von unten gemessen mit der schiebleere[mm]   
-#1   59.05 
+# Lochzahl , abstand von unten gemessen mit der schiebleere[mm]   
+1   59.05 
 2   60.8  
 3   13.15 
 4   21.8  
