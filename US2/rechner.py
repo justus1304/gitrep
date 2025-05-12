@@ -36,3 +36,9 @@ s_auge = (auge ) * (1/2) * v_s * 10**(-3)
 print("auge")
 for i in range(len(s_auge)):
     print(s_auge[i])
+p = ufloat(93.5,0.5)
+e = (1484/2)*p*10**(-6)
+print("esd=",e)
+esv = (4*np.pi/3) * (e/2)**3
+print(esv)
+print(esv*0.5)

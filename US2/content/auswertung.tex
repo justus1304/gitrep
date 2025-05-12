@@ -99,4 +99,80 @@ Als Nächstes werden durch das Selbe verfahren die Abmessungen in einem Auge bes
   \end{tblr}
 \end{table}
 
+\subsection{Auswertung der Tumore}
+Die beiden Tumore im Brustmodell sind in \autoref{fig:11}$\left(T_1\right)$
+, sowie in \autoref{fig:12}$\left(T_2\right)$
+abgebidet. Anhand der Bilder wird die age und die Eindringtife der Tumore 
+bestimmt. 
 
+\begin{figure}
+  \centering
+  \caption{Tumor $T_1$}
+  \label{fig:11}
+  \includegraphics[width=0.5\textwidth]{Bilder/BrustA1.png}
+\end{figure}
+Der Tumor in \autoref{fig:11} befindet sich \qty{8.7(1.7)}{\mm} tief
+in der Brust und hat eine Eindringtiefe von \qty{37.5(1.7)}{\mm}.
+\begin{figure}
+  \centering
+  \caption{Tumor $T_2$}
+  \label{fig:12}
+  \includegraphics[width=0.5\textwidth]{Bilder/BrustB1.png}
+\end{figure}
+Tumor $T_2$ in \autoref{fig:11} befindet sich \qty{8.7(1.7)}{\mm} tief
+in der Brust und hat eine Eindringtiefe von \qty{22.3(1.7)}{\mm}.
+
+%\subsection{Herzmodell}
+%\begin{figure}
+%  \centering
+%  \caption{Tumor $T_1$}
+%  \label{fig:13}
+%  \includegraphics[width=0.5\textwidth]{Bilder/Herz.png}
+%\end{figure}
+
+\begin{figure}
+  \centering
+  \caption{Tumor $T_1$}
+  \label{fig:14}
+  \includegraphics[width=0.5\textwidth]{Bilder/Herz2.png}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Abmessungen Schiebleere}
+  \label{tab:13}
+  \begin{tblr}{
+          colspec = {S S S},
+          row{1} = {guard, mode = math},
+      }
+      \toprule
+      \text{part} & t \, \unit{\micro\second}& Abstand x \, \unit{\mm}\\
+      \midrule
+      1  &  1 & 93.5  \\
+       2 &  2 & 93.5  \\
+        3&  2 & 93.5   \\
+       4 &  1 & 93.5  \\
+       5 &  1&  93.5 \\
+       6 &  1 & 93.5  \\
+        7&  1 & 93.5   \\
+       8 &  1 & 93.5  \\
+      \bottomrule 
+  \end{tblr}
+\end{table}
+In \autoref{fig:14} sind die Herzschläge aus dem TM-Scan abgebiildet. 
+Daraus wird graphisch die Breite und Höhe der Schläge abgelesen, in \autoref{tab:13}
+eingetragen und der Mittelwert gebildet. In 18 Sekunden schlug das Herz 
+neun mal, was einer Herzfrequenz von $v_{Herz} = 0.5$ Schlägen pro Seknde entspricht.
+Der endystolische Durchmesser knn durch folgende Formel bestimmt werden 
+\begin{equation}
+  ESD = \frac{c_\text{wasser} * A}{2}
+\end{equation}
+A ist dabei die gemittelte Amplitude $\overline{A} = \qty{93.5(0.5)}{} $ Mit Werten ergibt sich $ ESD = \qty{0.0694(0.0004)}{\meter}$
+Daraus ergibt sich das endystolische Herzvolumen zu 
+\begin{equation}
+  ESV = \frac{4\cdot \pi}{3}\cdot\left(\frac{ESD}{2}\right)^3 = \qty{0.0001748(0.0000028)}{\meter^3}
+\end{equation}
+Das Herzvolumen ist damit 
+\begin{equation}
+  V_\text{herz} = ESV \cdot v_\text{herz} = \qty{8.74(0.14)e-05}{\meter^3\per\second}
+\end{equation}
