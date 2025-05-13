@@ -8,7 +8,12 @@ bemerkbar, welche einen Wert für die Güte des Zählrohres angibt.
 Diese Steigung beträgt hier \qty{0.178}{\%}. Das ist eine sehr niedrige Steigung,
 jenes ist auch in \autoref{fig:10} zu erkennen. Das Ergebnis passt nicht zu 
 den Erwartungen, passt aber zur Theorie: Idealerweise sollte die Steigung so 
-gering wie möglich sein.
+gering wie möglich sein. Als Grund könnte das Löschgas herangezogen werden, 
+welche Nachentladungen trotz Alterung sehr unterdrücken. Die Messung würde somit 
+auf ein sehr gutes Zählrohr hinweisen. Dabei ist festzuhalten, dass die wenigen 
+aufgenommenen Werte größtenteils in einer gleichen Größenordnung von $0.2 \unit{\ampere}$
+liegen. Dementsprechend liefert die Rechnung einen sehr geringen Median für die 
+Steigung, was die statistische Unsicherheit der Messpunkte widerspiegeln könnte.
 
 \subsection{Bestimmung der Totzeit}
 Die Totzeit wurde auf zwei unterschiedlichen Arten berechnet.
@@ -19,6 +24,14 @@ Es ergab sich:
 \begin{equation}
     \tau_{Oszilloskop} = \qty{150}{\micro\second} 
 \end{equation}
-Das Ablesen vom Oszilloskop hat eine Abweichung von $16 \%$ von dem 
-ermittelten Wert durch die zwei Quellen-Mehode, die tatsächliche 
-Totzeit wird also in dem Bereich liegen.
+\noindent Dabei fällt auf, dass die theoretische Totzeit negativ ist, was 
+keinen physikalischen Sinn ergibt. Als Ursache kann der Untergrund herangezogen 
+werden, möglicherweise ist der Bereich mit der Probe und dem Geiger-Müller-Zählrohr 
+nicht genug abgeschirmt gewesen und war weiterer Strahlung ausgesetzt. Andererseits 
+wäre es möglich, dass sich die Quellen gegenseitig zu sehr beeinflusst haben oder 
+statistische Schwankungen durch zu kurze Messzeit eine Fehlerquelle bilden.
+Die relative Abweichung beider Werte berechnet sich durch 
+\begin{equation}
+    \frac{|\tau_{Oszilloskop} - \tau_{Zwei-Quellen}|}{\tau_{Oszilloskop}} \approx 16 \%.
+\end{equation}
+Die tatsächliche Totzeit wird demnach in diesem Bereich liegen.
