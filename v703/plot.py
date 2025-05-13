@@ -19,10 +19,12 @@ m_err, b_err = np.sqrt(np.diag(cov))
 print(f"Steigung: {m:.4f} ± {m_err:.4f}")
 print(f"Achsenabschnitt: {b:.4f} ± {b_err:.4f}")
 ax.plot(x,m * x + b)
-ax.set(xlabel='U',ylabel='R')
+ax.set(xlabel='$U/ V$',ylabel='$R/1/60s$')
 ax.legend()
 ax.grid(True)
 ax.axvline(x = 560,color = 'red', linestyle='--')
+ax.errorbar(U, N, yerr=np.sqrt(N), fmt='.', capsize=5, label='Messung')
+ax.errorbar(U, N, xerr=0.2, fmt='.', capsize=5, label='Messung')
 fig.savefig("build/plot1.pdf")
 
 #m = ufloat(m,m_err)
@@ -43,7 +45,7 @@ ax.plot(U,Q,"k.",label = 'Messwerte')
 
 
 
-ax.set(xlabel='U',ylabel='Q')
+ax.set(xlabel='U/V',ylabel='Q/A')
 ax.legend()
 
 fig2.savefig("build/plot2.pdf")

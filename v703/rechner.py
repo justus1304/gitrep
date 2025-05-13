@@ -14,5 +14,11 @@ t = (N1+N2-N12) / (N12**2-N1**2-N2**2)
 t2 =  (N1+N2-N12) / (2*N1 * N2)
 print(t)
 print(t2)
-
+print()
 print(129/150)
+U,I,N = np.genfromtxt("Daten/M1.txt",unpack = True)
+for i in range(len(N)):
+    print(np.sqrt(N[i]))
+
+
+
