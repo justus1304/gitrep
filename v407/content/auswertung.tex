@@ -1,31 +1,111 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+Zunächst wird der Brechungsindex für die parallele , sowie die senkrechte
+Polarisation berechnet. Dazu werden die Fresnelschen Formeln nach dem 
+Brechungsindex $n$ umgestellt. Die Messwerte Der gemessenen Lichtintensität $I_\text{r}$
+bei dem Winkel $\alpha$ sind \autoref{tab:10}  zu entnehmen. Die Berechnungen der Brechungsindizes 
+finden in zwei unterabschnitten \autoref{sec:10} und \autoref{sec:11} statt und die Ergebnisse sind 
+dann gemeinsam in \autoref{tab:11} zu finden.
 
-\begin{table}
+\begin{table}[H]
   \centering
-  \caption{Eine Beispieltabelle mit Messdaten.}
-  \label{tab:tabelle}
-  \sisetup{table-format=1.1, per-mode=reciprocal}
+  \caption{Messwerte der Lichtreflexion}
+  \label{tab:10}
   \begin{tblr}{
-      colspec = {S[table-format=3.0] S[table-format=2.1] S},
-      row{1} = {guard, mode=math},
-      vline{4} = {2}{-}{text=\clap{$\pm$}},
-    }
-    \toprule
-    U \mathbin{/} \unit{\volt} & I \mathbin{/} \unit{\micro\ampere} & \SetCell[c=2]{c} N \mathbin{/} \unit{\per\second} & \\
-    \midrule
-    360 & 0.1 & 98.3 & 0.9 \\
-    400 & 0.2 & 99.8 & 1.0 \\
-    420 & 0.2 & 99.1 & 0.9 \\
-    \bottomrule
+          colspec = {S S S S | S S S S},
+          row{1} = {guard, mode = math},
+          row{2} = {guard, mode = math},
+      }
+      \toprule
+       \SetCell[c=4]{c} Parallel & & & & \SetCell[c=4]{c} Senkrecht & \\
+      \alpha \, /\unit{\degree}& I \, /\unit{\milli\ampere}& \alpha \, /\unit{\degree} & I \, /\unit{\milli\ampere}&\alpha \, /\unit{\degree}& I \, /\unit{\milli\ampere}& \alpha \, /\unit{\degree} & I \, /\unit{\milli\ampere}\\
+      \midrule
+      85  &0.1400 &  53 & 0.0120  &  87 & 0.500 &  35 & 0.016\\
+      83  &0.0900 &  51 & 0.0100  &  85 & 0.480 &  33 & 0.012\\
+      82  &0.0680 &  49 & 0.0100  &  83 & 0.460 &  31 & 0.012\\
+      81  &0.0440 &  47 & 0.0120  &  81 & 0.460 &  29 & 0.012\\
+      80  &0.0280 &  45 & 0.0100  &  79 & 0.410 &  27 & 0.010\\
+      79  &0.0180 &  43 & 0.0100  &  77 & 0.400 &  25 & 0.012\\
+      78  &0.0120 &  41 & 0.0120  &  75 & 0.360 &  23 & 0.010\\
+      77  &0.0074 &  39 & 0.0140  &  73 & 0.320 &  21 & 0.012\\
+      76  &0.0042 &  37 & 0.0120  &  71 & 0.280 &  19 & 0.012\\
+      75  &0.0030 &  35 & 0.0100  &  69 & 0.220 &  17 & 0.010 \\
+      74  &0.0032 &  33 & 0.0080  &  67 & 0.200 &  15 & 0.010\\
+      73  &0.0040 &  31 & 0.0100  &  65 & 0.180 &  13 & 0.010\\
+      72  &0.0052 &  29 & 0.0100  &  63 & 0.120 &  11 & 0.010\\
+      71  &0.0072 &  27 & 0.0120  &  61 & 0.100 &  9  & 0.010\\
+      70  &0.0090 &  25 & 0.0100  &  59 & 0.100 &  7  & 0.010\\
+      69  &0.0100 &  23 & 0.0100  &  57 & 0.072 &  5  & 0.010\\
+      68  &0.0120 &  21 & 0.0100  &  55 & 0.060 &  3  & 0.010\\
+      67  &0.0140 &  19 & 0.0100  &  53 & 0.040 &     &  \\
+      66  &0.0160 &  17 & 0.0100  &  51 & 0.038 &     &  \\
+      65  &0.0160 &  15 & 0.0120  &  49 & 0.030 &     &   \\
+      64  &0.0160 &  13 & 0.0100  &  47 & 0.026 &     &  \\
+      63  &0.0180 &  11 & 0.0100  &  45 & 0.022 &     &  \\
+      61  &0.0180 &  9  & 0.0100  &  43 & 0.018 &     &  \\
+      59  &0.0180 &  7  & 0.0100  &  41 & 0.016 &     &  \\
+      57  &0.0180 &  5  & 0.0100  &  39 & 0.018 &     &  \\
+      55  &0.0140 &               &  37 & 0.018 &     &  \\
+      \bottomrule 
   \end{tblr}
 \end{table}
 
-Siehe \autoref{fig:plot} und \autoref{tab:tabelle}!
+\begin{table}[H]
+  \centering
+  \caption{Berechnete Brechungsindizes}
+  \label{tab:10}
+  \begin{tblr}{
+          colspec = {S S S S | S S S S},
+          row{1} = {guard, mode = math},
+          row{2} = {guard, mode = math},
+      }
+      \toprule
+       \SetCell[c=4]{c} Parallel & & & & \SetCell[c=4]{c} Senkrecht & \\
+      \alpha \, /\unit{\degree}& n & \alpha \, /\unit{\degree} & n&\alpha \, /\unit{\degree}& n& \alpha \, /\unit{\degree} & n\\
+      \midrule
+      85  &0.1400 &  53 & 0.0120  &  87 & 0.500 &  35 & 0.016\\
+      83  &0.0900 &  51 & 0.0100  &  85 & 0.480 &  33 & 0.012\\
+      82  &0.0680 &  49 & 0.0100  &  83 & 0.460 &  31 & 0.012\\
+      81  &0.0440 &  47 & 0.0120  &  81 & 0.460 &  29 & 0.012\\
+      80  &0.0280 &  45 & 0.0100  &  79 & 0.410 &  27 & 0.010\\
+      79  &0.0180 &  43 & 0.0100  &  77 & 0.400 &  25 & 0.012\\
+      78  &0.0120 &  41 & 0.0120  &  75 & 0.360 &  23 & 0.010\\
+      77  &0.0074 &  39 & 0.0140  &  73 & 0.320 &  21 & 0.012\\
+      76  &0.0042 &  37 & 0.0120  &  71 & 0.280 &  19 & 0.012\\
+      75  &0.0030 &  35 & 0.0100  &  69 & 0.220 &  17 & 0.010\\
+      74  &0.0032 &  33 & 0.0080  &  67 & 0.200 &  15 & 0.010\\
+      73  &0.0040 &  31 & 0.0100  &  65 & 0.180 &  13 & 0.010\\
+      72  &0.0052 &  29 & 0.0100  &  63 & 0.120 &  11 & 0.010\\
+      71  &0.0072 &  27 & 0.0120  &  61 & 0.100 &  9  & 0.010\\
+      70  &0.0090 &  25 & 0.0100  &  59 & 0.100 &  7  & 0.010\\
+      69  &0.0100 &  23 & 0.0100  &  57 & 0.072 &  5  & 0.010\\
+      68  &0.0120 &  21 & 0.0100  &  55 & 0.060 &  3  & 0.010\\
+      67  &0.0140 &  19 & 0.0100  &  53 & 0.040 &     &  \\
+      66  &0.0160 &  17 & 0.0100  &  51 & 0.038 &     &  \\
+      65  &0.0160 &  15 & 0.0120  &  49 & 0.030 &     &   \\
+      64  &0.0160 &  13 & 0.0100  &  47 & 0.026 &     &  \\
+      63  &0.0180 &  11 & 0.0100  &  45 & 0.022 &     &  \\
+      61  &0.0180 &  9  & 0.0100  &  43 & 0.018 &     &  \\
+      59  &0.0180 &  7  & 0.0100  &  41 & 0.016 &     &  \\
+      57  &0.0180 &  5  & 0.0100  &  39 & 0.018 &     &  \\
+      55  &0.0140 &               &  37 & 0.018 &     &  \\
+      \bottomrule 
+  \end{tblr}
+\end{table}
+
+\subsection{Paralleler Brechungsindex}
+Die Fresnel Formel für Parallele polarisation ergibt umgestellt nach $n$
+\begin{equation}
+n = \sqrt{\frac{E}{2\cdot\cos{\alpha}^2} + \sqrt{\frac{E^2}{4\cdot\cos{\alpha}^4} - E \cdot \tan{\alpha}^2}}
+\end{equation}
+Dabei ist $E = \frac{(I+1)^2}{(I - 1)^2}$ für $\alpha < \alpha_\text{brewster}$ und  
+$E = \frac{(I-1)^2}{(I + 1)^2}$ für $\alpha > \alpha_\text{brewster}$. 
+
+\subsection{Senkrechte Polarisation}
+Bei der Senkrechten polarisaton ergibt sich $n$ zu
+\begin{equation}
+n = \sqrt{1+\frac{4\cdot E \cos{alpha}^2}{(E-1)^2}}  , E = \sqrt{I}
+\end{equation}
+
+
