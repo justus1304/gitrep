@@ -1,18 +1,27 @@
-import matplotlib.pyplot as plt
+from uncertainties import ufloat
 import numpy as np
+import uncertainties.unumpy as unp
+from scipy.stats import sem
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+a_p,I_p = np.genfromtxt("Daten/parallel.txt",unpack = True)
+a_s,I_s = np.genfromtxt("Daten/senkrecht.txt",unpack = True)
+I_p = I_p/3
 
-fig, (ax1, ax2) = plt.subplots(1, 2, layout="constrained")
-ax1.plot(x, y, label="Kurve")
-ax1.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
-ax1.set_ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
-ax1.legend(loc="best")
+def n_p(a,E):
+    return np.sqrt(E/(2*np.cos(a)**2)+np.sqrt(E**2/(4*np.cos(a)**4)-E*np.tan(a)**2))
+def n_s(a,E):
+    return np.sqrt(1+4*E*np.cos(a)**2/((E-1)**2))
+    #return np.sqrt((E**2-2*E*np.cos(2*a)+1)/(E** -2*E+1))
 
-ax2.plot(x, y, label="Kurve")
-ax2.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
-ax2.set_ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
-ax2.legend(loc="best")
+for i in range(len(I_p)):
+    print(n_p(a_p[i],((I_p[i] + 1)/(I_p[i] - 1))**2))
 
-fig.savefig("build/plot.pdf")
+print()
+print()
+
+for i in range(len(I_s)):
+    print(n_s(a_s[i],(I_s[i])))
+
+
+
+
