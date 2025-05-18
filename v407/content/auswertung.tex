@@ -6,7 +6,8 @@ Polarisation berechnet. Dazu werden die Fresnelschen Formeln nach dem
 Brechungsindex $n$ umgestellt. Die Messwerte Der gemessenen Lichtintensität $I_\text{r}$
 bei dem Winkel $\alpha$ sind \autoref{tab:10}  zu entnehmen. Die Berechnungen der Brechungsindizes 
 finden in zwei unterabschnitten \autoref{sec:10} und \autoref{sec:11} statt und die Ergebnisse sind 
-dann gemeinsam in \autoref{tab:11} zu finden.
+dann gemeinsam in \autoref{tab:11} zu finden. Für die rechnungen wird die Intensität zu $I = \frac{I_r}{I_e}$ 
+benutzt, wobei $I_e = 0.203\unit{\milli\ampere}$  Die gemessene intensität des Einfallenden Lichts beschreibt
 
 \begin{table}[H]
   \centering
@@ -46,15 +47,21 @@ dann gemeinsam in \autoref{tab:11} zu finden.
       61  &0.0180 &  9  & 0.0100  &  43 & 0.018 &     &  \\
       59  &0.0180 &  7  & 0.0100  &  41 & 0.016 &     &  \\
       57  &0.0180 &  5  & 0.0100  &  39 & 0.018 &     &  \\
-      55  &0.0140 &               &  37 & 0.018 &     &  \\
+      55  &0.0140 &          &     &  37 & 0.018 &     &  \\
       \bottomrule 
   \end{tblr}
 \end{table}
+Die Werte des Senkrecht polarisierten lichts sind bis $\alpha = 31\unit{\degree}$ mit einem Fehler von 
+$\Delta I = \qty{0.02}{\milli\ampere}$ und ab $\alpha = 33\unit{\degree}$ mit einem Fehler von 
+$\Delta I = \qty{0.002}{\milli\ampere}$ versehen. Die Messwerte der reflektierten Intensität
+des Parallel polarisierten Lichts sind bis $\alpha = 12\unit{\degree}$ mit $\Delta I = \qty{0.02}{\milli\ampere}$ versehen, 
+zwischen $\alpha = 13\unit{\degree}$ und $\alpha = 20\unit{\degree}$ mit $\Delta I = \qty{0.002}{\milli\ampere}$ und ab 
+$\alpha = 13\unit{\degree}$ sind die Werte wieder mit einem Fehler von $\Delta I = \qty{0.02}{\milli\ampere}$ versehen.
 
 \begin{table}[H]
   \centering
   \caption{Berechnete Brechungsindizes}
-  \label{tab:10}
+  \label{tab:11}
   \begin{tblr}{
           colspec = {S S S S | S S S S},
           row{1} = {guard, mode = math},
@@ -64,48 +71,65 @@ dann gemeinsam in \autoref{tab:11} zu finden.
        \SetCell[c=4]{c} Parallel & & & & \SetCell[c=4]{c} Senkrecht & \\
       \alpha \, /\unit{\degree}& n & \alpha \, /\unit{\degree} & n&\alpha \, /\unit{\degree}& n& \alpha \, /\unit{\degree} & n\\
       \midrule
-      85  &0.1400 &  53 & 0.0120  &  87 & 0.500 &  35 & 0.016\\
-      83  &0.0900 &  51 & 0.0100  &  85 & 0.480 &  33 & 0.012\\
-      82  &0.0680 &  49 & 0.0100  &  83 & 0.460 &  31 & 0.012\\
-      81  &0.0440 &  47 & 0.0120  &  81 & 0.460 &  29 & 0.012\\
-      80  &0.0280 &  45 & 0.0100  &  79 & 0.410 &  27 & 0.010\\
-      79  &0.0180 &  43 & 0.0100  &  77 & 0.400 &  25 & 0.012\\
-      78  &0.0120 &  41 & 0.0120  &  75 & 0.360 &  23 & 0.010\\
-      77  &0.0074 &  39 & 0.0140  &  73 & 0.320 &  21 & 0.012\\
-      76  &0.0042 &  37 & 0.0120  &  71 & 0.280 &  19 & 0.012\\
-      75  &0.0030 &  35 & 0.0100  &  69 & 0.220 &  17 & 0.010\\
-      74  &0.0032 &  33 & 0.0080  &  67 & 0.200 &  15 & 0.010\\
-      73  &0.0040 &  31 & 0.0100  &  65 & 0.180 &  13 & 0.010\\
-      72  &0.0052 &  29 & 0.0100  &  63 & 0.120 &  11 & 0.010\\
-      71  &0.0072 &  27 & 0.0120  &  61 & 0.100 &  9  & 0.010\\
-      70  &0.0090 &  25 & 0.0100  &  59 & 0.100 &  7  & 0.010\\
-      69  &0.0100 &  23 & 0.0100  &  57 & 0.072 &  5  & 0.010\\
-      68  &0.0120 &  21 & 0.0100  &  55 & 0.060 &  3  & 0.010\\
-      67  &0.0140 &  19 & 0.0100  &  53 & 0.040 &     &  \\
-      66  &0.0160 &  17 & 0.0100  &  51 & 0.038 &     &  \\
-      65  &0.0160 &  15 & 0.0120  &  49 & 0.030 &     &   \\
-      64  &0.0160 &  13 & 0.0100  &  47 & 0.026 &     &  \\
-      63  &0.0180 &  11 & 0.0100  &  45 & 0.022 &     &  \\
-      61  &0.0180 &  9  & 0.0100  &  43 & 0.018 &     &  \\
-      59  &0.0180 &  7  & 0.0100  &  41 & 0.016 &     &  \\
-      57  &0.0180 &  5  & 0.0100  &  39 & 0.018 &     &  \\
-      55  &0.0140 &               &  37 & 0.018 &     &  \\
+      85  &12.55&  53 & 1.350  &  87 & 1.001 &  35 & 1.007\\
+      83  &8.655&  51 & 1.257  &  85 & 1.003 &  33 & 1.005\\
+      82  &7.451&  49 & 1.178  &  83 & 1.006 &  31 & 1.005\\
+      81  &6.506&  47 & 1.117  &  81 & 1.010 &  29 & 1.006\\
+      80  &5.781&  45 & 1.063  &  79 & 1.013 &  27 & 1.005\\
+      79  &5.209&  43 & 1.036  &  77 & 1.017 &  25 & 1.006\\
+      78  &4.744&  41 & 1.028  &  75 & 1.020 &  23 & 1.005\\
+      77  &4.354&  39 & 1.025  &  73 & 1.022 &  21 & 1.007\\
+      76  &4.022&  37 & 1.018  &  71 & 1.023 &  19 & 1.007\\
+      75  &3.740&  35 & 1.012  &  69 & 1.021 &  17 & 1.006\\
+      74  &3.495&  33 & 1.009  &  67 & 1.023 &  15 & 1.006\\
+      73  &3.280&  31 & 1.010  &  65 & 1.023 &  13 & 1.006\\
+      72  &3.089&  29 & 1.009  &  63 & 1.017 &  11 & 1.006\\
+      71  &2.920&  27 & 1.010  &  61 & 1.016 &  9  & 1.006\\
+      70  &2.766&  25 & 1.008  &  59 & 1.018 &  7  & 1.006\\
+      69  &2.625&  23 & 1.008  &  57 & 1.014 &  5  & 1.006\\
+      68  &2.498&  21 & 1.007  &  55 & 1.013 &  3  & 1.006\\
+      67  &2.382&  19 & 1.007  &  53 & 1.009 &     &  \\
+      66  &2.275&  17 & 1.007  &  51 & 1.010 &     &  \\
+      65  &2.173&  15 & 1.008  &  49 & 1.008 &     &   \\
+      64  &2.079&  13 & 1.007  &  47 & 1.008 &     &  \\
+      63  &1.994&  11 & 1.006  &  45 & 1.007 &     &  \\
+      61  &1.835&  9  & 1.006  &  43 & 1.006 &     &  \\
+      59  &1.695&  7  & 1.006  &  41 & 1.006 &     &  \\
+      57  &1.571&  5  & 1.006  &  39 & 1.007 &     &  \\
+      55  &1.453&      &         &  37&1.007 &     &  \\
       \bottomrule 
   \end{tblr}
 \end{table}
 
 \subsection{Paralleler Brechungsindex}
+\label{sec:10}
 Die Fresnel Formel für Parallele polarisation ergibt umgestellt nach $n$
 \begin{equation}
 n = \sqrt{\frac{E}{2\cdot\cos{\alpha}^2} + \sqrt{\frac{E^2}{4\cdot\cos{\alpha}^4} - E \cdot \tan{\alpha}^2}}
 \end{equation}
 Dabei ist $E = \frac{(I+1)^2}{(I - 1)^2}$ für $\alpha < \alpha_\text{brewster}$ und  
 $E = \frac{(I-1)^2}{(I + 1)^2}$ für $\alpha > \alpha_\text{brewster}$. 
+Durch Mittelung der Ergebnisse aus\autoref{tab:11} beläuft sich der Mittlere Wert auf 
+\begin{equation}
+  \overline{n_\text{parallel}} = 
+\end{equation}
 
 \subsection{Senkrechte Polarisation}
+\label{sec:11}
 Bei der Senkrechten polarisaton ergibt sich $n$ zu
 \begin{equation}
 n = \sqrt{1+\frac{4\cdot E \cos{alpha}^2}{(E-1)^2}}  , E = \sqrt{I}
 \end{equation}
-
+Damit ergibt sich mit den Werten der Senkrechten brechungsindizes in \autoref{tab:11} 
+\begin{equation}
+ \overline{n_\text{senkrecht}} = 
+\end{equation}
+\subsection{Brewster Winkel}
+Den Gemessenen intensitäten bei Paralleler polarisationsrichtung in \autoref{tab:10} kan man entnehmen, dass 
+der Brewster Winkel zwischen $\alpha = \qty{73}{\degree}$ und $\alpha = \qty{74}{\degree}$ liegen müsste. Mit dem 
+gemittelten Brechungsindex bei paralleler Polarisationsrichtung $n_\text{parallel} = $ ergibt sich nach \autoref{eqn:8}
+ein Brewster Winkel von
+\begin{equation}
+ \theta_\text{Brewster} = 
+\end{equation}
 
