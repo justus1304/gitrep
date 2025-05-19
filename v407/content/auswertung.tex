@@ -7,7 +7,8 @@ Brechungsindex $n$ umgestellt. Die Messwerte Der gemessenen Lichtintensität $I_
 bei dem Winkel $\alpha$ sind \autoref{tab:10}  zu entnehmen. Die Berechnungen der Brechungsindizes 
 finden in zwei unterabschnitten \autoref{sec:10} und \autoref{sec:11} statt und die Ergebnisse sind 
 dann gemeinsam in \autoref{tab:11} zu finden. Für die rechnungen wird die Intensität zu $I = \frac{I_r}{I_e}$ 
-benutzt, wobei $I_e = 0.203\unit{\milli\ampere}$  Die gemessene intensität des Einfallenden Lichts beschreibt
+benutzt, wobei $I_e = 0.255\unit{\milli\ampere}$  Die gemessene intensität des Einfallenden Lichts beschreibt.
+Der Dunkelstron $I_d$ wird als vernachlässigbar klein angenommen. 
 
 \begin{table}[H]
   \centering
@@ -111,7 +112,7 @@ Dabei ist $E = \frac{(I+1)^2}{(I - 1)^2}$ für $\alpha < \alpha_\text{brewster}$
 $E = \frac{(I-1)^2}{(I + 1)^2}$ für $\alpha > \alpha_\text{brewster}$. 
 Durch Mittelung der Ergebnisse aus\autoref{tab:11} beläuft sich der Mittlere Wert auf 
 \begin{equation}
-  \overline{n_\text{parallel}} = 
+  \overline{n_\text{parallel}} = \qty{2.50(0.32)}{}
 \end{equation}
 
 \subsection{Senkrechte Polarisation}
@@ -122,14 +123,23 @@ n = \sqrt{1+\frac{4\cdot E \cos{alpha}^2}{(E-1)^2}}  , E = \sqrt{I}
 \end{equation}
 Damit ergibt sich mit den Werten der Senkrechten brechungsindizes in \autoref{tab:11} 
 \begin{equation}
- \overline{n_\text{senkrecht}} = 
+ \overline{n_\text{senkrecht}} = \qty{1.48(0.05)}{}
 \end{equation}
+\subsection{Theorievergleich mit den Messswerten}
+Um die gemessenen Intensitäten mit den Theoriewerten zu vergleichen, sind 
+diese in \autoref{fig:10} zusammen mit den Theoriekurven abgebildet. 
+\begin{figure}[H]
+  \centering 
+  \caption{Messswerte und theoriekurve}
+  \label{fig:10}
+  \includegraphics{build/plot.pdf}
+\end{figure}
 \subsection{Brewster Winkel}
 Den Gemessenen intensitäten bei Paralleler polarisationsrichtung in \autoref{tab:10} kan man entnehmen, dass 
 der Brewster Winkel zwischen $\alpha = \qty{73}{\degree}$ und $\alpha = \qty{74}{\degree}$ liegen müsste. Mit dem 
-gemittelten Brechungsindex bei paralleler Polarisationsrichtung $n_\text{parallel} = $ ergibt sich nach \autoref{eqn:8}
+gemittelten Brechungsindex bei paralleler Polarisationsrichtung $n_\text{parallel} = \qty{2.50(0.32)}{}$ ergibt sich nach \autoref{eqn:8}
 ein Brewster Winkel von
 \begin{equation}
- \theta_\text{Brewster} = 
+ \theta_\text{Brewster} = \qty{68.17}{\degree}
 \end{equation}
 
