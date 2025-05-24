@@ -1,3 +1,235 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\subsection{Strom-Spannungs Kennlienie}
+Es werden die Strom-Spannungs Kennlinien für die Violette Linie der 
+Hg-Lampe Einmal bei voller und danach bei halber intensität in einem 
+Diagramm aufgetragen. Die Messwerte sind in \autoref{tab:10} und \autoref{tab:11} 
+ zu finden, sowie in \autoref{fig:10} die graphische Darstellung.
 
+\begin{figure}[H]
+    \centering
+    \caption{Strom-Spannungs Kennlinie Violett}
+    \label{fig:10}
+    \includegraphics{build/violettUI.pdf}
+\end{figure}    
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte Violettes Farbspektrom volle intensität}
+  \label{tab:10}
+  \begin{tblr}{
+          colspec = {S S S S S S},
+          row{1} = {guard, mode = math},
+      }
+      \toprule
+      U/\unit{\volt}&I/\unit{\milli\ampere}&U/\unit{\volt}&I/\unit{\milli\ampere}&U/\unit{\volt}&I/\unit{\milli\ampere}\\
+      \midrule
+      -1.168 & 0.000  & -1.065 & 0.054 & -0.650 & 1.000\\
+      -1.160 & 0.004  & -1.060 & 0.058 & -0.600 & 1.200\\
+      -1.155 & 0.006  & -1.055 & 0.062 & -0.550 & 1.600\\
+      -1.150 & 0.010  & -1.050 & 0.064 & -0.500 & 2.000\\
+      -1.145 & 0.012  & -1.045 & 0.068 & -0.400 & 2.600\\
+      -1.140 & 0.014  & -1.040 & 0.072 & -0.300 & 3.400\\
+      -1.135 & 0.014  & -1.035 & 0.076 & -0.200 & 4.400\\
+      -1.130 & 0.016  & -1.030 & 0.078 & -0.100 & 5.400\\
+      -1.125 & 0.018  & -1.025 & 0.084 & 0.000  & 6.200\\
+      -1.120 & 0.022  & -1.020 & 0.088 & 0.100  & 7.200\\
+      -1.115 & 0.024  & -1.015 & 0.094 & 0.200  & 8.200\\
+      -1.110 & 0.028  & -1.010 & 0.098 & 0.300  & 9.200\\
+      -1.105 & 0.032  & -1.005 & 0.100 & 0.400  & 10.00\\
+      -1.100 & 0.034  & -1.000 & 0.100 & 0.500  & 12.00\\
+      -1.095 & 0.038  & -0.950 & 0.160 & 1.000  & 14.00\\
+      -1.090 & 0.042  & -0.900 & 0.240 & 1.500  & 20.00\\
+      -1.085 & 0.042  & -0.850 & 0.340 & 5.000  & 50.00\\
+      -1.080 & 0.044  & -0.800 & 0.460 & 10.00  & 70.00\\
+      -1.075 & 0.048  & -0.750 & 0.640 & 15.00  & 80.00\\
+      -1.070 & 0.052  & -0.700 & 0.820 & 19.14  & 90.00\\
+      \bottomrule
+  \end{tblr}
+\end{table}
+
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte Violettes Farbspektrom halbe Intensität}
+  \label{tab:11}
+  \begin{tblr}{
+          colspec = {S S S S S S},
+          row{1} = {guard, mode = math},
+      }
+      \toprule
+      U/\unit{\volt}&I/\unit{\milli\ampere}\\
+      \midrule
+      -1.17  & 0 \\
+      -1.00  & 0.058 \\
+      -0.50  & 1 \\
+      0      & 3 \\
+      1      & 7.8 \\
+      3      & 16 \\
+      5      & 22 \\
+      8      & 30 \\
+      11     & 34 \\
+      15     & 40 \\
+      19.15  & 44 \\
+      \bottomrule
+  \end{tblr}
+\end{table}
+
+\subsection{Bestimmung der Grrenzspannung $U_\text{g}$}
+\label{sec:gruen}
+Für die Bestimmung von $U_\text{g,regr}$ wird Die Spannung gegen die 
+Wurzel des Photostroms $\sqrt{I}$ aufgetragen und es wird im linearen 
+bereich eine Ausgleichsrechnung durchgeführt um auf die genauere grenzspannung 
+zu schließen. Die Messwerte zur bestimmung der Grenzspannung des Violetten lichts 
+sind jene aus \autoref{tab:10}. Des weiteren sind die Messwerte und Regression in 
+\autoref{fig:12} graphisch dargestellt.
+
+\begin{figure}[H]
+    \centering
+    \caption{$U-\sqrt{I}$ Werte mit Ausgleichsrechnung der Violetten Linie}
+    \label{fig:12}
+    \includegraphics{build/violettUsqrtI.pdf}
+\end{figure} 
+\noindent Die Parameter der Ausgleichsgeraden ergeben sich zu 
+\begin{align}
+    a = & \qty{2.06(0.01)e-3}{\ampere}\\
+    b = & \qty{2.42(0.01)e-3}{\ampere}
+\end{align}
+Damit ergibt sich die Grenzspannung durch regression zu 
+\begin{equation}
+    U_\text{g,regr,violett} = \qty{1.175(0.01)}{\volt}
+\end{equation}
+
+\subsection{Grenzspannung der grünen Linie}
+Die Grenzspannung der grünen Linie Lässt sich analog zu \autoref{sec:gruen} 
+bestimmen. Die Messwerte befinden sich in \autoref{tab:gruen} sowie die 
+Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:gruen}
+\begin{table}[H]
+  \centering
+  \caption{Messwerte Grünes Farbspektrom}
+  \label{tab:11}
+  \begin{tblr}{
+          colspec = {S S S S S S},
+          row{1} = {guard, mode = math},
+      }
+      \toprule
+      U/\unit{\volt}&I/\unit{\milli\ampere}\\
+      \midrule
+      -0.579  & 0.000\\
+      -0.575 &  0.002\\
+      -0.570 &  0.004\\
+      -0.565 &  0.006\\
+      -0.560 &  0.006\\
+      -0.534 &  0.014\\
+      -0.518 &  0.018\\
+      -0.497 &  0.030\\
+      -0.480 &  0.036\\
+      -0.470 &  0.042\\
+      \bottomrule
+  \end{tblr}
+\end{table}
+\begin{figure}[H]
+    \centering
+    \caption{$U-\sqrt{I}$ Werte mit Ausgleichsrechnung der Grünen Linie}
+    \label{fig:gruen}
+    \includegraphics{build/gruen.pdf}
+\end{figure} 
+\noindent Die Parameter der Ausgleichsgeraden ergeben sich zu 
+\begin{align}
+    a = & \qty{1.58(0.13)e-3}{\ampere}\\
+    b = & \qty{0.95(0.07)e-3}{\ampere}
+\end{align}
+Damit ergibt sich die Grenzspannung durch regression zu 
+\begin{equation}
+    U_\text{g,regr,gruen} = \qty{1.175(0.01)}{\volt}
+\end{equation}
+
+
+\subsection{Grenzspannung der türkisen Linie}
+Die Messwerte zur Türkisen linie befinden sich in \autoref{tab:tueris} sowie die 
+Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:tuerkis}
+\begin{table}[H]
+  \centering
+  \caption{Messwerte Türkises Farbspektrom}
+  \label{tab:11}
+  \begin{tblr}{
+          colspec = {S S S S S S},
+          row{1} = {guard, mode = math},
+      }
+      \toprule
+      U/\unit{\volt}&I/\unit{\milli\ampere}\\
+      \midrule
+      -0.922  & 0.000\\
+      -0.880  & 0.002\\
+      -0.834  & 0.004\\
+      -0.798  & 0.006\\
+      -0.764  & 0.008\\
+      -0.711  & 0.010\\
+      -0.680  & 0.012\\
+      -0.648  & 0.014\\
+      -0.622  & 0.016\\
+      -0.605  & 0.018\\
+      -0.522  & 0.020\\
+      \bottomrule
+  \end{tblr}
+\end{table}
+\begin{figure}[H]
+    \centering
+    \caption{$U-\sqrt{I}$ Werte mit Ausgleichsrechnung der türkisen Linie}
+    \label{fig:tuerkis}
+    \includegraphics{build/tuerkies.pdf}
+\end{figure} 
+\noindent Die Parameter der Ausgleichsgeraden ergeben sich zu 
+\begin{align}
+    a = & \qty{0.32(0.03)e-3}{\ampere}\\
+    b = & \qty{0.33(0.02)e-3}{\ampere}
+\end{align}
+Damit ergibt sich die Grenzspannung durch regression zu 
+\begin{equation}
+    U_\text{g,regr,tuerkis} = \qty{-1.0(0.12)}{\volt}
+\end{equation}
+
+\subsection{Grenzspannung der gelben Linie}
+Auch für die Gelbe Linie wird noch einmal die Grenzspannung berechnet
+Die Messwerte zur Gelben linie befinden sich in \autoref{tab:gelb} sowie die 
+Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:gelb}
+\begin{table}[H]
+  \centering
+  \caption{Messwerte Gelbes Farbspektrom}
+  \label{tab:11}
+  \begin{tblr}{
+          colspec = {S S S S S S},
+          row{1} = {guard, mode = math},
+      }
+      \toprule
+      U/\unit{\volt}&I/\unit{\milli\ampere}\\
+      \midrule
+      -0.525 &  0.000\\
+      -0.501 &  0.002\\
+      -0.472 &  0.004\\
+      -0.426 &  0.006\\
+      -0.390 &  0.008\\
+      -0.389 &  0.010\\
+      -0.380 &  0.012\\
+      -0.370 &  0.014\\
+      -0.357 &  0.016\\
+      -0.342 &  0.018\\
+      -0.322 &  0.020\\
+      \bottomrule
+  \end{tblr}
+\end{table}
+\begin{figure}[H]
+    \centering
+    \caption{$U-\sqrt{I}$ Werte mit Ausgleichsrechnung der gelben Linie}
+    \label{fig:gelb}
+    \includegraphics{build/gelb.pdf}
+\end{figure} 
+\noindent Die Parameter der Ausgleichsgeraden ergeben sich zu 
+\begin{align}
+    a = & \qty{0.62(0.04)e-3}{\ampere}\\
+    b = & \qty{0.34(0.01)e-3}{\ampere}
+\end{align}
+Damit ergibt sich die Grenzspannung durch regression zu 
+\begin{equation}
+    U_\text{g,regr,gelb} = \qty{-0.55(0.05)}{\volt}
+\end{equation}
