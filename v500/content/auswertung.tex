@@ -47,6 +47,10 @@ Diagramm aufgetragen. Die Messwerte sind in \autoref{tab:10} und \autoref{tab:11
       \bottomrule
   \end{tblr}
 \end{table}
+\noindent Erkennbar ist, das der Strom Proportional zur Intensität ist. Wenn mann 
+also den Spalt so verkleinert, dass nur noch die halbe Intensität des Lichts an der 
+Photozelle ankommt, so ergibt sich die gleiche kurve des Photostroms, nur um ca. die 
+Hälfte gestaucht. 
 
 
 \begin{table}[H]
@@ -233,3 +237,22 @@ Damit ergibt sich die Grenzspannung durch regression zu
 \begin{equation}
     U_\text{g,regr,gelb} = \qty{-0.55(0.05)}{\volt}
 \end{equation}
+
+\subsection{Bestimmung der plank Konstante und Austritsarbeit}
+\noindent In \autoref{fig:aa} sind die Grenzspannungen gegen die 
+Frezenz des jewailigen ausgestrahlten lichts der HG-Lampe aufgetragen. Die frequenzen 
+der jewailigen Farbe befinden sich in \autoref{sec:aa}. 
+\begin{figure}[H]
+    \centering
+    \caption{Grenzspannungen als Funktion der Frequenz}
+    \label{fig:gelb}
+    \includegraphics{build/aa.pdf}
+\end{figure} 
+\noindent Nach \autoref{eqn:5} gibt die Steigung der Ausgleichsgeraden 
+$a = \frac{h}{e}$ das plancksche Wirkungsquantum geteilt durch die 
+Elementarladung am sowie der Parameter des y-Achsen Abschnitts $b =  W_\text{A}$
+die Austrittsarbeit. Somit folgen für $h$ und $W_\text{A}$
+\begin{align}
+    h =& \frac{a}{e} = \qty{6.3(1.1)e-34}{\joule}\\
+    W_\text{A} =& \qty{1.5(0.4)}{\joule}
+\end{align}

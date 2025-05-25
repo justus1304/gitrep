@@ -138,3 +138,28 @@ def tuerkies():
     fig.savefig("build/tuerkies.pdf")
 #Ausfuehren der funktionb
 tuerkies()
+
+
+def aa():
+    print("spektrale anhaengigkeit")
+    l,U = np.genfromtxt("Daten/aa.txt",unpack = True)
+    f = c/(l*10**(-9))
+    x = np.linspace(f[0],f[len(f)-1],10000)
+
+    fig, ax =plt.subplots()
+    ax.plot(f,U,"k.",label = 'Grenzspannungen jewailiger Frequenz')
+    params,cov = np.polyfit(f,U, 1,cov=True) 
+    m, b = params 
+    m_err, b_err = np.sqrt(np.diag(cov))
+    print(f"Steigung: {m:.7f} ± {m_err:.7f}")
+    print(f"Achsenabschnitt: {b:.7f} ± {b_err:.7f}")
+    print(-ufloat(m,m_err)*e)
+    ax.plot(x,m * x + b)
+    ax.set_xlabel(r"$f/\unit{\hertz}$")
+    ax.set_ylabel(r"$U_g/\unit{\volt}$")
+    ax.legend()
+    ax.grid(True)
+    #ax.axvline(x = 560,color = 'red', linestyle='--')
+    fig.savefig("build/aa.pdf")
+#Ausfuehren der funktionb
+aa()
