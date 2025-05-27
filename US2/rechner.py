@@ -32,7 +32,7 @@ for i in range(len(d)):
 print(s_hoehe)
 
 auge = np.genfromtxt("daten/auge.txt", unpack = True)
-s_auge = (auge ) * (1/2) * v_s * 10**(-3)
+s_auge = (auge ) * (1/2) *(v_s) * 10**(-3)
 print("auge")
 for i in range(len(s_auge)):
     print(s_auge[i])
