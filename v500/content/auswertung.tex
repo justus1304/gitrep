@@ -1,21 +1,22 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+
 \subsection{Strom-Spannungs Kennlienie}
-Es werden die Strom-Spannungs Kennlinien für die Violette Linie der 
-Hg-Lampe Einmal bei voller und danach bei halber intensität in einem 
+Es werden die Strom-Spannungs Kennlinien für das violette Spektrum der 
+Hg-Lampe zunächst bei voller und danach bei halber Intensität in einem 
 Diagramm aufgetragen. Die Messwerte sind in \autoref{tab:10} und \autoref{tab:11} 
- zu finden, sowie in \autoref{fig:10} die graphische Darstellung.
+zu finden. Die dazugehörige graphische Darstellung befindet sich in \autoref{fig:10}.
 
 \begin{figure}[H]
     \centering
-    \caption{Strom-Spannungs Kennlinie Violett}
+    \caption{Strom-Spannungs Kennlinie: Violett.}
     \label{fig:10}
     \includegraphics{build/violettUI.pdf}
 \end{figure}    
 
 \begin{table}[H]
   \centering
-  \caption{Messwerte Violettes Farbspektrom volle intensität}
+  \caption{Messwerte violettes Farbspektrom volle Intensität.}
   \label{tab:10}
   \begin{tblr}{
           colspec = {S S S S S S},
@@ -47,15 +48,14 @@ Diagramm aufgetragen. Die Messwerte sind in \autoref{tab:10} und \autoref{tab:11
       \bottomrule
   \end{tblr}
 \end{table}
-\noindent Erkennbar ist, das der Strom Proportional zur Intensität ist. Wenn mann 
-also den Spalt so verkleinert, dass nur noch die halbe Intensität des Lichts an der 
-Photozelle ankommt, so ergibt sich die gleiche kurve des Photostroms, nur um ca. die 
+\noindent Erkennbar ist, dass der Strom proportional zur Intensität ist. Wird 
+der Spalt verkleinert, dass nur noch die Hälfte der Lichtintensität an der 
+Photozelle ankommt, so ergibt sich die gleiche Kurve des Photostroms, nur um ca. die 
 Hälfte gestaucht. 
-
 
 \begin{table}[H]
   \centering
-  \caption{Messwerte Violettes Farbspektrom halbe Intensität}
+  \caption{Messwerte violettes Farbspektrom halbe Intensität.}
   \label{tab:11}
   \begin{tblr}{
           colspec = {S S S S S S},
@@ -79,14 +79,14 @@ Hälfte gestaucht.
   \end{tblr}
 \end{table}
 
-\subsection{Bestimmung der Grrenzspannung $U_\text{g}$}
+\subsection{Bestimmung der Grenzspannung $U_\text{g}$}
 \label{sec:gruen}
-Für die Bestimmung von $U_\text{g,regr}$ wird Die Spannung gegen die 
-Wurzel des Photostroms $\sqrt{I}$ aufgetragen und es wird im linearen 
-bereich eine Ausgleichsrechnung durchgeführt um auf die genauere grenzspannung 
-zu schließen. Die Messwerte zur bestimmung der Grenzspannung des Violetten lichts 
-sind jene aus \autoref{tab:10}. Des weiteren sind die Messwerte und Regression in 
-\autoref{fig:12} graphisch dargestellt.
+Für die Bestimmung von $U_\text{g,regr}$ wird die Spannung gegen die 
+Wurzel des Photostroms $\sqrt{I}$ aufgetragen. Es wird im linearen 
+Bereich eine Ausgleichsrechnung durchgeführt, um auf die genaue Grenzspannung 
+zu schließen. Die Messwerte zur Bestimmung der Grenzspannung des violetten Lichts 
+sind jene aus \autoref{tab:10}. Des Weiteren sind die Messwerte und Regression
+in \autoref{fig:12} graphisch dargestellt.
 
 \begin{figure}[H]
     \centering
@@ -99,19 +99,19 @@ sind jene aus \autoref{tab:10}. Des weiteren sind die Messwerte und Regression i
     a = & \qty{2.06(0.01)e-3}{\ampere}\\
     b = & \qty{2.42(0.01)e-3}{\ampere}
 \end{align}
-Damit ergibt sich die Grenzspannung durch regression zu 
+Damit ergibt sich die Grenzspannung durch Regression zu 
 \begin{equation}
     U_\text{g,regr,violett} = \qty{1.175(0.01)}{\volt}
 \end{equation}
 
-\subsection{Grenzspannung der grünen Linie}
+\subsection{Grenzspannung des grünen Farbspektrums}
 Die Grenzspannung der grünen Linie Lässt sich analog zu \autoref{sec:gruen} 
 bestimmen. Die Messwerte befinden sich in \autoref{tab:gruen} sowie die 
-Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:gruen}
+Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:gruen}.
 \begin{table}[H]
   \centering
-  \caption{Messwerte Grünes Farbspektrom}
-  \label{tab:11}
+  \caption{Messwerte grünes Farbspektrum.}
+  \label{tab:gruen}
   \begin{tblr}{
           colspec = {S S S S S S},
           row{1} = {guard, mode = math},
@@ -134,7 +134,7 @@ Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:gruen}
 \end{table}
 \begin{figure}[H]
     \centering
-    \caption{$U-\sqrt{I}$ Werte mit Ausgleichsrechnung der Grünen Linie}
+    \caption{$U-\sqrt{I}$ Werte mit Ausgleichsrechnung des grünen Lichts.}
     \label{fig:gruen}
     \includegraphics{build/gruen.pdf}
 \end{figure} 
@@ -143,18 +143,18 @@ Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:gruen}
     a = & \qty{1.58(0.13)e-3}{\ampere}\\
     b = & \qty{0.95(0.07)e-3}{\ampere}
 \end{align}
-Damit ergibt sich die Grenzspannung durch regression zu 
+Damit ergibt sich die Grenzspannung durch Regression zu 
 \begin{equation}
     U_\text{g,regr,gruen} = \qty{1.175(0.01)}{\volt}
 \end{equation}
 
 
-\subsection{Grenzspannung der türkisen Linie}
-Die Messwerte zur Türkisen linie befinden sich in \autoref{tab:tueris} sowie die 
-Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:tuerkis}
+\subsection{Grenzspannung des türkisen Farbspektrums}
+Die Messwerte zur türkisen Linie befinden sich in \autoref{tab:11} sowie die 
+Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:tuerkis}.
 \begin{table}[H]
   \centering
-  \caption{Messwerte Türkises Farbspektrom}
+  \caption{Messwerte türkises Farbspektrum.}
   \label{tab:11}
   \begin{tblr}{
           colspec = {S S S S S S},
@@ -179,7 +179,7 @@ Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:tuerkis}
 \end{table}
 \begin{figure}[H]
     \centering
-    \caption{$U-\sqrt{I}$ Werte mit Ausgleichsrechnung der türkisen Linie}
+    \caption{$U-\sqrt{I}$ Werte mit Ausgleichsrechnung des türkisen Lichts.}
     \label{fig:tuerkis}
     \includegraphics{build/tuerkies.pdf}
 \end{figure} 
@@ -188,19 +188,19 @@ Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:tuerkis}
     a = & \qty{0.32(0.03)e-3}{\ampere}\\
     b = & \qty{0.33(0.02)e-3}{\ampere}
 \end{align}
-Damit ergibt sich die Grenzspannung durch regression zu 
+Damit ergibt sich die Grenzspannung durch Regression zu 
 \begin{equation}
     U_\text{g,regr,tuerkis} = \qty{-1.0(0.12)}{\volt}
 \end{equation}
 
-\subsection{Grenzspannung der gelben Linie}
-Auch für die Gelbe Linie wird noch einmal die Grenzspannung berechnet
-Die Messwerte zur Gelben linie befinden sich in \autoref{tab:gelb} sowie die 
-Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:gelb}
+\subsection{Grenzspannung des gelben Farbspektrums}
+Auch für die gelbe Linie wird noch einmal die Grenzspannung berechnet.
+Die Messwerte zur gelben Linie befinden sich in \autoref{tab:12} und die 
+graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:gelb}.
 \begin{table}[H]
   \centering
   \caption{Messwerte Gelbes Farbspektrom}
-  \label{tab:11}
+  \label{tab:12}
   \begin{tblr}{
           colspec = {S S S S S S},
           row{1} = {guard, mode = math},
@@ -224,7 +224,7 @@ Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:gelb}
 \end{table}
 \begin{figure}[H]
     \centering
-    \caption{$U-\sqrt{I}$ Werte mit Ausgleichsrechnung der gelben Linie}
+    \caption{$U-\sqrt{I}$ Werte mit Ausgleichsrechnung des gelben Lichts.}
     \label{fig:gelb}
     \includegraphics{build/gelb.pdf}
 \end{figure} 
@@ -233,26 +233,27 @@ Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:gelb}
     a = & \qty{0.62(0.04)e-3}{\ampere}\\
     b = & \qty{0.34(0.01)e-3}{\ampere}
 \end{align}
-Damit ergibt sich die Grenzspannung durch regression zu 
+Damit ergibt sich die Grenzspannung durch Regression zu 
 \begin{equation}
     U_\text{g,regr,gelb} = \qty{-0.55(0.05)}{\volt}
 \end{equation}
 
-\subsection{Bestimmung der plank Konstante und Austritsarbeit}
+\subsection{Bestimmung der Planck-Konstante und Austritsarbeit}
+\label{sec:planckWa}
 \noindent In \autoref{fig:aa} sind die Grenzspannungen gegen die 
-Frezenz des jewailigen ausgestrahlten lichts der HG-Lampe aufgetragen. Die frequenzen 
-der jewailigen Farbe befinden sich in \autoref{sec:aa}. 
+Frequenz des jeweiligen ausgestrahlten Lichts der HG-Lampe aufgetragen. Die
+Messwerte zu den Frequenzen der Farben befinden sich in \autoref{sec:aa}. 
 \begin{figure}[H]
     \centering
-    \caption{Grenzspannungen als Funktion der Frequenz}
-    \label{fig:gelb}
+    \caption{Grenzspannungen als Funktion der Frequenz.}
+    \label{fig:aa}
     \includegraphics{build/aa.pdf}
 \end{figure} 
 \noindent Nach \autoref{eqn:5} gibt die Steigung der Ausgleichsgeraden 
-$a = \frac{h}{e}$ das plancksche Wirkungsquantum geteilt durch die 
-Elementarladung am sowie der Parameter des y-Achsen Abschnitts $b =  W_\text{A}$
+$a = \frac{h}{e}$ das planck'sche Wirkungsquantum geteilt durch die 
+Elementarladung an und der Wert des y-Achsen Abschnitts $b =  W_\text{A}$
 die Austrittsarbeit. Somit folgen für $h$ und $W_\text{A}$
 \begin{align}
-    h =& \frac{a}{e} = \qty{6.3(1.1)e-34}{\joule}\\
-    W_\text{A} =& \qty{1.5(0.4)}{\joule}
+    h =& \frac{a}{e} = \qty{6.3(1.1)e-34}{\joule\second}\\
+    W_\text{A} =& \qty{1.5(0.4)}{\eV}.
 \end{align}

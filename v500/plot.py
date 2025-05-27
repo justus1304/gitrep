@@ -147,7 +147,7 @@ def aa():
     x = np.linspace(f[0],f[len(f)-1],10000)
 
     fig, ax =plt.subplots()
-    ax.plot(f,U,"k.",label = 'Grenzspannungen jewailiger Frequenz')
+    ax.plot(f,U,"k.",label = 'Grenzspannungen der Frequenzen')
     params,cov = np.polyfit(f,U, 1,cov=True) 
     m, b = params 
     m_err, b_err = np.sqrt(np.diag(cov))

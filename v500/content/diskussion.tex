@@ -1,2 +1,69 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+\subsection{Kennlinien der Lichtspektren}
+Um über die Kennlinien des violetten Lichts zu urteilen bedarf es der 
+Betrachtung der Fermi-Dirac-Statistik, welche die Besetzungswahrscheinlichkeit 
+von Quantenzuständen durch Fermionen bei einer Temperatur $T$ beschreibt.
+Wird der Theorie gefolgt, so nimmt die Wahrscheinlichkeit für Fermionen, sich
+im Metallgitter zu befinden mit abnehmender Energie bei $T>0$ zu. Wird die 
+Fermi-Energie erreicht, stellt sich eine Sättigung ein. Diese ist auch in 
+\autoref{fig:10} zu erkennen. Der Photostrom steigt zunächst exponentiell, 
+bis er sich nach und nach zu einem ca. linearen Graphen abflacht.
+\vspace{0.5em}
+\\
+Für den Graphen mit halber Intensität gilt das gleiche; der Graph verhält sich 
+entsprechend der Fermi-Dirac Prognose. Der Graph ist lediglich gestaucht, da 
+die Intensität nicht mehr so hoch ist. Es lässt sich zusammenschließen, dass 
+die Anzahl der austretenden Elektronen proportional zur Intensität des Lichts 
+ist.
+
+\subsection{Grenzspannungen}
+Für die gemessenen Grenzspannungen ergaben sich die folgenden Werte:
+\begin{align*}
+    U_\text{g,regr,violett} &= \qty{1.175(0.01)}{\volt} \\
+    U_\text{g,regr,grün}   &= \qty{1.175(0.01)}{\volt} \\
+    U_\text{g,regr,türkis} &= \qty{-1.0(0.12)}{\volt}  \\
+    U_\text{g,regr,gelb}    &= \qty{-0.55(0.05)}{\volt} \\
+\end{align*}
+Es sind keine Theoriewerte oder Literaturwerte zum Vergleich vorhanden, alledings 
+ist durch \autoref{fig:aa} erkennbar, dass die Grenzspannungen fehlerbehaftet
+sind und somit von der Ausgleichsrechnung abweichen.
+
+\subsection{Planck'sches Wirkungsquantum}
+Der gemessene Wert des Planck'schen Wirkungsquantum aus \autoref{sec:planckWa}
+beläuft sich auf
+\begin{equation*}
+    h_{exp} = \qty{6.3(1.1)e-34}{\joule\second},
+\end{equation*}
+\noindent wohingegen der Wert aus der Literatur als 
+\begin{equation*}
+    h_{Lit} = \SI{6.626e-34}{\joule\second}
+\end{equation*}
+bekannt ist. Das enstpricht einer Abweichung von $4.92 \%$. Als Fehlerquelle
+könnte die Regression herangezogen werden. Hier handelt es sich um eine
+Ausgleichsrechnung aus vier Werten, welche (wie in \autoref{fig:aa} zu sehen)
+fehlerbehaftet sind. Folglich ist auch die experimentell bestimmte Planck'sche 
+Konstante mit Fehlern versehen. Diese sind jedoch sehr gering, der Literaturwert
+liegt im Fehlerbereich des experimentell bestimmten Werts. Es kann also von
+einer erfolgreichen Messung gesprochen werden.
+
+\subsection{Austrittsarbeit}
+Der Anodenring der Photozelle besteht aus einer Platin-Rhodium Legierung, 
+demnach wird die gemessene Austrittsarbeit mit den Literaturwerten beider 
+Elemente verglichen, diese belaufen sich auf:
+\begin{align*}
+    W_{A,\text{Pt}} &= \SIrange{5.32}{5.66}{\eV}, \quad \text{\cite{pt}} \\
+    W_{A,\text{Rh}} &= \SI{4.58}{\eV} \quad \text{\cite{rh}}.
+\end{align*}
+Verglichen mit dem gemessenen Wert von 
+\begin{align*}
+    W_\text{A,exp} =& \qty{1.5(0.4)}{\eV}
+\end{align*}
+wäre das eine Abweichung von mindestens $67.25 \%$. Das könnte durch eine 
+verunreinigte Metallschicht kommen. Andererseits können hier nur Vermutungen 
+angestellt werden zumal es sich einerseits um eine Legierung handelt und 
+anderersetis kein direkter Vergleich vorliegt, sondern nur der mit dein einzelnen 
+Elementen selbst. Letztendlich lässt sich jedoch vermuten, dass ein vergleichsweise 
+großer Fehler vorliegt, da die lineare Regression aus lediglich vier Werten 
+besteht, welche selbst wiederum einem Fehler unterliegen.
