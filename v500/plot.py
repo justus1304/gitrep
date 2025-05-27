@@ -151,7 +151,7 @@ def aa():
     params,cov = np.polyfit(f,U, 1,cov=True) 
     m, b = params 
     m_err, b_err = np.sqrt(np.diag(cov))
-    print(f"Steigung: {m:.7f} ± {m_err:.7f}")
+    print(f"Steigung: {m:.10f} ± {m_err:.10f}")
     print(f"Achsenabschnitt: {b:.7f} ± {b_err:.7f}")
     print(-ufloat(m,m_err)*e)
     ax.plot(x,m * x + b)
@@ -163,3 +163,27 @@ def aa():
     fig.savefig("build/aa.pdf")
 #Ausfuehren der funktionb
 aa()
+
+def aa2():
+    print("spektrale anhaengigkeit ohne regression ")
+    l,U = np.genfromtxt("Daten/aa2.txt",unpack = True)
+    f = c/(l*10**(-9))
+    x = np.linspace(f[0],f[len(f)-1],10000)
+
+    fig, ax =plt.subplots()
+    ax.plot(f,U,"k.",label = 'Grenzspannungen der Frequenzen ohne Regression')
+    params,cov = np.polyfit(f,U, 1,cov=True) 
+    m, b = params 
+    m_err, b_err = np.sqrt(np.diag(cov))
+    print(f"Steigung: {m:.10f} ± {m_err:.10f}")
+    print(f"Achsenabschnitt: {b:.7f} ± {b_err:.7f}")
+    print(-ufloat(m,m_err)*e)
+    ax.plot(x,m * x + b)
+    ax.set_xlabel(r"$f/\unit{\hertz}$")
+    ax.set_ylabel(r"$U_g/\unit{\volt}$")
+    ax.legend()
+    ax.grid(True)
+    #ax.axvline(x = 560,color = 'red', linestyle='--')
+    fig.savefig("build/aa2.pdf")
+#Ausfuehren der funktionb
+aa2()
