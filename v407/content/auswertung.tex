@@ -1,14 +1,15 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-Zunächst wird der Brechungsindex für die parallele , sowie die senkrechte
+Zunächst wird der Brechungsindex für die parallele sowie die senkrechte
 Polarisation berechnet. Dazu werden die Fresnelschen Formeln nach dem 
 Brechungsindex $n$ umgestellt. Die Messwerte Der gemessenen Lichtintensität $I_\text{r}$
 bei dem Winkel $\alpha$ sind \autoref{tab:10}  zu entnehmen. Die Berechnungen der Brechungsindizes 
 finden in zwei unterabschnitten \autoref{sec:10} und \autoref{sec:11} statt und die Ergebnisse sind 
-dann gemeinsam in \autoref{tab:11} zu finden. Für die rechnungen wird die Intensität zu $I = \frac{I_r}{I_e}$ 
-benutzt, wobei $I_e = 0.255\unit{\milli\ampere}$  Die gemessene intensität des Einfallenden Lichts beschreibt.
-Der Dunkelstron $I_d$ wird als vernachlässigbar klein angenommen. 
+dann gemeinsam in \autoref{tab:11} zu finden. Für die Rechnungen wird die Intensität zu $I = \frac{I_r}{I_e}$ 
+benutzt, wobei $I_e = 0.255\unit{\milli\ampere}$  Die gemessene intensität des einfallenden Lichts beschreibt.
+Der Dunkelstron $I_d$ wird als vernachlässigbar klein angenommen, da das Messgerät in der Größenordnung keine 
+Verlässlichen Werte anzeigt.
 
 \begin{table}[H]
   \centering
@@ -20,7 +21,7 @@ Der Dunkelstron $I_d$ wird als vernachlässigbar klein angenommen.
           row{2} = {guard, mode = math},
       }
       \toprule
-       \SetCell[c=4]{c} Parallel & & & & \SetCell[c=4]{c} Senkrecht & \\
+       \SetCell[c=4]{c} \text{Parallel} & & & & \SetCell[c=4]{c} \text{Senkrecht} & \\
       \alpha \, /\unit{\degree}& I \, /\unit{\milli\ampere}& \alpha \, /\unit{\degree} & I \, /\unit{\milli\ampere}&\alpha \, /\unit{\degree}& I \, /\unit{\milli\ampere}& \alpha \, /\unit{\degree} & I \, /\unit{\milli\ampere}\\
       \midrule
       85  &0.1400 &  53 & 0.0120  &  87 & 0.500 &  35 & 0.016\\
@@ -72,36 +73,37 @@ $\alpha = 13\unit{\degree}$ sind die Werte wieder mit einem Fehler von $\Delta I
        \SetCell[c=4]{c} Parallel & & & & \SetCell[c=4]{c} Senkrecht & \\
       \alpha \, /\unit{\degree}& n & \alpha \, /\unit{\degree} & n&\alpha \, /\unit{\degree}& n& \alpha \, /\unit{\degree} & n\\
       \midrule
-      85  &12.55&  53 & 1.350  &  87 & 1.001 &  35 & 1.007\\
-      83  &8.655&  51 & 1.257  &  85 & 1.003 &  33 & 1.005\\
-      82  &7.451&  49 & 1.178  &  83 & 1.006 &  31 & 1.005\\
-      81  &6.506&  47 & 1.117  &  81 & 1.010 &  29 & 1.006\\
-      80  &5.781&  45 & 1.063  &  79 & 1.013 &  27 & 1.005\\
-      79  &5.209&  43 & 1.036  &  77 & 1.017 &  25 & 1.006\\
-      78  &4.744&  41 & 1.028  &  75 & 1.020 &  23 & 1.005\\
-      77  &4.354&  39 & 1.025  &  73 & 1.022 &  21 & 1.007\\
-      76  &4.022&  37 & 1.018  &  71 & 1.023 &  19 & 1.007\\
-      75  &3.740&  35 & 1.012  &  69 & 1.021 &  17 & 1.006\\
-      74  &3.495&  33 & 1.009  &  67 & 1.023 &  15 & 1.006\\
-      73  &3.280&  31 & 1.010  &  65 & 1.023 &  13 & 1.006\\
-      72  &3.089&  29 & 1.009  &  63 & 1.017 &  11 & 1.006\\
-      71  &2.920&  27 & 1.010  &  61 & 1.016 &  9  & 1.006\\
-      70  &2.766&  25 & 1.008  &  59 & 1.018 &  7  & 1.006\\
-      69  &2.625&  23 & 1.008  &  57 & 1.014 &  5  & 1.006\\
-      68  &2.498&  21 & 1.007  &  55 & 1.013 &  3  & 1.006\\
-      67  &2.382&  19 & 1.007  &  53 & 1.009 &     &  \\
-      66  &2.275&  17 & 1.007  &  51 & 1.010 &     &  \\
-      65  &2.173&  15 & 1.008  &  49 & 1.008 &     &   \\
-      64  &2.079&  13 & 1.007  &  47 & 1.008 &     &  \\
-      63  &1.994&  11 & 1.006  &  45 & 1.007 &     &  \\
-      61  &1.835&  9  & 1.006  &  43 & 1.006 &     &  \\
-      59  &1.695&  7  & 1.006  &  41 & 1.006 &     &  \\
-      57  &1.571&  5  & 1.006  &  39 & 1.007 &     &  \\
-      55  &1.453&      &         &  37&1.007 &     &  \\
+      85  &12.6+-0.5 & 53 &  1.35+-0.12 &  87 & 1.5+-0.5&  35 &   1.3+-0.6\\
+      83  &8.66+-0.35&  51 & 1.26+-0.13 &  85 & 1.8+-0.6&  33 &   1.2+-0.7\\
+      82  &7.45+-0.30&  49 & 1.18+-0.15 &  83 & 2.0+-0.7&  31 &   1.2+-0.7\\
+      81  &6.51+-0.27&  47 & 1.12+-0.18 &  81 & 2.4+-0.9&  29 &   1.3+-0.8\\
+      80  &5.78+-0.24&  45 & 1.06+-0.21 &  79 & 2.2+-0.6&  27 &   1.2+-0.8\\
+      79  &5.21+-0.22&  43 & 1.04+-0.18 &  77 & 2.4+-0.7&  25 &   1.3+-0.8\\
+      78  &4.74+-0.20&  41 & 1.03+-0.13 &  75 & 2.2+-0.6&  23 &   1.3+-0.9\\
+      77  &4.35+-0.18&  39 & 1.03+-0.10 &  73 & 2.1+-0.5&  21 &   1.3+-0.9\\
+      76  &4.02+-0.17&  37 & 1.02+-0.09 &  71 & 1.9+-0.4&  19 &   1.3+-0.9\\
+      75  &3.74+-0.16&  35 & 1.01+-0.08 &  69 & 1.71+-0.31&  17 & 1.3+-0.9\\
+      74  &3.50+-0.15&  33 & 1.01+-0.07 &  67 & 1.71+-0.31&  15 & 1.3+-1.0\\
+      73  &3.28+-0.14&  31 & 1.01+-0.06 &  65 & 1.69+-0.31&  13 & 1.3+-1.0\\
+      72  &3.09+-0.14&  29 & 1.01+-0.06 &  63 & 1.48+-0.26&  11 & 1.3+-1.0\\
+      71  &2.92+-0.13&  27 & 1.01+-0.05 &  61 & 1.44+-0.26&  9  & 1.3+-1.0\\
+      70  &2.77+-0.13&  25 & 1.01+-0.05 &  59 & 1.49+-0.29&  7  & 1.3+-1.0\\
+      69  &2.63+-0.12&  23 & 1.01+-0.05 &  57 & 1.40+-0.29&  5  & 1.3+-1.0\\
+      68  &2.50+-0.12&  21 & 1.01+-0.05 &  55 & 1.37+-0.31&  3  & 1.3+-1.0\\
+      67  &2.38+-0.12&  19 & 1.01+-0.05 &  53 & 1.29+-0.33&     &  \\
+      66  &2.28+-0.11&  17 & 1.01+-0.04 &  51 & 1.31+-0.35&     &  \\
+      65  &2.17+-0.11&  15 & 1.01+-0.04 &  49 & 1.3+-0.4&     &   \\
+      64  &2.08+-0.11&  13 & 1.01+-0.04 &  47 & 1.3+-0.4&     &  \\
+      63  &1.99+-0.11&  11 & 1.01+-0.04 &  45 & 1.3+-0.5&     &  \\
+      61  &1.84+-0.10&  9  & 1.01+-0.04 &  43 & 1.2+-0.5&     &  \\
+      59  &1.70+-0.10&  7  & 1.01+-0.04 &  41 & 1.2+-0.6&     &  \\
+      57  &1.57+-0.10&  5  & 1.01+-0.04 &  39 & 1.3+-0.6&     &  \\
+      55  &1.45+-0.11&      &         &  37&1.3+-0.6& &  \\
       \bottomrule 
   \end{tblr}
 \end{table}
 
+(toolbox) ju
 \subsection{Paralleler Brechungsindex}
 \label{sec:10}
 Die Fresnel Formel für Parallele polarisation ergibt umgestellt nach $n$
@@ -142,4 +144,8 @@ ein Brewster Winkel von
 \begin{equation}
  \theta_\text{Brewster} = \qty{68.17}{\degree}
 \end{equation}
-
+Aus dem aus unseren Messdaten abgelesenen Brewster Winkel $\Theta_\text{Brewster}=75\unit{\degree}$ ergibt sich 
+ein Brechungsindex von  
+\begin{equation}
+ n_\text{Brewster} = \qty{0.96}{}
+\end{equation}
