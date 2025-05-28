@@ -17,16 +17,32 @@ Aus den Berechnungen ergaben sich die Brechungsindizes
     \overline{n_\text{parallel}}  &= \qty{2.50(0.32)}{} \\
     \overline{n_\text{senkrecht}} &= \qty{1.48(0.05)}{}
 \end{align*}
-\noindent Es ist nicht möglich Vergleichswerte heranzuziehen, jedoch sind diese 
-Werte als fehlerbehaftet anzunehmen. Die signifikante Abweichung zwischen den
+\noindent Die signifikante Abweichung zwischen den
 beiden Werten ($\increment n = 1.02$) deutet auf eine starke Doppelbrechung des
 Materials hin. Die vergleichsweise große Unsicherheit bei $\overline{n_\text{parallel}}$
 von $\pm 0.32$ lässt sich auf mehrere Faktoren zurückführen, wie die bereits 
 angesprochenen Polarisationsfilterprobleme oder die manuelle Ausrichtung von 
 Instrumenten, was zu einer Vermischung der Polarisationsebenen führt.
 Dies äußert sich besonders stark bei der Messung der parallelen Komponente.
+Bei dem Vergleich mit der Literatur wird der Verdacht einer sehr fehlerbelasteten 
+Messung bestätigt. Ausgehend von einem Wert von $n_{Lit} = 3.42$ \cite{brisi} 
+für Silicium würde das einer Abweichung von $26.9 \%$ bzw. $56.73 \%$ entsprechen. 
+Für die Bestimmung des Brechungsindex mithilfe des Brewster Winkels von 
+$\theta_\text{Brewster}=75\unit{\degree}$ ergab sich ein Wert von 
+\begin{equation*}
+    n_{Brewster} = 0.96,
+\end{equation*}
+der deutlich unter dem zu erwartenden Literaturwert von $3,42$ für Silicium liegt.
+Dieser würde weit mehr abweichen mit einem Prozentwert 
+von $71.93$. Eine derartig hohe Abweichung ist ungewöhnlich, lässt sich jedoch
+durch mehrere systematische Fehlerquellen erklären. Bereits der gemessene
+Brewster-Winkel wich signifikant vom theoretisch vorhergesagten Wert ab (mehr 
+dazu in \autoref{sec:disb}). Diese systematischen Unsicherheiten potenzieren sich
+bei der Berechnung des Brechungsindex und führen so zu der beobachteten starken
+Abweichung vom Referenzwert.
 
 \subsection{Brewsterwinkel}
+\label{sec:disb}
 Da der Polarisationsfilter nicht so funktioniert, wie vorgesehen, unterliegt die
 Bestimmung des Brewsterwinkels dem systematischen Fehler. Trotzdem ist zu erkennen, 
 dass nach \autoref{tab:10} die Intensität im Bereich zwischen x und y 
@@ -41,7 +57,10 @@ Fehlern zuzuschreiben.
 Der Literatur nach liegt der Brewster-Winkel bei Silicium bei $74°$ \cite{brewster}.
 Dementsprechend ist die Bestimmung via Diagramm wesentlich präziser mit einer 
 Abweichung von $1.35 \%$ im Gegensatz zur Berechnung, welche sich um $10 \%$
-von der Literatur unterscheidet.
+von der Literatur unterscheidet. Die Brewster-Methode setzt eine perfekt glatte
+Oberfläche voraus, was im Versuch nur sehr schwer realisierbar ist.
+Oberflächenkontaminationen oder Oxidschichten auf Silicium
+reduzieren die reflektierte Intensität und verfälschen $\theta_{Brewster}$.
 
 \subsection{Diagramm zum Vergleich}
 In \autoref{fig:10} sind die Messewerte veranschaulicht. Es fällt auf, dass 
