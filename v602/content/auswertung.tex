@@ -1,4 +1,67 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\subsection{Verifizierung der Bragg-Bedingung}
+\subsection{Verifizierung der Bragg-Bedingung.}
+\begin{figure}
+    \centering
+    \caption{Messwerte zur Bragg-Überprüfung}
+    \label{fig:brag}
+    \includegraphics{build/bragg.pdf}
+\end{figure}
+Anhand von \autoref{fig:brag} lässt sich das Maximum ziemlich genau bei 
+$\theta = 28\unit{\degree}$ erkennen. Da das Medium, an welchen 
+die Photonen reflektiert werden in einem Winkel von $14\unit{\degree}$ stand, 
+ist das Maximum bei dem Winkel erwartbar. (Einfallswinkel = Ausfallswinkel).
+
+\subsection{Das Emissionsspektrum einer Cu-Roentgenroehre}
+In \autoref{fig:spektrum} sind die Messwerte geplotet. Eingezeichnet sind auch der Bremsbergm sowie die $K_\alpha $ und $K_\beta $-Linien.
+Der Grenzwinkel bestimmt sich durch ablesen zu 
+\begin{equation}
+    \Theta_\text{G} = \qty{5.7(0.1)}{\degree}
+\end{equation}
+daraus ergibt sich nach \autoref{eqn:} und \autoref{eqn:}
+eine minimale Wellenlänge, bzw eine maximale Energie ableiten,
+ \begin{align}
+    \lambda_\text{min} &= \qty{40(0.7)}{\pico\meter}\\
+    E_\text{max} &= \qty{49.7(0.7)}{\kilo\electronvolt}
+ \end{align}
+\begin{figure}
+    \centering
+    \caption{Emmisionsspektrum einer Cu-Röhre.}
+    \label{fig:spektrum}
+    \includegraphics{build/wertejust.pdf}
+\end{figure}
+Um nun das Auflösevermögen der Apparatur zu bestimmen Werden die K-Linien noch einmal 
+vergrößert in \autoref{fig:zoom} dargestellt. Des Weiteren wurden die Wargerechten linien 
+auf der höhe der beiden Halbwertsbreiten der K-Linien eingezeichnet. Daraus ergeben sich jewails zwei 
+Winkel aus den Schnittpunkten mit der $K_\alpha$ und $K_\beta$-Linie.
+Für $K_\alpha$ ergibt sich $\Theta_{min,\alpha} = \qty{22(0.1)}{\degree}$ 
+, $\Theta_{max,\alpha} = \qty{22.7(0.1)}{\degree}$ sowie für $K_\beta
+$ $\Theta_{min,\beta} = \qty{19.8(0.1)}{\degree}$ und $\Theta_{max,\alpha} = \qty{20.4(0.1)}{\degree}$
+Durch \autoref{} werden daraus erneut die Energien ermittelt. Das Auflösungsvermögen lässt sich dann 
+durch folgende Gleichung bestimmen.Die Ergebnisse sind \autoref{tab:auf} zu entnehmen.
+
+\begin{equation}
+    A = \frac{E}{\Delta E}
+\end{equation}
+\begin{table}[H]
+  \centering
+  \caption{Messwerte violettes Farbspektrom halbe Intensität.}
+  \label{tab:11}
+  \begin{tblr}{
+          colspec = {S S S S S S},
+          row{1} = {guard, mode = math},
+      }
+      \toprule
+      Linie&IE/\unit{\kilo\electronvolt}& \Delta E /\unit{\kilo\electronvolt}&A\\
+      \midrule
+      
+      \bottomrule
+  \end{tblr}
+\end{table}
+\begin{figure}
+    \centering
+    \caption{Zoom auf $K_{\alpha} $und $ K_{\beta}$ Lienien des Emissionsspektrums}
+    \label{fig:zoom}
+    \includegraphics{build/zoom.pdf}
+\end{figure}
