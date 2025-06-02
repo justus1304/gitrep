@@ -116,3 +116,146 @@ zoom()
 def aufloesung():
     print(E(5.7, 201.4*10**(-12)))
 aufloesung()
+
+
+def strontium():
+    theta, R = np.genfromtxt("daten/strontium.txt", unpack = True)
+    # Maximum finden
+    max_R = np.max(R)
+    max_theta = theta[np.argmax(R)]
+    x = np.linspace(10,12,1000)
+    fig, ax = plt.subplots()
+    mittelwert = np.mean(R)
+    # Messdaten plotten (verbunden mit Linien und Punkten)
+    ax.plot(theta, R, '-x', color='blue', markersize=1, label='Meswerte')
+    ax.plot(x, f(x,mittelwert), '-', color='red', markersize=1, label='Mittelwert')
+
+    # Diagramm gestalten
+   
+    ax.set_xlabel("Winkel θ [°]", fontsize=12)
+    ax.set_ylabel("Reflexionsintensität R [a.u.]", fontsize=12)
+    print("Theta min/max:", np.min(theta), np.max(theta))
+    print("R min/max:", np.min(R), np.max(R))
+    ax.set_xlim(10.0, 12.0)
+    ax.set_ylim(0, 140)
+
+    ax.legend(fontsize=10)
+    ax.grid(True, alpha=0.3)
+
+    fig.savefig("build/strontium.pdf")
+strontium()    
+
+def gallium():
+    theta, R = np.genfromtxt("daten/gallium.txt", unpack = True)
+    # Maximum finden
+    max_R = np.max(R)
+    max_theta = theta[np.argmax(R)]
+    x = np.linspace(16.3,18.3,1000)
+    fig, ax = plt.subplots()
+    mittelwert = np.mean(R)
+    print(mittelwert)
+    # Messdaten plotten (verbunden mit Linien und Punkten)
+    ax.plot(theta, R, '-x', color='blue', markersize=1, label='Meswerte')
+    ax.plot(x, f(x,mittelwert), '-', color='red', markersize=1, label='Mittelwert')
+    ax.plot(2)
+    # Diagramm gestalten
+   
+    ax.set_xlabel("Winkel θ [°]", fontsize=12)
+    ax.set_ylabel("Reflexionsintensität R [a.u.]", fontsize=12)
+    print("Theta min/max:", np.min(theta), np.max(theta))
+    print("R min/max:", np.min(R), np.max(R))
+    ax.set_xlim(16.3, 18.3)
+    ax.set_ylim(0, 40)
+
+    ax.legend(fontsize=10)
+    ax.grid(True, alpha=0.3)
+
+    fig.savefig("build/gallium.pdf")
+gallium()    
+
+
+def zink():
+    theta, R = np.genfromtxt("daten/zink.txt", unpack = True)
+    # Maximum finden
+    max_R = np.max(R)
+    max_theta = theta[np.argmax(R)]
+    x = np.linspace(17.6,19.6,1000)
+    fig, ax = plt.subplots()
+    mittelwert = np.mean(R)
+    print(mittelwert)
+    # Messdaten plotten (verbunden mit Linien und Punkten)
+    ax.plot(theta, R, '-x', color='blue', markersize=1, label='Meswerte')
+    ax.plot(x, f(x,mittelwert), '-', color='red', markersize=1, label='Mittelwert')
+    ax.plot(2)
+    # Diagramm gestalten
+   
+    ax.set_xlabel("Winkel θ [°]", fontsize=12)
+    ax.set_ylabel("Reflexionsintensität R [a.u.]", fontsize=12)
+    print("Theta min/max:", np.min(theta), np.max(theta))
+    print("R min/max:", np.min(R), np.max(R))
+    ax.set_xlim(17.6, 19.6)
+    ax.set_ylim(0, 40)
+
+    ax.legend(fontsize=10)
+    ax.grid(True, alpha=0.3)
+
+    fig.savefig("build/zink.pdf")
+zink()    
+
+
+def zr():
+    theta, R = np.genfromtxt("daten/zr.txt", unpack = True)
+    # Maximum finden
+    max_R = np.max(R)
+    max_theta = theta[np.argmax(R)]
+    x = np.linspace(8.8,10.8,1000)
+    fig, ax = plt.subplots()
+    mittelwert = np.mean(R)
+    print(mittelwert)
+    # Messdaten plotten (verbunden mit Linien und Punkten)
+    ax.plot(theta, R, '-x', color='blue', markersize=1, label='Meswerte')
+    ax.plot(x, f(x,mittelwert), '-', color='red', markersize=1, label='Mittelwert')
+    ax.plot(2)
+    # Diagramm gestalten
+   
+    ax.set_xlabel("Winkel θ [°]", fontsize=12)
+    ax.set_ylabel("Reflexionsintensität R [a.u.]", fontsize=12)
+    print("Theta min/max:", np.min(theta), np.max(theta))
+    print("R min/max:", np.min(R), np.max(R))
+    ax.set_xlim(8.8, 10.8)
+    ax.set_ylim(0, 100)
+
+    ax.legend(fontsize=10)
+    ax.grid(True, alpha=0.3)
+
+    fig.savefig("build/zr.pdf")
+zr()    
+
+
+def brom():
+    theta, R = np.genfromtxt("daten/brom.txt", unpack = True)
+    # Maximum finden
+    max_R = np.max(R)
+    max_theta = theta[np.argmax(R)]
+    x = np.linspace(12,14.2,1000)
+    fig, ax = plt.subplots()
+    mittelwert = np.mean(R)
+    print(mittelwert)
+    # Messdaten plotten (verbunden mit Linien und Punkten)
+    ax.plot(theta, R, '-x', color='blue', markersize=1, label='Meswerte')
+    ax.plot(x, f(x,mittelwert), '-', color='red', markersize=1, label='Mittelwert')
+    ax.plot(2)
+    # Diagramm gestalten
+   
+    ax.set_xlabel("Winkel θ [°]", fontsize=12)
+    ax.set_ylabel("Reflexionsintensität R [a.u.]", fontsize=12)
+    print("Theta min/max:", np.min(theta), np.max(theta))
+    print("R min/max:", np.min(R), np.max(R))
+    ax.set_xlim(12, 14.2)
+    ax.set_ylim(0, 40)
+
+    ax.legend(fontsize=10)
+    ax.grid(True, alpha=0.3)
+
+    fig.savefig("build/brom.pdf")
+brom()    

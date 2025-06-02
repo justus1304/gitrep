@@ -55,8 +55,8 @@ durch folgende Gleichung bestimmen.Die Ergebnisse sind \autoref{tab:auf} zu entn
       \toprule
       Linie&IE/\unit{\kilo\electronvolt}& \Delta E /\unit{\kilo\electronvolt}&A\\
       \midrule
-      \alpha & 8.10 +- 0.04 & 0.26+-0.07 & 31+-8\\
-      \beta & 8.95 +- 0.04 & 0.26+-0.07 & 34+-9\\
+      $\alpha$ & 8.10 +- 0.04 & 0.26+-0.07 & 31+-8\\
+      $\beta$ & 8.95 +- 0.04 & 0.26+-0.07 & 34+-9\\
       \bottomrule
   \end{tblr}
 \end{table}
@@ -86,3 +86,65 @@ $ als Theoriewert angenommenm, da dieser nicht experimentell bestimmt wurde. Die
       \bottomrule
   \end{tblr}
 \end{table}
+
+
+\subsection{Das Absorptionsspektrum}
+In den folgenden Abbildungen sind die Messwerte für das Absorptionsspektrum graphisch dargestellt.
+Daraus wird der Braggwinkel $\Theta_\text{k,exp}$ und zur besseren Übersicht ist dazu noch der Mittelwert der Messwerte eingezeichnet.
+Aus dem Bragwinkel werden wie schon im letzen Unterabschnitt die Energien bestimmt und letztendlich mit \autoref{sigma} die Abschirmkonstanten bestimmt. 
+Die ergebnisse sind in \autoref{tab:abs} dargestelt.
+\begin{table}[H]
+  \centering
+  \caption{Berechnete Braggwinkel,Absorptionsenergie und Abschirmkonstanten.}
+  \label{tab:11}
+  \begin{tblr}{
+          colspec = {S S S S S S},
+          row{1} = {guard, mode = math},
+      }
+      \toprule
+      Material & \Theta_\text{k,exp}\unit{\degree}&\Theta_\text{k,lit}\unit{\degree}&E_\text{k,exp}\unit{\kilo\electronvolt}&\sigma_{K,exp}&\sigma_{K,lit}\\
+      \midrule
+      Strontium & 10.95 +- 0.1 & 16.19+-0.15&16.12&3.60+-0.09& 3.98\\
+      Gallium &17.12+-0.1 & 10.46+-0.05 & & 7.26+-0.08 &\\
+      Brom &13.1+-0.1 & 13.58+-0.11 & & 6.41+-0.06\\
+      Zink &18.45+-0.1 & 9.74+-0.05 & & 4.26 +- 0.06 \\
+      Zirkonium &9.85+-0.1 & 17.99+-0.17 & & 3.62+-0.17\\
+      \bottomrule
+  \end{tblr}
+\end{table}
+\begin{figure}
+    \centering
+    \caption{Ermittlung des Strontium Bragwinkels}
+    \label{fig:zink}
+    \includegraphics{build/strontium.pdf}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \caption{Ermittlung des Gallium Braggwinkels}
+    \label{fig:}
+    \includegraphics{build/gallium.pdf}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \caption{Ermittlung des Zink Braggwinkels}
+    \label{fig:}
+    \includegraphics{build/zink.pdf}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \caption{Ermittlung des Zirkonium Braggwinkels}
+    \label{fig:}
+    \includegraphics{build/zr.pdf}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \caption{Ermittlung des Brom Braggwinkels}
+    \label{fig:}
+    \includegraphics{build/brom.pdf}
+\end{figure}
+
+
