@@ -4,46 +4,58 @@
 \subsection{Verifizierung der Bragg-Bedingung.}
 \begin{figure}
     \centering
-    \caption{Messwerte zur Bragg-Überprüfung}
+    \caption{Messwerte zur Bragg-Überprüfung.}
     \label{fig:brag}
     \includegraphics{build/bragg.pdf}
 \end{figure}
-Anhand von \autoref{fig:brag} lässt sich das Maximum ziemlich genau bei 
+\noindent Anhand von \autoref{fig:brag} lässt sich das Maximum ziemlich genau bei 
 $\theta = 28\unit{\degree}$ erkennen. Da das Medium, an welchen 
 die Photonen reflektiert werden in einem Winkel von $14\unit{\degree}$ stand, 
-ist das Maximum bei dem Winkel erwartbar. (Einfallswinkel = Ausfallswinkel).
+ist das Maximum bei dem Winkel erwartungsgemäß. (Einfallswinkel = Ausfallswinkel).
 
 \subsection{Das Emissionsspektrum einer Cu-Roentgenroehre}
-In \autoref{fig:spektrum} sind die Messwerte geplotet. Eingezeichnet sind auch der Bremsbergm sowie die $K_\alpha $ und $K_\beta $-Linien.
-Der Grenzwinkel bestimmt sich durch ablesen zu 
+In \autoref{fig:spektrum} sind die Messwerte geplottet. Eingezeichnet sind auch
+der Bremsberg sowie die $K_\alpha $ und $K_\beta $-Linien. Der Grenzwinkel
+bestimmt sich durch Ablesen zu 
 \begin{equation}
-    \Theta_\text{G} = \qty{5.7(0.1)}{\degree}
+    \theta_\text{G} = \qty{5.7(0.1)}{\degree}
 \end{equation}
 daraus ergibt sich nach \autoref{eqn:E} und \autoref{eqn:B}
-eine minimale Wellenlänge, bzw eine maximale Energie ableiten,
+eine minimale Wellenlänge, bzw eine maximale Energie.
  \begin{align}
     \lambda_\text{min} &= \qty{40(0.7)}{\pico\meter}\\
     E_\text{max} &= \qty{49.7(0.7)}{\kilo\electronvolt}
  \end{align}
-\begin{figure}
+\begin{figure} [H]
     \centering
     \caption{Emmisionsspektrum einer Cu-Röhre.}
     \label{fig:spektrum}
     \includegraphics{build/wertejust.pdf}
 \end{figure}
-Um nun das Auflösevermögen der Apparatur zu bestimmen Werden die K-Linien noch einmal 
-vergrößert in \autoref{fig:zoom} dargestellt. Des Weiteren wurden die Wargerechten linien 
-auf der höhe der beiden Halbwertsbreiten der K-Linien eingezeichnet. Daraus ergeben sich jewails zwei 
-Winkel aus den Schnittpunkten mit der $K_\alpha$ und $K_\beta$-Linie.
-Für $K_\alpha$ ergibt sich $\Theta_{min,\alpha} = \qty{22(0.1)}{\degree}$ 
-, $\Theta_{max,\alpha} = \qty{22.7(0.1)}{\degree}$ sowie für $K_\beta
-$ $\Theta_{min,\beta} = \qty{19.8(0.1)}{\degree}$ und $\Theta_{max,\alpha} = \qty{20.4(0.1)}{\degree}$
-Durch \autoref{eqn:E} werden daraus erneut die Energien ermittelt. Das Auflösungsvermögen lässt sich dann 
-durch folgende Gleichung bestimmen.Die Ergebnisse sind \autoref{tab:auf} zu entnehmen.
-
+\noindent Um nun das Auflösevermögen der Apparatur zu bestimmen, werden die K-Linien zusätzlich
+vergrößert, wie in \autoref{fig:zoom} dargestellt. Des Weiteren wurden die
+waagerechten Linien auf Höhe der beiden Halbwertsbreiten der K-Linien eingezeichnet.
+Daraus ergeben sich jeweils zwei Winkel aus den Schnittpunkten mit der 
+$K_\alpha$- und $K_\beta$-Linie.
+Es ergibt sich:
+\begin{align}
+    \text{K$_\alpha$: } \theta_{\text{min},\alpha} &= \qty{22(0.1)}{\degree}   \\
+                          \theta_{\text{max},\alpha} &= \qty{22.7(0.1)}{\degree} \\
+    \text{K$_\beta$: }  \theta_{\text{min},\beta} &= \qty{19.8(0.1)}{\degree}  \\
+                          \theta_{\text{max},\beta} &= \qty{20.4(0.1)}{\degree}
+\end{align}
+\begin{figure}[H]
+    \centering
+    \caption{Zoom auf $K_{\alpha} $und $ K_{\beta}$ Lienien des Emissionsspektrums.}
+    \label{fig:zoom}
+    \includegraphics{build/zoom.pdf}
+\end{figure}
+\noindent Durch \autoref{eqn:E} werden daraus erneut die Energien ermittelt. Das Auflösungsvermögen
+lässt sich dann durch folgende Gleichung bestimmen.
 \begin{equation}
     A = \frac{E}{\Delta E}
 \end{equation}
+Die Ergebnisse sind in \autoref{tab:auf} aufgetragen.
 \begin{table}[H]
   \centering
   \caption{Berechnete Energien und Energiedifferenzen.}
@@ -53,22 +65,17 @@ durch folgende Gleichung bestimmen.Die Ergebnisse sind \autoref{tab:auf} zu entn
           row{1} = {guard, mode = math},
       }
       \toprule
-      Linie&IE/\unit{\kilo\electronvolt}& \Delta E /\unit{\kilo\electronvolt}&A\\
+      \text{Linie} & E/\unit{\kilo\electronvolt}& \Delta E /\unit{\kilo\electronvolt}&A\\
       \midrule
       $\alpha$ & 8.10 +- 0.04 & 0.26+-0.07 & 31+-8\\
       $\beta$ & 8.95 +- 0.04 & 0.26+-0.07 & 34+-9\\
       \bottomrule
   \end{tblr}
 \end{table}
-\begin{figure}
-    \centering
-    \caption{Zoom auf $K_{\alpha} $und $ K_{\beta}$ Lienien des Emissionsspektrums}
-    \label{fig:zoom}
-    \includegraphics{build/zoom.pdf}
-\end{figure}
-Aus Den Gleichungen \autoref{eqn:a}, \autoref{eqn:b} sowie \autoref{eqn:c} Lassen sich mit den berechneten Werten für die 
-Energien die Abschirmkonstanten berechnen. bei der berechnung von $\sigma_1$ Wird für die Energie $E_\text{K,abs} = \qty{8.987}{\kilo\electronvolt}
-$ als Theoriewert angenommenm, da dieser nicht experimentell bestimmt wurde. Die berechneten Abschirmkonstanten befinden sich in \autoref{tab:ab}
+\noindent Aus \autoref{eqn:a}, \autoref{eqn:b} und \autoref{eqn:c} lassen sich mit den
+berechneten Werten für die Energien die Abschirmkonstanten berechnen. Bei der 
+Berechnung von $\sigma_1$ wird für die Energie $E_\text{K,abs} = \qty{8.987}{\kilo\electronvolt}
+$ als Theoriewert angenommen, da dieser nicht experimentell bestimmt wurde. Die berechneten Abschirmkonstanten befinden sich in \autoref{tab:ab}
 \begin{table}[H]
   \centering
   \caption{Berechnete Abschirmkonstanten.}
@@ -78,9 +85,9 @@ $ als Theoriewert angenommenm, da dieser nicht experimentell bestimmt wurde. Die
           row{1} = {guard, mode = math},
       }
       \toprule
-      \sigma & experimenteler Wert&Theoretischer Wert\\
+      \sigma & \text{experimenteller Wert} & \text{theoretischer Wert}\\
       \midrule
-       \sigma 1 & 0& 3.29\\
+       \sigma 1 & \text{n.A.} & 3.29\\
        \sigma 2& 12.85+-0.36 & 12.14\\
        \sigma 3& 24.05+-2.67 & 24.04\\
       \bottomrule
@@ -90,61 +97,86 @@ $ als Theoriewert angenommenm, da dieser nicht experimentell bestimmt wurde. Die
 
 \subsection{Das Absorptionsspektrum}
 In den folgenden Abbildungen sind die Messwerte für das Absorptionsspektrum graphisch dargestellt.
-Daraus wird der Braggwinkel $\Theta_\text{k,exp}$ und zur besseren Übersicht ist dazu noch der Mittelwert der Messwerte eingezeichnet.
-Aus dem Bragwinkel werden wie schon im letzen Unterabschnitt die Energien bestimmt und letztendlich mit \autoref{sigma} die Abschirmkonstanten bestimmt. 
-Die ergebnisse sind in \autoref{tab:abs} dargestelt.
+Daraus wird der Braggwinkel $\theta_\text{k,exp}$ bestimmt. Zur besseren Übersicht ist der Mittelwert der Messwerte eingezeichnet.
+Aus dem Braggwinkel werden, wie schon im letzten Unterabschnitt, die Energien
+bestimmt und letztendlich mit \autoref{sigma} die Abschirmkonstanten. 
+Die Ergebnisse sind in \autoref{tab:abs} dargestellt.
 \begin{table}[H]
   \centering
   \caption{Berechnete Braggwinkel,Absorptionsenergie und Abschirmkonstanten.}
   \label{tab:abs}
   \begin{tblr}{
-          colspec = {S S S S S S},
+          colspec = {S S S[table-format=2.2] S S[table-format=2.2] S},
           row{1} = {guard, mode = math},
       }
       \toprule
-      Material & \Theta_\text{k,exp}\unit{\degree}&E_\text{k,exp}\unit{\degree}&E_\text{k,lit}\unit{\kilo\electronvolt}&\sigma_{K,exp}&\sigma_{K,lit}\\
+      \text{Material} & \theta_\text{k,exp} / \unit{\degree} & \theta_\text{k,lit} / \unit{\degree} &
+      E_\text{k,exp} / \unit{\kilo\electronvolt} & E_\text{k,lit} / \unit{\kilo\electronvolt} 
+      & \sigma_{K,exp} & \sigma_{K,lit}\\
       \midrule
-      Strontium & 10.95 +- 0.1 & 16.19+-0.15&16.12&3.50+-0.09& 3.61\\
-      Gallium &17.12+-0.1 & 10.46+-0.05 & 11.11& 3.26+-0.08 &3.41\\
-      Brom &13.1+-0.1 & 13.58+-0.11 & 13.48& 3.41+-0.06&3.83\\
-      Zink &18.45+-0.1 & 9.74+-0.05 & 9.65& 4.26 +- 0.06 &3.37\\
-      Zirkonium &9.85+-0.1 & 17.99+-0.17 & 18.01& 3.62+-0.17&3.65\\
+      Sr & 10.95 +- 0.1 & 11.01 & 16.19 +-0.15 & 16.12 & 3.50 +- 0.09 & 3.61 \\
+      Ga & 17.12 +- 0.1 & 17.30 & 10.46 +-0.05 & 11.11 & 3.26 +- 0.08 & 3.41 \\
+      Br & 13.1  +- 0.1 & 13.20 & 13.58 +-0.11 & 13.48 & 3.41 +- 0.06 & 3.83 \\
+      Zn & 18.45 +- 0.1 & 18.60 & 9.74  +-0.05 & 9.65  & 4.26 +- 0.06 & 3.37 \\
+      Zr & 9.85  +- 0.1 & 9.84 & 17.99 +-0.17 & 18.01 & 3.62 +- 0.17 & 3.65 \\
       \bottomrule
   \end{tblr}
 \end{table}
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \caption{Ermittlung des Strontium Bragwinkels}
+    \caption{Ermittlung des Braggwinkels von Strontium.}
     \label{fig:zink}
     \includegraphics{build/strontium.pdf}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \caption{Ermittlung des Gallium Braggwinkels}
+    \caption{Ermittlung des Braggwinkels von Gallium.}
     \label{fig:}
     \includegraphics{build/gallium.pdf}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \caption{Ermittlung des Zink Braggwinkels}
+    \caption{Ermittlung des Braggwinkels von Zink.}
     \label{fig:}
     \includegraphics{build/zink.pdf}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \caption{Ermittlung des Zirkonium Braggwinkels}
+    \caption{Ermittlung des Braggwinkels von Zirkonium.}
     \label{fig:}
     \includegraphics{build/zr.pdf}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \caption{Ermittlung des Brom Braggwinkels}
+    \caption{Ermittlung des Braggwinkels von Brom.}
     \label{fig:}
     \includegraphics{build/brom.pdf}
 \end{figure}
 
 
+\subsection{Bestimmung der Rydbergkonstante}
+Wird der Theorie nach dem Moseleyschen Gesetz gefolgt, besteht ein linearer 
+Zusammenhang zwischen $\sqrt{E_K}$ und der effektiven Kernladung $z_{eff}$.
+Der Proportionalitätsfaktor entspricht der Wurzel der Rydbergenergie, welcher 
+mithilfe eines linearen fit der Form $y = mx + b$ bestimmt werden kann.
+Mithilfe aller gegebenen Größen ergeben sich die Parameter zu
+\begin{align*}
+    m =& \qty{3.43 (0.16)}{\sqrt{eV}} \\
+    b =& \qty{8.79 (5.02)}{\sqrt{eV}}.
+\end{align*}
+Da die Rydbergkonstante Faktor $m^2$ entspricht, beläuft sich die Rydbergenergie 
+auf 
+\begin{equation*}
+    R_{\infty,\text{exp}} = 11.76\,\text{eV}.
+\end{equation*}
+Der graphische Verlauf befindet sich in \autoref{fig:ryd}
+\begin{figure}[H]
+    \centering
+    \label{fig:ryd}
+    \includegraphics{build/ryd.pdf}
+    \caption{Lineare Regression der Wurzel der Absorptionsenergien.}
+\end{figure}
