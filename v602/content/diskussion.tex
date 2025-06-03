@@ -1,2 +1,79 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+\subsection{Bragg-Bedingung}
+Zunächst ist festzuhalten, dass der auffällige plötzliche Fall der geplotteten 
+Daten auf einen systematischen Fehler zurückzuführen ist. Bei einer Detektion 
+der Intensität von Null handelt es sich um einen Fehler des Messgeräts, welcher 
+für die Bestimmung des Bragg-Winkels ignoriert werden kann. Der im Experiment
+gemessene Beugungswinkel von 28° entspricht exakt dem Doppelten des eingestellten
+Einfallswinkels (14°) zur Netzebene. Dies steht in Einklang mit der Bragg-Theorie,
+nach der der Beugungswinkel $2 \theta$ beträgt, wenn $\theta$ der Winkel zwischen
+einfallendem Strahl und den Kristallebenen ist. Da hier $\theta$ = 14° sowohl
+als Einfallswinkel (zur Netzebene) gewählt wurde als auch aus dem Beugungswinkel 
+folgt, bestätigt dies die Gültigkeit der Bragg-Bedingung für diese Messung.
+
+\subsection{Emissionsspektrum}
+Als experimentelle Größen ergaben sich
+\begin{align*}
+    \theta_\text{G}    &= \qty{5.7(0.1)}{\degree}     \\
+    \lambda_\text{min} &= \qty{40(0.7)}{\pico\meter}  \\
+    E_\text{max}       &= \qty{49.7(0.7)}{\kilo\electronvolt},
+\end{align*}
+sowie mit einer gleichen Energiedifferenz von $0.26 \pm 0.07$ für das Auflösungsvermögen
+\begin{align*}
+    A_{\alpha} &= 31 \pm 8 \\
+    A_{\beta}  &= 34 \pm 9 \\
+\end{align*}
+Jene Werte sind als Quantifizierung des Experiments, die Energien zu unterscheiden, 
+zu verstehen, Werte der vorliegenden Größenordnung bedeuten eine erkennbare Differenz, 
+was mit dem Plot übereinstimmt, da zwei Maxima zu erkennen sind.
+\vspace{0.5em}
+\\
+\noindent Für die Abschirmkonstanten können nur Vergleiche für $\sigma_2$ und 
+$\sigma_3$ aufgestellt werden, da sich $\sigma_1$ nicht experimentell bestimmt 
+wurde. Für die beiden Werte ergaben sich Abweichungen von $5.53 \%$ und $0.04 \%$,
+was auf das Auflösevermögen zurückzuführen sein könnte. Aus der geringen Auflösung 
+resultiert eine größere Unsicherheit von $E_K$. Ebenso führt eine geringe 
+Quantität an Messwerten zu Abweichungen von $E_K$, so überträgt sich ein möglicher 
+Fehler weiterhin auf $\sigma_K$.
+
+\subsection{Absorptionsspektrum}
+Die Abweichungen der Bragg-Winkel, der Absorptionsenergie und der Abschirmkonstanten 
+zu den Materialien Strontium, Gallium, Brom, Zink und Zirkonium befinden sich 
+in \autoref{tab:abspek}.
+\begin{table}[H]
+    \centering
+    \caption{Abweichung der Bragg-Winkel, der Absorptionsenergie und der Abschirmkonstanten.}
+    \label{tab:abspek}
+    \begin{tblr}{
+            colspec = {S S S S},
+            row{1} = {guard, mode = math},
+        }
+        \toprule
+        \text{Material} & \Delta \theta_{\text{K}} / \% & 
+        \Delta E_{\text{K}} / \% & 
+        \sigma_{\text{K}} / \% \\
+        \midrule
+        Sr & 0.54 & 0.43 & 3.05 \\
+        Ga & 1.04 & 5.85 & 4.4 \\
+        Br & 0.76 & 0.74 & 10.97\\
+        Zn & 0.81 & 0.92 & 20.89 \\
+        Zr & 0.10 & 0.11 & 0.82 \\
+        \bottomrule
+    \end{tblr}
+\end{table}
+\noindent Es fällt auf, dass die Messwerte größtenteils sehr nahe am Literaturwert
+liegen und einen Prozentwert von 1 idR. nicht überschreitet. Allerdings gibt es 
+einige Abweichungen, die herausstechen, so ist die Abschirmkonstante von Zink 
+offenbar sehr fehlerbelastet. Als Ursache könnte Unreinheit der Probe gemutmaßt 
+werden, das hohe Alter und die oftmalige Benutzung kann zu einer Abnutzung 
+beigesteuert haben, was sich in den Abweichungen manifestiert.
+
+\subsection{Rydbergkonstante}
+Ausgehend von einer Rydbergkonstante von $R_{\infty,\text{lit}} = 13.605 \,
+\unit{\eV}$ \cite{ryd} beläuft sich die Abweichung zu $R_{\infty,\text{exp}} 
+= 11.76\,\text{eV}$ auf $13.56 \%$. In Anbetracht der vorhergegangen Fehler 
+von Absorptionsenergie und Abschirmungskonstante (siehe \autoref{tab:abspek})
+war eine derartige Abweichung zu erwarten, da die Rydberg-Energie aus jenen 
+resultiert.
