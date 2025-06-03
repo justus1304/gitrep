@@ -51,7 +51,9 @@ zu finden. Die dazugehörige graphische Darstellung befindet sich in \autoref{fi
 \noindent Erkennbar ist, dass der Strom proportional zur Intensität ist. Wird 
 der Spalt verkleinert, dass nur noch die Hälfte der Lichtintensität an der 
 Photozelle ankommt, so ergibt sich die gleiche Kurve des Photostroms, nur um ca. die 
-Hälfte gestaucht. 
+Hälfte gestaucht.  Die Grenzspannung ist der begin der Messung und damit auch der beginn der Kurve. Sie liegt bei 
+ca. $-1.1\unit{\volt}$. bei ca. $20\unit{\volt} $ flacht die Kurve immer weiter ab, es hat sich also eine 
+Sätigungsspannung eingestellt.
 
 \begin{table}[H]
   \centering
@@ -94,14 +96,14 @@ in \autoref{fig:12} graphisch dargestellt.
     \label{fig:12}
     \includegraphics{build/violettUsqrtI.pdf}
 \end{figure} 
-\noindent Die Parameter der Ausgleichsgeraden ergeben sich zu 
+\noindent Die Parameter der Ausgleichsgeraden der form $f(U)=a\cdot U+b$ ergeben sich zu 
 \begin{align}
-    a = & \qty{2.06(0.01)e-3}{\ampere}\\
-    b = & \qty{2.42(0.01)e-3}{\ampere}
+    a = & \qty{2.06(0.01)e-9}{\ampere\per\volt}\\
+    b = & \qty{2.42(0.01)e-9}{\ampere}
 \end{align}
 Damit ergibt sich die Grenzspannung durch Regression zu 
 \begin{equation}
-    U_\text{g,regr,violett} = \qty{1.175(0.01)}{\volt}
+    U_\text{g,regr,violett} = \qty{-1.175(0.01)}{\volt}
 \end{equation}
 
 \subsection{Grenzspannung des grünen Farbspektrums}
@@ -138,14 +140,14 @@ Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:gruen}.
     \label{fig:gruen}
     \includegraphics{build/gruen.pdf}
 \end{figure} 
-\noindent Die Parameter der Ausgleichsgeraden ergeben sich zu 
+\noindent Die Parameter der Ausgleichsgeraden der form $f(U)=a\cdot U+b$ ergeben sich zu 
 \begin{align}
-    a = & \qty{1.58(0.13)e-3}{\ampere}\\
-    b = & \qty{0.95(0.07)e-3}{\ampere}
+    a = & \qty{1.58(0.13)e-9}{\ampere\per\volt}\\
+    b = & \qty{0.95(0.07)e-9}{\ampere}
 \end{align}
 Damit ergibt sich die Grenzspannung durch Regression zu 
 \begin{equation}
-    U_\text{g,regr,gruen} = \qty{1.175(0.01)}{\volt}
+    U_\text{g,regr,gruen} = \qty{-0.60(0.07)}{\volt}
 \end{equation}
 
 
@@ -185,8 +187,8 @@ Graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:tuerkis}.
 \end{figure} 
 \noindent Die Parameter der Ausgleichsgeraden ergeben sich zu 
 \begin{align}
-    a = & \qty{0.32(0.03)e-3}{\ampere}\\
-    b = & \qty{0.33(0.02)e-3}{\ampere}
+    a = & \qty{0.32(0.03)e-9}{\ampere\per\volt}\\
+    b = & \qty{0.33(0.02)e-9}{\ampere}
 \end{align}
 Damit ergibt sich die Grenzspannung durch Regression zu 
 \begin{equation}
@@ -230,8 +232,8 @@ graphische Darstellung inklisive Ausgleichsgeraden in \autoref{fig:gelb}.
 \end{figure} 
 \noindent Die Parameter der Ausgleichsgeraden ergeben sich zu 
 \begin{align}
-    a = & \qty{0.62(0.04)e-3}{\ampere}\\
-    b = & \qty{0.34(0.01)e-3}{\ampere}
+    a = & \qty{0.62(0.04)e-9}{\ampere\per\volt}\\
+    b = & \qty{0.34(0.01)e-9}{\ampere}
 \end{align}
 Damit ergibt sich die Grenzspannung durch Regression zu 
 \begin{equation}
@@ -249,12 +251,11 @@ Messwerte zu den Frequenzen der Farben befinden sich in \autoref{sec:aa}.
     \label{fig:aa}
     \includegraphics{build/aa.pdf}
 \end{figure} 
-\noindent Nach \autoref{eqn:5} gibt die Steigung der Ausgleichsgeraden 
-$a = \frac{h}{e}$ das planck'sche Wirkungsquantum geteilt durch die 
+\noindent Nach \autoref{eqn+/-0.07:5} gibt die Steigung $a = \frac{h}{e}$ der Ausgleichsgeraden der Form $f(U) = a\cdot U + b$ das planck'sche Wirkungsquantum geteilt durch die 
 Elementarladung an und der Wert des y-Achsen Abschnitts $b =  W_\text{A}$
 die Austrittsarbeit. Somit folgen für $h$ und $W_\text{A}$
 \begin{align}
-    h =& \frac{a}{e} = \qty{6.3(1.1)e-34}{\joule\second}\\
+    h =& a\cdot e = \qty{6.3(1.1)e-34}{\joule\second}\\
     W_\text{A} =& \qty{1.5(0.4)}{\eV}.
 \end{align}
 
@@ -268,8 +269,8 @@ Frequenz des jeweiligen ausgestrahlten Lichts der HG-Lampe aufgetragen.
     \label{fig:aa2}
     \includegraphics{build/aa2.pdf}
 \end{figure} 
-\noindent Somit folgen für $h_\text{exp} $ und $W_\text{A,exp}$
+\noindent Somit folgen für $h_\text{exp} $ und $W_\text{A,exp}b$
 \begin{align}
-    h_\text{exp} =& \frac{a}{e} = \qty{6.4(0.7)e-34}{\joule\second}\\
+    h_\text{exp} =& a\cdot e = \qty{6.4(0.7)e-34}{\joule\second}\\
     W_\text{A,exp} =& \qty{1.5(0.2)}{\eV}.
 \end{align}

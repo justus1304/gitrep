@@ -18,7 +18,7 @@ def violettUI():
     I_min = I_min * 10**(-6)
     fig, ax =plt.subplots()
 #plotten der Messwerte
-    ax.plot(U1,I_max,"k.",label = 'Violett(Voll)')
+    ax.plot(U1,I_max,"r.",label = 'Violett(Voll)')
     ax.plot(U2,I_min,"k.",label = 'Violett(Halb)')
     ax.set_xlabel(r"$U/\unit{\volt}$")
     ax.set_ylabel(r"$I/\unit{\milli\ampere}$")
@@ -187,3 +187,4 @@ def aa2():
     fig.savefig("build/aa2.pdf")
 #Ausfuehren der funktionb
 aa2()
+
