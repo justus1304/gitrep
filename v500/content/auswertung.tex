@@ -242,16 +242,17 @@ Damit ergibt sich die Grenzspannung durch Regression zu
 
 \subsection{Bestimmung der Planck-Konstante und Austritsarbeit}
 \label{sec:planckWa}
-\noindent In \autoref{fig:aa} sind die Grenzspannungen gegen die 
-Frequenz des jeweiligen ausgestrahlten Lichts der HG-Lampe aufgetragen. Die
-Messwerte zu den Frequenzen der Farben befinden sich in \autoref{sec:aa}. 
+\noindent In \autoref{fig:aa} sind die Grenzspannungen, welche sich aus den 
+Regressionen ergaben, gegen die Frequenz des jeweiligen ausgestrahlten Lichts
+der HG-Lampe aufgetragen. Die Messwerte zu den Frequenzen der Farben befinden
+sich in \autoref{sec:aa}. 
 \begin{figure}[H]
     \centering
     \caption{Grenzspannungen als Funktion der Frequenz.}
     \label{fig:aa}
     \includegraphics{build/aa.pdf}
 \end{figure} 
-\noindent Nach \autoref{eqn+/-0.07:5} gibt die Steigung $a = \frac{h}{e}$ der Ausgleichsgeraden der Form $f(U) = a\cdot U + b$ das planck'sche Wirkungsquantum geteilt durch die 
+\noindent Nach \autoref{eqn:5} gibt die Steigung $a = \frac{h}{e}$ der Ausgleichsgeraden der Form $f(U) = a\cdot U + b$ das planck'sche Wirkungsquantum geteilt durch die 
 Elementarladung an und der Wert des y-Achsen Abschnitts $b =  W_\text{A}$
 die Austrittsarbeit. Somit folgen für $h$ und $W_\text{A}$
 \begin{align}
@@ -263,13 +264,15 @@ die Austrittsarbeit. Somit folgen für $h$ und $W_\text{A}$
 \label{sec:planckWa}
 \noindent In \autoref{fig:aa2} sind wieder die Grenzspannungen gegen die 
 Frequenz des jeweiligen ausgestrahlten Lichts der HG-Lampe aufgetragen. 
+Dies mal handelt es sich um die Grenzspannungen, welche sich experimentell 
+(ohne Regression) ergaben.
 \begin{figure}[H]
     \centering
     \caption{Experimentelle Grenzspannungen als Funktion der Frequenz.}
     \label{fig:aa2}
     \includegraphics{build/aa2.pdf}
 \end{figure} 
-\noindent Somit folgen für $h_\text{exp} $ und $W_\text{A,exp}b$
+\noindent Somit folgen für $h_\text{exp} $ und $W_\text{A,exp}$
 \begin{align}
     h_\text{exp} =& a\cdot e = \qty{6.4(0.7)e-34}{\joule\second}\\
     W_\text{A,exp} =& \qty{1.5(0.2)}{\eV}.
