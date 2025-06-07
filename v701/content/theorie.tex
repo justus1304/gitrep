@@ -1,4 +1,48 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+Beim Durchlaufen von Materie verlieren $\alpha$-Teilchen Energie durch Anregung 
+oder Dissoziation von Molekülen, also der Aufspaltung eines Moleküls. Dieser 
+Energieverlust $\frac{-dE_{\alpha}}{dx}$ ist abhängig von der Energie der 
+Strahlung und der Dichte des Materials. Je schneller ein $\alpha$-Teilchen ist, 
+desto kürzer ist die Wechselwirkungszeit, folglich ist die Wahrscheinlichkeit 
+für Wechselwirkungen gering und der Energieverlust ist minimal. Für große 
+Energien kann die Bethe-Boch-Gleichung genutzt werden, sie gibt an, wie der 
+Energieverlust aussieht.
+\begin{equation}
+    \label{eqn:1}
+    -\frac{dE_\alpha}{dx} = \frac{z^2 e^4}{4 \pi \epsilon_0 m_e} \cdot 
+                           \frac{n Z}{v^2} \cdot \ln\left(\frac{2 m_e v^2}{I}\right)
+\end{equation}
+Die Bestandteile sind die Ladung $z$, $v$ die Geschwindigkeit der $\alpha$-
+Teilchen, $Z$ die Ordnungszahl, $n$ als die Teilchendichte und $I$ die 
+Ionisierungsenergie des Targetgases. Nach dem Ladungsaustausch bei hinreichend
+kleinen Energien kann die Reichweite $R$ bis zur vollkommenen Abbremsung durch 
+Energieverlust mittels 
+\begin{equation}
+    \label{eqn:2}
+    R = \int_0^{E_\alpha} \frac{dE_{\alpha}}{-\frac{dE_\alpha}{dx}}
+\end{equation}
+bestimmt werden. Wie bereits erwähnt nimmt die Wahrscheinlichkeit für 
+Wechselwirkungen bei hohen Geschwindigkeiten ab. Im Umkehrzug sind Materie-
+Wechselwirkungen in niedrigen Geschwindigkeitsbereichen demnach eher zu erwarten, 
+die Bethe-Boch-Gleichung versagt, da sie die Ladungsänderungen vernachlässigt.
+Als Lösung werden empirische Kurven genutzt, um die mittlere Reichweite (im 
+$\unit{\milli\meter}$-Bereich)
+\begin{equation}
+    \label{eqn:3}
+    R_m = 3.1 \cdot E_{\alpha}^{\frac{3}{2}}
+\end{equation}
+zu bestimmen. Die Energie der $\alpha$-Strahlung ist dabei $E_{\alpha} \leq 
+2.5 \unit{\mega\eV}$. Es wird also die effektive Weglänge gegen die Anzahl der 
+Pulse aufgetragen, um die mittlere Reichweite der Strahlung zu ermitteln.
+Diese effektive Weglänge $x$ kann bei einem Druck $p$ und einem Abstand zwischen 
+Detektor und $\alpha$-Strahler von $x_0$, sowie einem Normaldruck $p_0$ (letzteres 
+sei beides konstant) bestimmt werden als:
+\begin{equation}
+    \label{eqn:4}
+    x = x_0 \frac{p}{p_0}
+\end{equation}
+Diese Gleichung gilt, da die Reichweite von $\alpha$-Teilchen bei $T$=const. und 
+$V$=const. proportional zu $p$ ist. Demzufolge ist eine Absorptionsmessung mit 
+Variierung des Drucks sinnvoll.
