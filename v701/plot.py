@@ -59,7 +59,7 @@ def abstand_4():
     print(f"Achsenabschnitt: {b:.7f} ± {b_err:.7f}")
     print(-ufloat(b,b_err)/ufloat(m,m_err))
 #Ausgleichsrechnung ploten 
-    ax.plot(x,m * x + b,label = 'Regression')
+    ax.plot(x,m * x + b,label = 'regression')
     
     #ax.set_xlabel(r"Effektive Weglänge $ /\unit{\meter}$")
     #ax.set_ylabel(r"Energie$/\unit{\mega\electronvolt}$")
@@ -126,9 +126,9 @@ def anzahl_4():
     print(f"Achsenabschnitt: {b:.7f} ± {b_err:.7f}")
     print(-ufloat(b,b_err)/ufloat(m,m_err))
 #ploten der ausgleichsgerade 
-    ax.plot(x,m * x + b, label = 'Regression')
+    ax.plot(x,m * x + b, label = 'regression')
 #ploten auf halber maximaler hoehe
-    ax.plot(x,f(0,x,np.max(n)/2),label = 'Halbe maximale Pulszahl')
+    ax.plot(x,f(0,x,np.max(n)/2),label = 'Halbe maximale pulszahl')
     
     sp = (np.max(n)/2-ufloat(b,b_err)) / ufloat(m,m_err)
     print("schnittpunkt : " ,sp,np.max(n)/2)
@@ -164,9 +164,9 @@ def anzahl_7():
     print(f"Achsenabschnitt: {b:.7f} ± {b_err:.7f}")
     print(-ufloat(b,b_err)/ufloat(m,m_err))
 #ploten der ausgleichsgerade 
-    ax.plot(x,m * x + b, label = 'Regression')
+    ax.plot(x,m * x + b, label = 'regression')
 #ploten auf halber maximaler hoehe
-    ax.plot(x,f(0,x,np.max(n)/2),label = 'Halbe maximale Pulszahl')
+    ax.plot(x,f(0,x,np.max(n)/2),label = 'Halbe maximale pulszahl')
     sp = (np.max(n)/2-ufloat(b,b_err)) / ufloat(m,m_err) 
     print("schnittpunkt : " ,sp,np.max(n)/2)
 #ploten des Schnittpunktes
@@ -189,21 +189,23 @@ def histogramm_1():
     daten3 = daten - np.sqrt(daten)
     fig, ax =plt.subplots()
     # Histogramm zeichnen
-    #ax.hist(daten, bins=10, facecolor='none', edgecolor='black', linewidth=3)
-    #ax.hist(daten2, bins=10, facecolor='none', edgecolor='red', linewidth=2, linestyle = '--')
-    #ax.hist(daten3, bins=10, facecolor='none', edgecolor='yellow', linewidth=2, linestyle = '--')
+    ax.hist(daten, bins=10, facecolor='none', edgecolor='black', linewidth=2,label='Messwerte')
+    ax.hist(daten2, bins=10, facecolor='none', edgecolor='red', linewidth=2, linestyle = '--',label = 'Messwerte + $\sqrt{N}$')
+    ax.hist(daten3, bins=10, facecolor='none', edgecolor='yellow', linewidth=2, linestyle = '--',label = 'Messwerte - $\sqrt{N}$')
     x = np.linspace(1700,2000,1000)
     y = norm.pdf(x,mittelwert(daten),standartabweichung(daten))
-    ax.plot(x,y,label = 'Gauß')
-    #gauß = 1/(standartabweichung(daten) * np.sqrt(2*np.pi)) * np.exp(-(daten-mittelwert(daten))**2/(2*standartabweichung(daten)**2))
-    #ax.hist(gauß, bins=10, facecolor='none', edgecolor='blue', linewidth=2, linestyle = '--')
+    
+    gauss = np.random.normal(loc=mittelwert(daten), scale=standartabweichung(daten), size=len(daten))
+    poisson = np.random.poisson(lam=mittelwert(daten), size=len(daten))
+    ax.hist(gauss, bins=10, facecolor='none', edgecolor='blue', linewidth=2, linestyle = '-',label = 'Gauß')
+    ax.hist(poisson, bins=10, facecolor='none', edgecolor='red', linewidth=2, linestyle = '-',label = 'Poisson')
     
     #ax.hist(daten2, bins=10, edgecolor='blue')
     print("mittelwert = ", ufloat(mittelwert(daten),standartabweichung(daten)/np.sqrt(len(daten))))
     print("varianz = ", standartabweichung(daten))
     # Achsenbeschriftungen und Titel
-    ax.set_xlabel('Werte')
-    ax.set_ylabel('Häufigkeit')
+    ax.set_xlabel('Anzahl')
+    
    
     # Anzeigen
     ax.legend()
@@ -213,3 +215,37 @@ def histogramm_1():
     fig.savefig("build/histogram_1.pdf")
 histogramm_1()
 
+
+def histogramm_2():
+    # Beispiel-Daten erzeugen
+
+    daten = np.genfromtxt("daten/100mw.txt")
+    daten2 = daten + np.sqrt(daten)
+    daten3 = daten - np.sqrt(daten)
+    fig, ax =plt.subplots()
+    # Histogramm zeichnen
+    ax.hist(daten, bins=5, facecolor='none', edgecolor='black', linewidth=2,label='Messwerte')
+    ax.hist(daten2, bins=5, facecolor='none', edgecolor='red', linewidth=2, linestyle = '--',label = 'Messwerte + $\sqrt{N}$')
+    ax.hist(daten3, bins=5, facecolor='none', edgecolor='yellow', linewidth=2, linestyle = '--',label = 'Messwerte - $\sqrt{N}$')
+    x = np.linspace(1700,2000,1000)
+    y = norm.pdf(x,mittelwert(daten),standartabweichung(daten))
+    
+    gauss = np.random.normal(loc=mittelwert(daten), scale=standartabweichung(daten), size=len(daten))
+    poisson = np.random.poisson(lam=mittelwert(daten), size=len(daten))
+    ax.hist(gauss, bins=5, facecolor='none', edgecolor='blue', linewidth=2, linestyle = '-',label = 'Gauß')
+    ax.hist(poisson, bins=5, facecolor='none', edgecolor='red', linewidth=2, linestyle = '-',label = 'Poisson')
+    
+    #ax.hist(daten2, bins=10, edgecolor='blue')
+    print("mittelwert = ", ufloat(mittelwert(daten),standartabweichung(daten)/np.sqrt(len(daten))))
+    print("varianz = ", standartabweichung(daten))
+    # Achsenbeschriftungen und Titel
+    ax.set_xlabel('Anzahl')
+    
+   
+    # Anzeigen
+    ax.legend()
+    ax.grid(True)
+#Senkrechte linie falls benoetigt
+    #ax.axvline(x = 560,color = 'red', linestyle='--')
+    fig.savefig("build/histogram_2.pdf")
+histogramm_2()

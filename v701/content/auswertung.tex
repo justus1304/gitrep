@@ -117,8 +117,24 @@ Abstände in \autoref{fig:13} und \autoref{fig:14} abgebildet.
 halben maximalen Pulsrate geben die mittlere Reichweite an. Die Reichweiten
 ergeben sich damit zu 
 \begin{align}
-  R_\text{4cm} = \qty{53(9)}{\centi\meter}, \\
-  R_\text{7cm} = \qty{24(4)}{\centi\meter}.
+  R_\text{4cm} = &\qty{53(9)}{\centi\meter} \\
+  R_\text{7cm} = &\qty{24(4)}{\centi\meter}.
 \end{align}
 
-\subesction{Statistische Messung}
+\subsection{Statistische Messung}
+Es wird $100$ mal eine Statistische Messung der Pulsrate (Pulse pro $10\unit{\second}$) in gleichem Abstand $x=\qty{7}{\centi\meter}$ 
+durchgeführt. Die ermittelten Werte werden in einem Histogramm in \autoref{fig:05} in $10$ Bins und in \autoref{fig:06} in $5$ Bins Dargestellt. 
+Außerdem wird zum vergleich eine Poisson und Gaußverteilung mit dem aus den Messwerten ermittelten Mittelwert von $\overline{N} = \qty{1792(8)}{}$ und einer Varianz von 
+$\sigma = \qty{78.11}{}$ als Histogramm gegenübergestellt.
+\begin{figure}[H]
+  \centering
+  \caption{Messwerte sowie Gauß- und Poissonverteilung in $10$ Bins}
+  \label{fig:05}
+  \includegraphics{build/histogram_1.pdf}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \caption{Messwerte sowie Gauß- und Poissonverteilung in $10$ Bins}
+  \label{fig:06}
+  \includegraphics{build/histogram_2.pdf}
+\end{figure}
