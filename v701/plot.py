@@ -59,7 +59,7 @@ def abstand_4():
     print(f"Achsenabschnitt: {b:.7f} ± {b_err:.7f}")
     print(-ufloat(b,b_err)/ufloat(m,m_err))
 #Ausgleichsrechnung ploten 
-    ax.plot(x,m * x + b,label = 'regression')
+    ax.plot(x,m * x + b,label = 'Regression')
     
     #ax.set_xlabel(r"Effektive Weglänge $ /\unit{\meter}$")
     #ax.set_ylabel(r"Energie$/\unit{\mega\electronvolt}$")
@@ -126,9 +126,9 @@ def anzahl_4():
     print(f"Achsenabschnitt: {b:.7f} ± {b_err:.7f}")
     print(-ufloat(b,b_err)/ufloat(m,m_err))
 #ploten der ausgleichsgerade 
-    ax.plot(x,m * x + b, label = 'regression')
+    ax.plot(x,m * x + b, label = 'Regression')
 #ploten auf halber maximaler hoehe
-    ax.plot(x,f(0,x,np.max(n)/2),label = 'Halbe maximale pulszahl')
+    ax.plot(x,f(0,x,np.max(n)/2),label = 'Halbe maximale Pulszahl')
     
     sp = (np.max(n)/2-ufloat(b,b_err)) / ufloat(m,m_err)
     print("schnittpunkt : " ,sp,np.max(n)/2)
@@ -164,9 +164,9 @@ def anzahl_7():
     print(f"Achsenabschnitt: {b:.7f} ± {b_err:.7f}")
     print(-ufloat(b,b_err)/ufloat(m,m_err))
 #ploten der ausgleichsgerade 
-    ax.plot(x,m * x + b, label = 'regression')
+    ax.plot(x,m * x + b, label = 'Regression')
 #ploten auf halber maximaler hoehe
-    ax.plot(x,f(0,x,np.max(n)/2),label = 'Halbe maximale pulszahl')
+    ax.plot(x,f(0,x,np.max(n)/2),label = 'Halbe maximale Pulszahl')
     sp = (np.max(n)/2-ufloat(b,b_err)) / ufloat(m,m_err) 
     print("schnittpunkt : " ,sp,np.max(n)/2)
 #ploten des Schnittpunktes

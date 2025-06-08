@@ -4,14 +4,15 @@
 \subsection{Energieverlust}
 Um den Energieverlust zu berechnen wird die effektive Weglänge gegen die Energie aufgetragen und der Energieverlust
 durch eine lineare Ausgleichsrechnung bestimmt.
-Um die effektive Weglänge zu berechnen werden die Werte für den Druck aus \autoref{tab:11} und \autoref{tab:12} für die jewailigen Abstände von $x=4$ und $x=7\unit{\centi\meter}$ in \autoref{eqn:eff}
+Um die effektive Weglänge zu berechnen, werden die Werte für den Druck aus \autoref{tab:11}
+und \autoref{tab:12} für die Abstände von $x=4$ und $x=7\unit{\centi\meter}$ in \autoref{eqn:4}
 eingesetzt. Die Energie wird in einer Dreisatzrechnung bestimmt, wobei von einer maximalen Energie $E = \qty{4}{\mega\electronvolt}$
-bei einem Druck $p = \qty{0}{\bar}$ ausgegangen wird. Es wird von einer lineare Energieskala ausgegangen. Die Ausgleichsrechnungen sind
-\autoref{fig:11} und \autoref{fig:12} zu entnehmen. 
-
+bei einem Druck $p = \qty{0}{\bar}$ ausgegangen wird. Es wird von einer linearen 
+Energieskala ausgegangen. Die Ausgleichsrechnungen sind \autoref{fig:11} und
+\autoref{fig:12} zu entnehmen.
 \begin{table}[H]
   \centering
-  \caption{Druck, Anzahl der pulse und Channel für einen Abstand von $x=4$.}
+  \caption{Druck, Anzahl der Pulse und Channel für einen Abstand von $x=4$.}
   \label{tab:11}
   \begin{tblr}{
           colspec = {S S S S S S},
@@ -44,7 +45,7 @@ bei einem Druck $p = \qty{0}{\bar}$ ausgegangen wird. Es wird von einer lineare 
 \end{table}
 \begin{table}[H]
   \centering
-  \caption{Druck, Anzahl der pulse und Channel für einen Abstand von $x=7$.}
+  \caption{Druck, Anzahl der Pulse und Channel für einen Abstand von $x=7$.}
   \label{tab:12}
   \begin{tblr}{
           colspec = {S S S S S S},
@@ -72,47 +73,52 @@ bei einem Druck $p = \qty{0}{\bar}$ ausgegangen wird. Es wird von einer lineare 
   \label{fig:11}
   \includegraphics{build/abstand4.pdf}
 \end{figure}
-Der steigungsparameter der Ausgleichsrechnung gibt den Energieverlust an, welcher sich damit bei einem Abstand von 
+\noindent Der Steigungsparameter der Ausgleichsrechnung gibt den Energieverlust
+an, welcher sich damit bei einem Abstand von 
 $x = \qty{4}{\centi\meter}$ zu 
 \begin{equation}
   m_\text{4cm} = \qty{-81.26(2.24)}{\mega\electronvolt\per\meter}
 \end{equation}
-
+ergibt.
 \begin{figure}[H]
   \centering
   \caption{Bestimmung des Energieverlusts bei einem Abstand von $x = \qty{7}{\centi\meter}$}
   \label{fig:12}
   \includegraphics{build/abstand4.pdf}
 \end{figure}
-Bei einem Abstand von $x = \qty{7}{\centi\meter}$ ergibt sich durh den Steigungsparameter 
-ein Energieverlust von 
+\noindent Bei einem Abstand von $x = \qty{7}{\centi\meter}$ ergibt sich durch
+den Steigungsparameter ein Energieverlust von 
 \begin{equation}
   m_\text{7cm} = \qty{-99.14(3.83)}{\mega\electronvolt\per\meter}
 \end{equation}
 
 \subsection{Mittlere Reichweite}
-Um die Mittlere Reichweite zu bestimmen wird die Anzahl der Pulse gegen die Effektive Weglänge 
-aufgetragen. durch den Stärksten Abfall wird eine Ausgleisgerade gezogen und dann der Schnittpunkt dieser geraden mit einer geraden Auf 
-Höhe der halben maximalen Intensität gesucht. Die Ausgleichsrechnungen, sowie die eignezeichnete Gerade und 
-der Schnittpunkt befinden sich für die Jewailigen abstände in \autoref{fig:13} und \autoref{fig:14} abgebildet.
+Um die mittlere Reichweite zu bestimmen, wird die Anzahl der Pulse gegen die
+effektive Weglänge aufgetragen. Durch den stärksten Abfall wird eine Ausgleisgerade
+gezogen und dann der Schnittpunkt dieser Geraden mit einer Geraden auf 
+Höhe der halben maximalen Intensität gesucht. Die Ausgleichsrechnungen und die
+eignezeichnete Gerade sowie der Schnittpunkt befinden sich für die jeweiligen
+Abstände in \autoref{fig:13} und \autoref{fig:14} abgebildet.
 
 \begin{figure}[H]
   \centering
-  \caption{Messwerte der Pulse pro $120\unit{\second}$ und bestimmung der mittleren Reichweite für den Abstand $x = \qty{4}{\centi\meter}$}
+  \caption{Messwerte der Pulse pro $120\unit{\second}$ und Bestimmung der mittleren Reichweite für den Abstand $x = \qty{4}{\centi\meter}$}
   \label{fig:13}
   \includegraphics{build/anzahl4.pdf}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \caption{Messwerte der Pulse pro $120\unit{\second}$ und bestimmung der mittleren Reichweite für den Abstand $x = \qty{7}{\centi\meter}$}
+  \caption{Messwerte der Pulse pro $120\unit{\second}$ und Bestimmung der mittleren Reichweite für den Abstand $x = \qty{7}{\centi\meter}$}
   \label{fig:14}
   \includegraphics{build/anzahl7.pdf}
 \end{figure}
-
-Die schnittpunkte der Ausgleichgeraden mit der konstanten geraden auf höhe der halben Maximalen pulsrate 
-geben die mittlere Reichweite an. Die Reichweiten ergeben sich damit zu 
+\noindent Die Schnittpunkte der Ausgleichgeraden mit der Geraden auf Höhe der
+halben maximalen Pulsrate geben die mittlere Reichweite an. Die Reichweiten
+ergeben sich damit zu 
 \begin{align}
-  R_\text{4cm} = \qty{53(9)}{\centi\meter}\\
-  R_\text{7cm} = \qty{24(4)}{\centi\meter}
+  R_\text{4cm} = \qty{53(9)}{\centi\meter}, \\
+  R_\text{7cm} = \qty{24(4)}{\centi\meter}.
 \end{align}
+
+\subesction{Statistische Messung}
