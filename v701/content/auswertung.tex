@@ -1,31 +1,118 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+\subsection{Energieverlust}
+Um den Energieverlust zu berechnen wird die effektive Weglänge gegen die Energie aufgetragen und der Energieverlust
+durch eine lineare Ausgleichsrechnung bestimmt.
+Um die effektive Weglänge zu berechnen werden die Werte für den Druck aus \autoref{tab:11} und \autoref{tab:12} für die jewailigen Abstände von $x=4$ und $x=7\unit{\centi\meter}$ in \autoref{eqn:eff}
+eingesetzt. Die Energie wird in einer Dreisatzrechnung bestimmt, wobei von einer maximalen Energie $E = \qty{4}{\mega\electronvolt}$
+bei einem Druck $p = \qty{0}{\bar}$ ausgegangen wird. Es wird von einer lineare Energieskala ausgegangen. Die Ausgleichsrechnungen sind
+\autoref{fig:11} und \autoref{fig:12} zu entnehmen. 
 
-\begin{table}
+\begin{table}[H]
   \centering
-  \caption{Eine Beispieltabelle mit Messdaten.}
-  \label{tab:tabelle}
-  \sisetup{table-format=1.1, per-mode=reciprocal}
+  \caption{Druck, Anzahl der pulse und Channel für einen Abstand von $x=4$.}
+  \label{tab:11}
   \begin{tblr}{
-      colspec = {S[table-format=3.0] S[table-format=2.1] S},
-      row{1} = {guard, mode=math},
-      vline{4} = {2}{-}{text=\clap{$\pm$}},
-    }
-    \toprule
-    U \mathbin{/} \unit{\volt} & I \mathbin{/} \unit{\micro\ampere} & \SetCell[c=2]{c} N \mathbin{/} \unit{\per\second} & \\
-    \midrule
-    360 & 0.1 & 98.3 & 0.9 \\
-    400 & 0.2 & 99.8 & 1.0 \\
-    420 & 0.2 & 99.1 & 0.9 \\
-    \bottomrule
+          colspec = {S S S S S S},
+          row{1} = {guard, mode = math},
+      }
+      \toprule
+      p/\unit{\bar}&\text{Anzahl Impulse}&\text{Channel}\\
+      \midrule
+      0   & 59397  & 1159 \\
+      50  & 58355  & 1082\\
+      100 & 57520  & 1039\\
+      150 & 56528  & 1023\\
+      200 & 56276  & 967\\
+      250 & 56068  & 896\\
+      300 & 55243  & 870\\
+      350 & 55010  & 879\\
+      400 & 54460  & 768\\
+      450 & 53865  & 768\\
+      500 & 52403  & 687\\
+      550 & 51494  & 666\\
+      600 & 50589  & 612\\
+      650 & 48451  & 534\\
+      700 & 44760  & 474\\
+      750 & 36158  & 391\\
+      800 & 19362  & 366\\
+      850 & 3498   & 363\\
+      900 & 501    & 367\\
+      \bottomrule
+  \end{tblr}
+\end{table}
+\begin{table}[H]
+  \centering
+  \caption{Druck, Anzahl der pulse und Channel für einen Abstand von $x=7$.}
+  \label{tab:12}
+  \begin{tblr}{
+          colspec = {S S S S S S},
+          row{1} = {guard, mode = math},
+      }
+      \toprule
+      p/\unit{\bar}&\text{Anzahl Impulse}&\text{Channel}\\
+      \midrule
+      0   & 11903 & 1140\\
+      50  & 11615 & 1000\\
+      100 & 11442 & 943\\
+      150 & 10859 & 805\\
+      200 & 11039 & 763\\
+      250 & 10634 & 640\\
+      300 & 9397  & 514\\
+      350 & 5680  & 386\\
+      400 & 33    & 363\\
+      \bottomrule
   \end{tblr}
 \end{table}
 
-Siehe \autoref{fig:plot} und \autoref{tab:tabelle}!
+\begin{figure}[H]
+  \centering
+  \caption{Bestimmung des Energieverlusts bei einem Abstand von $x = \qty{4}{\centi\meter}$}
+  \label{fig:11}
+  \includegraphics{build/abstand4.pdf}
+\end{figure}
+Der steigungsparameter der Ausgleichsrechnung gibt den Energieverlust an, welcher sich damit bei einem Abstand von 
+$x = \qty{4}{\centi\meter}$ zu 
+\begin{equation}
+  m_\text{4cm} = \qty{-81.26(2.24)}{\mega\electronvolt\per\meter}
+\end{equation}
+
+\begin{figure}[H]
+  \centering
+  \caption{Bestimmung des Energieverlusts bei einem Abstand von $x = \qty{7}{\centi\meter}$}
+  \label{fig:12}
+  \includegraphics{build/abstand4.pdf}
+\end{figure}
+Bei einem Abstand von $x = \qty{7}{\centi\meter}$ ergibt sich durh den Steigungsparameter 
+ein Energieverlust von 
+\begin{equation}
+  m_\text{7cm} = \qty{-99.14(3.83)}{\mega\electronvolt\per\meter}
+\end{equation}
+
+\subsection{Mittlere Reichweite}
+Um die Mittlere Reichweite zu bestimmen wird die Anzahl der Pulse gegen die Effektive Weglänge 
+aufgetragen. durch den Stärksten Abfall wird eine Ausgleisgerade gezogen und dann der Schnittpunkt dieser geraden mit einer geraden Auf 
+Höhe der halben maximalen Intensität gesucht. Die Ausgleichsrechnungen, sowie die eignezeichnete Gerade und 
+der Schnittpunkt befinden sich für die Jewailigen abstände in \autoref{fig:13} und \autoref{fig:14} abgebildet.
+
+\begin{figure}[H]
+  \centering
+  \caption{Messwerte der Pulse pro $120\unit{\second}$ und bestimmung der mittleren Reichweite für den Abstand $x = \qty{4}{\centi\meter}$}
+  \label{fig:13}
+  \includegraphics{build/anzahl4.pdf}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Messwerte der Pulse pro $120\unit{\second}$ und bestimmung der mittleren Reichweite für den Abstand $x = \qty{7}{\centi\meter}$}
+  \label{fig:14}
+  \includegraphics{build/anzahl7.pdf}
+\end{figure}
+
+Die schnittpunkte der Ausgleichgeraden mit der konstanten geraden auf höhe der halben Maximalen pulsrate 
+geben die mittlere Reichweite an. Die Reichweiten ergeben sich damit zu 
+\begin{align}
+  R_\text{4cm} = \qty{53(9)}{\centi\meter}\\
+  R_\text{7cm} = \qty{24(4)}{\centi\meter}
+\end{align}
