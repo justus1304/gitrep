@@ -1,6 +1,12 @@
 \section{Diskussion}
 \label{sec:Diskussion}
 
+Berechnungen der Abweichung werden im Folgenden mithilfe von 
+\begin{equation*}
+    \increment x = \left| \frac{x_{exp}-x_{theo}}{x_{theo}} \right|
+\end{equation*}
+durchgeführt.
+
 \subsection{Energieverlust}
 Die gemessenen Werte des Energieverlusts beliefen sich auf 
 \begin{align*}
@@ -13,4 +19,20 @@ Die Abweichung der beiden Werte ist mit einem Wert von $18.06 \%$ sehr hoch.
 Diese Abweichung ist allerdings zu erwarten gewesen in Anbetracht der Tatsache, 
 dass es sich um die Bestimmung über eine Ausgleichsgerade handelt, dessen Werte 
 fehlerbelastet sind. Das kommt daher, dass die Einstellungen an der Vakuumpumpe 
-per Hand erfolgen und der Druck dementsprechend nach Augenmaß reguliert wird. 
+per Hand erfolgen und der Druck dementsprechend nach Augenmaß reguliert wird.
+
+\subsection{Mittlere Reichweite}
+Die mittlere Reichweite belief sich jeweils auf:
+\begin{align}
+    R_\text{4cm} = \qty{53(9)}{\centi\meter}, \\
+    R_\text{7cm} = \qty{24(4)}{\centi\meter}.
+\end{align}
+Die beiden Werte weichen um $54.72 \%$ voneinander ab, was für eine sehr 
+unpräzise Messung spricht. Die bereits angesprochen Fehler bezüglich der Messung 
+verstärken sich hier. Zusätzlich könnte argumentiert werden, dass bei der 
+Messung mit einem effektiven Abstand von $x = 7 \unit{\centi\meter}$ weniger
+Messwerte vorliegen. Das könnte zu einer geringeren Präzision bei der Regression 
+und schlussendlich zu einer größeren Abweichung bei der Bestimmung der mittleren 
+Reichweite führen.
+
+\subsection{Statistische Messung}
