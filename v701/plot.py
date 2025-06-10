@@ -61,8 +61,8 @@ def abstand_4():
 #Ausgleichsrechnung ploten 
     ax.plot(x,m * x + b,label = 'regression')
     
-    #ax.set_xlabel(r"Effektive Weglänge $ /\unit{\meter}$")
-    #ax.set_ylabel(r"Energie$/\unit{\mega\electronvolt}$")
+    ax.set_xlabel(r"Effektive Weglänge $ /\unit{\meter}$")
+    ax.set_ylabel(r"Energie$/\unit{\mega\electronvolt}$")
     ax.legend()
     ax.grid(True)
 #Senkrechte linie falls benoetigt
@@ -94,8 +94,8 @@ def abstand_7():
 
     ax.plot(x,m * x + b,label = 'regrssion')
     
-    #ax.set_xlabel(r"Effektive Weglänge $ /\unit{\meter}$")
-    #ax.set_ylabel(r"Energie$/\unit{\mega\electronvolt}$")
+    ax.set_xlabel(r"Effektive Weglänge $ /\unit{\meter}$")
+    ax.set_ylabel(r"Energie$/\unit{\mega\electronvolt}$")
     ax.legend()
     ax.grid(True)
 #Senkrechte linie falls benoetigt
@@ -134,8 +134,8 @@ def anzahl_4():
     print("schnittpunkt : " ,sp,np.max(n)/2)
 #ploten des Schnittpunktes
     ax.plot(sp.nominal_value,f(m,sp.nominal_value,b),'rx',label = 'Schnittpunkt')
-    #ax.set_xlabel(r"Effektive Weglänge $ /\unit{\meter}$")
-    #ax.set_ylabel(r"Impulse pro 200s")
+    ax.set_xlabel(r"Effektive Weglänge $ /\unit{\meter}$")
+    ax.set_ylabel(r"Impulse pro 200s")
     ax.legend()
     ax.grid(True)
 #Senkrechte linie falls benoetigt
@@ -171,8 +171,8 @@ def anzahl_7():
     print("schnittpunkt : " ,sp,np.max(n)/2)
 #ploten des Schnittpunktes
     ax.plot(sp.nominal_value,f(m,sp.nominal_value,b),'rx',label = 'Schnittpunkt')
-    #ax.set_xlabel(r"Effektive Weglänge $ /\unit{\meter}$")
-    #ax.set_ylabel(r"Impulse pro 200s")
+    ax.set_xlabel(r"Effektive Weglänge $ /\unit{\meter}$")
+    ax.set_ylabel(r"Impulse pro 200s")
     ax.legend()
     ax.grid(True)
 #Senkrechte linie falls benoetigt
