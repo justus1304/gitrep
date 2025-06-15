@@ -1,0 +1,5 @@
+#number of peak, time tp peak / micro second
+1   3.2
+2   30.0
+3   59.9
+4   89.4
