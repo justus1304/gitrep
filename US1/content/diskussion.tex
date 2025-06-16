@@ -1,2 +1,73 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+Berechnungen der Abweichung werden im Folgenden mithilfe von 
+\begin{equation*}
+    \increment x = \left| \frac{x_{exp}-x_{theo}}{x_{theo}} \right|
+\end{equation*}
+durchgeführt.
+
+\subsection{Programm und Geräteeinstellungen}
+Der experimentell bestimmte Wert für die Wellenlänge der Schwingungen in Acryl 
+bei einer Periode von $T = \qty{0.61(0.04)}{\micro\second}$ berechnet sich zu
+\begin{align*}
+    \lambda &= \qty{1.69(0.11)}{\milli\meter}.
+\end{align*}
+Der vergleichbare im Vorhinein berechnete Wert lässt sich mit 
+% \begin{align*}
+%     \lambda_\text{Theo} &= \qty{1.36()}{\milli\meter}
+% \end{align*}
+\begin{align*}
+    \lambda_\text{Theo} &= \qty{1.36(0.0)}{\milli\meter}.
+\end{align*}
+beziffern, was in einer Differenz von $19.53 \%$ resultiert. Das ist eine 
+vergleichsweise hohe Abweichung, welche auf die händische Durchführung zurückgeführt 
+werden könnte. Die Auswertung der Daten am Computer könnte an falschen Stellen 
+erfolgt sein, sodass die Peaks nicht exakt getroffen wurden, sodass die Differenziation 
+der Peaks mangelhaft war. Ebenso könnte zu wenig destilliertes Wasser als 
+Gleitmittel genutzt worden sein, sodass die Signale mit Rauschen versehen waren, 
+was das Ergebnis nachträglich verfälscht.
+
+\subsection{Schallgeschwindigkeit}
+Die experimentell bestimmten Schallgeschwindigkeiten beliefen sich auf:
+\begin{align*}
+    c_\text{Acryl} &= \qty{2744(14)}{\meter\per\second} \\
+    c_\text{Aluminium} &= \qty{6213(1107)}{\meter\per\second}
+\end{align*}
+Die dazugehörigen Literaturwerte betragen:
+\begin{align*}
+    c_\text{Acryl,Lit} &= \qty{2730}{\meter\per\second} \\
+    c_\text{Aluminium,Lit} &= \qty{6320}{\meter\per\second}
+\end{align*}
+\noindent Damit lassen sich die Abweichungen berechnen: $0.51 \%$ und $1.69 \%$. 
+Das spricht für eine sehr gelungene Messung und eine erfolgreiche Durchführung. 
+Trotz erwarter Abweichungen durch die Kopplung von zwei Zylindern sind die 
+Abschweifungen zur Literatur vernachlässigbar gering.
+
+\subsection{Dämpfung}
+Die Dämpfungsfaktoren ließen sich mit 
+\begin{align*}
+    d_{2 \unit{\mega\hertz},angepasst} &= \qty{-11.6(2.9)}{1 \per\meter} \\
+    d_{1 \unit{\mega\hertz},angepasst} &= \qty{-1.31(0.92)}{1 \per\meter} \\
+    d_{2 \unit{\mega\hertz}} &= \qty{-1.47 \pm 2.37}{1 \per\meter} \\
+    d_{1 \unit{\mega\hertz}} &= \qty{2.46 \pm 2.06}{1 \per\meter}
+\end{align*}
+beziffern. Die unterschiedlichen Werte lassen sich einerseits durch die Eliminierung 
+von Messwerten begründen, andererseits durch Wechselwirkungseffekte der Sonde 
+mit dem Medium. Bei einer geringeren Frequenz wechselwirkt die Sonde weniger, 
+wodurch der Koeffiziente hier grundsätzlich geringer ausfällt. Ebenso ist der 
+positive Wert von $d_{1 \unit{\mega\hertz}}$ nicht physikalisch sinnvoll, was 
+auf eine sehr fehlerbehaftete Messung hinweist. Inwiefern die Werte allerdings 
+realistisch sind, steht weiterhin aus, da keine Literaturwerte oder anderweitige 
+Quellen zum Vergleich stehen.
+
+\subsection{Kallibrierkurve}
+Aufgrund der zulaufenden Form sollte eine quadratische Näherung stattfinden. 
+Durch die Messungen kann auf einen misslungenen Versuch hingedeutet werden: 
+Es ergibt sich eine Gerade. Das könnte auf eine schlechte Durchführung 
+zurückzuführen sein. Möglicherweise wurden die Messabstände nicht korrekt eingehalten.
+Hauptfehlerquelle wird sehr wahrscheinlich die ungünstige Peak-Detektion gewesen 
+sein. Dadurch, dass die Apparatur ständig gewissen Unterschwankungen ausgesetzt 
+war, schwankten auch die Peaks. Schlussendlich bleibt nichts von einem 
+quadratischen Verlauf übrig und es kann von einer erfolglosen Messung gesprochen 
+werden.

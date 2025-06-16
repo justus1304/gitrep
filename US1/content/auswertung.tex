@@ -139,12 +139,13 @@ der Zeitabstand zwischen Anfang und Ende einer ganzen Schwingugsperiode
 gemessen wurde. Diese Werte aus \autoref{tab:11} wurden gemittelt, das
 ergibt eine mittlere Periodendauer von 
 \begin{equation}
-   T = \qty{0.61(0.04)}{\micro\second}
+   T = \qty{0.61(0.04)}{\micro\second}.
 \end{equation}
-und unter annahme der später bestimmten Schallgeschwindigkeit in Acryl von $c_\text{Acryl} = \qty{2744(14)}{meter\per\second}$
-eine durchschnittliche Wellenlänge von
+Unter Annahme der später bestimmten Schallgeschwindigkeit in Acryl von
+$c_\text{Acryl} = \qty{2744(14)}{\meter\per\second}$ ergibt sich eine
+durchschnittliche Wellenlänge von
 \begin{equation}
-   \lambda = \qty{1.69(0.11)}{\micro\meter}.
+   \lambda = \qty{1.69(0.11)}{\milli\meter}.
 \end{equation}
 
 \subsection{Schallgeschwindigkeit in Acryl und Aluminium}
@@ -191,7 +192,7 @@ Somit ergibt sich eine Schallgeschwindigkeit in Acryl zu
 \subsection{Dämpfungsfaktor}
 Um den Dämpfungsfaktor der Schwingungsamplitude zu ermitteln, werden die
 Amplituden der reflektierten Schwingungen an den Grenzflächen bei verschiedenen
-Abstände des Ultraschalls betrachtet. Die Amplituden aus \autoref{tab:13} werden
+Abständen des Ultraschalls betrachtet. Die Amplituden aus \autoref{tab:13} werden
 in \autoref{fig:13} (2$\unit{\mega\hertz}$ Sonde) sowie in \autoref{fig:14} 
 (1$\unit{\mega\hertz}$ Sonde) gegen die Abstände der jeweiligen Grenzfläche 
 (Höhen der Zylinder) aufgetragen und dann eine Regression der Form 
@@ -214,7 +215,7 @@ Die Parameter der Ausgleichsrechnung ergeben sich zu
 \end{align*}
 Somit ergibt sich ein Dämpfungsfaktor von 
 \begin{equation}
-    d_{1\unit{\mega\hertz},angepasst} = \qty{-11.6(2.9)}{1 \per\meter}.
+    d_{2\unit{\mega\hertz},angepasst} = \qty{-11.6(2.9)}{1 \per\meter}.
 \end{equation}
 
 \begin{figure}[H]
@@ -230,7 +231,7 @@ Somit ergibt sich ein Dämpfungsfaktor von
 \end{align*}
 Somit ergibt sich ein Dämpfungsfaktor von 
 \begin{equation}
-    d_{2 \unit{\mega\hertz},angepasst} = \qty{-1.31(0.92)}{1 \per\meter}.
+    d_{1 \unit{\mega\hertz},angepasst} = \qty{-1.31(0.92)}{1 \per\meter}.
 \end{equation}
 
 \subsubsection{Uhrsprüngliche Messwerte}
@@ -240,16 +241,36 @@ Somit ergibt sich ein Dämpfungsfaktor von
     \label{fig:131}
     \includegraphics{build/amplituden_alu2mhz.pdf}
 \end{figure}
+\noindent Die Parameter der Ausgleichsrechnung ergeben sich zu 
+\begin{align*}
+    a &= \qty{-1.47(2.37)}{1 \per\meter}\\
+    b &= \qty{-0.62(0.19)}{\meter}.
+\end{align*}
+Somit ergibt sich ein Dämpfungsfaktor von 
+\begin{equation}
+    d_{2 \unit{\mega\hertz}} = \qty{-1.47(2.37)}{1 \per\meter}.
+\end{equation}
+
 \begin{figure}[H]
     \centering
     \caption{Messwerte und Regression der Amplituden Mit der 1 $\unit{\mega\hertz}$ Sonde }
     \label{fig:141}
     \includegraphics{build/amplituden_alu1mhz.pdf}
 \end{figure}
-\noindent Die in \autoref{fig:131} und \autoref{fig:141} dargestellten Regressionen
+\noindent Die in \autoref{fig:141} dargestellte Regression
 der ursprünglichen Messdaten ergeben eine positive Steigung. Dieses Ergebnis
 ist physikalisch nicht plausibel, da es einer Verstärkung der Schwingungen
 durch das Material entsprechen würde.
+Die Daten zu dem Graphen wären:
+\begin{align*}
+    a &= \qty{2.46(2.06)}{1 \per\meter}\\
+    b &= \qty{-0.57(0.16)}{\meter},
+\end{align*}
+sodass sich ein Dämpfungsfaktor von 
+\begin{equation}
+    d_{1 \unit{\mega\hertz}} = \qty{2.46 \pm 2.06}{\per\meter}
+\end{equation}
+ergibt.
 
 \subsection{Kallibrierkurve}
 Es wird davon ausgegangen, dass der Füllstand eines Erlenmeyer-Kolbens durch
