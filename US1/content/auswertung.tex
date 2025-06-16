@@ -11,7 +11,7 @@
             row{1} = {guard, mode = math},
         }
         \toprule
-        \text{Peak}& \text{Laufzeit}\unit{\micro\second}\\
+        \text{Peak}& \text{Laufzeit} / \unit{\micro\second}\\
         \midrule
         1  & 3.2\\
         2  & 30.0\\
@@ -98,7 +98,7 @@
             row{1} = {guard, mode = math},
         }
         \toprule
-        Wassermenge / \unit{mili\liter}&Laufzeit / \unit{\micro\second}\\
+        \text{Wassermenge} / \unit{\milli\liter} & \text{Laufzeit} / \unit{\micro\second}\\
         \midrule
         50 +-1& 19.2\\
         60 +-1& 22.2\\
@@ -121,80 +121,84 @@
 \end{table}
 
 \subsection{Programm und Geräteeinstellungen}
-Um die funktionsweise des Programms zu verstehen wurden am anfang 
-einmal vier x Werte von Peaks (\autoref{fig:10} sowie Werte in \autoref{tab:10}) bei der durchschallung eines Acrylblockes 
-mit der $2 \unit{\mega\hertz}$ Sonde aufgenommen.Diese entstehen durch reflexion an der Grenzfläche 
-bei eintritt in das Acryl und bei austritt und mit geschwächter Ampilitude auch weitere male 
-an diesen grenzflächen. Um trotsdem die hinteren Peaks erkennbar zu machen wurde 
-die Verstärkung, welche unten im Bild zu erkennen ist, eingeschaltet.
+Um die Funktionsweise des Programms zu verstehen wurden am Anfang 
+zuerst vier $x$-Werte von Peaks (\autoref{fig:10} sowie Werte in \autoref{tab:10})
+bei der Durchschallung eines Acrylblockes mit der $2 \unit{\mega\hertz}$ Sonde
+aufgenommen. Diese entstehen durch Reflexion an der Grenzfläche bei Eintritt in
+das Acryl und bei Austritt sowie auch weitere Male mit geschwächter Ampilitude.
+Um trotzdem die hinteren Peaks erkennbar zu machen wurde die Verstärkung,
+welche unten im Bild zu erkennen ist, eingeschaltet.
 \begin{figure}[H]
     \centering
-    \caption{Perks der Grenzflächenreflexion}
+    \caption{Peaks der Grenzflächenreflexion.}
     \label{fig:10}
     \includegraphics[width=\textwidth]{bilder/ssprogramm.jpg}
 \end{figure}
- Des weiteren wurden der Abbildung mehrere Periodendauern $T$ entnommen, indem 
- der Zeitabstand zwischen Anfang und Ende einer Ganzen Schwingugsperiode 
- gemessen wurde. Diese Werte aus \autoref{tab:11} wurden gemittelt und das ergibt eine 
- mittlere Periodendauer von 
- \begin{equation}
-    T = \qty{0.61(0.04)}{\micro\second}
- \end{equation}
+\noindent Des Weiteren wurden der Abbildung mehrere Periodendauern $T$ entnommen, indem 
+der Zeitabstand zwischen Anfang und Ende einer ganzen Schwingugsperiode 
+gemessen wurde. Diese Werte aus \autoref{tab:11} wurden gemittelt, das
+ergibt eine mittlere Periodendauer von 
+\begin{equation}
+   T = \qty{0.61(0.04)}{\micro\second}
+\end{equation}
 
- \subsection{Schallgeschwindigkeit in Acryl und Aluminium}
- Die Schallgeschwindigkeiten in den verschiedenen Medien werden ermittelt indem 
- die Höhe der Zylinder gegen die halbe laufzeitdifferenz des Ultraschalls zwischen 
- Anfangs- und Endgrenzfläcke aufgetragen wird. Wenn man eine Ausgleichsgerade der Form 
- $y = m \cdot x + b$ an die Messwerte fitet, kann die Schallgeschwindigkeit 
- duch den Steigungsparameter $m$ bestimmt werden. Die Messwerte der Höhen, sowie die Laufzeiten 
- befinden sich für Aluminium und Messing in \autoref{tab:12}, sowie die graphischen Darstellungen für 
- Acryl in \autoref{fig:11} und für Aluminium in \autoref{tab:12}
- 
- \begin{figure}[H]
+\subsection{Schallgeschwindigkeit in Acryl und Aluminium}
+Die Schallgeschwindigkeiten in den verschiedenen Medien werden ermittelt,
+indem die Höhe der Zylinder gegen die halbe Laufzeitdifferenz des Ultraschalls 
+zwischen Anfangs- und Endgrenzfläche aufgetragen wird. Wird eine Ausgleichsgerade
+der Form $y = m \cdot x + b$ an die Messwerte gefittet, kann die Schallgeschwindigkeit 
+duch den Steigungsparameter $m$ bestimmt werden. Die Messwerte der Höhen sowie
+die Laufzeiten befinden sich für Aluminium und Messing in \autoref{tab:12} 
+und die graphischen Darstellungen für Acryl in \autoref{fig:11} und für Aluminium
+in \autoref{tab:12}.
+\begin{figure}[H]
     \centering
-    \caption{Messwerte und regression zur ermittlung der Schallgeschwindigkeit in Acryl}
+    \caption{Messwerte und Regression zur Ermittlung der Schallgeschwindigkeit in Acryl.}
     \label{fig:11}
     \includegraphics{build/schallgeschwindigkeit_acryl.pdf}
 \end{figure}
-Die Parameter der Ausgleichsrechnung ergeben sich zu 
+\noindent Die Parameter der Ausgleichsrechnung ergeben sich zu 
 \begin{align*}
     a &= \qty{2744(14)}{\meter\per\second}\\
-    b &= \qty{0.002(0.0004)}{meter}
+    b &= \qty{0.002(0.0004)}{\meter}.
 \end{align*}
 Somit ergibt sich eine Schallgeschwindigkeit in Acryl von 
 \begin{equation}
-    c_\text{Acryl} = \qty{2744(14)}{\meter\per\second}
+    c_\text{Acryl} = \qty{2744(14)}{\meter\per\second}.
 \end{equation}
 
 \begin{figure}[H]
     \centering
-    \caption{Messwerte und regression zur ermittlung der Schallgeschwindigkeit in Aluminium}
+    \caption{Messwerte und Regression zur Ermittlung der Schallgeschwindigkeit in Aluminium.}
     \label{fig:12}
     \includegraphics{build/schallgeschwindigkeit_alu.pdf}
 \end{figure}
-Die Parameter der Ausgleichsrechnung ergeben sich zu 
+\noindent Die Parameter der Ausgleichsrechnung ergeben sich zu 
 \begin{align*}
     a &= \qty{6213(1107)}{\meter\per\second}\\
-    b &= \qty{0.0091(0.012)}{meter}
+    b &= \qty{0.0091(0.012)}{\meter}.
 \end{align*}
-Somit ergibt sich eine Schallgeschwindigkeit in Acryl von 
+Somit ergibt sich eine Schallgeschwindigkeit in Acryl zu
 \begin{equation}
-    c_\text{Aluminium} = \qty{6213(1107)}{\meter\per\second}
+    c_\text{Aluminium} = \qty{6213(1107)}{\meter\per\second}.
 \end{equation}
 
 \subsection{Dämpfungsfaktor}
-Um den Dämpfungsfaktor der Schwingungsamplitude zu ermitteln, werden 
-Amplituden von an Grenzflächen verschiedener Abstände reflektierten schwingungen 
-des Ultraschalls betrachtet. Die Amplituden aus \autoref{tab:13} werden in \autoref{fig:13}(2$\unit{\mega\hertz}$ Sonde) 
-sowie in \autoref{fig:14}(1$\unit{\mega\hertz}$ Sonde) gegen Die Abstände der Jewailigen grenzfläche (Höhen der Zylinder) aufgetragen 
-und dann eine Regression der Form $y = m \cdot x + b$  durchgeführt. In \autoref{fig:131} sowie \autoref{141} sind die fits der Ursprünglichen Messwerte 
-aufgetragen, jedoch fallen einige Messwerte so weit aus dem Muster, dass in \autoref{fig:13} die Messwerte 
-1,2,3 und 7 ausgenommen wurden und in \autoref{fig:14} die Werte 1,2 und 9 ausgenommen wurden. Somit ergeben sich deutlich sinnvollere 
-und genauere Dämpfungsfaktoren.
+Um den Dämpfungsfaktor der Schwingungsamplitude zu ermitteln, werden die
+Amplituden der reflektierten Schwingungen an den Grenzflächen bei verschiedenen
+Abstände des Ultraschalls betrachtet. Die Amplituden aus \autoref{tab:13} werden
+in \autoref{fig:13} (2$\unit{\mega\hertz}$ Sonde) sowie in \autoref{fig:14} 
+(1$\unit{\mega\hertz}$ Sonde) gegen die Abstände der jeweiligen Grenzfläche 
+(Höhen der Zylinder) aufgetragen und dann eine Regression der Form 
+$y = m \cdot x + b$  durchgeführt. In \autoref{fig:131} und \autoref{fig:141} sind
+die fits der ursprünglichen Messwerte aufgetragen, jedoch fallen einige
+Messwerte so weit aus dem Muster, dass in \autoref{fig:13} die Messwerte 
+1,2,3 und 7 rausgenommen wurden und in \autoref{fig:14} die Werte 1,2 und 9.
+Somit ergeben sich deutlich sinnvollere und genauere Dämpfungsfaktoren.
  
 \begin{figure}[H]
     \centering
-    \caption{Messwerte und regression der Amplituden Mit der 2 $\unit{\mega\hertz}$ Sonde ohne die Werte 1,2,3 und 7}
+    \caption{Messwerte und Regression der Amplituden Mit der 2 $\unit{\mega\hertz}$ Sonde ohne die Werte 1,2,3 und 7.}
     \label{fig:13}
     \includegraphics{build/amplituden_alu2mhzbearbeitet.pdf}
 \end{figure}
@@ -214,10 +218,10 @@ Somit ergibt sich ein Dämpfungsfaktor von
     \label{fig:14}
     \includegraphics{build/amplituden_alu1mhzbearbeitet.pdf}
 \end{figure}
-Die Parameter der Ausgleichsrechnung ergeben sich zu 
+\noindent Die Parameter der Ausgleichsrechnung ergeben sich zu 
 \begin{align*}
     a &= \qty{-1.31(0.92)}{1 \per\meter}\\
-    b &= \qty{-0.61(0.06)}{meter}
+    b &= \qty{-0.61(0.06)}{\meter}.
 \end{align*}
 Somit ergibt sich ein Dämpfungsfaktor von 
 \begin{equation}
@@ -227,34 +231,41 @@ Somit ergibt sich ein Dämpfungsfaktor von
 \subsubsection{Uhrsprüngliche Messwerte}
 \begin{figure}[H]
     \centering
-    \caption{Messwerte und regression der Amplituden Mit der 2 $\unit{\mega\hertz}$ Sonde.}
+    \caption{Messwerte und Regression der Amplituden Mit der 2 $\unit{\mega\hertz}$ Sonde.}
     \label{fig:131}
-    \includegraphics{build/amplituden_alu1mhz.pdf}
+    \includegraphics{build/amplituden_alu2mhz.pdf}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \caption{Messwerte und regression der Amplituden Mit der 1 $\unit{\mega\hertz}$ Sonde }
+    \caption{Messwerte und Regression der Amplituden Mit der 1 $\unit{\mega\hertz}$ Sonde }
     \label{fig:141}
     \includegraphics{build/amplituden_alu1mhz.pdf}
 \end{figure}
-In \autoref{fig:131} und \autoref{fig:141} ist zu sehen, dass wenn 
-man die ursprünglichen Messdaten für die regression nutzt, eine Positive Steigung 
-das ergebnis wäre. Dies macht Physikalisch keinen Sinn, da es bedeuten würde das Material verstärkt die Schwingungen. 
+\noindent Die in \autoref{fig:131} und \autoref{fig:141} dargestellten Regressionen
+der ursprünglichen Messdaten ergeben eine positive Steigung. Dieses Ergebnis
+ist physikalisch nicht plausibel, da es einer Verstärkung der Schwingungen
+durch das Material entsprechen würde.
 
 \subsection{Kallibrierkurve}
-Es wird davon ausgegangen, dass der Füllstand eines Elenmeyer-kolbens 
-durch eine Funktion dritten grades genähert werden kann. Es werden die Messwerte 
+Es wird davon ausgegangen, dass der Füllstand eines Erlenmeyer-Kolbens durch
+eine Funktion dritten Grades genähert werden kann. Es werden die Messwerte 
 aus \autoref{tab:14} an eine Funktion der Form $y = a \cdot x^2 + b \cdot x + c $ gefittet 
 um die Parameter der Füllstandsfunktion zu bestimmen. 
 \begin{figure}[H]
     \centering
-    \caption{Messwert und regression des Füllstandes gegen die Laufzeit.}
+    \caption{Messwerte und Regression des Füllstandes gegen die Laufzeit.}
     \label{fig:15}
     \includegraphics{build/fuellstand.pdf}
 \end{figure}
 
-Mit den Parametern der regression ergibt sich die Füllstandsfunktion zu 
+\noindent Mit den Parametern 
+\begin{align}
+    a &= \qty{0.000(0.000)}{\frac{\milli\liter}{\micro\second^2}}, \\
+    b &= \qty{0.217(0.010)}{\frac{\milli\liter}{\micro\second}}, \\
+    c &= \qty{8.694(0.552)}{\milli\liter}
+\end{align}
+der Regression ergibt sich die Füllstandsfunktion zu 
 \begin{equation}
-    u_\text{füllstand}(x) = 0 \cdot x^2 + 0.21 \cdot x + 8.69 
+    u_\text{füllstand}(x) = 0 \cdot x^2 + 0.21 \cdot x + 8.69.
 \end{equation}
 
