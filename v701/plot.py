@@ -108,7 +108,7 @@ abstand_7()
 
 def anzahl_4():
     print("Anzahl, Abstand: 4cm ")
-    x = np.linspace(0.00,0.064,10000)
+    x = np.linspace(0.045,0.064,10000)
     x_0 = 0.07 #m
 
     p,n,c = np.genfromtxt("daten/x0ist4.txt",unpack = True)
@@ -135,7 +135,7 @@ def anzahl_4():
 #ploten des Schnittpunktes
     ax.plot(sp.nominal_value,f(m,sp.nominal_value,b),'rx',label = 'Schnittpunkt')
     ax.set_xlabel(r"Effektive Weglänge $ /\unit{\meter}$")
-    ax.set_ylabel(r"Impulse pro 200s")
+    ax.set_ylabel(r"Impulse pro 120s")
     ax.legend()
     ax.grid(True)
 #Senkrechte linie falls benoetigt
@@ -146,7 +146,7 @@ anzahl_4()
 
 def anzahl_7():
     print("Anzahl, Abstand: 7cm ")
-    x = np.linspace(0.00,0.036,10000)
+    x = np.linspace(0.020,0.036,10000)
     x_0 = 0.07 #m
 
     p,n,c = np.genfromtxt("daten/x0ist7.txt",unpack = True)
@@ -189,16 +189,16 @@ def histogramm_1():
     daten3 = daten - np.sqrt(daten)
     fig, ax =plt.subplots()
     # Histogramm zeichnen
-    ax.hist(daten, bins=10, facecolor='none', edgecolor='black', linewidth=2,label='Messwerte')
-    ax.hist(daten2, bins=10, facecolor='none', edgecolor='red', linewidth=2, linestyle = '--',label = 'Messwerte + $\sqrt{N}$')
-    ax.hist(daten3, bins=10, facecolor='none', edgecolor='yellow', linewidth=2, linestyle = '--',label = 'Messwerte - $\sqrt{N}$')
+    ax.hist(daten, bins=10, facecolor='none',histtype='step', edgecolor='black', linewidth=1.7,label='Messwerte')
+    ax.hist(daten2, bins=10, facecolor='none',histtype='step', edgecolor='red', linewidth=1.7, linestyle = '--',label = 'Messwerte + $\sqrt{N}$')
+    ax.hist(daten3, bins=10, facecolor='none',histtype='step', edgecolor='yellow', linewidth=1.7, linestyle = '--',label = 'Messwerte - $\sqrt{N}$')
     x = np.linspace(1700,2000,1000)
     y = norm.pdf(x,mittelwert(daten),standartabweichung(daten))
     
     gauss = np.random.normal(loc=mittelwert(daten), scale=standartabweichung(daten), size=len(daten))
     poisson = np.random.poisson(lam=mittelwert(daten), size=len(daten))
-    ax.hist(gauss, bins=10, facecolor='none', edgecolor='blue', linewidth=2, linestyle = '-',label = 'Gauß')
-    ax.hist(poisson, bins=10, facecolor='none', edgecolor='red', linewidth=2, linestyle = '-',label = 'Poisson')
+    ax.hist(gauss, bins=10, facecolor='none',histtype='step', edgecolor='blue', linewidth=1.7, linestyle = '-',label = 'Gauß')
+    ax.hist(poisson, bins=10, facecolor='none',histtype='step', edgecolor='red', linewidth=1.7, linestyle = '-',label = 'Poisson')
     
     #ax.hist(daten2, bins=10, edgecolor='blue')
     print("mittelwert = ", ufloat(mittelwert(daten),standartabweichung(daten)/np.sqrt(len(daten))))
@@ -224,16 +224,16 @@ def histogramm_2():
     daten3 = daten - np.sqrt(daten)
     fig, ax =plt.subplots()
     # Histogramm zeichnen
-    ax.hist(daten, bins=5, facecolor='none', edgecolor='black', linewidth=2,label='Messwerte')
-    ax.hist(daten2, bins=5, facecolor='none', edgecolor='red', linewidth=2, linestyle = '--',label = 'Messwerte + $\sqrt{N}$')
-    ax.hist(daten3, bins=5, facecolor='none', edgecolor='yellow', linewidth=2, linestyle = '--',label = 'Messwerte - $\sqrt{N}$')
+    ax.hist(daten, bins=5, facecolor='none',histtype='step', edgecolor='black', linewidth=1.7,label='Messwerte')
+    ax.hist(daten2, bins=5, facecolor='none',histtype='step', edgecolor='red', linewidth=1.7, linestyle = '--',label = 'Messwerte + $\sqrt{N}$')
+    ax.hist(daten3, bins=5, facecolor='none',histtype='step', edgecolor='yellow', linewidth=1.7, linestyle = '--',label = 'Messwerte - $\sqrt{N}$')
     x = np.linspace(1700,2000,1000)
     y = norm.pdf(x,mittelwert(daten),standartabweichung(daten))
     
     gauss = np.random.normal(loc=mittelwert(daten), scale=standartabweichung(daten), size=len(daten))
     poisson = np.random.poisson(lam=mittelwert(daten), size=len(daten))
-    ax.hist(gauss, bins=5, facecolor='none', edgecolor='blue', linewidth=2, linestyle = '-',label = 'Gauß')
-    ax.hist(poisson, bins=5, facecolor='none', edgecolor='red', linewidth=2, linestyle = '-',label = 'Poisson')
+    ax.hist(gauss, bins=5, facecolor='none',histtype='step', edgecolor='blue', linewidth=1.7, linestyle = '-',label = 'Gauß')
+    ax.hist(poisson, bins=5, facecolor='none',histtype='step', edgecolor='red', linewidth=1.7, linestyle = '-',label = 'Poisson')
     
     #ax.hist(daten2, bins=10, edgecolor='blue')
     print("mittelwert = ", ufloat(mittelwert(daten),standartabweichung(daten)/np.sqrt(len(daten))))

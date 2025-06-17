@@ -96,7 +96,7 @@ den Steigungsparameter ein Energieverlust von
 Um die mittlere Reichweite zu bestimmen, wird die Anzahl der Pulse gegen die
 effektive Weglänge aufgetragen. Durch den stärksten Abfall wird eine Ausgleisgerade
 gezogen und dann der Schnittpunkt dieser Geraden mit einer Geraden auf 
-Höhe der halben maximalen Intensität gesucht. Die Ausgleichsrechnungen und die
+Höhe der halben maximalen Pulszahl ($N_\text{max,4cm}/2 = 29698.5$, $N_\text{max,7cm}/2 = 5951.5$) gesucht. Die Ausgleichsrechnungen und die
 eignezeichnete Gerade sowie der Schnittpunkt befinden sich für die jeweiligen
 Abstände in \autoref{fig:13} und \autoref{fig:14} abgebildet.
 
@@ -117,20 +117,25 @@ Abstände in \autoref{fig:13} und \autoref{fig:14} abgebildet.
 halben maximalen Pulsrate geben die mittlere Reichweite an. Die Reichweiten
 ergeben sich damit zu 
 \begin{align}
-  R_\text{4cm} = &\qty{53(9)}{\centi\meter} \\
-  R_\text{7cm} = &\qty{24(4)}{\centi\meter}.
+  R_\text{4cm} = &\qty{5.3(0.9)}{\centi\meter} \\
+  R_\text{7cm} = &\qty{2.4(0.4)}{\centi\meter}.
+\end{align}
+und nach \autoref{eqn:3} entsprechen diese einer Energie von
+\begin{align}
+  E_\text{4cm} = &\qty{6.6(0.8)}{\mega\electronvolt} \\
+  E_\text{7cm} = &\qty{3.9(0.4)}{\mega\electronvolt}.
 \end{align}
 
 \subsection{Statistische Messung}
 Es wird $100$ mal eine Statistische Messung der Pulsrate (Pulse pro $10\unit{\second}$) in gleichem Abstand $x=\qty{7}{\centi\meter}$ 
 durchgeführt. Die ermittelten Werte werden in einem Histogramm in \autoref{fig:05} in $10$ Bins und in \autoref{fig:06} in $5$ Bins Dargestellt. 
 Außerdem wird zum vergleich eine Poisson und Gaußverteilung mit dem aus den Messwerten ermittelten Mittelwert von $\overline{N} = \qty{1792(8)}{}$ und einer Varianz von 
-$\sigma = \qty{78.11}{}$ als Histogramm gegenübergestellt.
+$\sigma = \qty{78.11}{}$, welche nach \autoref{eqn:mittel} und \autoref{\eqn:standart} als Histogramm gegenübergestellt.
 \begin{figure}[H]
   \centering
   \caption{Messwerte sowie Gauß- und Poissonverteilung in $10$ Bins}
   \label{fig:05}
-  \includegraphics{build/histogram_1.pdf}
+  \includegraphics[width=\textwidth]{build/histogram_1.pdf}
 \end{figure}
 \begin{figure}[H]
   \centering
