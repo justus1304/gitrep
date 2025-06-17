@@ -25,8 +25,8 @@ Energieverlust mittels
 \end{equation}
 bestimmt werden. Wie bereits erwähnt nimmt die Wahrscheinlichkeit für 
 Wechselwirkungen bei hohen Geschwindigkeiten ab. Im Umkehrzug sind Materie-
-Wechselwirkungen in niedrigen Geschwindigkeitsbereichen demnach eher zu erwarten, 
-die Bethe-Boch-Gleichung versagt, da sie die Ladungsänderungen vernachlässigt.
+Wechselwirkungen in niedrigen Geschwindigkeitsbereichen demnach eher zu erwarten.
+Die Bethe-Boch-Gleichung versagt, da sie die Ladungsänderungen vernachlässigt.
 Als Lösung werden empirische Kurven genutzt, um die mittlere Reichweite (im 
 $\unit{\milli\meter}$-Bereich)
 \begin{equation}
@@ -46,3 +46,23 @@ sei beides konstant) bestimmt werden als:
 Diese Gleichung gilt, da die Reichweite von $\alpha$-Teilchen bei $T$=const. und 
 $V$=const. proportional zu $p$ ist. Demzufolge ist eine Absorptionsmessung mit 
 Variierung des Drucks sinnvoll.
+\cite{anleitung11}
+
+\subsection{Fehlerrechnung}
+Die gemessenen Werte unterliegen Messunsicherheiten und werden demnach im
+Folgenden nicht als fehlerfrei angesehen. Die Fehler entstehen bei der
+Bildung der Mittelwerte durch den Fehler des Mittelwerts und bei der
+Regressionsrechnung sowie der Fehlerforpflanzung durch Python.
+Der Fehler des Mittelwerts ist gegeben durch 
+\begin{equation}
+    \begin{aligned}
+        \increment \overline{x} &= \sqrt{\overline{x^2\kern-0.1em} - \overline{x}^2} \\
+                            &= \frac{\sqrt{\frac{1}{N-1} \sum\limits_{i=1}^N (x_i - \overline{x})^2}}{\sqrt{N}}.
+    \end{aligned}
+\end{equation}
+
+Um Fehler einzubeziehen, wird die Gauß'sche Fehlerfortpflanzung verwendet:
+\begin{equation}
+    \label{eqn:9}
+    \increment f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 \cdot \left(\increment x\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 \cdot \left(\increment y\right)^2 + .... + \left(\frac{\partial f}{\partial z}\right)^2 \cdot \left(\increment z\right)^2}
+\end{equation}
