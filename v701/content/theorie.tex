@@ -38,7 +38,8 @@ zu bestimmen. Die Energie der $\alpha$-Strahlung ist dabei $E_{\alpha} \leq
 Pulse aufgetragen, um die mittlere Reichweite der Strahlung zu ermitteln.
 Diese effektive Weglänge $x$ kann bei einem Druck $p$ und einem Abstand zwischen 
 Detektor und $\alpha$-Strahler von $x_0$, sowie einem Normaldruck $p_0$ (letzteres 
-sei beides konstant) bestimmt werden als:
+sei beides konstant mit $x_0 = 6 \unit{\centi\meter}$ und $p_0 = 1.013 \unit{\bar}$
+\cite{normaldruck}) bestimmt werden als:
 \begin{equation}
     \label{eqn:4}
     x = x_0 \frac{p}{p_0}
@@ -49,10 +50,15 @@ Variierung des Drucks sinnvoll.
 \cite{anleitung11}
 
 \subsection{Fehlerrechnung}
+\label{subsec:fehler}
 Die gemessenen Werte unterliegen Messunsicherheiten und werden demnach im
 Folgenden nicht als fehlerfrei angesehen. Die Fehler entstehen bei der
 Bildung der Mittelwerte durch den Fehler des Mittelwerts und bei der
 Regressionsrechnung sowie der Fehlerforpflanzung durch Python.
+Der Mittelwert ist gegeben durch:
+\begin{equation}
+    \overline{x} = \frac{1}{N} \sum\limits_{k=1}^N x_K
+\end{equation}
 Der Fehler des Mittelwerts ist gegeben durch 
 \begin{equation}
     \begin{aligned}
