@@ -198,40 +198,39 @@ in \autoref{fig:13} (2$\unit{\mega\hertz}$ Sonde) sowie in \autoref{fig:14}
 (Höhen der Zylinder) aufgetragen und dann eine Regression der Form 
 $y = m \cdot x + b$  durchgeführt. In \autoref{fig:131} und \autoref{fig:141} sind
 die fits der ursprünglichen Messwerte aufgetragen, jedoch fallen einige
-Messwerte so weit aus dem Muster, dass in \autoref{fig:13} die Messwerte 
-1,2,3 und 7 rausgenommen wurden und in \autoref{fig:14} die Werte 1,2 und 9.
+Messwerte so weit aus dem Muster, dass in \autoref{fig:13} der Messwert 3 rausgenommen wurde und in \autoref{fig:14} die Werte 1,2 und 7.
 Somit ergeben sich deutlich sinnvollere und genauere Dämpfungsfaktoren.
  
 \begin{figure}[H]
     \centering
-    \caption{Messwerte und Regression der Amplituden Mit der 2 $\unit{\mega\hertz}$ Sonde ohne die Werte 1,2,3 und 7.}
+    \caption{Messwerte und Regression der Amplituden Mit der 2 $\unit{\mega\hertz}$ Sonde ohne Wert 3.}
     \label{fig:13}
     \includegraphics{build/amplituden_alu2mhzbearbeitet.pdf}
 \end{figure}
 Die Parameter der Ausgleichsrechnung ergeben sich zu 
 \begin{align*}
-    a &= \qty{-11.6(2.9)}{1 \per\meter}\\
-    b &= \qty{0.13(0.16)}{}
+    a &= \qty{-0.82(0.7)}{1 \per\meter}\\
+    b &= \qty{0.60(0.05)}{}
 \end{align*}
 Somit ergibt sich ein Dämpfungsfaktor von 
 \begin{equation}
-    d_{2\unit{\mega\hertz},angepasst} = \qty{-11.6(2.9)}{1 \per\meter}.
+    d_{2\unit{\mega\hertz},angepasst} = \qty{0.82(0.7)}{1 \per\meter}.
 \end{equation}
 
 \begin{figure}[H]
     \centering
-    \caption{Messwerte und regression der Amplituden Mit der 1 $\unit{\mega\hertz}$ Sonde ohne die Werte 1,2 und 9}
+    \caption{Messwerte und regression der Amplituden Mit der 1 $\unit{\mega\hertz}$ Sonde ohne die Werte 1,2 und 7}
     \label{fig:14}
     \includegraphics{build/amplituden_alu1mhzbearbeitet.pdf}
 \end{figure}
 \noindent Die Parameter der Ausgleichsrechnung ergeben sich zu 
 \begin{align*}
-    a &= \qty{-1.31(0.92)}{1 \per\meter}\\
-    b &= \qty{-0.61(0.06)}{\meter}.
+    a &= \qty{-1.6(4.4)}{1 \per\meter}\\
+    b &= \qty{-0.29(0.30)}{\meter}.
 \end{align*}
 Somit ergibt sich ein Dämpfungsfaktor von 
 \begin{equation}
-    d_{1 \unit{\mega\hertz},angepasst} = \qty{-1.31(0.92)}{1 \per\meter}.
+    d_{1 \unit{\mega\hertz},angepasst} = \qty{1.6(4.4)}{1 \per\meter}.
 \end{equation}
 
 \subsubsection{Uhrsprüngliche Messwerte}
@@ -248,7 +247,7 @@ Somit ergibt sich ein Dämpfungsfaktor von
 \end{align*}
 Somit ergibt sich ein Dämpfungsfaktor von 
 \begin{equation}
-    d_{2 \unit{\mega\hertz}} = \qty{-1.47(2.37)}{1 \per\meter}.
+    d_{2 \unit{\mega\hertz}} = \qty{1.47(2.37)}{1 \per\meter}.
 \end{equation}
 
 \begin{figure}[H]

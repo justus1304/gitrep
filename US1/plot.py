@@ -170,9 +170,9 @@ def acryl1bearbeitet():
     
     h_a = h_a * 0.01
     fig, ax =plt.subplots()
-    ax.plot(h_a,np.log(out2/in2),"k.",label = 'Messwerte')
+    ax.plot(h_a,np.log(out1/in1),"k.",label = 'Messwerte')
 
-    params,cov = np.polyfit(h_a, np.log(out2/in2), 1,cov=True) 
+    params,cov = np.polyfit(h_a, np.log(out1/in1), 1,cov=True) 
     m, b = params 
     m_err, b_err = np.sqrt(np.diag(cov))
     print(f"Steigung1: {m:.4f} ± {m_err:.4f}")
@@ -202,7 +202,7 @@ def fuellstand():
     # Plot the results
     fig, ax =plt.subplots()
     # Parameter ausgeben
-    print("Optimale Parameter:")
+    print("Optimale P7   1.244   0.724   0.727   0.393   3.12arameter:")
     
     perr = np.sqrt(np.diag(pcov))
     print("\nStandardfehler der Parameter:")
