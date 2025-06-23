@@ -146,7 +146,7 @@ anzahl_4()
 
 def anzahl_7():
     print("Anzahl, Abstand: 7cm ")
-    x = np.linspace(0.020,0.036,10000)
+    x = np.linspace(0.020,0.028,10000)
     x_0 = 0.07 #m
 
     p,n,c = np.genfromtxt("daten/x0ist7.txt",unpack = True)
@@ -172,7 +172,7 @@ def anzahl_7():
 #ploten des Schnittpunktes
     ax.plot(sp.nominal_value,f(m,sp.nominal_value,b),'rx',label = 'Schnittpunkt')
     ax.set_xlabel(r"Effektive Weglänge $ /\unit{\meter}$")
-    ax.set_ylabel(r"Impulse pro 200s")
+    ax.set_ylabel(r"Impulse pro 120s")
     ax.legend()
     ax.grid(True)
 #Senkrechte linie falls benoetigt
