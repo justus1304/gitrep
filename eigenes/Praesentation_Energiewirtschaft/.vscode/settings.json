@@ -1,0 +1,5 @@
+// Sagt LaTeX, wohin es kompilieren soll
+    "latex-workshop.latex.outDir": "build",
+
+    // Sagt dem PDF-Betrachter, wo die PDF liegt
+    "latex-workshop.view.pdf.viewer": "tab"

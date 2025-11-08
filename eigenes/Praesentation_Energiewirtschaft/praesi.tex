@@ -1,0 +1,54 @@
+% Hiermit sagst du LaTeX, dass es eine Beamer-Präsentation ist
+\documentclass{beamer}
+
+% Wichtige Pakete für Umlaute und Schriftkodierung
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel} % Für deutsche Silbentrennung und Begriffe
+
+% --- Titel-Informationen ---
+\title{Meine erste Präsentation}
+\author{Dein Name}
+\date{\today} % Setzt das heutige Datum
+
+% Füge dies nach den \usepackage-Befehlen ein
+\usetheme{Madrid} % Ein sehr beliebtes Theme mit Navigationsleiste
+
+\begin{document}
+
+% --- 1. Die Titelfolie generieren ---
+% Die \titlepage nutzt die Infos aus der Präambel
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% --- 2. Eine Inhaltsverzeichnis-Folie (optional) ---
+\begin{frame}
+    \frametitle{Übersicht} % Titel für diese Folie
+    \tableofcontents % Erstellt automatisch ein Inhaltsverzeichnis
+\end{frame}
+
+% --- 3. Eine normale Inhaltsfolie ---
+\section{Einleitung} % Fügt einen Eintrag zum Inhaltsverzeichnis hinzu
+
+\begin{frame}
+    \frametitle{Was ist Beamer?} % Der Titel dieser Folie
+    
+    Das ist der Inhalt meiner ersten Folie.
+    
+    \begin{itemize}[-]
+        \item Ein Punkt
+        \item Noch ein Punkt
+    \end{itemize}
+\end{frame}
+
+% --- 4. Eine weitere Folie ---
+\section{Hauptteil} % Nächster Abschnitt
+
+\begin{frame}
+    \frametitle{Warum LaTeX?}
+    
+    Weil es für Formeln $E = mc^2$ und Textsatz unschlagbar ist.
+\end{frame}
+
+\end{document}

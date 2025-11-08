@@ -1,0 +1,87 @@
+% --- Dies ist ein minimales Beamer-Template ---
+\documentclass{beamer}
+
+% --- Paket-Definitionen ---
+\usepackage[utf8]{inputenc}   % Erlaubt Umlaute (ä, ö, ü) direkt im Code
+\usepackage[T1]{fontenc}      % Stellt sicher, dass Umlaute korrekt kopiert/dargestellt werden
+\usepackage{graphicx}         % Zum Einfügen von Bildern mit \includegraphics
+
+% --- Theme-Einstellungen (optional) ---
+% Du kannst das Aussehen leicht ändern.
+% Probiere andere Themes aus, z.B. "Warsaw", "Berlin", "Singapore"
+\usetheme{Madrid}
+\usecolortheme{beaver}
+
+% --- Titel-Informationen ---
+\title[Kurztitel]{Der vollständige Titel deiner Präsentation}
+\author[Mustermann]{Max Mustermann}
+\institute[Meine Uni]{Meine Universität \\ Fakultät für Irgendwas}
+\date{\today} % Setzt das heutige Datum
+
+% --- Dokument-Start ---
+\begin{document}
+
+% --- 1. Die Titelseite ---
+% Erstellt eine Titelseite basierend auf den obigen Infos
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% --- 2. Das Inhaltsverzeichnis ---
+% Erstellt automatisch ein Verzeichnis basierend auf \section
+\begin{frame}
+  \frametitle{Inhaltsverzeichnis} % Titel für diese Folie
+  \tableofcontents
+\end{frame}
+
+% --- 3. Inhalt (Abschnitte und Folien) ---
+
+% Jeder \section-Befehl erstellt einen neuen Eintrag im Inhaltsverzeichnis
+\section{Einleitung}
+
+\begin{frame}
+  \frametitle{Was ist das Problem?} % Titel für diese Folie
+
+  Willkommen zu meiner Präsentation.
+  \begin{itemize}
+    \item Das ist der erste Punkt.
+    \item Und ein zweiter Punkt.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ein Bild einfügen}
+  
+  % (Dafür muss ein Ordner "bilder" mit "logo.png" existieren)
+  % \includegraphics[width=0.6\textwidth]{bilder/logo.png}
+  
+  Hier könnte auch Text stehen.
+\end{frame}
+
+\section{Hauptteil}
+
+\begin{frame}
+  \frametitle{Die wichtigsten Ergebnisse}
+  
+  Hier stehen die Kernergebnisse.
+  \begin{enumerate}
+    \item Erstens...
+    \item Zweitens...
+    \item Drittens...
+  \end{enumerate}
+\end{frame}
+
+\section{Zusammenfassung}
+
+\begin{frame}
+  \frametitle{Fazit}
+  
+  Vielen Dank für Ihre Aufmerksamkeit!
+  
+  \bigskip % Macht einen kleinen vertikalen Abstand
+  
+  Haben Sie noch Fragen?
+\end{frame}
+
+% --- Dokument-Ende ---
+\end{document}

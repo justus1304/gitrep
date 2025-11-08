@@ -1,0 +1,110 @@
+% Hiermit sagst du LaTeX, dass es eine Beamer-Präsentation ist
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{tikz} % Brauchst du für diese Methode
+\usetikzlibrary{positioning} % Für einfache Positionierung (z.B. "right=of")
+
+% --- HINTERGRUNDBILD (ROBUSTE TIKZ-METHODE) ---
+%\setbeamertemplate{background canvas}{%
+%  \begin{tikzpicture}[overlay, remember picture]
+%    \node[opacity=.5, at=(current page.center)] {
+%      \includegraphics[width=\paperwidth, height=\paperheight]{bg3.png}
+%    };
+%  \end{tikzpicture}
+%}
+% ---Wichtige Pakete für Umlaute und Schriftkodierung
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel} % Für deutsche Silbentrennung und Begriffe
+% Fügt 1em (ca. eine Zeilenhöhe) Abstand über/unter JEDER figure-Umgebung ein
+\setbeamertemplate{figure}[text margin=1em]
+
+% --- TIKZ-STILE DEFINIEREN (Für sauberen Code) ---
+% Hier definieren wir, wie unsere Boxen und Pfeile aussehen sollen
+\tikzset{
+  % Stil für unsere Boxen
+  mybox/.style={
+    draw=structure!80,  % Randfarbe (nimmt die Theme-Farbe)
+    fill=structure!10,  % Füllfarbe (10% der Theme-Farbe)
+    rounded corners,      % Abgerundete Ecken
+    minimum height=1.5cm,   % Mindesthöhe
+    minimum width=4cm,    % Mindestbreite
+    text centered,        % Text zentrieren
+    thick                 % Dickerer Rand
+  },
+  % Stil für unsere Pfeile
+  myarrow/.style={
+    ->,                   % Pfeilspitze
+    very thick,           % Dicker Pfeil
+    color=structure!90,   % Pfeilfarbe
+    shorten >=1pt,        % Pfeil stoppt 1pt vor der Box
+    shorten <=1pt         % Pfeil startet 1pt nach der Box
+  }
+}
+
+% --- Titel-Informationen ---
+\title{Wasserkraft}
+\author{Justus Weber}
+\date{\today} % Setzt das heutige Datum
+
+% Füge dies nach den \usepackage-Befehlen ein
+\usetheme{metropolis} % Ein sehr beliebtes Theme mit Navigationsleiste
+\logo{\includegraphics[height=1mm]{tud_logo_rgb.jpg}}
+\setbeamercolor{structure}{fg=green!80!black}
+%\usecolortheme{beaver} % Ändert die Farben (meist rot/braun)
+% 1. Ebene (standard: Dreieck) wird zu einem Gedankenstrich
+%\setbeamertemplate{itemize item}{\large $\circ$} 
+
+% 2. Ebene (standard: kleineres Dreieck) wird zu einem Kreis
+%\setbeamertemplate{itemize subitem}{$\circ$}
+
+% 3. Ebene (standard: Quadrat) wird zu einem Stern
+%\setbeamertemplate{itemize subsubitem}{$\star$}
+
+
+
+\begin{document}
+
+% --- 1. Die Titelfolie generieren ---
+% Die \titlepage nutzt die Infos aus der Präambel
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% --- 2. Eine Inhaltsverzeichnis-Folie (optional) ---
+\begin{frame}
+    \frametitle{Übersicht} % Titel für diese Folie
+    \tableofcontents % Erstellt automatisch ein Inhaltsverzeichnis
+\end{frame}
+
+% --- 3. Eine normale Inhaltsfolie ---
+\section{Einleitung} % Fügt einen Eintrag zum Inhaltsverzeichnis hinzu
+
+\begin{frame}
+  \frametitle{Das Grundprinzip der Wasserkraft}
+  Hier ist das Prinzip:
+
+  \begin{itemize}
+        \item Umwandlung von potenzieller in Elektrische Energie 
+        \item Höher gelagertes Wasser $\rightarrow$ Fluss in nierdigere Lagen 
+        \item Kinetische Energie des Wassers in Elektrische Energie umwandeln 
+    \end{itemize}
+    \vfill
+    %\begin{figure}
+        
+        \includegraphics[width=0.5\textwidth]{bilder/grundaufbau.png}
+        
+    %\end{figure}
+    \vfill
+\end{frame}
+
+% --- 4. Eine weitere Folie ---
+\section{Hauptteil} % Nächster Abschnitt
+
+\begin{frame}
+    \frametitle{Warum LaTeX?}
+    
+    Weil es für Formeln $E = mc^2$ und Textsatz unschlagbar ist.
+\end{frame}
+
+\end{document}

@@ -124,7 +124,7 @@ y_s = np.linspace(alpha_s[0], alpha_s[-1], 100)
 tI_s = theo_s(y_s, 1.48)
 
 fig, ax = plt.subplots(1, 1, layout="constrained")
-ax.set_xlabel(r"$\alpha \mathbin{/} \unit{\degree}$")
+ax.set_xlabel(r"$\alph_\text{A}a \mathbin{/} \unit{\degree}$")
 ax.set_ylabel(r"$\sqrt{I\left(\alpha\right) \mathbin{/} I_{\text{e}}}$")
 ax.plot(alpha_p, I_p_lin, ".", label="parallel")
 ax.plot(alpha_s, I_s_lin, ".", label="senkrecht")
