@@ -2,7 +2,7 @@
 \label{sec:Theorie}
 
 Für die Vakuumphysik gibt es zahlreiche Anwendungsfelder, wie etwa die 
-Lebensmittelindustrie, die chemische oder Halbleiterindustrie. Um Vakuumc, 
+Lebensmittelindustrie, die chemische oder Halbleiterindustrie. Um Vakuum, 
 also einen Raum mit einem Druck, geringer als dem Druck in der Atmosphäre, zu 
 erzeugen und zu charakterisieren, sind spezielle Komponenten, Pumpen und
 Messgeräte notwendig, deren Zusammenspiel und physikalische Grundlagen im
@@ -16,14 +16,21 @@ ersteres jener Druck ist, welcher entsteht, wenn die Gasteilchen auf Wände der
 Gaskammer treffen. Der Partialdruck ist der Druck eines spezifischen Gases. Für 
 ein Gemisch können die Partialdrücke aufsummiert werden. 
 \\
-Um Druckbereiche einfacher zu differenzieren wird in die Folgenden unterteilt:
-\begin{align*}
-    \text{Grobvakuum (GV)}: & \quad \qty{1}{\bar} \text{ bis } \qty{1}{\milli\bar} \quad (\text{Atmosphärendruck}) \\
-    \text{Feinvakuum (FV)}: & \quad \qty{1}{\milli\bar} \text{ bis } \qty{e-3}{\milli\bar} \quad (\text{z.B. in der Thermoskanne}) \\
-    \text{Hochvakuum (HV)}: & \quad \qty{e-3}{\milli\bar} \text{ bis } \qty{e-7}{\milli\bar} \quad (\text{In Röntgenröhren}) \\
-    \text{Ultrahochvakuum (UHV)}: & \quad \qty{e-7}{\milli\bar} \text{ bis } \qty{e-12}{\milli\bar} \quad (\text{In Teilchenbeschleunigern}) \\
-    \text{Extremes Ultrahochvakuum (XHV)}: & \quad \text{ weniger als } \qty{e-12}{\milli\bar} \quad (\text{Im Weltraum}) \\
-\end{align*}
+Um Druckbereiche einfacher zu differenzieren unterteilt man von Grobvakuum (GV)
+in Bereichen von $\qty{1}{\bar}$ bis $\qty{1}{\milli\bar}$ bis zu dem extremen
+Ultrahochvakuum (XHV), dessen Druck kleiner als $\qty{e-12}{\milli\bar}$ ist.
+Für diesen Versuch sind das Grobvakuum und das Hochvakuum (liegt zwischen 
+$\qty{e-3}{\milli\bar} \text{ bis } \qty{e-7}{\milli\bar}$) relevant. Ersteres 
+für die mechanische Pumpe und letzteres für die Turbomolekularpumpe. Im späteren 
+Verlauf wird erläutert, weshalb diese Bereiche von besonderer Relevanz sind 
+(siehe \autoref{sec:dsp} und \autoref{sec:tmp}).
+% \begin{align*}
+%     \text{Grobvakuum (GV)}: & \quad \qty{1}{\bar} \text{ bis } \qty{1}{\milli\bar} \quad (\text{Atmosphärendruck}) \\
+%     \text{Feinvakuum (FV)}: & \quad \qty{1}{\milli\bar} \text{ bis } \qty{e-3}{\milli\bar} \quad (\text{z.B. in der Thermoskanne}) \\
+%     \text{Hochvakuum (HV)}: & \quad \qty{e-3}{\milli\bar} \text{ bis } \qty{e-7}{\milli\bar} \quad (\text{In Röntgenröhren}) \\
+%     \text{Ultrahochvakuum (UHV)}: & \quad \qty{e-7}{\milli\bar} \text{ bis } \qty{e-12}{\milli\bar} \quad (\text{In Teilchenbeschleunigern}) \\
+%     \text{Extremes Ultrahochvakuum (XHV)}: & \quad \text{ weniger als } \qty{e-12}{\milli\bar} \quad (\text{Im Weltraum}) \\
+% \end{align*}
 \noindent Je nach Druckbereich variiert die mittlere freie Weglänge, ein Maß 
 für die Distanz, welche ein Teilchen im Mittel zwischen zwei Stößen zurücklegt. 
 Diese spielt eine wichte Rolle für die Turbomolekularpumpe (siehe \autoref{sec:tmp}).
@@ -54,10 +61,78 @@ des Transportgefäßes. Eine Veranschaulichung ist in \autoref{fig:2} zu sehen.
         \label{fig:2}
     \end{minipage}
 \end{figure}
+\noindent Im späteren Verlauf soll es darum gehen, das Saugvermögen der Pumpen 
+zu bestimmen. Dafür ist zunächst die Definition der Teilchendichte und des 
+Teilchenstroms (Anzahl an Teilchen, die pro Zeiteinheit in einem Volumen
+transportiert wird) relevant:
+\begin{equation}
+    \label{eqn:1}
+    I_T = \frac{N}{V} \cdot \frac{dV}{dt} = n \cdot \frac{dV}{dt}, \qquad [I_T] = \si{\per\second}
+\end{equation}
 \noindent In dem Experiment wird (für die Rechnungen) von einem idealen Gas 
 ausgegangen. Das bedeutet, dass Moleküle als Punktmassen realisiert werden, 
 das Eigenvolumen vernachlässigt wird und keine Wechselwirkungen bis auf elastische 
-Stöße stattfinden. 
+Stöße stattfinden. In Anbetracht dessen und der Annahme des thermodynamischen 
+Gleichgewichts ergibt sich der Ausdruck
+\begin{equation}
+    \label{eqn:2}
+    I = p \cdot \frac{dV}{dt} = p \cdot S(p), \qquad [I] = \si{\pascal\meter\cubed\per\second}, [S(p)] = \si{\meter\cubed\per\hour}.
+\end{equation}
+Dafür wurde der Teilchenstrom mit der Größe $k_B \cdot T$ multipliziert. Es 
+ergibt sich die Saugleistung, welche die pro Zeit durch eine Querschnittsfläche 
+transportierte Gasmenge angibt. 
+
+\subsubsection{Evakuierungskurve}
+Diese Faktoren können für die Herleitung der Evakuierungskurve und der Bestimmung 
+des Saugvermögens durch Leckratenmessung genutzt werden. Dem Boyle-Mariotteschen 
+Gesetz zufolge ist das Produkt von Druck und Volumen für Isotherme konstant. 
+Bei zeitlicher Ableitung ergibt sich eine homogene DGL 1. Ordnung, welche sich 
+durch Separation der Variablen lösen lässt. Das Ergebnis ergibt sich zu 
+\begin{equation}
+    \label{eqn:3}
+    p(t) = (p_0 - p_e) \cdot e^{- \frac{S}{V} \cdot t} + p_e.
+\end{equation}
+Dabei wurde die physikalische Tatsache, dass der Druckabfall nicht auf Null 
+abfallen kann durch den Enddruck $p_e$ korrigiert. Schlussendlich kann durch 
+eine lineare Regression über die daraus resultierende Gleichung
+\begin{equation}
+    \ln\left(\frac{p(t) - p_e}{p_0 - p_e}\right) =  - \frac{S}{V} \cdot t
+\end{equation}
+das Saugvermögen bestimmt werden. Für diesen Versuch werden die Annahmen gemacht,
+dass der Druck mit einem konstanten Volumen gemessen und die Temperatur konstant 
+bleibt. Weiter soll der Prozess quasi-statisch sein, des Weiteren werden 
+Desorptionsprozesse nicht berücksichtigt. Letztlich wird angenommen, dass das 
+Saugvermögen konstant sowie druckunabhängig ist. 
+\\
+Es ist zu beachten, dass diese 
+Bedingungen im realen Experiment nicht vollständig erfüllt sind. Das Saugvermögen 
+ist druckabhängig, ebenso wird der Gasstrom aus Desorptionsprozessen nicht mehr 
+vernachlässigbar. Das bedeutet, dass Teilchen, welche sich vorher an den Wänden 
+des Rezipienten abgesetzt hatten (in diesem Fall Wasser), nun vom Gas absorbiert
+werden, was zur Folge hat, dass die Pumpe nacharbeiten muss. Es strömt konstant 
+Gas von den Wänden in das Volumen wie ein virtuelles Leck. Diese Abweichungen 
+sind jedoch keine Störung, die Evakuierungskurve wird im $\ln$-Diagramm in 
+Abschnitte mit unterschiedlichen Steigungen unterteilt. Jeder lineare Bereich 
+entspricht einem Druckintervall, in dem das Saugvermögen näherungsweise konstant
+ist.
+
+\subsubsection{Leckratenmessung}
+Bei dieser alternativen Bestimmung des Saugvermögens wird in der Apparatur 
+durch das Saugen der Pumpe und ein eingestelltes Leck (in dem Fall ein geöffnetes
+Ventil) ein Druck $p_g$ im Gleichgewicht gehalten. 
+Anschließend wird die Pumpe abgeriegelt, sodass der Druck ansteigt. Diese 
+zeitliche Änderung des Drucks wird dokumentiert. Das effektive Saugvermögen 
+(also dem Saugvermögen abzüglich der Reibungsverluste an Ventilen oder Rohren)
+ergibt sich schließlich über 
+\begin{equation}
+    S_{eff} = \frac{V}{p_g} \cdot \frac{\increment p}{\increment t}.
+\end{equation}
+Wie bei der Messung zur Evakuierungskurve besteht der Umstand der Desorption.
+Neben dem Gasstrom durch das Dosierventil liefern auch Desorptionsprozesse an 
+den Rezipientenwänden einen Beitrag zum Gasstrom. Die gemessene Druckanstiegsrate
+$\frac{dp}{dt}$ ist daher die Summe beider Beiträge. Die Desorption führt zu einer
+systematischen Überschätzung von $S_{\text{eff}}$, insbesondere bei niedrigen 
+Gleichgewichtsdrücken $p_g$ im Hochvakuumbereich.
 
 \subsection{Pumpen}
 \subsubsection{Drehschieberpumpe}
@@ -74,3 +149,35 @@ Stöße stattfinden.
 \subsubsection{Turbomolekularpumpe}
 \label{sec:tmp}
 \cite{glossar}
+
+\subsection{Geräte für das Messverfahren}
+\subsubsection{Piezo-Vakuummeter}
+
+\subsubsection{Pirani-Vakuummeter}
+
+\subsubsection{Kaltkathoden-Vakuummeter}
+
+\subsubsection{Glühkathoden-Vakuummeter}
+
+\subsection{Fehlerrechnung}
+Die gemessenen Werte unterliegen Messunsicherheiten und werden demnach im
+Folgenden nicht als fehlerfrei angesehen. Die Fehler entstehen bei der
+Bildung der Mittelwerte durch den Fehler des Mittelwerts und bei der
+Regressionsrechnung sowie der Fehlerforpflanzung durch Python.
+Der Mittelwert ist definiert durch
+\begin{equation}
+    \overline{x} = \frac{1}{N} \sum\limits_{i=1}^N x_i.
+\end{equation}
+\noindent Der Fehler des Mittelwerts ist somit gegeben durch 
+\begin{equation}
+    \begin{aligned}
+        \increment \overline{x} &= \sqrt{\overline{x^2\kern-0.1em} - \overline{x}^2} \\
+                            &= \frac{\sqrt{\frac{1}{N-1} \sum\limits_{i=1}^N (x_i - \overline{x})^2}}{\sqrt{N}}.
+    \end{aligned}
+\end{equation}
+
+Um Fehler einzubeziehen, wird die Gauß'sche Fehlerfortpflanzung verwendet:
+\begin{equation}
+    \label{eqn:9}
+    \increment f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 \cdot \left(\increment x\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 \cdot \left(\increment y\right)^2 + .... + \left(\frac{\partial f}{\partial z}\right)^2 \cdot \left(\increment z\right)^2}
+\end{equation}
