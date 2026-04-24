@@ -80,7 +80,7 @@ Gleichgewichts ergibt sich der Ausdruck
 \end{equation}
 Dafür wurde der Teilchenstrom mit der Größe $k_B \cdot T$ multipliziert. Es 
 ergibt sich die Saugleistung, welche die pro Zeit durch eine Querschnittsfläche 
-transportierte Gasmenge angibt. 
+transportierte Gasmenge angibt. \cite{glossar}
 
 \subsubsection{Evakuierungskurve}
 Diese Faktoren können für die Herleitung der Evakuierungskurve und der Bestimmung 
@@ -134,6 +134,7 @@ $\frac{dp}{dt}$ ist daher die Summe beider Beiträge. Die Desorption führt zu e
 systematischen Überschätzung von $S_{\text{eff}}$, insbesondere bei niedrigen 
 Gleichgewichtsdrücken $p_g$ im Hochvakuumbereich.
 
+
 \subsection{Pumpen}
 \subsubsection{Drehschieberpumpe}
 \label{sec:dsp}
@@ -145,19 +146,106 @@ Gleichgewichtsdrücken $p_g$ im Hochvakuumbereich.
     \hfill
     \label{fig:3}
 \end{figure}
+Die Drehschieberpumpe ist eine Verdrängerpumpe zur Erzeugung von Grob- und 
+Feinvakuum. Im Inneren rotiert ein exzentrisch gelagerter Rotor mit zwei
+beweglichen Schiebern (siehe \autoref{fig:3}). Durch die Rotation wird 
+das Volumen der Saugkammer (Schöpfraum) zunächst vergrößert. Der dadurch 
+entstehende Unterdruck saugt Gas aus dem Rezipienten an. Bei weiterer 
+Rotation wird die Kammer vom Einlass getrennt, das Gas komprimiert und 
+schließlich über ein Auslassventil ausgestoßen. Der Kreislauf wiederholt 
+sich kontinuierlich. Da das Gas im Schöpfraum durch die Verringerung des
+Volumens sehr  schnell auf den Atmosphärendruck gebracht wird, gibt es die
+Möglichkeit, einen Gasballast einzubauen. Dieser hat die Aufgabe, Umgebungsluft
+in den Schöpfraum zu befördern, sodass die Kondensation verhindert wird und die
+Maschine präventiv vor Korrosion geschützt wird. Ein Bild der im Experiment 
+genutzten Drehschieberpumpe befindet sich in \autoref{fig:4}.
+\begin{figure}[H]
+    \centering
+        \centering
+        \includegraphics[width=0.7\textwidth]{Bilder/dspea.jpg}
+        \caption{Aufnahme der Drehschieberpumpe. (Eigenaufnahme)}
+    \hfill
+    \label{fig:4}
+\end{figure}
+\noindent Der Drehschieberpumpe sind einige technische Grenzen gesetzt, wodurch bei alleiniger 
+Nutzung dieser kein Druck unterhalb des Feinvakuums erreicht werden kann. Dazu 
+zählt: Rückströmung von Gas durch Ventile und Spalte, Diffusion von Öldämpfen
+in den Rezipienten sowie Adsorption und Desorption an den Wänden. Daher wird die
+Drehschieberpumpe im Versuch als Vorpumpe für die Turbomolekularpumpe eingesetzt.
+\cite{glossar}
 
 \subsubsection{Turbomolekularpumpe}
 \label{sec:tmp}
-\cite{glossar}
+Die Turbomolekularpumpe ist eine kinetische Vakuumpumpe zur Erzeugung von Hoch-
+und Ultrahochvakuum. Sie nutzt das Prinzip der molekularen Strömung: Ein schnell
+rotierender Rotor (bis zu 1350~Hz bei der verwendeten Pumpe) mit schräg
+gestellten Schaufeln überträgt seinen Impuls auf die Gasmoleküle, sodass diese
+durch wiederholte Kollisionen mit den Rotorblättern gezielt in Richtung Auslass
+beschleunigt werden (siehe \autoref{fig:6}). Um diesen Prozess zu gewährleisten,
+muss die mittlere freie Weglänge der Gasmoleküle größer sein als die Abstände
+zwischen den Rotor- und Statorscheiben. Andernfalls würden Stöße zwischen den 
+Molekülen den gerichteten Impuls zerstören. Dieser Zustand der molekularen
+Strömung stellt sich erst bei Drücken unterhalb von weniger als
+$\qty{0.1}{\milli\bar}$ ein \cite{tmp_vp_druck}.
+Daher ist die Turbomolekularpumpe auf eine vorgeschaltete Vorpumpe angewiesen
+(im Versuch die Drehschieberpumpe), die den Druck zunächst in den Grob- bis 
+Feinvakuumbereich senkt. Erst dann kann die Turbopumpe ihre volle Effizienz
+entfalten und Drücke bis in den Ultrahochvakuumbereich erreichen. Eine Aufnahme
+der im Versuch verwendeten Turbopumpe zeigt \autoref{fig:5}. \cite{tmp_funktion}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Bilder/tmp.jpg}
+        \caption{TMP im Versuchsaufbau. (Eigenaufnahme)}
+        \label{fig:5}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Bilder/tmp_innen.jpg}
+        \caption{Innenleben der TMP. \cite{tmp_innen}}
+        \label{fig:6}
+    \end{minipage}
+\end{figure}
+\noindent Der Nachteil der Pumpe liegt in der mechanischen Komplexität. Da die 
+Rotorblätter auf mehrere zehntausend Umdrehungen pro Minute beschleunigt werden
+müssen, bedarf es einer präzisen Lagerung. Dafür funktioniert die Maschine
+völlig ölfrei, was das Risiko auf potentielle Verunreinigungen eliminiert.
+
 
 \subsection{Geräte für das Messverfahren}
 \subsubsection{Piezo-Vakuummeter}
+Bei dem Piezo-Vakuummeter handelt es sich um ein Messgerät mit einer Membran 
+aus einem piezoelektrischen Material wie Quarz oder Keramik. Diese weisen die 
+Eigenschaft auf, bei mechanischer Verformung elektrische Spannung zu erzeugen 
+oder sich bei Anlegen einer Spannung zu verformen (inverser piezoelektrischer 
+Effekt). Für das Messgerät ist nur der direkte piezoelektrische Effekt relevant.
+Damit können Drücke im Grobvakuum bestimmt werden, unterhalb $\qty{1}{\milli\bar}$
+ist die mechanische Verformung so gering, dass das elektrische Signal zu schwach 
+ist, um noch zuverlässig gemessen zu werden. Das Piezo-Vakuummeter ist daher 
+auf den Grobvakuumbereich beschränkt.
+Ein wesentlicher Vorteil des Piezo-Vakuummeters ist seine Unabhängigkeit von
+der Gasart: Da die Druckmessung rein mechanisch erfolgt, spielen thermische
+Leitfähigkeit oder chemische Eigenschaften des Gases keine Rolle.
 
 \subsubsection{Pirani-Vakuummeter}
+Bei diesem Messgerät bildet ein elektrisch (konstant) beheizter Draht die Basis.
+Er führt durch Stöße zwischen den Teilchen die Wärme ab, mit sinkendem Druck im 
+Reizipienten steigt die Temperatur am Draht, da nicht mehr genügend Moleküle 
+die Hitze abtransportieren können. Folglich steigt der elektrische Widerstand,
+welcher mit einer Wheatstone Brücke erfasst werden können. Daraus kann die 
+Temperatur bestimmt und anschließend auf den Druck geschlossen werden. Dieses 
+Vakuummeter eignet sich für das Feinvakuum bis hin zum Hochvakuum. Es bringt 
+aber zwei Nachteile mit sich: das Pirani-Vakuummeter ist abhängig von der 
+thermischen Leitfähigkeit, das Messgerät muss also auf das Gas festgelegt sein. 
+Weiter ist der Wärmetransport nicht linear druckabhängig.
 
 \subsubsection{Kaltkathoden-Vakuummeter}
 
 \subsubsection{Glühkathoden-Vakuummeter}
+\cite{glossar}
+
 
 \subsection{Fehlerrechnung}
 Die gemessenen Werte unterliegen Messunsicherheiten und werden demnach im
