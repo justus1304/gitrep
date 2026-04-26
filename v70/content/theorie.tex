@@ -227,25 +227,46 @@ ist, um noch zuverlässig gemessen zu werden. Das Piezo-Vakuummeter ist daher
 auf den Grobvakuumbereich beschränkt.
 Ein wesentlicher Vorteil des Piezo-Vakuummeters ist seine Unabhängigkeit von
 der Gasart: Da die Druckmessung rein mechanisch erfolgt, spielen thermische
-Leitfähigkeit oder chemische Eigenschaften des Gases keine Rolle.
+Leitfähigkeit oder chemische Eigenschaften des Gases keine Rolle. \cite{glossar}
 
 \subsubsection{Pirani-Vakuummeter}
 Bei diesem Messgerät bildet ein elektrisch (konstant) beheizter Draht die Basis.
 Er führt durch Stöße zwischen den Teilchen die Wärme ab, mit sinkendem Druck im 
-Reizipienten steigt die Temperatur am Draht, da nicht mehr genügend Moleküle 
+Rezipienten steigt die Temperatur am Draht, da nicht mehr genügend Moleküle 
 die Hitze abtransportieren können. Folglich steigt der elektrische Widerstand,
-welcher mit einer Wheatstone Brücke erfasst werden können. Daraus kann die 
+welcher mit einer Wheatstone Brücke erfasst werden kann. Daraus kann die 
 Temperatur bestimmt und anschließend auf den Druck geschlossen werden. Dieses 
-Vakuummeter eignet sich für das Feinvakuum bis hin zum Hochvakuum. Es bringt 
+Vakuummeter eignet sich für das Feinvakuum bis hin zum Hochvakuum
+($\qty{e-4}{\milli\bar}$ bis $\qty{e2}{\milli\bar}$ \cite{glossar}). Es bringt
 aber zwei Nachteile mit sich: das Pirani-Vakuummeter ist abhängig von der 
 thermischen Leitfähigkeit, das Messgerät muss also auf das Gas festgelegt sein. 
-Weiter ist der Wärmetransport nicht linear druckabhängig.
+Weiter ist der Wärmetransport nicht linear druckabhängig. Dieser Effekt ist
+allerdings zu vernachlässigen, da bei sehr niedrigen Drücken die molekulare
+Strömung herrscht und die Wärmeabfuhr quasi-linear vom Druck abhängt. \cite{glossar}
 
 \subsubsection{Kaltkathoden-Vakuummeter}
+Das Kaltkathoden-Vakuummeter nutzt vorhandene freie Elektronen, welche durch 
+ein starkes elektrisches Feld zur Anode beschleunigt werden. Auf dem Weg kollidieren 
+sie mit Molekülen aus dem Rezipienten, welche sie infolgedessen ionisieren. Die 
+abgelenkten Elektronen stoßen erneut mit den Molekülen zusammen und ionisieren 
+um so mehr Teilchen durch einen Lawineneffekt. Um die Rate an Ionisationen zu
+erhöhen, wird senkrecht zu dem elektrischen Feld noch ein magnetisches Feld
+angelegt, sodass sich die Elektronen auf Kreisbahnen bewegen. Die Ionen werden
+von einem Kollektor an der Kathode aufgefangen und können detektiert werden.
+Der aufgenommene Ionenstrom ist unmittelbar proportional zum Druck in der Kammer. 
+Ein Kaltkathoden-Vakuummeter ist in Bereichen von $\qty{e-3}{\milli\bar}$ bis $\qty{e-9}{\milli\bar}$ 
+\cite{glossar} effektiv. Es kann aber zu Problemen kommen, wenn wenig freie 
+Elektronen vorhanden sind und die Entlandung nicht mehr zuverlässig funktioniert.
 
 \subsubsection{Glühkathoden-Vakuummeter}
-\cite{glossar}
-
+Analog zu dem Kaltkathoden-Vakuummeter funktioniert der Aufbau für das Glühkathoden-
+Vakuummeter. Der wesentliche Unterschied besteht in der beheizten Kathode, die
+durch Glühemission einen konstanten Elektronenstrom für die Ionisation der
+Gasmoleküle liefert. Der Messbereich erstreckt sich von $\qty{e-4}{\milli\bar}$
+bis $\qty{e-12}{\milli\bar}$ \cite{glossar}, was es präziser macht als das
+Kaltkathoden-Vakuummeter. Jedoch gibt es einen zentralen Nachteil der Glühkathode:
+durch die Hitze kann es zu chemischen Reaktionen kommen, wodurch die Kathode 
+beschädigt oder zerstört werden kann.
 
 \subsection{Fehlerrechnung}
 Die gemessenen Werte unterliegen Messunsicherheiten und werden demnach im
