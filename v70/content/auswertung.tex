@@ -9,8 +9,9 @@ sowie den Anfangsdruck $p_0$ und den Enddruck $p_E = \qty{0.02}{\milli\bar}$
 \end{equation}
 berechnet, um daraus durch umstelen auf das Saugvermögen der Pumpe schliesen zu können. 
 der ln in abhängigkeit der zeit ist in \ref{fig:10} mit den Ausgleichsgeraden in drei verschiedenen Abschnitten ,gewählt als (0-150) , (150-290) ,(290-599), 
-dargestellt. Auserdem sind Messwerte und der Logarithmuswert in \autoref{tab:10} zu entnehmen.
+dargestellt. Auserdem sind Messwerte und der Logarithmuswert \autoref{tab:10} zu entnehmen.
 \begin{figure}
+  \label{fig:10}
   \centering
   \includegraphics{ersteKurve.pdf}
 \end{figure}
@@ -34,7 +35,7 @@ Saugvermögen in den jevailigen Bereichen zu
 \begin{table}[H]
 \label{tab:10}
 \centering
-\caption{Messdaten (kompakt)}
+\caption{Messdaten der Evakuierungskurve Drehschieberpumpe}
 \begin{tabular}{|r|r@{\,$\pm$\,}l|r@{\,$\pm$\,}l|p{0.5cm}|r|r@{\,$\pm$\,}l|r@{\,$\pm$\,}l|}
 \hline
 t / s & \multicolumn{2}{c|}{p/\unit{\milli\bar}} & \multicolumn{2}{c|}{$\log{\frac{p-p_E}{p_0-p_E}}$} & & t/s & \multicolumn{2}{c|}{p / \unit{\milli\bar}} & \multicolumn{2}{c|}{$\log{\frac{p-p_E}{p_0-p_E}}$} \\
@@ -161,8 +162,8 @@ Zeit / s & Druck / mbar & Fehler / mbar \\
 
 \begin{table}[H]
   \centering
-\label{tab:12} 
 \caption{Messwerte für die Leckratenmethode der Drehschieberpumpe bei $p_\text{g} = \qty{10}{\milli\bar}$.}
+\label{tab:12} 
 \begin{tabular}{rrr}
 \toprule
 Zeit / s & Druck / mbar & Fehler / mbar \\
@@ -463,11 +464,14 @@ den Drucksensor vor der Engstelle, also zwischen Pumpe und Engstelle befinden si
 Die Messwerte befinden sich in \autoref{tab:105}.
 
 \begin{figure}[H]
+  \caption{Ausgleichsrechnung zur bestimung des Saugvermögens vor der Engstelle}
 \label{fig:101}
 \includegraphics{build/letzte1.pdf}
 \end{figure}
 
 \begin{figure}[H]
+  \caption{Ausgleichsrechnung zur bestimung des Saugvermögens hinter der Engstelle}
+
   \label{fig:102}
 \includegraphics{build/letzte2.pdf}
 \end{figure}
@@ -515,11 +519,51 @@ Drucks zusammengefasst werden. In \autoref{fig:103} befinden sich jene Saugverm�
 \autoref{fig:104} jene der Turbomolekularpumpe.
 
 \begin{figure}[h]
+  \caption{Saugvermögen der Drehschieberpumpe in anbhängigkeit des Drucks}
   \label{fig:103}
 \includegraphics{build/saugvermögenDrehschieberpumpe.pdf}
 \end{figure}
 
 \begin{figure}[h]
+  \caption{Saugvermögen der Turbomlekularpumpe in abhängigkeit des Drucks}
   \label{fig:104}
 \includegraphics{build/saugvermögenTurbopumpe.pdf}
 \end{figure}
+
+\section*{Fehlerrechnung}
+
+Die berechnung des Logarithmus erfolgt über die Formel
+\begin{equation}
+    y = \ln\left( \frac{p - p_E}{p_0 - p_E} \right)
+\end{equation}
+
+Da sowohl der gemessene druck $p$ als auch der Enddruck $p_E$ fehlerbehaftet sind ($\Delta p$ und $\Delta p_E$), berechnet sich der Fehler $\Delta y$ über die Gaußsche Fehlerfortpflanzung
+\begin{equation}
+    \Delta y = \sqrt{ \left( \frac{\partial y}{\partial p} \cdot \Delta p \right)^2 + \left( \frac{\partial y}{\partial p_E} \cdot \Delta p_E \right)^2 }
+\end{equation}
+
+
+nun leitet man ab
+
+    
+    \begin{equation}
+        \frac{\partial y}{\partial p} = \frac{1}{p - p_E}
+    \end{equation}
+    
+   
+    \begin{equation}
+        \frac{\partial y}{\partial p_E} = \frac{p - p_0}{(p - p_E)(p_0 - p_E)}
+    \end{equation}
+
+
+
+Setzt man diese in die fehlerfortpflanzung ein, erhält man für den Fehler des Logarithmus:
+\begin{equation}
+    \Delta y = \sqrt{ \left( \frac{\Delta p}{p - p_E} \right)^2 + \left( \frac{(p - p_0) \cdot \Delta p_E}{(p - p_E)(p_0 - p_E)} \right)^2 }
+\end{equation}
+
+Des weiteren gibt es Bei der Bildung von Mittelwerten noch den fehler des Mittelwertes $\delta x$, welcher sich mit dem Systematischen fehler wie folgt zusamensetzt
+\begin{equation}
+  \delta y_\text{gesamt} = \sqrt{(\delta x)^2+(\delta y)^2}
+\end{equation}
+

@@ -238,7 +238,7 @@ ax.errorbar(b, sonMist(b,1.71),linestyle='none',errorevery=20, yerr=sonMist(b,0.
 ax.errorbar(c, sonMist(c,0.70),linestyle='none',errorevery=20, yerr=sonMist(c,0.07), fmt='x', markersize=2, color='green', linewidth=0.5,capsize=3, label='S aus Evakuierungskurve Bereich 3')
 
 plt.xticks(rotation=45)
-fig.suptitle('Saugvermögen der Turbomolekularpumpe in abhängigkeit des Drucks')
+fig.suptitle('')
 ax.legend()
 ax.grid()
 fig.savefig('build/saugvermögenDrehschieberpumpe.pdf')

@@ -167,8 +167,8 @@ def eins(zeit, druck, fehler,pfad,slice,meinTitel):
     fig.savefig(f'{pfad}')
     return ufloat(m_fit1,m_fehler1)
 
-param1 = eins(zeit1,druck1,fehler1,'build/letzte1.pdf',13,'Ausgleichsrechnung zur bestimmung des saugvermögens vor der Engstelle')
-param2 = eins(zeit2,druck2,fehler2,'build/letzte2.pdf',2,'Ausgleichsrechnung zur bestimung des Saugvermögens hinter der Engstelle')
+param1 = eins(zeit1,druck1,fehler1,'build/letzte1.pdf',13,'')
+param2 = eins(zeit2,druck2,fehler2,'build/letzte2.pdf',2,'')
 #param3 = eins(zeit3,druck3,fehler3,'build/TurbomolekularpumpeLeckrate3.pdf',2,'Leckratenmessung Turbomolekularpumpe p_g = 50.1 mbar')
 #param4 = eins(zeit4,druck4,fehler4,'build/TurbomolekularpumpeLeckrate4.pdf',0,'Leckratenmessung Turbomolekularpumpe p_g = 105 mbar')
 
