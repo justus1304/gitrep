@@ -1,41 +1,46 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-\subsection{Berechnung des Saugvermögens mit der Evakuierungskurve}
-Um das Saugvermögen mithilfe der Evakuierungskurve zu bestimmen wird \autoref{eqn:100} genutzt. Es wird für jeden gemessenen druck Druck $p$, 
+
+\subsection{Berechnung des Saugvermögens mit der Evakuierungskurve für die Drehschieberpumpe}
+Um das Saugvermögen mithilfe der Evakuierungskurve zu bestimmen wird \autoref{eqn:100} 
+genutzt. Es wird für jeden gemessenen Druck $p$, 
 sowie den Anfangsdruck $p_0$ und den Enddruck $p_E = \qty{0.02}{\milli\bar}$ 
 \begin{equation}
   \label{eqn:100}
-  -\frac{S_\text{eff}}{V} \cdot t = \log{\frac{p\left(t\right)-p_E}{p_0-p_E}}
+  -\frac{S_\text{eff}}{V} \cdot t = \ln\left(\frac{p(t) - p_e}{p_0 - p_e}\right)
 \end{equation}
-berechnet, um daraus durch umstelen auf das Saugvermögen der Pumpe schliesen zu können. 
-der ln in abhängigkeit der zeit ist in \ref{fig:10} mit den Ausgleichsgeraden in drei verschiedenen Abschnitten ,gewählt als (0-150) , (150-290) ,(290-599), 
-dargestellt. Auserdem sind Messwerte und der Logarithmuswert \autoref{tab:10} zu entnehmen.
+berechnet, um daraus durch Umstellen auf das Saugvermögen der Pumpe schließen zu
+können. Der Logarithmus in Abhängigkeit der Zeit ist in \autoref{fig:10} mit den
+Ausgleichsgeraden dargestellt. Es wird unterteilt in drei verschiedenen Abschnitte, 
+zu denen lineare Regressionen durchgeführt werden. Das Intervall (0-150), (150-290)
+und (290-599). Die dazugehörigen Messwerte befinden sich in \autoref{tab:10}.
 \begin{figure}
-  \label{fig:10}
   \centering
   \includegraphics{ersteKurve.pdf}
+  \caption{Darstellung des Logarithmus in Abhängigkeit der Zeit mit Ausgleichsgeraden}
+  \label{fig:10}
 \end{figure}
-Es ergeben sich aus den regressionen die steigungsparameter der Ausgleichsgeraden
+Es ergeben sich aus den Regressionen die steigungsparameter der Ausgleichsgeraden
 \begin{align}
   a_1 =& \qty{-0.04107 +- 0.00015}{}\\
   a_2 =& \qty{-0.01443 +- 0.00022}{}\\
   a_3 =& \qty{-0.00587 +- 0.00002}{}
 \end{align}
 
-Multipliziert man nun noch mit dem Volumen, welches ... beträgt ergeben sich die 
-Saugvermögen in den jevailigen Bereichen zu
+Bei Multiplikation mit dem Volumen $\qty{34 \pm 3.4}{\litre}$, ergeben sich die 
+Saugvermögen in den jeweiligen Bereichen zu
 \begin{align}
-  S_\text{eff1}^\text{eva} =& \qty{4.9+-0.5}{m^3/s}\\
-  S_\text{eff2}^\text{eva} =& \qty{1.71+-0.17}{m^3/s}\\
-  S_\text{eff3}^\text{eva} =& \qty{0.70+-0.07}{m^3/s}
+  S_\text{eff1}^\text{eva} =& \qty{4.9+-0.5}{m^3/h}\\
+  S_\text{eff2}^\text{eva} =& \qty{1.71+-0.17}{m^3/h}\\
+  S_\text{eff3}^\text{eva} =& \qty{0.70+-0.07}{m^3/h}
 \end{align}
 
 
 
 \begin{table}[H]
-\label{tab:10}
 \centering
-\caption{Messdaten der Evakuierungskurve Drehschieberpumpe}
+\caption{Messdaten der Evakuierungskurve der Drehschieberpumpe}
+\label{tab:10}
 \begin{tabular}{|r|r@{\,$\pm$\,}l|r@{\,$\pm$\,}l|p{0.5cm}|r|r@{\,$\pm$\,}l|r@{\,$\pm$\,}l|}
 \hline
 t / s & \multicolumn{2}{c|}{p/\unit{\milli\bar}} & \multicolumn{2}{c|}{$\log{\frac{p-p_E}{p_0-p_E}}$} & & t/s & \multicolumn{2}{c|}{p / \unit{\milli\bar}} & \multicolumn{2}{c|}{$\log{\frac{p-p_E}{p_0-p_E}}$} \\
@@ -75,56 +80,65 @@ t / s & \multicolumn{2}{c|}{p/\unit{\milli\bar}} & \multicolumn{2}{c|}{$\log{\fr
 \end{table}
 
 \subsection{Bestimmung des Saugvermögens der Drehschieberpumpe durch Leckratenmethode}
-Die messwerte des Druckanstiegs nach abschiebern des Pmpenventiels sind in den Tabellen \autoref{tab:11},\autoref{tab:12},\autoref{tab:13},\autoref{tab:14} gegeben. 
+Die Messwerte des Druckanstiegs nach Abschiebern des Pmpenventiels sind in den
+Tabellen \autoref{tab:11},\autoref{tab:12},\autoref{tab:13},\autoref{tab:14} gegeben. 
 Aus diesen Drücken wird durch 
 \begin{equation}
   \label{eqn:20}
-  S_\text{eff}^\text{leck} = \frac{V}{p_\text{g}} \cdot \frac{\delta p}{\delta t}
+  S_\text{eff}^\text{leck} = \frac{V}{p_\text{g}} \cdot \frac{\increment p}{\increment t}
 \end{equation}
-und mithilfe der Steigungsparameter der Ausgleichsrechnungen bei den jewailigen Gleichgewichtsdrücken, welche dem Quotienten $\frac{\delta p}{\delta t}$
-entsprechen, das Saugvermögen bestimmt. den Folgenden Abbildungen sind die messwerte geplotet, sowie 
-die Ausgleichsgraden zu entnehmen. Es ist zu erkennen, dass einige erste Werte bei der Regression ausgeschlossen wurden, sofern sie stark von einem linearen verlauf abgewichen haben. Diese starken abweichungen am anfang liegen wohlmöglich an eingeschlossener 
-Luft im Ventil, welche schlagartig beim öffnen frei wird.
+und mithilfe der Steigungsparameter der Ausgleichsrechnungen bei den jeweiligen
+Gleichgewichtsdrücken, welche dem Quotienten $\frac{\increment p}{\increment t}$
+entsprechen, das Saugvermögen bestimmt. In den folgenden Abbildungen sind die
+Messwerte inklusive Ausgleichsgeraden geplottet. Es ist zu erkennen, dass einige
+erste Werte bei der Regression ausgeschlossen wurden, sofern sie stark von einem
+linearen verlauf abgewichen haben. Diese starken Abweichungen am Anfang liegen
+wohlmöglich an eingeschlossener Luft im Ventil, welche schlagartig beim öffnen
+frei wird.
 
 \begin{figure}[H]
   \includegraphics{"drehschieberLeckrate1.pdf"}
 \end{figure}
-Der Steigungsparameter der Ausgleichsgeraden beträgt bei einem gleichgewichtsdruck von 
-$p_\text{g} = \qty{0.502}{\milli\bar}$
+\noindent Der Steigungsparameter der Ausgleichsgeraden beträgt bei einem 
+Gleichgewichtsdruck von $p_\text{g} = \qty{0.502}{\milli\bar}$
 \begin{equation}
-  m_{\qty{0.502}{\milli\bar}} = \qty{0.00280 +- 0.00002}{\milli\bar\per\second}
+  m_{\qty{0.502}{\milli\bar}} = \qty{0.00280 +- 0.00002}{\milli\bar\per\second}.
 \end{equation}
 
 \begin{figure}[H]
   \includegraphics{"drehschieberLeckrate2.pdf"}
 \end{figure}
+\noindent Bei der zweiten Messung mit $p_\text{g} = \qty{10}{\milli\bar}$ ergibt 
+sich
 \begin{equation}
-  m_{\qty{10}{\milli\bar}} = \qty{0.29483 +- 0.00040}{\milli\bar\per\second}
+  m_{\qty{10}{\milli\bar}} = \qty{0.29483 +- 0.00040}{\milli\bar\per\second}.
 \end{equation}
 
 \begin{figure}[H]
   \includegraphics{"drehschieberLeckrate3.pdf"}
 \end{figure}
+\noindent Bei $p_\text{g} = \qty{50.1}{\milli\bar}$ beläuft sich der Steigungsparameter 
+auf
 \begin{equation}
-  m_{\qty{50.07}{\milli\bar}} = \qty{2.11171 +- 0.00216}{\milli\bar\per\second}
+  m_{\qty{50.1}{\milli\bar}} = \qty{2.11171 +- 0.00216}{\milli\bar\per\second}.
 \end{equation}
 
 \begin{figure}[H]
   \includegraphics{"drehschieberLeckrate4.pdf"}
 \end{figure}
-$p_\text{g} = \qty{0.502}{\milli\bar}$
+\noindent Zuletzt ergibt sich bei $p_\text{g} = \qty{105}{\milli\bar}$ ein Parameter von
 \begin{equation}
-  m_{\qty{105}{\milli\bar}} = \qty{3.86502 +- 0.00826}{\milli\bar\per\second}
+  m_{\qty{105}{\milli\bar}} = \qty{3.86502 +- 0.00826}{\milli\bar\per\second}.
 \end{equation}
 
 
-Aus diesen Steigungen der Ausgleichsrechnungen berechnen wir nun mit \autoref{eqn:20}
-die Saugvermögen zu 
+\noindent Aus diesen Steigungen der Ausgleichsrechnungen wird über \autoref{eqn:20}
+das Saugvermögen bestimmt als:
 \begin{align}
-  S_\text{eff0.5mbar}^\text{leck} =& \qty{0.68+-0.07}{\meter\cubed\per\second}\\
-  S_\text{eff10mbar}^\text{leck} =& \qty{3.6+-0.4}{\meter\cubed\per\second}\\
-  S_\text{eff50mbar}^\text{leck} =& \qty{5.1+-0.5}{\meter\cubed\per\second}\\
-  S_\text{eff105mbar}^\text{leck} =& \qty{4.5+-0.5}{\meter\cubed\per\second}
+  S_\text{eff,0.5mbar}^\text{leck} =& \qty{0.68+-0.07}{\meter\cubed\per\hour}\\
+  S_\text{eff,10mbar}^\text{leck} =& \qty{3.6+-0.4}{\meter\cubed\per\hour}\\
+  S_\text{eff,50mbar}^\text{leck} =& \qty{5.1+-0.5}{\meter\cubed\per\hour}\\
+  S_\text{eff,105mbar}^\text{leck} =& \qty{4.5+-0.5}{\meter\cubed\per\hour}
 \end{align}
 
 
@@ -221,7 +235,7 @@ Zeit / s & Druck / mbar & Fehler / mbar \\
 \end{table}
 
 \begin{table}[H]
-  \caption{Messwerte für die Leckratenmethode der Drehschieberpumpe bei $p_\text{g} = \qty{100}{\milli\bar}$.2 Messungen für mittelwertsbildung.}
+  \caption{Messwerte für die Leckratenmethode der Drehschieberpumpe bei $p_\text{g} = \qty{100}{\milli\bar}$. Zwei Messungen für Mittelwertsbildung.}
 \label{tab:14} 
 \begin{tabular}{rrrrrr}
 \toprule
@@ -255,53 +269,63 @@ Zeit / s & Druck 4.1 / mbar & Fehler 4.1 / mbar & Druck 4.2 / mbar & Fehler 4.2 
 
 \subsection{Bestimmung des Saugvermögens der Turbomolekularpumpe durch die Leckratenmethode}
 \label{sec:100}
-Die Berechnung folgt analog zu der berechnung bei der Drehschieberpumpe.
- \autoref{tab:messung1},\autoref{tab:messung2},\autoref{tab:messung3},\autoref{tab:messung4} gegeben. 
- Es folgen die geplotteten Mesdaten mit den berechneten Ausgleichsgeraden.
+Die Berechnung erfolgt analog zu der bei der Drehschieberpumpe. In \autoref{tab:messung1},
+\autoref{tab:messung2},\autoref{tab:messung3},\autoref{tab:messung4} befinden 
+sich die Messwerte. Es folgen die geplotteten Messdaten mit den berechneten
+Ausgleichsgeraden.
 
 \begin{figure}[H]
-  \includegraphics{"drehschieberLeckrate1.pdf"}
+  \includegraphics{"TurbomolekularpumpeLeckrate1.pdf"}
+  \caption*{}
 \end{figure}
-Der Steigungsparameter der Ausgleichsgeraden beträgt bei einem gleichgewichtsdruck von 
-\qty{5.04e-5}{\milli\bar}
+\noindent Der Steigungsparameter der Ausgleichsgeraden beträgt bei einem
+Gleichgewichtsdruck von $\qty{5.04e-5}{\milli\bar}$
 \begin{equation}
-  m_{\qty{5.04e-5}{\milli\bar}} = \qty{413(7.3)e-7}{\milli\bar\per\second}
+  m_{\qty{5.04e-5}{\milli\bar}} = \qty{413(7.3)e-7}{\milli\bar\per\second}.
 \end{equation}
 
 \begin{figure}[H]
-  \includegraphics{"drehschieberLeckrate2.pdf"}
+  \includegraphics{"TurbomolekularpumpeLeckrate2.pdf"}
+  \caption*{}
 \end{figure}
+\noindent Aus der Regression ergibt sich bei $p_g = \qty{56.96e-5}{\milli\bar}$:
 \begin{equation}
-  m_{\qty{56.96e-5}{\milli\bar}} = \qty{883(20)e-7}{\milli\bar\per\second}
+  m_{\qty{56.96e-5}{\milli\bar}} = \qty{883(20)e-7}{\milli\bar\per\second}.
 \end{equation}
 
 \begin{figure}[H]
-  \includegraphics{"drehschieberLeckrate3.pdf"}
+  \includegraphics{"TurbomolekularpumpeLeckrate3.pdf"}
+  \caption*{}
 \end{figure}
+\noindent Für $p_g = \qty{1.03e-4}{\milli\bar}$ wird ein Parameter von
 \begin{equation}
   m_{\qty{1.03e-4}{\milli\bar}} = \qty{883(20)e-7}{\milli\bar\per\second}
 \end{equation}
+berechnet.
 
 \begin{figure}[H]
-  \includegraphics{"drehschieberLeckrate4.pdf"}
+  \includegraphics{"TurbomolekularpumpeLeckrate4.pdf"}
+  \caption*{}
 \end{figure}
+\noindent Letztlich ergibt sich für $p_g = \qty{1.91e-4}{\milli\bar}$ eine 
+Steigung von
 \begin{equation}
-  m_{\qty{1.91e-4}{\milli\bar}} = \qty{1580(39)e-7}{\milli\bar\per\second}
+  m_{\qty{1.91e-4}{\milli\bar}} = \qty{1580(39)e-7}{\milli\bar\per\second}.
 \end{equation}
 
 
-Aus diesen Steigungen der Ausgleichsrechnungen berechnen wir nun mit \autoref{eqn:20}
-die Saugvermögen zu 
+\noindent Aus diesen Steigungen der Ausgleichsrechnungen wird mittels \autoref{eqn:20}
+das Saugvermögen bei den unterschiedlichen drücken bestimmt. Es ergibt sich: 
 \begin{align}
-  S_\text{eff\qty{5.04e-5}{\milli\bar}}^\text{leck} =& \qty{27.9+-2.8}{\liter\per\second}\\
-  S_\text{eff\qty{56.96e-5}{\milli\bar}}^\text{leck} =& \qty{43+-4}{\liter\per\second}\\
-  S_\text{eff\qty{1.03e-4}{\milli\bar}}^\text{leck} =& \qty{29.2+-3.0}{\liter\per\second}\\
-  S_\text{eff\qty{1.91e-4}{\milli\bar}}^\text{leck} =& \qty{28.0+-2.9}{\liter\per\second}
+  S_\text{eff,\qty{5.04e-5}{\milli\bar}}^\text{leck} =& \qty{27.9+-2.8}{\liter\per\second}\\
+  S_\text{eff,\qty{56.96e-5}{\milli\bar}}^\text{leck} =& \qty{43+-4}{\liter\per\second}\\
+  S_\text{eff,\qty{1.03e-4}{\milli\bar}}^\text{leck} =& \qty{29.2+-3.0}{\liter\per\second}\\
+  S_\text{eff,\qty{1.91e-4}{\milli\bar}}^\text{leck} =& \qty{28.0+-2.9}{\liter\per\second}
 \end{align}
 
 \begin{table}[H]
     \centering
-    \caption{Messdaten des Druckanstiegs zur Bestimmung der Leckrate $p_g = \qty{5.04e-5}{\milli\bar}$.}
+    \caption{Messdaten des Druckanstiegs zur Bestimmung der Leckrate bei $p_g = \qty{5.04e-5}{\milli\bar}$.}
     \label{tab:messung1}
     \begin{tabular}{S[table-format=3.0] S[table-format=1.2e-1] @{ \pm } S[table-format=1.2e-1]}
         \toprule
@@ -327,7 +351,7 @@ die Saugvermögen zu
 
 \begin{table}[H]
     \centering
-    \caption{Messdaten des Druckanstiegs zur Bestimmung der Leckrate $p_g = \qty{56.96e-5}{\milli\bar}$.}
+    \caption{Messdaten des Druckanstiegs zur Bestimmung der Leckrate bei $p_g = \qty{56.96e-5}{\milli\bar}$.}
     \label{tab:messung2}
     \begin{tabular}{S[table-format=3.0] S[table-format=1.2e-1] @{ \pm } S[table-format=1.2e-1]}
         \toprule
@@ -352,7 +376,7 @@ die Saugvermögen zu
 
 \begin{table}[H]
     \centering
-    \caption{Messdaten des Druckanstiegs zur Bestimmung der Leckrate $p_g = \qty{1.03e-4}{\milli\bar}$.}
+    \caption{Messdaten des Druckanstiegs zur Bestimmung der Leckrate bei $p_g = \qty{1.03e-4}{\milli\bar}$.}
     \label{tab:messung3}
     \begin{tabular}{S[table-format=3.0] S[table-format=1.2e-1] @{ \pm } S[table-format=1.2e-1]}
         \toprule
@@ -377,7 +401,7 @@ die Saugvermögen zu
 
 \begin{table}[H]
     \centering
-    \caption{Messdaten des Druckanstiegs zur Bestimmung der Leckrate $p_g = \qty{1.91e-4}{\milli\bar}$.}
+    \caption{Messdaten des Druckanstiegs zur Bestimmung der Leckrate bei $p_g = \qty{1.91e-4}{\milli\bar}$.}
     \label{tab:messung4}
     \begin{tabular}{S[table-format=3.0] S[table-format=1.2e-1] @{ \pm } S[table-format=1.2e-1]}
         \toprule
@@ -403,33 +427,35 @@ die Saugvermögen zu
     \end{tabular}
 \end{table}
 
-\subsection{Evakuierungskurve der turbomolekularpumpe}
-Analog zur bestimmung des Saugvermögens der Drehschieberpumpe wird hier 
+\subsection{Evakuierungskurve der Turbomolekularpumpe}
+Analog zur Bestimmung des Saugvermögens der Drehschieberpumpe wird hier 
 das Saugvermögen der Turbopumpe durch die Evakuierungskurve bestimmt.
 %Die berechnung erfolgt durch \autoref{eqn:100} mit den gemesenen druckwerten $p_\text{E} = \qty{3.52(1)e-6}{\milli\bar}$ und $p_\text{0} = \qty{5e(1.5)-3}{\milli\bar}$, sowie dem 
-Volumen der Aperatur $V = \qty{33+-3.3}{\liter}$.
-
-Die gemittelten Messwerte, sowie derren Fehler sind \autoref{tab:100} zu entnehmen. Dabei ergibt sich der Fehler aus dem Fehler des Mittelwerts 
-und dem Systematischen Fehler. Die geploteten Messwerte inklusive Ausgleichsgeraden befinden sich in 
-\autoref{fig:100}. Dabei wurden für die Ausgleichsrechnung die ersten 12 Messwerte berücksichtigt, da 
-dort ein linearer Abfall erkennbar ist. Danach nähert sich der Druck dem Enddruck an und es wird kaum noch gepumpt.
+Das Volumen der Apperatur liegt bei $V = \qty{33+-3.3}{\liter}$.
+\noindent Die gemittelten Messwerte, sowie deren Fehler sind \autoref{tab:100}
+zu entnehmen. Dabei ergibt sich der Fehler aus dem Fehler des Mittelwerts 
+und dem systematischen Fehler. Die geplotteten Messwerte inklusive Ausgleichsgeraden
+befinden sich in \autoref{fig:100}. Dabei wurden für die Ausgleichsrechnung die
+ersten 12 Messwerte berücksichtigt, da dort ein linearer Abfall erkennbar ist.
+Danach nähert sich der Druck dem Enddruck an und es wird kaum noch gepumpt.
 
 \begin{figure}
-  \label{fig:100}
   \centering
-  \includegraphics{/home/justus/gitrep/v70/build/turboevakuierung.pdf}
+  \includegraphics{build/turboevakuierung.pdf}
+  \caption{Darstellung des Logarithmus in Abhängigkeit der Zeit mit Ausgleichsgeraden}
+  \label{fig:100}
 \end{figure}
-Der steigungsparameter der ausgleichsrechnung beträgt 
+\noindent Der Steigungsparameter der Ausgleichsrechnung beträgt 
 \begin{equation}
-  m = \qty{-46.5(1.4)e-2}{}
+  m = \qty{-46.5(1.4)e-2}{\milli\bar\per\second}.
 \end{equation}
-und damit ergibt sich ein Saugvermögen von
+Daraus ergibt sich ein Saugvermögen von
 \begin{equation}
-  S_\text{eff}^\text{Eva} = \qty{15.4+-1.6}{l/s}.
+  S_\text{eff}^\text{Eva} = \qty{15.4+-1.6}{\liter\per\second}.
 \end{equation}
 
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \caption{Messdaten und berechnete Logarithmuswerte}
     \begin{tabular}{c c c}
@@ -449,19 +475,18 @@ und damit ergibt sich ein Saugvermögen von
         100& $(4,24 \pm 8,48) \cdot 10^{-6}$ & $-8,24 \pm 9,07$ \\
         \hline
     \end{tabular}
-    \label{tab:messdaten}
+    \label{tab:100}
 \end{table}
 
 \subsection{Engstelle und Leitwert}
-
-Als letztes wird zwische den Beiden Pirani- Druckmessgeräten eine 
-erheblichere Engstelle eingebaut, sodass sich sofort eine Größere Druckdifferenz zwischen 
-den Sensoren einstellt, welche aus dem Geringeren Leitwert der Engstelle resultiert.
-Nun werden mit beiden Messgeräten analog zu \autoref{sec:100} die Saugvermögen 
-berechnet um den Unterschied zu verdeutlichen. Die Messwerte und Regression für 
-den Drucksensor vor der Engstelle, also zwischen Pumpe und Engstelle befinden sich in 
-\autoref{fig:101}, sowie die für das messgerät nach der Engstelle in \autoref{fig:102}.
-Die Messwerte befinden sich in \autoref{tab:105}.
+Als letztes wird zwischen den Beiden Pirani- Druckmessgeräten eine 
+erheblichere Engstelle eingebaut, sodass sich sofort eine größere Druckdifferenz
+zwischen den Sensoren einstellt, welche aus dem geringeren Leitwert der Engstelle
+resultiert. Nun werden mit beiden Messgeräten analog zu \autoref{sec:100} die
+Saugvermögen berechnet um den Unterschied zu verdeutlichen. Die Messwerte und
+Regression für den Drucksensor vor der Engstelle, also zwischen Pumpe und Engstelle 
+befinden sich in \autoref{fig:101}, sowie die für das Messgerät nach der Engstelle
+(D2) in \autoref{fig:102}. Die Messwerte befinden sich in \autoref{tab:105}.
 
 \begin{figure}[H]
   \caption{Ausgleichsrechnung zur bestimung des Saugvermögens vor der Engstelle}
@@ -476,22 +501,22 @@ Die Messwerte befinden sich in \autoref{tab:105}.
 \includegraphics{build/letzte2.pdf}
 \end{figure}
 
-Die Parameter der ausgleichsrechnungen ergeben sich zu 
+\noindent Die Parameter der Ausgleichsrechnungen ergeben sich zu 
 \begin{align}
-m_{\text{vor}}    &= \qty{1.99(0.01)e-04}{} \\
-m_{\text{hinter}} &= \qty{1.84(0.009)e-04}{}
+m_{\text{vor}}    &= \qty{1.99(0.01)e-04}{\milli\bar\per\second} \\
+m_{\text{hinter}} &= \qty{1.84(0.009)e-04}{\milli\bar\per\second}.
 \end{align}
 
-und daraus Ergeben sich die Saugvermögen wiederum zu 
-Die Parameter der ausgleichsrechnungen ergeben sich zu 
+\noindent Mithilfe dieser Werte werden die Saugvermögen als 
 \begin{align}
-S_\text{vor} =& \qty{35.1(3.5)}{l/s}\\
-S_\text{hinter} =& \qty{2.68(1.0)}{l/s}
+S_\text{vor} =& \qty{35.1(3.5)}{\liter\per\second}\\
+S_\text{hinter} =& \qty{2.68(1.0)}{\liter\per\second}
 \end{align}
+bestimmt.
 
-\begin{table}[h]
-  \label{tab:105}
+\begin{table}[H]
 \centering
+\caption{Messdaten und berechnete Logarithmuswerte}
 \begin{tabular}{|c|c|c|}
 \hline
 t / s & p / \unit{\milli\bar} & p/\unit{\milli\bar} \\ \hline
@@ -511,59 +536,71 @@ t / s & p / \unit{\milli\bar} & p/\unit{\milli\bar} \\ \hline
 131 & 2.53e-02 $\pm$ 7.59e-03 & 2.51e-02 $\pm$ 7.53e-03 \\ \hline
 141 & 2.72e-02 $\pm$ 8.16e-03 & 2.68e-02 $\pm$ 8.04e-03 \\ \hline
 \end{tabular}
+\label{tab:105}
 \end{table}
 
 \subsection{Vergleich und druckabhängige Darstellung der Saugvermögen beider Pumpen}
-Als zusammenfassung aller berechneter Saugvermögen sollen diese hier einmal in abhängigkeit des 
-Drucks zusammengefasst werden. In \autoref{fig:103} befinden sich jene Saugvermögen der Drehschieberpumpe und in 
-\autoref{fig:104} jene der Turbomolekularpumpe.
+Als Zusammenfassung aller berechneter Saugvermögen sollen diese hier in Abhängigkeit
+des Drucks zusammengefasst werden. In \autoref{fig:103} befinden sich die Saugvermögen
+der Drehschieberpumpe und in \autoref{fig:104} jene der Turbomolekularpumpe.
 
 \begin{figure}[h]
-  \caption{Saugvermögen der Drehschieberpumpe in anbhängigkeit des Drucks}
+  \caption{Saugvermögen der Drehschieberpumpe in Abhängigkeit des Drucks.}
   \label{fig:103}
 \includegraphics{build/saugvermögenDrehschieberpumpe.pdf}
 \end{figure}
 
 \begin{figure}[h]
-  \caption{Saugvermögen der Turbomlekularpumpe in abhängigkeit des Drucks}
+  \caption{Saugvermögen der Turbomolekularpumpe in Abhängigkeit des Drucks.}
   \label{fig:104}
 \includegraphics{build/saugvermögenTurbopumpe.pdf}
 \end{figure}
 
 \section*{Fehlerrechnung}
+% Die Berechnung des Logarithmus erfolgt über die Formel
+% \begin{equation}
+%     y = \ln\left( \frac{p - p_E}{p_0 - p_E} \right)
+% \end{equation}
+% \noindent Da sowohl der gemessene Druck $p$ als auch der Enddruck $p_E$
+% fehlerbehaftet sind ($\Delta p$ und $\Delta p_E$), berechnet sich der Fehler $\Delta y$ über die Gaußsche Fehlerfortpflanzung
+% \begin{equation}
+%     \Delta y = \sqrt{ \left( \frac{\partial y}{\partial p} \cdot \Delta p \right)^2 + \left( \frac{\partial y}{\partial p_E} \cdot \Delta p_E \right)^2 }.
+% \end{equation}
+% Die Ableitungen berechnen sich als
+% \begin{equation}
+%     \frac{\partial y}{\partial p} = \frac{1}{p - p_E},
+% \end{equation}
+% \begin{equation}
+%     \frac{\partial y}{\partial p_E} = \frac{p - p_0}{(p - p_E)(p_0 - p_E)}.
+% \end{equation}
+% Einsetzen in die Fehlerfortpflanzung liefert den Fehler des Logarithmus:
+% \begin{equation}
+%     \Delta y = \sqrt{ \left( \frac{\Delta p}{p - p_E} \right)^2 + \left( \frac{(p - p_0) \cdot \Delta p_E}{(p - p_E)(p_0 - p_E)} \right)^2 }.
+% \end{equation}
+% Des weiteren gibt es Bei der Bildung von Mittelwerten noch den fehler des Mittelwertes $\delta x$, welcher sich mit dem Systematischen fehler wie folgt zusamensetzt
+% \begin{equation}
+%   \delta y_\text{gesamt} = \sqrt{(\delta x)^2+(\delta y)^2}
+% \end{equation}
 
-Die berechnung des Logarithmus erfolgt über die Formel
+Die Berechnung des Logarithmus erfolgt über die Formel
 \begin{equation}
-    y = \ln\left( \frac{p - p_E}{p_0 - p_E} \right)
+    y = \ln\left( \frac{p - p_{\text{E}}}{p_0 - p_{\text{E}}} \right).
 \end{equation}
-
-Da sowohl der gemessene druck $p$ als auch der Enddruck $p_E$ fehlerbehaftet sind ($\Delta p$ und $\Delta p_E$), berechnet sich der Fehler $\Delta y$ über die Gaußsche Fehlerfortpflanzung
+Da sowohl der gemessene Druck $p$ als auch der Enddruck $p_{\text{E}}$ fehlerbehaftet sind ($\Delta p$ und $\Delta p_{\text{E}}$), berechnet sich der Fehler $\Delta y$ über die Gaußsche Fehlerfortpflanzung:
 \begin{equation}
-    \Delta y = \sqrt{ \left( \frac{\partial y}{\partial p} \cdot \Delta p \right)^2 + \left( \frac{\partial y}{\partial p_E} \cdot \Delta p_E \right)^2 }
+    \Delta y = \sqrt{ \left( \frac{\partial y}{\partial p} \cdot \Delta p \right)^2 + \left( \frac{\partial y}{\partial p_{\text{E}}} \cdot \Delta p_{\text{E}} \right)^2 }.
 \end{equation}
-
-
-nun leitet man ab
-
-    
-    \begin{equation}
-        \frac{\partial y}{\partial p} = \frac{1}{p - p_E}
-    \end{equation}
-    
-   
-    \begin{equation}
-        \frac{\partial y}{\partial p_E} = \frac{p - p_0}{(p - p_E)(p_0 - p_E)}
-    \end{equation}
-
-
-
-Setzt man diese in die fehlerfortpflanzung ein, erhält man für den Fehler des Logarithmus:
+Die partiellen Ableitungen berechnen sich zu
+\begin{align}
+    \frac{\partial y}{\partial p}      &= \frac{1}{p - p_{\text{E}}}, \\[6pt]
+    \frac{\partial y}{\partial p_{\text{E}}} &= \frac{p - p_0}{(p - p_{\text{E}})(p_0 - p_{\text{E}})}.
+\end{align}
+Einsetzen in die Fehlerfortpflanzung liefert den Fehler des Logarithmus:
 \begin{equation}
-    \Delta y = \sqrt{ \left( \frac{\Delta p}{p - p_E} \right)^2 + \left( \frac{(p - p_0) \cdot \Delta p_E}{(p - p_E)(p_0 - p_E)} \right)^2 }
+    \Delta y = \sqrt{ \left( \frac{\Delta p}{p - p_{\text{E}}} \right)^2 + \left( \frac{(p - p_0) \, \Delta p_{\text{E}}}{(p - p_{\text{E}})(p_0 - p_{\text{E}})} \right)^2 }.
 \end{equation}
-
-Des weiteren gibt es Bei der Bildung von Mittelwerten noch den fehler des Mittelwertes $\delta x$, welcher sich mit dem Systematischen fehler wie folgt zusamensetzt
+Bei der Bildung von Mittelwerten kommt zum statistischen Fehler des Mittelwerts
+$\delta x$ noch der systematische Fehler $\delta y$ hinzu. Der Gesamtfehler ergibt sich somit zu
 \begin{equation}
-  \delta y_\text{gesamt} = \sqrt{(\delta x)^2+(\delta y)^2}
+    \delta y_{\text{ges}} = \sqrt{(\delta x)^2 + (\delta y)^2}.
 \end{equation}
-

@@ -16,10 +16,10 @@ pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
 # CSV einlesen
-df1 = pd.read_csv('/home/justus/gitrep/v70/Daten/TPLR1/TPG_all_data_2026_04_20-PM01_39_18.csv',sep=',')
-df2 = pd.read_csv('/home/justus/gitrep/v70/Daten/TPLR2/TPG_all_data_2026_04_20-PM01_49_18.csv', sep=',')
-df3 = pd.read_csv('/home/justus/gitrep/v70/Daten/TPLR3/TPG_all_data_2026_04_20-PM01_49_18.csv', sep=',')
-df4 = pd.read_csv('/home/justus/gitrep/v70/Daten/TPLR4/TPG_all_data_2026_04_20-PM01_58_31.csv', sep=',')
+df1 = pd.read_csv('Daten/TPLR1/TPG_all_data_2026_04_20-PM01_39_18.csv',sep=',')
+df2 = pd.read_csv('Daten/TPLR2/TPG_all_data_2026_04_20-PM01_49_18.csv', sep=',')
+df3 = pd.read_csv('Daten/TPLR3/TPG_all_data_2026_04_20-PM01_49_18.csv', sep=',')
+df4 = pd.read_csv('Daten/TPLR4/TPG_all_data_2026_04_20-PM01_58_31.csv', sep=',')
 #df42 = pd.read_csv('/home/justus/gitrep/v70/Daten/DPLR42/TPG_all_data_2026_04_20-PM05_11_52.csv', sep=',')
 #df_gesamt = pd.concat([df41['	 TPG202 [mbar]1'], df42['	 TPG202 [mbar]']], axis=1)
 #df_gesamt['mittelwert'] = df_gesamt[['	 TPG202 [mbar]1', '	 TPG202 [mbar]']].mean(axis=1)
@@ -166,11 +166,19 @@ def eins(zeit, druck, fehler,pfad,slice,meinTitel):
     fig.savefig(f'{pfad}')
     return ufloat(m_fit1,m_fehler1)
 
-param1 = eins(zeit1,druck1,fehler1,'build/TurbomolekularpumpeLeckrate1.pdf',13,'Leckratenmessung Turbomolekularpumpe p_g = 0.502 mbar')
-param2 = eins(zeit2,druck2,fehler2,'build/TurbomolekularpumpeLeckrate2.pdf',2,'Leckratenmessung Turbomolekularpumpe p_g = 10 mbar')
-param3 = eins(zeit3,druck3,fehler3,'build/TurbomolekularpumpeLeckrate3.pdf',2,'Leckratenmessung Turbomolekularpumpe p_g = 50.1 mbar')
-param4 = eins(zeit4,druck4,fehler4,'build/TurbomolekularpumpeLeckrate4.pdf',0,'Leckratenmessung Turbomolekularpumpe p_g = 105 mbar')
+# param1 = eins(zeit1,druck1,fehler1,'build/TurbomolekularpumpeLeckrate1.pdf',13,'Leckratenmessung Turbomolekularpumpe p_g = 0.502 mbar')
+# param2 = eins(zeit2,druck2,fehler2,'build/TurbomolekularpumpeLeckrate2.pdf',2,'Leckratenmessung Turbomolekularpumpe p_g = 10 mbar')
+# param3 = eins(zeit3,druck3,fehler3,'build/TurbomolekularpumpeLeckrate3.pdf',2,'Leckratenmessung Turbomolekularpumpe p_g = 50.1 mbar')
+# param4 = eins(zeit4,druck4,fehler4,'build/TurbomolekularpumpeLeckrate4.pdf',0,'Leckratenmessung Turbomolekularpumpe p_g = 105 mbar')
 
+param1 = eins(zeit1, druck1, fehler1, 'build/TurbomolekularpumpeLeckrate1.pdf', 13, 
+              r'Leckratenmessung Turbomolekularpumpe $p_g = 5.04 \cdot 10^{-5}$ mbar')
+param2 = eins(zeit2, druck2, fehler2, 'build/TurbomolekularpumpeLeckrate2.pdf', 2,
+              r'Leckratenmessung Turbomolekularpumpe $p_g = 5.696 \cdot 10^{-4}$ mbar')  # 56.96e-5 = 5.696e-4
+param3 = eins(zeit3, druck3, fehler3, 'build/TurbomolekularpumpeLeckrate3.pdf', 2,
+              r'Leckratenmessung Turbomolekularpumpe $p_g = 1.03 \cdot 10^{-4}$ mbar')
+param4 = eins(zeit4, druck4, fehler4, 'build/TurbomolekularpumpeLeckrate4.pdf', 0,
+              r'Leckratenmessung Turbomolekularpumpe $p_g = 1.91 \cdot 10^{-4}$ mbar')
 
 ##### Tabellen erstellen 
 

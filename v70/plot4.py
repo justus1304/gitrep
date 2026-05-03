@@ -7,11 +7,11 @@ from scipy.optimize import curve_fit
 import pandas as pd
 from scipy import stats
 
-df1 = pd.read_csv('/home/justus/gitrep/v70/Daten/TPEK1/TPG_all_data_2026_04_20-PM12_57_24.csv',sep=',')
-df2 = pd.read_csv('/home/justus/gitrep/v70/Daten/TPEK2/TPG_all_data_2026_04_20-PM01_06_54.csv', sep=',')
-df3 = pd.read_csv('/home/justus/gitrep/v70/Daten/TPEK3/TPG_all_data_2026_04_20-PM01_15_54.csv', sep=',')
-df4 = pd.read_csv('/home/justus/gitrep/v70/Daten/TPEK4/TPG_all_data_2026_04_20-PM01_21_30.csv', sep=',')
-df5 = pd.read_csv('/home/justus/gitrep/v70/Daten/TPEK5/TPG_all_data_2026_04_20-PM01_28_16.csv', sep=',')
+df1 = pd.read_csv('Daten/TPEK1/TPG_all_data_2026_04_20-PM12_57_24.csv',sep=',')
+df2 = pd.read_csv('Daten/TPEK2/TPG_all_data_2026_04_20-PM01_06_54.csv', sep=',')
+df3 = pd.read_csv('Daten/TPEK3/TPG_all_data_2026_04_20-PM01_15_54.csv', sep=',')
+df4 = pd.read_csv('Daten/TPEK4/TPG_all_data_2026_04_20-PM01_21_30.csv', sep=',')
+df5 = pd.read_csv('Daten/TPEK5/TPG_all_data_2026_04_20-PM01_28_16.csv', sep=',')
 
 
 def druckFehler(a):
@@ -113,8 +113,8 @@ tabelle(zeit,druck,fgesamt,"build/testtabelle.csv")
 
 fig, ax1 = plt.subplots()
 ax1.set_title('Ausgleichsrechnung zur bestimmung des Saugvermögens mit der Evakuierungskurve der Turbomolekularpumpe',fontsize = 1)
-ax1.set_xlabel('t')
-ax1.set_ylabel('log((p-p_E)/(p_0-p_E))')
+ax1.set_xlabel('t/s')
+ax1.set_ylabel(r'$\ln\frac{p - p_E}{p_0 - p_E}$') # eigentlich: \ln(\frac{p - p_E}{p_0 - p_E}), NICHT log
 #ax1.plot(zeit,y_werte,linestyle='',fmt ='o')
 
 #x = np.linspace(min(t_bereich3),max(t_bereich3),1000)

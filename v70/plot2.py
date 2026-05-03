@@ -16,11 +16,11 @@ pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
 # CSV einlesen
-df1 = pd.read_csv('/home/justus/gitrep/v70/Daten/DPLR1/TPG_all_data_2026_04_20-PM04_14_00.csv', sep=',')
-df2 = pd.read_csv('/home/justus/gitrep/v70/Daten/DPLR2/TPG_all_data_2026_04_20-PM04_33_53.csv', sep=',')
-df3 = pd.read_csv('/home/justus/gitrep/v70/Daten/DPLR3/TPG_all_data_2026_04_20-PM04_53_22.csv', sep=',')
-df41 = pd.read_csv('/home/justus/gitrep/v70/Daten/DPLR41/TPG_all_data_2026_04_20-PM05_02_36.csv', sep=',')
-df42 = pd.read_csv('/home/justus/gitrep/v70/Daten/DPLR42/TPG_all_data_2026_04_20-PM05_11_52.csv', sep=',')
+df1 = pd.read_csv('Daten/DPLR1/TPG_all_data_2026_04_20-PM04_14_00.csv', sep=',')
+df2 = pd.read_csv('Daten/DPLR2/TPG_all_data_2026_04_20-PM04_33_53.csv', sep=',')
+df3 = pd.read_csv('Daten/DPLR3/TPG_all_data_2026_04_20-PM04_53_22.csv', sep=',')
+df41 = pd.read_csv('Daten/DPLR41/TPG_all_data_2026_04_20-PM05_02_36.csv', sep=',')
+df42 = pd.read_csv('Daten/DPLR42/TPG_all_data_2026_04_20-PM05_11_52.csv', sep=',')
 df_gesamt = pd.concat([df41['	 TPG202 [mbar]1'], df42['	 TPG202 [mbar]']], axis=1)
 df_gesamt['mittelwert'] = df_gesamt[['	 TPG202 [mbar]1', '	 TPG202 [mbar]']].mean(axis=1)
 # Die ersten 5 Zeilen anzeigen
@@ -169,10 +169,14 @@ def eins(zeit, druck, fehler,pfad,slice,meinTitel):
     fig.savefig(f'{pfad}')
     return ufloat(m_fit1,m_fehler1)
 
-param1 = eins(zeit1,druck1,fehler1,'build/drehschieberLeckrate1.pdf',13,'Leckratenmessung Drehschieberpumpe p_g = 0.502 mbar')
-param2 = eins(zeit2,druck2,fehler2,'build/drehschieberLeckrate2.pdf',2,'Leckratenmessung Drehschieberpumpe p_g = 10 mbar')
-param3 = eins(zeit3,druck3,fehler3,'build/drehschieberLeckrate3.pdf',2,'Leckratenmessung Drehschieberpumpe p_g = 50.1 mbar')
-param4 = eins(zeit4,druck4,fehler4,'build/drehschieberLeckrate4.pdf',0,'Leckratenmessung Drehschieberpumpe p_g = 105 mbar')
+param1 = eins(zeit1, druck1, fehler1, 'build/drehschieberLeckrate1.pdf', 13, 
+              r'Leckratenmessung Drehschieberpumpe $p_g = 0.502$ mbar')
+param2 = eins(zeit2, druck2, fehler2, 'build/drehschieberLeckrate2.pdf', 2,
+              r'Leckratenmessung Drehschieberpumpe $p_g = 10$ mbar')
+param3 = eins(zeit3, druck3, fehler3, 'build/drehschieberLeckrate3.pdf', 2,
+              r'Leckratenmessung Drehschieberpumpe $p_g = 50.1$ mbar')
+param4 = eins(zeit4, druck4, fehler4, 'build/drehschieberLeckrate4.pdf', 0,
+              r'Leckratenmessung Drehschieberpumpe $p_g = 105$ mbar')
 
 
 ##### Tabellen erstellen 

@@ -1,2 +1,120 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+\subsection{Drehschieberpumpe}
+Die ermittelten Saugvermögen bei der Evakuierungsmethode für die Drehschieberpumpe
+der Firma ILMVAC Typ 300883/AKD16 beliefen sich auf 
+\begin{align}
+    S_\text{eff1}^\text{eva} =& \qty{4.9+-0.5}{m^3/h}, \\
+    S_\text{eff2}^\text{eva} =& \qty{1.71+-0.17}{m^3/h}, \\
+    S_\text{eff3}^\text{eva} =& \qty{0.70+-0.07}{m^3/h}.
+\end{align}
+Dabei ist $S_\text{eff1}^\text{eva}$ das Saugvermögen im Druckbereich von 0 bis 
+$\qty{150}{\milli\bar}$, $S_\text{eff2}^\text{eva}$ in einem Bereich von 150 bis 
+$\qty{290}{\milli\bar}$ und $S_\text{eff3}^\text{eva}$ im Bereich von 290 bis 
+knapp $\qty{290}{\milli\bar}$. Laut Hersteller liegt der Wert des Saugvermögens 
+in einem Bereich von $\qty{4.6}{m^3/h}$ bis $\qty{5.5}{m^3/h}$. Der Wert für 
+$S_\text{eff1}^\text{eva}$ liegt exakt in diesem Intervall und stimmt innerhalb
+der Messunsicherheit von $±\qty{0.5}{m^3/h}$ mit der Herstellerangabe überein.
+Dies ist plausibel, da im hohen Druckbereich (Grobvakuum, etwa oberhalb von
+$\qty{1}{mbar}$) die laminare Strömung dominiert und die Pumpe nahe ihrem
+Optimalwert arbeitet. Rückströmungseffekte und Desorption sind bei diesen Drücken
+noch vernachlässigbar.
+% \vspace{0.5em}
+\\
+Die deutlich niedrigeren Werte $S_\text{eff2}^\text{eva}$ und 
+$S_\text{eff3}^\text{eva}$ sind keine Messfehler, sondern eine direkte Folge der 
+Druckabhängigkeit des Saugvermögens. Mit sinkendem Druck treten einige Effekte
+zunehmend in den Vordergrund. Dazu gehört der Einfluss der Molekularströmung: 
+die mittlere freie Weglänge wird größer als die Abmessungen der Pumpe, was zur 
+Folge hat, dass der gerichtete Gastransport ineffizienter wird. Darüber hinaus 
+kommt es zu Rückströmungseffekten, wie bereits in \autoref{sec:dsp} angesprochen.
+Durch Spalte zwischen Rotor und Gehäuse oder Ventilen diffundieren Gasmoleküle 
+zurück in den Rezipienten. Da die Drehschieberpumpe mit Öl als Schmiermittel 
+arbeitet ist es auch nicht ausgeschlossen, dass Teilchen von diesem in den 
+Rezipienten übergehen. Dazu kommen auch Wasserteilchen, welche sich an den 
+Wänden abgesetzt haben, was auf Van-der-Waals-Kräfte oder Wasserstoffbrücken 
+an der Metalloberfläche zurückzuführen ist. Folglich ist die sinkende Steigung, 
+wie in \autoref{fig:10} zu sehen, genau das erwartete Verhalten. Die Herstellerangaben
+beziehen sich auf den optimalen Arbeitsbereich bei Drücken oberhalb von $\qty{1}{mbar}$.
+\vspace{0.5em}
+\\
+Zusätzlich bestätigen die Leckratenmessungen diesen Befund: Bei $\qty{50}{mbar}$
+ergibt sich $S_\text{eff}^\text{leck} = \qty{5.1+-0.5}{m^3/h}$, was in
+Übereinstimmung mit $S_\text{eff1}^\text{eva}$ steht, während bei $\qty{0.5}{mbar}$
+nur noch $\qty{0.68+-0.07}{m^3/h}$ gemessen werden, kompatibel mit 
+$S_\text{eff3}^\text{eva}$. Die beiden unabhängigen Methoden 
+liefern also konsistente Ergebnisse.
+\noindent Insgesamt sind die ermittelten Werte physikalisch legitim und zeigen,
+dass das Saugvermögen einer Drehschieberpumpe kein individueller Materialparameter
+ist, sondern stark vom Druckbereich abhängt.
+
+\subsection{Turbomolekularpumpe}
+Für die Turbomolekularpumpe SST81 der Firma ILMVAC (betrieben bei $\qty{1350}{\hertz}$)
+ergaben sich das Saugvermögen bei der Evakuierungsmessung als
+\begin{equation}
+    S_\text{eff}^\text{Eva} = \qty{15.4+-1.6}{\liter\per\second}.
+\end{equation}
+Laut Hersteller sollte ein Vermögen von $\qty{77}{\liter\per\second}$ erreicht 
+werden können, solang Stickstoff mit der Pumpe gefördert werden soll. In diesem 
+Experiment wird mit Luft gearbeitet, diese besteht nur etwa zu 80 \% aus Stickstoff, 
+ein exakter Vergleich ist also ohne Weiteres nicht möglich. In Anbetracht dessen 
+liegt die Abweichung bei mindestens 80 \%. Diese signifikante Abweichung resultiert 
+aus einigen Faktoren, wie etwa dem Aspekt, dass das effektive Saugvermögen bestimmt 
+wurde. Das bedeutet, dass die Berechnung keine leitwertbehafteten Verbindugnen 
+wie Rohre und Ventile berücksichtigt. Da Messungen im Bereich der Größenordnung 
+von $\qty{e-5}{\milli\bar}$ liegen, herrscht molekulare Strömung. Hier ist der 
+Einfluss des Leitwerts besonders stark, da das Nennsaugvermögen der Turbopumpe
+sehr hoch ist, während der Leitwert typischer Rohrleitungen vergleichsweise
+gering ausfällt.
+\vspace{0.5em}
+\\
+Bessere Ergebnisse liefern die Messungen mittels Leckratenmethode, welche bei 
+einem Druck von $p_g = \qty{56.96e-5}{\milli\bar}$ bereits ein Saugvermögen 
+von mehr als $\qty{40}{\liter\per\second}$ ergaben. Insgesamt liegt die Abweichung 
+noch bei knapp 44.1 bis 63.4\%. Ein Großteil der Abweichungen ist auf die
+Messgenauigkeit der verwendeten PKR-360 Sensoren zurückzuführen, die vom Hersteller 
+im Bereich unterhalb von $\qty{100}{\milli\bar}$ mit $30\,\%$ vom Messwert
+angegeben ist.
+\noindent Zusammenfassend sind die ermittelten Werte physikalisch gerechtfertig,
+wenn die realen experimentellen Randbedingungen beachtet werden. Die Abweichung
+vom Herstellerwert ist kein Widerspruch zur zugrundeliegenden Physik, sondern
+eine direkte Konsequenz des realen Aufbaus, der nicht die idealen 
+Vergleichsbedingungen eines Normtests erfüllt.
+
+\subsection{Engstelle und Leitwert}
+Der Einbau einer Engstelle in Form eines Testrohrs führt zu einer drastischen 
+Reduktion des effektiven Saugvermögens von knapp $\qty{35.1}{\liter\per\second}$
+auf $\qty{2,68}{\liter\per\second}$. Die gemessene Druckdifferenz zwischen den
+beiden PKR-360 Sensoren bestätigt diesen Effekt: Vor der Engstelle liegt ein
+niedrigerer Druck an als dahinter. Dies zeigt, dass bereits ein kurzes Rohr mit
+kleinem Querschnitt einen dominanten Strömungswiderstand darstellt. Die Pumpe
+kann ihr Nennsaugvermögen daher nur dann entfalten, wenn die Verbindungsleitungen
+ausreichend dimensioniert sind. Eine demenstprechende Abweichung beider Werte
+ist physikalisch plausibel und unterstreicht die Relevanz des Leitwerts.
+
+\subsection{Störeinflüsse durch Konvektion und Kondensation}
+\subsubsection{Konvektion}
+Ein systematischer Fehler, welcher bei der Interpretation der Fehler berücksichtigt 
+werden muss, liegt bei der Konvektion. Bei der Leckratenmessung wird die
+Druckanstiegsrate $\frac{\increment p}{\increment t}$ gemessen und in ein 
+effektives Saugvermögen umgerechnet. Das Pirani-Messprinzip, welches sowohl im 
+im TPG-202 als auch im PKR-360 verwendet wird ist jedoch konvektionsempfindlich
+\cite{glossar}. Temperaturunterschiede im Rezipienten führen zu Gasströmungen,
+die zusätzliche Wärme vom Messdraht abführen und somit einen höheren Druck
+anzeigen, als tatsächlich vorhanden ist.
+
+\subsubsection{Kondensation als thermodynamische Pumpe im Rezipienten}
+Während der Evakuierung kann es dazu kommen, dass Wasserdampf an kalten Stellen
+des Rezipienten kondensiert. Dieser Phasenübergang reduziert die Teilchenzahl 
+in der Gasphase, ohne dass die Pumpe tatsächlich aktiv ist. Es wirkt wie eine
+zusätzliche, nicht kontrollierbare Pumpe. Im vorliegenden Experiment ist dieser 
+Effekt jedoch vernachlässigbar klein, da die Messzeiten kurz und die 
+Desorptionsraten gering sind, was sich darin äußert, dass bei der Evakuierungskurve 
+das Saugvermögen wesentlich kleiner ist, als durch die Literatur vorgegeben. Ein 
+Einfluss dieses Effekts würde sich durch eine Überschätzung des Saugvermögens 
+bemerkbar machen, nicht aber durch einen zu geringen Wert.
+
+\subsection*{Hinweis zum Einsatz von KI-Tools}
+Teile der Diskussion wurden unter Verwendung des KI-Modells DeepSeek
+erstellt und anschließend überprüft und angepasst.
