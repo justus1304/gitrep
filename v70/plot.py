@@ -25,7 +25,7 @@ def druckFehler(a):
 def druckFehler(a):
     x = 0
     if (a > 10):
-        x = 1200 * 0.03
+        x = 1200 * 0.003
     else:
         if(a > 2*10**(-3)):
             x = a*0.1
@@ -137,7 +137,9 @@ print(saug3*3.6)
 #np.savetxt('meineDaten/ergebnisse_fehler.txt', export_daten, 
 #           header='Druck[mbar] Zeit[s] Fehler[mbar]', 
 #           fmt='%.5e', delimiter='\t')
-
+# Gibt jeden 10. Eintrag sauber in der Konsole aus
+for eintrag in liste[::10]:
+    print(f"Zeit: {eintrag[0]:>3}s | Druck: {eintrag[1]:.2uP} | Log: {eintrag[2]:.2uP}")
 
 
 
