@@ -1,4 +1,50 @@
 \section{Theorie}
 \label{sec:Theorie}
+\section{Theoretische Grundlagen}
 
-\cite{sample}
+Der Operationsverstärker, kurz OPV, ist ein gleichspannungsgekoppelter Differenzverstärker. Er kann je nach anschluss in vielen bereichen verwendung finden. So kann er als Integriere oder Differenziere 
+einer Spannung genutzt werden. Daher Erhält der OPV auch seinen namen. Er kann jedoch auch zur reinen Verstärkung eines Eingangssignals genutzt werden, oder als eine Art schaltvorrichting in form von 
+einer Schmidt-Trigger Schaltung. 
+
+\subsection{Idealer und realer Operationsverstärker}
+In der Theorie wird oft mit dem Modell des idealen OPV gearbeitet. Dieser zeichnet sich durch eine unendliche Leerlaufverstärkung ($V \to \infty$), 
+einen unendlichen eingangswiderstand ($R_e \to \infty$) und einen Ausgangswiderstand von Null ($R_a = 0$) aus.
+Reale Operationsverstärker, wie sie in diesem Versuch genutzt werden, Haben aufgrund Technischer limitierungen Grenzen, so Kann nur ein Sehr großer Wiederstand gewählt werden, sodass fast 
+kein Strom in den Verstärker fließt. Des weiteren weisen Transistoren physikalische grenzen auf, was zu eier frequenzabhängigen obergrenze für die verstärkug führt. Ab überschreiten dieser Grenze 
+können die Transistoren nicht mehr schnell genug schalten und funktionieren nicht mehr ordnungsgemäß. Des weiteren kan es zu einer Offsetspannung kommen, wenn eine Ausgangsspannung anliegt, obwohl es 
+keine Differenz im  Eingang gibt.
+
+
+\subsection{Rückkopplung und Gegenkopplung}
+Die Eigenschaften einer OPV-Schaltung hängen von der Art der Rückführung ab:
+\begin{itemize}
+    \item \textbf{Gegenkopplung:} Ein Teil des Ausgangssignals wird auf den invertierenden Eingang ($-$) zurückgeführt. Dies führt zu einer Stabilisierung und erlaubt den Betrieb als linearer Verstärker.
+    \item \textbf{Mitkopplung:} Die Rückführung erfolgt auf den nicht-invertierenden Eingang ($+$). Dies führt dazu, dass der OPV nur zwei stabile Zustände (Sättigung) einnimmt. So kann der OPV als schalter genutzt werden.
+\end{itemize}
+
+\subsection{Mathematische Beschreibung verschiedenen Schaltungen}
+
+\subsubsection{Invertierender Linearverstärker}
+Durch die hohe Verstärkung und die Gegenkopplung stellt sich am invertierenden Eingang ein virtueller Nullpunkt ein. Das Verhältnis der Widerstände bestimmt den Verstärkungsfaktor
+\begin{equation}
+    v = \frac{U_a}{U_e} = -\frac{R_2}{R_1}
+\end{equation}
+
+\subsubsection{Integrator und Differenzierer}
+Wird ein Kondensator mit Kapazität $C$ in die Schaltung integriert, lassen sich zeitabhängige Operationen realisieren. Der Umkehr-Integrator folgt der Beziehung
+\begin{equation}
+    U_a(t) = -\frac{1}{RC} \int_{0}^{t} U_e(t') \, dt'
+\end{equation}
+Beim Differenzierer hingegen ist die Ausgangsspannung proportional zur zeitlichen Ableitung der Eingangsspannung.
+\begin{equation}
+    U_a(t) = -R \cdot C \cdot \frac{d U_e(t)}{dt}
+\end{equation}
+
+\subsubsection{Nicht-invertierender Schmitt-Trigger}
+Durch die Mitkopplung über einen Spannungsteiler entstehen zwei Schaltschwellen $U_{on}$ und $U_{off}$. Nur bei überwinden der jewailigen Schaltschwelle fällt der OPV in die positive bzw negative Sättignung. Die Differenz dieser Schwellen wird als Hysterese bezeichnet und verhindert ein unerwünschtes Hin- und Herschalten bei verrauschten Signalen.
+
+% --- Beispiel für das Literaturverzeichnis am Ende des Dokuments ---
+
+
+
+
