@@ -27,7 +27,7 @@ df_gesamt['mittelwert'] = df_gesamt[['	 TPG202 [mbar]1', '	 TPG202 [mbar]']].mea
 #print(df.head())
 
 # Zugriff auf eine bestimmte Spalte
-druck1 = df1['TPG202 [mbar]']
+druck1 = df1['    TPG202 [mbar]']
 druck2 = df2['	 TPG202 [mbar]']
 druck3 = df3['	 TPG202 [mbar]']
 druck4 = df_gesamt['mittelwert']
