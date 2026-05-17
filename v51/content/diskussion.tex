@@ -1,2 +1,100 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+\subsection{Invertierender Linearverstärker}
+Zunächst ist zu erkennen, dass alle verwerteten Frequenzgänge den theoretischen 
+Erwartungen entsprechen. Es ist grundsätzlich ein konstanter Plateaubereich 
+identifizierbar. Ebenso weichen die Messwerte der Abfallgeraden kaum vom Graphen 
+ab (mit Ausnahme von Messung 2, wo die letzten drei Werte Abweichungen aufweisen),
+was für eine präzise Messung spricht.
+\begin{table}[H]
+    \centering
+    \caption{Ermittelte Verstärkungen und die Abweichung zum Theoriewert.}
+    \label{tab:d1}
+    \sisetup{table-format=1.2}
+    \begin{tblr}{
+        colspec = {S[table-format=1.0] S[table-format=1.4] S[table-format=2.4] S[table-format=2.2]},
+        row{1} = {guard, mode=math},
+        column{2} = {halign=c},  % Zentriere Spalte 2
+        column{3} = {halign=c},  % Zentriere Spalte 3
+        column{4} = {halign=c},  % Zentriere Spalte 4
+    }
+    \toprule
+    \text{Messung} & V_{exp} & V_{theo} & \text{Prozentuale Abweichung} \\
+    \midrule
+    1 & 1.4857 & 1.5   & 0.96 \\
+    2 & 9.7143 & 10.0  & 2.94 \\
+    3 & 4.9841 & 4.7   & 6.04 \\
+    4 & 3.4286 & 3.133 & 9.44 \\  
+    \bottomrule
+    \end{tblr}
+\end{table}
+\noindent In \autoref{tab:d1} befindet sich der Vergleich der Werte für die 
+Verstärkung. Trotz der genauen Graphen kommt es teils zu signifikannten Unterschieden 
+zwischen experimentell und theoretisch ermittelten Werten. Jenes kann auf den 
+Aspekt der Beschaffenheit des Operationsverstärkers zurückgeführt werden. Da es 
+sich nicht um einen Idealen Verstärker handelt, ist etwa die Leerlaufverstärkung 
+endlich und die Bandbreite begrenzt, was zur Folge haben kann, dass systematische 
+Fehler entstehen. Möglicherweise haben nicht vollständig kompensierte Eingänge 
+die Messungen in Form von Restverzerrungen beeinflusst. Messung 1 zeigt, dass
+unter geeigneten Bedingungen durchaus sehr präzise Ergebnisse zu erwarten sind,
+darauffolgende Messungen nehmen an Genauigkeit ab.
+\vspace{0.5cm}
+\\
+\noindent Die Untersuchung der Phasenbeziehungen kann als erfolgreich gewertet 
+werden, auch wenn die Dekandenmessungen bessere Werte hätten liefern können.
+Für eine einfachere Identifikation des Graphenverlaufs wären andere 
+Frequenzintervalle hilfreich gewesen. Besonders bei den ersten beiden
+Durchgängen fehlt es für höhere Frequenzen an Werten für die Phase der Signale.
+Trotzdem verändert sich die Phase am Ausgangsoszilloskop (ausgehend von 180°
+oder -180°) um 90°. In den Plots der Messwerte ist zu erkennen, das höhere
+Frequenzen zunehmend zu einer Phasenveränderung führen. Somit ergibt sich der
+erwartete Verlauf eines Tiefpasses. 
+
+
+\subsection{Der Umkehr-Integrator-und Differenzierer}
+Für die Ausgleichsrechnung sollte sich für die Steigung im Idealfall ein Wert 
+von $m=-1$ einstellen. Experimentell ergibt sich ein Wert von
+\begin{equation*}
+    m_{\text{exp}} = -0.9193 \pm 0.0206,
+\end{equation*}
+was einer Abweichung von $8.07 \%$ bzw. $6.01 \%$ entspricht. Derartige Abweichungen 
+sind plausibel, da laut Datenblatt des LM741 Widerstände über eine Toleranz von 
+$5 \%$ verfügen \cite{datenblatt}. Für die integrierte Sinus-, Dreieck- und 
+Rechteckspannung ergeben sich ebefalls plausible Ergebnisse. Das Sinussignal 
+wird um knapp 90° versetzt, das Rechtecksignal entwickelt sich zu der erwarteten 
+Dreieckspannung und die Dreieckspannung wird zu einer Sinusspannung.
+\vspace{0.5cm}
+\\
+\noindent Beim Differenzierer sind die Abweichungen größer. Eine ideale
+Proportionalität wäre durch eine Steigung in der Regression von $m=1$ gegeben.
+Erreicht wird 
+\begin{equation*}
+    m_{\text{exp}} = 0.8414 \pm 0.0428.
+\end{equation*}
+Die Differenzen zum Idealwert betragen $15.86 \%$ und inklusive Fehlertoleranz 
+$11.58 \%$. Diese erhöhten Werte im Vergleich zum Integrator könnten aus den 
+gleichen Gründen wie beim Linearverstärker kommen: unkompensierte Eingänge 
+verzerren Möglicherweise die Messung. Am Ausgangsozilloskop zeigen sich die
+charakteristischen Ableitungseffekte. Aus einem sinusförmigen Eingangssignal 
+entsteht aufgrund der Differentiation ein cosinusförmiger Verlauf, was einer 
+Phasenverschiebung von 90° entspricht. Bei der Rechteckspannung als Eingang werden
+an den steilen Flanken Spannungsimpulse erzeugt, welche oszillierend abklingen.
+Für die Rechteckspannung kommen ähnliche Effekte zustande. Im Idealfall würde
+sich hier eine Rechteckspannung ergeben.
+
+
+\subsection{Schmitt-Trigger}
+Für die Hysteresebreite des Schmitt-Triggers sollte sich theoretisch ein Wert von 
+\begin{equation*}
+    \Delta U_{\text{theo}} = \qty{2,727}{\volt}
+\end{equation*}
+einstellen. Im Vergleich zum ermittelten Wert über das Oszilloskop mit
+\begin{equation*}
+    \Delta U_{\text{exp}} = \qty{2.736 \pm 0.002}{\volt}.
+\end{equation*}
+bedeutet das eine Abweichung von lediglich $0.33 \%$. Das Experiment kann daher 
+als sehr gelungen bewertet werden. Die hervorragende Übereinstimmung bestätigt
+die Theorie und zeigt, dass der Schmitt-Trigger im Gegensatz zu linearen
+Verstärkerschaltungen oder Umkehrschaltungen sehr robust gegenüber realen
+Einschränkungen ist.
