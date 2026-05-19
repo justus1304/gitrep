@@ -39,7 +39,7 @@ Nachdem durch Zusammenspiel von DP und TMP ein Druck von $\qty{5e-5}{\milli\bar}
 erreicht wurde, kann die Evakuierungskurve bestimmt werden. Es wird V3 geöffnet, 
 sodass die TP mit dem Rezipienten verbunden ist. Gleichzeitig wird V5 so reguliert,
 dass sich ein Druck von etwa $\qty{5e-5}{\milli\bar}$ einstellt. Es wird das 
-Python-Skript gestartet und kurz darauf V5 geschlossen, sodass die Röhre evakuiert 
+Python-Skript gestartet und kurz darauf V4 und V5 geschlossen, sodass die Röhre evakuiert 
 wird. Für 120 Sekunden wird nun der Druckabfall gemessen, dieser Vorgang für eine 
 statistisch abgesicherte Mittelwertbildung fünfmal wiederholt. Am Ende stellt
 sich ein Enddruck $p_E$ ein, dieser wird notiert.
@@ -65,8 +65,9 @@ dessen befindet sich in \autoref{fig:9}.
 \noindent Durch die Verengung kommt es zu Strömungsverlusten, was darin resultiert,
 dass die PKR-360 unterschiedliche Drücke ausgeben. Sobald sich ein Gleichgewichtsdruck 
 einstellt, wird eine Leckratenmessung, wie in \autoref{sec:Leckratenmessung}, 
-durchgeführt. Es wird der Druckunterschied zwischen den beiden Sensoren D1 und D2 
-berechnet und durch Mittelung das effektive Saugvermögen bestimmt.
+durchgeführt. Es wird der Druckunterschied der beiden Sensoren D1 und D2 
+gemessen und durch Auswertung das effektive Saugvermögen vor und hinter der 
+Engstelle bestimmt.
 
 \subsubsection{DP: Aufbaukontrolle und Dichtigkeitsprüfung}
 Zunächst wird der Aufbau gemäß \autoref{fig:7} überprüft. Die Drehschieberpumpe
@@ -76,11 +77,11 @@ Damit gilt der Aufbau als ausreichend dicht.
 
 \subsubsection{DP: Evakuierungskurve}
 Der Rezipient wird über die Ventile V4 und V5 belüftet, bis der Normaldruck von
-$\approx \qty{1000}{\milli\bar}$ erreicht ist. Anschließend werden V4 und V5 geschlossen
-und das Python-Skript zur Datenerfassung kann gestartet werden. Zum Zeitpunkt
-$t=0$ wird das Absperrventil V1 geöffnet. Der Druckabfall wird einmal für 
-600 Sekunden mit dem TPG-202 aufgezeichnet. Es stellt sich ein Druck $p_E$ ein,
-welcher notiert wird.
+$\approx \qty{1000}{\milli\bar}$ erreicht ist. Dabei ist V1 geschlossen. 
+Anschließend werden V4 und V5 geschlossen und das Python-Skript zur Datenerfassung
+kann gestartet werden. Zum Zeitpunkt $t=0$ wird das Absperrventil V1 geöffnet.
+Der Druckabfall wird einmal für 600 Sekunden mit dem TPG-202 aufgezeichnet.
+Es stellt sich ein Druck $p_E$ ein, welcher notiert wird.
 
 \subsubsection{DP: Leckratenmessung}
 Bei laufender Pumpe und geöffnetem Absperrventil V1 sowie geöffnetem 

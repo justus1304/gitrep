@@ -6,19 +6,20 @@ Lebensmittelindustrie, die chemische oder Halbleiterindustrie. Um Vakuum,
 also einen Raum mit einem Druck, geringer als dem Druck in der Atmosphäre, zu 
 erzeugen und zu charakterisieren, sind spezielle Komponenten, Pumpen und
 Messgeräte notwendig, deren Zusammenspiel und physikalische Grundlagen im
-Folgenden erläutert werden.
+Folgenden erläutert werden. \cite{glossar}
 
 \subsection{Terminologie und Definitionen der Vakuumtechnik}
 Neben dem Begriff des Vakuums spielt auch der Rezipient eine elementare Rolle. 
-Dieser ist eine Kammer, welche ein Gas in einem Niederdruck beinhaltet (hier:
+Dieser ist eine Kammer, welche ein Gas niedrigen Drucks enthält (hier:
 das Vakuum). Weiter wichtig sind der Totaldruck und der Partialdruck, wobei 
 ersteres jener Druck ist, welcher entsteht, wenn die Gasteilchen auf Wände der 
 Gaskammer treffen. Der Partialdruck ist der Druck eines spezifischen Gases. Für 
-ein Gemisch können die Partialdrücke aufsummiert werden. 
+ein Gemisch können die Partialdrücke aufsummiert werden, um den Gesamtdruck zu 
+erhalten.
 \\
-Um Druckbereiche einfacher zu differenzieren unterteilt man von Grobvakuum (GV)
-in Bereichen von $\qty{1}{\bar}$ bis $\qty{1}{\milli\bar}$ bis zu dem extremen
-Ultrahochvakuum (XHV), dessen Druck kleiner als $\qty{e-12}{\milli\bar}$ ist.
+% Um Druckbereiche zu differenzieren unterteilt man von Grobvakuum (GV)
+% in Bereichen von $\qty{1}{\bar}$ bis $\qty{1}{\milli\bar}$ bis zu dem extremen
+% Ultrahochvakuum (XHV), dessen Druck kleiner als $\qty{e-12}{\milli\bar}$ ist.
 Für diesen Versuch sind das Grobvakuum und das Hochvakuum (liegt zwischen 
 $\qty{e-3}{\milli\bar} \text{ bis } \qty{e-7}{\milli\bar}$) relevant. Ersteres 
 für die mechanische Pumpe und letzteres für die Turbomolekularpumpe. Im späteren 
@@ -79,8 +80,10 @@ Gleichgewichts ergibt sich der Ausdruck
     I = p \cdot \frac{dV}{dt} = p \cdot S(p), \qquad [I] = \si{\pascal\meter\cubed\per\second}, [S(p)] = \si{\meter\cubed\per\hour}.
 \end{equation}
 Dafür wurde der Teilchenstrom mit der Größe $k_B \cdot T$ multipliziert. Es 
-ergibt sich die Saugleistung, welche die pro Zeit durch eine Querschnittsfläche 
-transportierte Gasmenge angibt. \cite{glossar}
+ergibt sich die Saugleistung (pV-Durchsatz) $I$, welche die pro Zeit durch eine
+Querschnittsfläche transportierte Gasmenge angibt. \cite{glossar} Diese ist von
+dem Saugvermögen $S(p)$ zu unterscheiden: jenes ist die Veränderung des Volumens 
+pro Zeit.
 
 \subsubsection{Evakuierungskurve}
 Diese Faktoren können für die Herleitung der Evakuierungskurve und der Bestimmung 
@@ -109,13 +112,14 @@ Es ist zu beachten, dass diese
 Bedingungen im realen Experiment nicht vollständig erfüllt sind. Das Saugvermögen 
 ist druckabhängig, ebenso wird der Gasstrom aus Desorptionsprozessen nicht mehr 
 vernachlässigbar. Das bedeutet, dass Teilchen, welche sich vorher an den Wänden 
-des Rezipienten abgesetzt hatten (in diesem Fall Wasser), nun vom Gas absorbiert
-werden, was zur Folge hat, dass die Pumpe nacharbeiten muss. Es strömt konstant 
-Gas von den Wänden in das Volumen wie ein virtuelles Leck. Diese Abweichungen 
-sind jedoch keine Störung, die Evakuierungskurve wird im $\ln$-Diagramm in 
-Abschnitte mit unterschiedlichen Steigungen unterteilt. Jeder lineare Bereich 
-entspricht einem Druckintervall, in dem das Saugvermögen näherungsweise konstant
-ist.
+des Rezipienten abgesetzt hatten (in diesem Fall insbesondere Wasser), nun vom
+Gas absorbiert werden, was zur Folge hat, dass die Pumpe nacharbeiten muss. Es
+strömt konstant Gas von den Wänden in das Volumen wie ein virtuelles Leck. Diese
+Abweichungen sind jedoch keine Störung, die Evakuierungskurve wird im 
+$\ln$-Diagramm in Abschnitte mit unterschiedlichen Steigungen unterteilt. Jeder
+lineare Bereich entspricht einem Druckintervall, in dem das Saugvermögen 
+näherungsweise als konstant angenommen wird.
+
 
 \subsubsection{Leckratenmessung}
 Bei dieser alternativen Bestimmung des Saugvermögens wird in der Apparatur 
@@ -132,9 +136,13 @@ ergibt sich schließlich über
 Wie bei der Messung zur Evakuierungskurve besteht der Umstand der Desorption.
 Neben dem Gasstrom durch das Dosierventil liefern auch Desorptionsprozesse an 
 den Rezipientenwänden einen Beitrag zum Gasstrom. Die gemessene Druckanstiegsrate
-$\frac{dp}{dt}$ ist daher die Summe beider Beiträge. Die Desorption führt zu einer
-systematischen Überschätzung von $S_{\text{eff}}$, insbesondere bei niedrigen 
-Gleichgewichtsdrücken $p_g$ im Hochvakuumbereich.
+$\frac{dp}{dt}$ ist daher die Summe beider Beiträge. Da die Desorption zusätzliche
+Gasteilchen liefert, wird der tatsächliche Gasstrom durch das Ventil überschätzt.
+Das führt zu einer systematischen Überschätzung von $S_{\text{eff}}$, da in 
+\autoref{eqn:5} fälschlicherweise die gesamte Druckanstiegsrate dem 
+Ventilgasstrom zugeschrieben wird, obwohl ein Teil aus der Desorption stammt.
+Insbesondere bei niedrigen Gleichgewichtsdrücken $p_g$ im Hochvakuumbereich ist 
+dieser Effekt relevant.
 
 
 \subsection{Pumpen}
@@ -149,15 +157,15 @@ Gleichgewichtsdrücken $p_g$ im Hochvakuumbereich.
     \label{fig:3}
 \end{figure}
 Die Drehschieberpumpe ist eine Verdrängerpumpe zur Erzeugung von Grob- und 
-Feinvakuum. Im Inneren rotiert ein exzentrisch gelagerter Rotor mit zwei
+Feinvakuum. Im Inneren rotiert ein exzentrisch gelagerter Rotor mit drei
 beweglichen Schiebern (siehe \autoref{fig:3}). Durch die Rotation wird 
-das Volumen der Saugkammer (Schöpfraum) zunächst vergrößert. Der dadurch 
-entstehende Unterdruck saugt Gas aus dem Rezipienten an. Bei weiterer 
+das Volumen der Saugkammer (Schöpfraum) zunächst vergrößert. Durch den 
+entstehende Unterdruck strömt Gas aus dem Rezipienten ein. Bei weiterer 
 Rotation wird die Kammer vom Einlass getrennt, das Gas komprimiert und 
 schließlich über ein Auslassventil ausgestoßen. Der Kreislauf wiederholt 
 sich kontinuierlich. Da das Gas im Schöpfraum durch die Verringerung des
-Volumens sehr  schnell auf den Atmosphärendruck gebracht wird, gibt es die
-Möglichkeit, einen Gasballast einzubauen. Dieser hat die Aufgabe, Umgebungsluft
+Volumens sehr schnell auf den Atmosphärendruck gebracht wird, gibt es die
+Möglichkeit, einen Gasballast zu nutzen. Dieser hat die Aufgabe, Umgebungsluft
 in den Schöpfraum zu befördern, sodass die Kondensation verhindert wird und die
 Maschine präventiv vor Korrosion geschützt wird. Ein Bild der im Experiment 
 genutzten Drehschieberpumpe befindet sich in \autoref{fig:4}.
@@ -171,10 +179,13 @@ genutzten Drehschieberpumpe befindet sich in \autoref{fig:4}.
 \end{figure}
 \noindent Der Drehschieberpumpe sind einige technische Grenzen gesetzt, wodurch bei alleiniger 
 Nutzung dieser kein Druck unterhalb des Feinvakuums erreicht werden kann. Dazu 
-zählt: Rückströmung von Gas durch Ventile und Spalte, Diffusion von Öldämpfen
-in den Rezipienten sowie Adsorption und Desorption an den Wänden. Daher wird die
-Drehschieberpumpe im Versuch als Vorpumpe für die Turbomolekularpumpe eingesetzt.
+zählt: Rückströmung von Gas durch Ventile und Spalte (bedingt druch mechanische 
+Toleranzen wie Spaltmaße, Passgenauigkeit der Schieber und Undichtigkeiten, 
+hervorgerufen durch Verschleiß), Diffusion von Öldämpfen in den Rezipienten 
+sowie Adsorption und Desorption an den Wänden. Daher wird die Drehschieberpumpe
+im Versuch als Vorpumpe für die Turbomolekularpumpe eingesetzt.
 \cite{glossar}
+
 
 \subsubsection{Turbomolekularpumpe}
 \label{sec:tmp}
@@ -216,7 +227,7 @@ müssen, bedarf es einer präzisen Lagerung. Dafür funktioniert die Maschine
 völlig ölfrei, was das Risiko auf potentielle Verunreinigungen eliminiert.
 
 
-\subsection{Geräte für das Messverfahren}
+\subsection{Druckmessgeräte}
 \subsubsection{Piezo-Vakuummeter}
 Bei dem Piezo-Vakuummeter handelt es sich um ein Messgerät mit einer Membran 
 aus einem piezoelektrischen Material wie Quarz oder Keramik. Diese weisen die 
@@ -245,6 +256,11 @@ thermischen Leitfähigkeit, das Messgerät muss also auf das Gas festgelegt sein
 Weiter ist der Wärmetransport nicht linear druckabhängig. Dieser Effekt ist
 allerdings zu vernachlässigen, da bei sehr niedrigen Drücken die molekulare
 Strömung herrscht und die Wärmeabfuhr quasi-linear vom Druck abhängt. \cite{glossar}
+Darüber hinaus wird der Messbereich nach oben durch einsetzende Konvektion begrenzt,
+da der Wärmetransport durch strömende Gasmengen kaum mehr druckabhängig ist, 
+worauf das Messprinzip des Pirani-Meters aber basiert. Oberhalb der
+$\qty{e2}{\milli\bar}$ ist dementsprechend keine zuverlässige Druckbestimmung
+mehr möglich.
 
 \subsubsection{Kaltkathoden-Vakuummeter}
 Das Kaltkathoden-Vakuummeter nutzt vorhandene freie Elektronen, welche durch 
@@ -265,10 +281,18 @@ Analog zu dem Kaltkathoden-Vakuummeter funktioniert der Aufbau für das Glühkat
 Vakuummeter. Der wesentliche Unterschied besteht in der beheizten Kathode, die
 durch Glühemission einen konstanten Elektronenstrom für die Ionisation der
 Gasmoleküle liefert. Der Messbereich erstreckt sich von $\qty{e-4}{\milli\bar}$
-bis $\qty{e-12}{\milli\bar}$ \cite{glossar}, was es präziser macht als das
+bis $\qty{e-12}{\milli\bar}$ \cite{glossar}. Damit ist es präziser als das
 Kaltkathoden-Vakuummeter. Jedoch gibt es einen zentralen Nachteil der Glühkathode:
 durch die Hitze kann es zu chemischen Reaktionen kommen, wodurch die Kathode 
 beschädigt oder zerstört werden kann.
+\begin{figure}[H]
+    \centering
+        \centering
+        \includegraphics[width=0.7\textwidth]{Bilder/glühkathode.png}
+        \caption{Aufnahme des Glühkathoden-Vakuummeters. \cite{bayard}}
+    \hfill
+    \label{fig:bayard}
+\end{figure}
 
 \subsection{Fehlerrechnung}
 Die gemessenen Werte unterliegen Messunsicherheiten und werden demnach im
@@ -292,3 +316,25 @@ Um Fehler einzubeziehen, wird die Gauß'sche Fehlerfortpflanzung verwendet:
     \label{eqn:9}
     \increment f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 \cdot \left(\increment x\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 \cdot \left(\increment y\right)^2 + .... + \left(\frac{\partial f}{\partial z}\right)^2 \cdot \left(\increment z\right)^2}
 \end{equation}
+
+\noindent Grundsätzlich ist zwischen statistischen und systematischen Fehlern
+zu unterscheiden. Die statistischen Fehler resultieren aus zufälligen Schwankungen
+der Messwerte und gehen über den Fehler des Mittelwerts sowie die Fehlerfortpflanzung
+in die Berechnung ein. Die systematischen Fehler hingegen werden durch die
+begrenzte Messgenauigkeit der verwendeten Geräte verursacht und verschieben
+den Messwert systematisch in eine Richtung.
+\\ 
+\noindent Im Experiment kommen zwei Typen von Vakuummessgeräten zum Einsatz.
+Für Drücke oberhalb von $\qty{e-3}{\milli\bar}$ wird der kombinierte 
+Piezo/Pirani-Sensor TPG-202 der Firma Pfeiffer Vacuum verwendet. Dessen
+Messgenauigkeit beträgt im Bereich von $\qty{1200}{hPa} bis \qty{10}{hPa}$
+etwa $\qty{0,3}{\%}$, im Bereich von $\qty{10}{hPa}$ bis $\qty{2e-3}{hPa}$ 
+etwa $\qty{10}{\%}$ des Messwertes. Unterhalb von \qty{2e-3}{hPa} kann der
+Messfehler bis auf den Faktor 2 des Messwertes anwachsen. Für Drücke im
+Hochvakuumbereich (unterhalb von $\qty{e-3}{\milli\bar}$) werden zwei PKR-360-Sensoren
+(Pfeiffer Vacuum) mit den zugehörigen Anzeigegeräten TPG-361 verwendet. Diese
+kombinieren ein Pirani- und ein Kaltkathoden-Messprinzip. Laut Hersteller beträgt
+die Messgenauigkeit im Bereich von $\qty{e-8}{hPa}$ bis $\qty{100}{hPa}$ etwa
+$\qty{30}{\%}$ des Messwertes. Diese vergleichsweise hohe systematische Unsicherheit
+ist eine wesentliche Ursache für die Abweichungen zwischen den gemessenen und
+den theoretisch erwarteten Werten des Saugvermögens. \autoref{anleitung12}
