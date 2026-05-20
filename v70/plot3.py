@@ -147,8 +147,8 @@ def linear(x,a,b):
 #sigma_bereich1 = [np.asarray(e[2]).item().s for e in liste[0:150]]
 
 
-def eins(zeit, druck, fehler,pfad,slice,meinTitel):
-    popt, pcov = curve_fit(linear, zeit[slice:], druck[slice:], sigma=fehler[slice:])
+def eins(zeit, druck, fehler,pfad,meinTitel):
+    popt, pcov = curve_fit(linear, zeit[:], druck[:], sigma=fehler[:])
 
     m_fit1 = popt[0]
     m_fehler1 = np.sqrt(pcov[0,0]) # Standardabweichung der Steigung
@@ -157,7 +157,7 @@ def eins(zeit, druck, fehler,pfad,slice,meinTitel):
 
     fig, ax1 = plt.subplots()
     ax1.errorbar(zeit, druck,linestyle='none',errorevery=20, yerr=fehler, fmt='o', markersize=0.4, color='black', linewidth=0.5,capsize=3, label='Messwerte')
-    x = np.linspace(0,210,1000)
+    x = np.linspace(0,150,1000)
     ax1.plot(x,m_fit1 * x + b_fit1,label='Regression')
     ax1.set_xlabel('t / s')
     ax1.set_ylabel('p / mbar')
@@ -171,14 +171,14 @@ def eins(zeit, druck, fehler,pfad,slice,meinTitel):
 # param3 = eins(zeit3,druck3,fehler3,'build/TurbomolekularpumpeLeckrate3.pdf',2,'Leckratenmessung Turbomolekularpumpe p_g = 50.1 mbar')
 # param4 = eins(zeit4,druck4,fehler4,'build/TurbomolekularpumpeLeckrate4.pdf',0,'Leckratenmessung Turbomolekularpumpe p_g = 105 mbar')
 
-param1 = eins(zeit1, druck1, fehler1, 'build/TurbomolekularpumpeLeckrate1.pdf', 13, 
-              r'Leckratenmessung Turbomolekularpumpe $p_g = 5.04 \cdot 10^{-5}$ mbar')
-param2 = eins(zeit2, druck2, fehler2, 'build/TurbomolekularpumpeLeckrate2.pdf', 2,
-              r'Leckratenmessung Turbomolekularpumpe $p_g = 5.696 \cdot 10^{-4}$ mbar')  # 56.96e-5 = 5.696e-4
-param3 = eins(zeit3, druck3, fehler3, 'build/TurbomolekularpumpeLeckrate3.pdf', 2,
-              r'Leckratenmessung Turbomolekularpumpe $p_g = 1.03 \cdot 10^{-4}$ mbar')
-param4 = eins(zeit4, druck4, fehler4, 'build/TurbomolekularpumpeLeckrate4.pdf', 0,
-              r'Leckratenmessung Turbomolekularpumpe $p_g = 1.91 \cdot 10^{-4}$ mbar')
+param1 = eins(zeit1, druck1, fehler1, 'build/TurbomolekularpumpeLeckrate1.pdf', 
+              r'Leckratenmessung Turbomolekularpumpe $p_g = 5 +- 1.5 \cdot 10^{-5}$ mbar')
+param2 = eins(zeit2, druck2, fehler2, 'build/TurbomolekularpumpeLeckrate2.pdf',
+              r'Leckratenmessung Turbomolekularpumpe $p_g = 6.9 +- 2.3 \cdot 10^{-4}$ mbar')  # 56.96e-5 = 5.696e-4
+param3 = eins(zeit3, druck3, fehler3, 'build/TurbomolekularpumpeLeckrate3.pdf',
+              r'Leckratenmessung Turbomolekularpumpe $p_g = 1 +- 0.3 \cdot 10^{-4}$ mbar')
+param4 = eins(zeit4, druck4, fehler4, 'build/TurbomolekularpumpeLeckrate4.pdf',
+              r'Leckratenmessung Turbomolekularpumpe $p_g = 1.9 +- 0.5 \cdot 10^{-4}$ mbar')
 
 ##### Tabellen erstellen 
 
@@ -243,3 +243,7 @@ fig.suptitle('')
 ax.legend()
 ax.grid()
 fig.savefig('build/saugvermögenTurbopumpe.pdf')
+print(5.04*0.3)
+print(5.69*0.3)
+print(1.03*0.3)
+print(1.91*0.3)

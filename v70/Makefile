@@ -7,19 +7,22 @@ build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
 	# and set the matplotlibrc
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
 
-#build/plot2.pdf: plot2.py ../matplotlibrc ../header-matplotlib.tex | build
-#	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot2.py
-#
-#build/plot3.pdf: plot3.py ../matplotlibrc ../header-matplotlib.tex | build
-#	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot3.py
-#
-#build/plot4.pdf: plot4.py ../matplotlibrc ../header-matplotlib.tex | build
-#	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot4.py
-#
-#build/plot5.pdf: plot5.py ../matplotlibrc ../header-matplotlib.tex | build
-#	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot5.py
-# hier weitere Abhängigkeiten für build/v70.pdf deklarieren:
-build/v70.pdf: #build/plot.pdf build/plot2.pdf build/plot3.pdf build/plot4.pdf build/plot5.pdf
+build/plot2.pdf: plot2.py ../matplotlibrc ../header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot2.py
+
+build/plot3.pdf: plot3.py ../matplotlibrc ../header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot3.py
+
+build/plot4.pdf: plot4.py ../matplotlibrc ../header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot4.py
+
+build/plot5.pdf: plot5.py ../matplotlibrc ../header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot5.py
+
+build/plot6.pdf: plot6.py ../matplotlibrc ../header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot6.py
+ hier weitere Abhängigkeiten für build/v70.pdf deklarieren:
+build/v70.pdf: build/plot.pdf build/plot2.pdf build/plot3.pdf build/plot4.pdf build/plot6.pdf build/plot5.pdf
 
 build/v70.pdf: FORCE | build
 	# to find header and bib files in the main directory

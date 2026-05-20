@@ -21,17 +21,17 @@ df2 = pd.read_csv('Daten/DPLR2/TPG_all_data_2026_04_20-PM04_33_53.csv', sep=',')
 df3 = pd.read_csv('Daten/DPLR3/TPG_all_data_2026_04_20-PM04_53_22.csv', sep=',')
 df41 = pd.read_csv('Daten/DPLR41/TPG_all_data_2026_04_20-PM05_02_36.csv', sep=',')
 df42 = pd.read_csv('Daten/DPLR42/TPG_all_data_2026_04_20-PM05_11_52.csv', sep=',')
-df_gesamt = pd.concat([df41['	 TPG202 [mbar]1'], df42['	 TPG202 [mbar]']], axis=1)
-df_gesamt['mittelwert'] = df_gesamt[['	 TPG202 [mbar]1', '	 TPG202 [mbar]']].mean(axis=1)
+df_gesamt = pd.concat([df41['druck'], df42['	 TPG202 [mbar]']], axis=1)
+df_gesamt['mittelwert'] = df_gesamt[['druck', 'druck']].mean(axis=1)
 # Die ersten 5 Zeilen anzeigen
 #print(df.head())
 
 # Zugriff auf eine bestimmte Spalte
-druck1 = df1['    TPG202 [mbar]']
-druck2 = df2['	 TPG202 [mbar]']
-druck3 = df3['	 TPG202 [mbar]']
+druck1 = df1['druck']
+druck2 = df2['druck']
+druck3 = df3['druck']
 druck4 = df_gesamt['mittelwert']
-druck41 = df41['	 TPG202 [mbar]1']
+druck41 = df41['druck']
 druck42 = df42['	 TPG202 [mbar]']
 
 zeit1 = []
