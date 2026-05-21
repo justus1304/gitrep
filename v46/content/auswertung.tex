@@ -1,31 +1,130 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\subsection{Magnetfeldstärke an der Probe}
+\label{sec:1}
+Da für die bestimmung der Effektiven Masse und somit für die Auswertung der Messwerte die Kenntnis der Magnetfeldverteilung entlang der Probe notwendig ist, wurde diese zunächst mit einer Hall-Sonde vermessen. Die Messwerte wurden in \autoref{fig:magnetfeldverteilung} dargestellt und mit einem quadratischen Fit versehen, um die Verteilung zu beschreiben. Die gefundenen Koeffizienten des Fits sind in der Legende der Grafik angegeben. Es ist zu erkennen, dass die Messdaten gut durch den quadratischen Fit beschrieben werden, jedoch wurden die werte bei jewails $\qty{80}{mm}$, sowie $\qty{120}{mm}$ nicht berücksichtigt, da diese offensichtlich Ausreißer darstellen, da das Magnetfeld Dort nahezu Null ist. Die Messwerte sind \autoref{tab:magnetfeldverteilung} zu entnehmen.
+
 
 \begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+    \centering
+    \includegraphics[width=0.8\textwidth]{build/magnetfeldverteilung.png}
+    \caption{Messwerte der Magnetfeldverteilung entlang der Probe mit quadratischem Fit.}
+    \label{fig:magnetfeldverteilung}
 \end{figure}
 
 \begin{table}
-  \centering
-  \caption{Eine Beispieltabelle mit Messdaten.}
-  \label{tab:tabelle}
-  \sisetup{table-format=1.1, per-mode=reciprocal}
-  \begin{tblr}{
-      colspec = {S[table-format=3.0] S[table-format=2.1] S},
-      row{1} = {guard, mode=math},
-      vline{4} = {2}{-}{text=\clap{$\pm$}},
-    }
-    \toprule
-    U \mathbin{/} \unit{\volt} & I \mathbin{/} \unit{\micro\ampere} & \SetCell[c=2]{c} N \mathbin{/} \unit{\per\second} & \\
-    \midrule
-    360 & 0.1 & 98.3 & 0.9 \\
-    400 & 0.2 & 99.8 & 1.0 \\
-    420 & 0.2 & 99.1 & 0.9 \\
-    \bottomrule
-  \end{tblr}
+    \centering
+    \caption{Messwerte der Magnetfeldverteilung entlang der Probe.}
+    \label{tab:magnetfeldverteilung}
+    \begin{tabular}{c|c}
+        Position $x$ (mm) & Magnetfeld $B$ (mT) \\
+        \hline
+        100 & 422\\
+        95 & 402\\
+        90 & 300\\
+        85 & 104\\
+        80 & 24\\
+        105 & 380\\ 
+        110 & 223\\
+        115 & 56\\
+        120 & 13\\
+    \end{tabular}
 \end{table}
 
-Siehe \autoref{fig:plot} und \autoref{tab:tabelle}!
+Der Hochpunkt der Ausgleichsrechnung und damit die maximale Magnetfeldstärke ergibt sich zu. 
+\begin{equation}
+    B_\text{max} = \qty{424+-9}{mT}
+\end{equation}
+
+
+\subsection{Bestimmung der Effektiven Masse}
+Die Bestimmung der Effektiven Masse erfolgt durch die Auswertung der gemessenen Faraday-Rotationswinkel in Abhängigkeit von der Wellenlänge. Hierfür wurden die gemessenen Rotationswinkel von den Frei-Rotationswinkeln subtrahiert, um die Faraday-Rotationswinkel zu erhalten. Anschließend wurden diese gegen das Quadrat der Wellenlänge aufgetragen und mit einem linearen Fit versehen, um die Steigung zu bestimmen. Die Effektive Masse kann dann aus der Steigung des Fits berechnet werden. Es ist zu beachten, dass bei der Auswertung einige Messwerte als Ausreißer identifiziert und nicht berücksichtigt wurden, da sie offensichtlich von den anderen Messwerten abweichen. 
+
+\indent
+
+Die Gemesenen Faradey-Winkel sind \autoref{tab:rotationswinkel1} sowie \autoref{tab:rotationswinkel2} zu entnehmen. Die Rotationswinkel der Zwei Proben sind die halbierten Differenzen der aufgenommenen 
+Winkel bei der jewailigen Wellenlänge, sowie die reinen rotationswinkel die halbierten Differenzen der aufgenommenen Winkel bei der Messung mit der reinen Probe. Die Frei-Rotationswinkel wurden über die differenz der Rotationswinkel der dotierten Proben zu der undotierten Probe bestimmt, nachdem diese durch ihre Dicke geteilt und somit skaliert werden.
+\begin{table}[h]
+    \centering
+    \caption{Spezifikationen der Proben}
+    \label{tab:proben}
+    \begin{tabular}{c|c|c}
+        Probe & Dotierung & Dicke (mm) \\
+        \hline
+        1 & $1.2\cdot10^{18} \text{cm}^{-3}$ & 1.36 \\
+        2 & $2.8\cdot10^{18} \text{cm}^{-3}$ & 1.29 \\
+        3 & undotiert & 5.11 \\
+    \end{tabular}
+\end{table}[h]
+\begin{table}
+    \centering
+    \caption{Gemessene Rotationswinkel sowie freie Rotation für Probe 1(1.2$\cdot$10$^{18}$ cm$^{-3}$ Dotierung).}
+    \label{tab:rotationswinkel1}
+    \begin{tabular}{c|c|c|c}
+        Wellenlänge $\lambda$ (nm) & $\theta_1$ / rad & $\theta_2$ / rad & $\theta_\text{frei}$ / rad \\
+        \hline
+        1,06 &  8,17e-2 & -6,20e-2 &   72,2 \\
+        1,29 &  5,21e-2 &  1,23e-1 &   14,3 \\
+        1,45 &  2,01e-2 &  9,96e-2 &   -4,7 \\
+        1,72 &  2,36e-2 &  9,49e-1 & -168,0 \\ % Ausreißer Filterwechsel
+        1,96 &  5,92e-2 & -8,46e-1 &  209,0 \\ % Ausreißer Filterwechsel
+        2,16 &  6,20e-2 &  4,61e-2 &   36,5 \\
+        2,34 &  6,18e-2 &  3,39e-2 &   38,8 \\
+        2,51 &  6,60e-2 &  2,75e-2 &   43,2 \\
+        2,65 &  5,44e-2 &  4,29e-2 &   31,6 \\
+    \end{tabular}
+    \end{table}
+
+\begin{table}[h]
+    \centering
+    \caption{Gemessene Rotationswinkel sowie freie Rotation für Probe 2.}
+    \label{tab:rotationswinkel2}
+    \begin{tabular}{c|c|c|c}
+        Wellenlänge $\lambda$ (nm) & $\theta_1$ / rad & $\theta_2$ / rad & $\theta_\text{frei}$ / rad \\
+        \hline
+        1.06     & 9.85e-02 & -6.20e-02 & 8.85e+01\\
+        1.29     & 7.71e-02 & 1.23e-01 & 3.58e+01\\
+        1.45     & 7.77e-02 & 9.96e-02 & 4.07e+01\\
+        1.72     & 8.49e-02 & 9.49e-01 & -1.20e+02\\
+        1.96     & 9.96e-02 & -8.46e-01 & 2.43e+02\\
+        2.16     & 1.02e-01 & 4.61e-02 & 7.01e+01\\
+        2.34     & 7.36e-02 & 3.39e-02 & 5.04e+01\\
+        2.51     & 1.56e-01 & 2.75e-02 & 1.15e+02   \\
+        2.65     & 1.18e-01 & 4.29e-02 & 8.29e+01   \\
+    \end{tabular}
+\end{table}
+
+Nun werden die Freien Rotationswinkel gegen das Quadrat der Wellenlänge aufgetragen und mit einem linearen Fit versehen, um die Steigung zu bestimmen.
+in der Gleichung 
+\begin{equation*}
+    \theta_\text{frei} = \frac{e^3}{8\pi^2\epsilon_0 c^3}\frac{N B_\text{max}}{n m^{*2}}\lambda^2
+\end{equation*}
+
+kann der Therm 
+\begin{equation*}
+    a = \frac{e^3}{8\pi^2\epsilon_0 c^3}\frac{N B_\text{max}}{n m^{*2}}
+\end{equation*}
+
+als Steigung der Ausgleichsgeraden identifiziert werden. Durch umstellen Lässt sich dann durch einsetzen der Konstanten in \autoref{eqn:1}, sowie die in\autoref{sec:1} berchnete maximale Magnetfeldstärke am Ort der Probe, auf die Effektive Masse schliesen.
+\begin{equation}
+    \label{eqn:2}
+    m^* = \sqrt{\frac{e^3}{8\pi^2\epsilon_0 c^3}\frac{N B_\text{max}}{n a}}
+\end{equation}
+
+\begin{figure}
+    \centering
+    \caption{Freie Rotationswinkel gegen das Quadrat der Wellenlänge mit linearem Fit.}
+    \includegraphics[width=0.8\textwidth]{build/faraday_rotation.png}
+    \label{fig:faradayrotation}
+\end{figure}
+Es wurde bei der Ersten probe der Erste Messwert, sowie bei beiden Proben der dritte und vierte als Ausreißer nicht in die regression mit einbezogen. Die parameter der Ausgleichsrechnung ergeben sich zu 
+\begin{align*}
+    a_{1.2dot} &= \qty{6.8+-2.4e+12}{rad/m^2} \\
+    a_{2.8dot} &= \qty{6+-5e+12}{rad/m^2}
+\end{align*}
+
+und dadurch wiederum eingesetzt in \autoref{eqn:2} die Effektiven Massen
+\begin{align}
+    m^*_{1.2dot} &= \qty{7.0+-1.2e-32}{kg} \\
+    m^*_{2.8dot} &= \qty{1.2+-0.5e-31}{kg}
+\end{align}
