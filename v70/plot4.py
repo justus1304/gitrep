@@ -269,7 +269,7 @@ def fit(start, ende, label_name):
     return ufloat(m_fit, m_fehler)
 
 # 1. Fit: von Wert 0 bis 12
-ergebnis1 = fit(0, 12, "Bereich 1 (0-12)")
+ergebnis1 = fit(0, 12, "Bereich 1 (0-22)")
 
 # HIER NEU: 2. Fit: von Wert 22 bis zum Ende des Arrays
 ergebnis2 = fit(22, len(zeit), "Bereich 2 (22-Ende)")

@@ -4,16 +4,17 @@
 \subsection{Drehschieberpumpe}
 Die ermittelten Saugvermögen bei der Evakuierungsmethode für die Drehschieberpumpe
 der Firma ILMVAC Typ 300883/AKD16 beliefen sich auf 
-\begin{align}
-    S_\text{eff1}^\text{eva} =& \qty{4.9+-0.5}{m^3/h} = \qty{1.36+-0.14}{\liter\per\second}, \\
-    S_\text{eff2}^\text{eva} =& \qty{1.71+-0.17}{m^3/h} = \qty{0.47+-0.05}{\liter\per\second}, \\
-    S_\text{eff3}^\text{eva} =& \qty{0.70+-0.07}{m^3/h} = \qty{0.19+-0.2}{\liter\per\second}.
-\end{align}
+\begin{align*}
+    S_\text{eff1}^\text{eva} =& \qty{1.36+-0.14}{\liter\per\second}, \\
+    S_\text{eff2}^\text{eva} =& \qty{0.48+-0.05}{\liter\per\second}, \\
+    S_\text{eff3}^\text{eva} =& \qty{0.19+-0.2}{\liter\per\second}.
+\end{align*}
 Dabei ist $S_\text{eff1}^\text{eva}$ das Saugvermögen im Druckbereich von 0 bis 
 $\qty{150}{\milli\bar}$, $S_\text{eff2}^\text{eva}$ in einem Bereich von 150 bis 
 $\qty{290}{\milli\bar}$ und $S_\text{eff3}^\text{eva}$ im Bereich von 290 bis 
 knapp $\qty{290}{\milli\bar}$. Laut Hersteller liegt der Wert des Saugvermögens 
-in einem Bereich von $\qty{4.6}{m^3/h}$ bis $\qty{5.5}{m^3/h}$. Der Wert für 
+in einem Bereich von $\qty{4.6}{m^3/h}$ bis $\qty{5.5}{m^3/h}$ bzw. 
+$\qty{1.28}{\liter\per\second}$ bis $\qty{1.53}{\liter\per\second}$. Der Wert für 
 $S_\text{eff1}^\text{eva}$ liegt exakt in diesem Intervall und stimmt innerhalb
 der Messunsicherheit von $±\qty{0.5}{m^3/h}$ mit der Herstellerangabe überein.
 Dies ist plausibel, da im hohen Druckbereich (Grobvakuum, etwa oberhalb von
@@ -39,11 +40,17 @@ wie in \autoref{fig:10} zu sehen, genau das erwartete Verhalten. Die Herstellera
 beziehen sich auf den optimalen Arbeitsbereich bei Drücken oberhalb von $\qty{1}{mbar}$.
 \vspace{0.5em}
 \\
-Zusätzlich bestätigen die Leckratenmessungen diesen Befund: Bei $\qty{50}{mbar}$
-ergibt sich $S_\text{eff}^\text{leck} = \qty{5.1+-0.5}{m^3/h}$, was in
-Übereinstimmung mit $S_\text{eff1}^\text{eva}$ steht, während bei $\qty{0.5}{mbar}$
-nur noch $\qty{0.68+-0.07}{m^3/h}$ gemessen werden, kompatibel mit 
-$S_\text{eff3}^\text{eva}$. Die beiden unabhängigen Methoden 
+Zusätzlich bestätigen die Leckratenmessungen diesen Befund. Gemessen wurden:
+\begin{align*}
+    S_{\text{eff}, 0.2\,\text{mbar}}^{\text{leck}}  &= \qty{0.48(15)}{\liter\per\second} \\
+    S_{\text{eff}, 6.3\,\text{mbar}}^{\text{leck}}  &= \qty{1.59(50)}{\liter\per\second} \\
+    S_{\text{eff}, 56.4\,\text{mbar}}^{\text{leck}} &= \qty{1.24(39)}{\liter\per\second} \\
+    S_{\text{eff}, 86\,\text{mbar}}^{\text{leck}}   &= \qty{1.53(48)}{\liter\per\second}
+\end{align*}
+Bei $\qty{0.2}{mbar}$ ergibt sich $S_\text{eff}^\text{leck} = \qty{0.48(15)}{\liter\per\second}$, was in
+Übereinstimmung mit $S_\text{eff2}^\text{eva}$ steht, während bei etwa 
+$\qty{56.4}{mbar}$ ein Vermögen von $\qty{1.24+-0.39}{m^3/h}$ gemessen werden, 
+kompatibel mit $S_\text{eff1}^\text{eva}$. Die beiden unabhängigen Methoden 
 liefern also konsistente Ergebnisse.
 \noindent Insgesamt sind die ermittelten Werte physikalisch legitim und zeigen,
 dass das Saugvermögen einer Drehschieberpumpe kein individueller Materialparameter
@@ -51,12 +58,17 @@ ist, sondern stark vom Druckbereich abhängt.
 
 \subsection{Turbomolekularpumpe}
 Für die Turbomolekularpumpe SST81 der Firma ILMVAC (betrieben bei $\qty{1350}{\hertz}$)
-ergaben sich das effektive Saugvermögen bei der Evakuierungsmessung als
-\begin{equation}
-    S_\text{eff}^\text{Eva} = \qty{15.4+-1.6}{\liter\per\second}.
-\end{equation}
+ergab sich das effektive Saugvermögen bei der Evakuierungsmessung als
+\begin{equation*}
+    S_{\text{eff}, 1}^\text{Eva} = \qty{15.4(16)}{\liter\per\second}
+\end{equation*}
+in dem Bereich der ersten 22 Sekunden und 
+\begin{equation*}
+    S_{\text{eff}, 2}^\text{Eva} = \qty{0.41(5)}{\liter\per\second}.
+\end{equation*}
+für den späteren Verlauf.
 Laut Hersteller sollte ein Vermögen von $\qty{77}{\liter\per\second}$ erreicht 
-werden können, solang Stickstoff mit der Pumpe gefördert werden soll. In diesem 
+werden können, solange Stickstoff mit der Pumpe gefördert werden soll. In diesem 
 Experiment wird mit Luft gearbeitet, diese besteht nur etwa zu 80 \% aus Stickstoff, 
 ein exakter Vergleich ist also ohne Weiteres nicht möglich. In Anbetracht dessen 
 liegt die Abweichung bei mindestens 80 \%. Diese signifikante Abweichung resultiert 
@@ -74,10 +86,10 @@ Dadurch erklärt sich ein Großteil der gemessenen Abweichung, ohne dass ein Def
 der Pumpe oder ein Messfehler angenommen werden muss (vergleiche \autoref{fig:7}).
 \vspace{0.5em}
 \\
-Bessere Ergebnisse liefern die Messungen mittels Leckratenmethode, welche bei 
-einem Druck von $p_g = \qty{56.96e-5}{\milli\bar}$ bereits ein Saugvermögen 
+Etwas bessere Ergebnisse liefern die Messungen mittels Leckratenmethode, welche bei 
+einem Druck von $p_g = \qty{56.96e-5}{\milli\bar}$ fast ein Saugvermögen 
 von mehr als $\qty{40}{\liter\per\second}$ ergaben. Insgesamt liegt die Abweichung 
-noch bei knapp 44.1 bis 63.4\%. Ein Großteil der Abweichungen ist auf die
+noch bei knapp 50.9 bis 73.9\%. Ein Großteil der Abweichungen ist auf die
 Messgenauigkeit der verwendeten PKR-360 Sensoren zurückzuführen, die vom Hersteller 
 im Bereich unterhalb von $\qty{100}{\milli\bar}$ mit $30\,\%$ vom Messwert
 angegeben ist.

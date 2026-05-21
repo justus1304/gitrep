@@ -27,7 +27,7 @@ Es ergeben sich aus den Regressionen die steigungsparameter der Ausgleichsgerade
   a_3 =& \qty{-0.00587 +- 0.00002}{}
 \end{align}
 
-Bei Multiplikation mit dem Volumen $\qty{34 \pm 3.4}{\litre}$, ergeben sich die 
+\noindent Bei Multiplikation mit dem Volumen $\qty{34 \pm 3.4}{\litre}$, ergeben sich die 
 Saugvermögen in den jeweiligen Bereichen zu
 \begin{align}
   S_\text{eff1}^\text{eva} &= \qty{1.36+-0.14}{L/s} \\
@@ -179,8 +179,10 @@ auf
     S_{\text{eff}, 56.4\,\text{mbar}}^{\text{leck}} &= \qty{1.24(39)}{\liter\per\second} \\
     S_{\text{eff}, 86\,\text{mbar}}^{\text{leck}}   &= \qty{1.53(48)}{\liter\per\second}
 \end{align}
-Die Ergebnisse Für zu hoch angenommene Gleichgewichtsdrücke durch eine fehlerhafte Durchführung des Versuchs wurden 
-mit dem Jewailigen Faktor Skaliert, um den Der Gleichgewichtsdruck vom realen abgewichen ist. beispielsweise mit $\frac{0.5}{0.2}$ für den ersten Wert.
+Die Ergebnisse für zu hoch angenommene Gleichgewichtsdrücke durch eine fehlerhafte
+Durchführung des Versuchs wurden mit dem jeweiligen Faktor skaliert, um den
+der Gleichgewichtsdruck vom Realen abgewichen ist (beispielsweise mit 
+$\frac{0.5}{0.2}$ für den ersten Wert)
 
 
 \begin{table}[H]
@@ -337,7 +339,7 @@ Zeit $t$ / s & Druck 4.1 / mbar & Druck 4.2 / mbar & Mittelwert $\bar{p}$ / mbar
 \bottomrule
 \end{tabular}
 \end{table}
-Die Messungen wurden nur zwei mal durchgeführt und diese Werte gemittelt. Die dritte Messung erfolgte von Hand um die Zeitskalierung zu überprüfen. 
+\noindent Die Messungen wurden nur zwei mal durchgeführt und diese Werte gemittelt. Die dritte Messung erfolgte von Hand um die Zeitskalierung zu überprüfen. 
 Das Ergebnis sind fehlerhafte zeitschritte des Geräts, wesshalb alle Werte ein bischen gestreckt werden. 
 
 
@@ -518,7 +520,7 @@ Analog zur Bestimmung des Saugvermögens der Drehschieberpumpe wird hier
 das Saugvermögen der Turbopumpe durch die Evakuierungskurve bestimmt.
 %Die berechnung erfolgt durch \autoref{eqn:100} mit den gemesenen druckwerten $p_\text{E} = \qty{3.52(1)e-6}{\milli\bar}$ und $p_\text{0} = \qty{5e(1.5)-3}{\milli\bar}$, sowie dem 
 Das Volumen der Apperatur liegt bei $V = \qty{33+-3.3}{\liter}$.
-\noindent Die gemittelten Messwerte, sowie deren Fehler sind \autoref{tab:100}
+\noindent Die gemittelten Messwerte, sowie deren Fehler sind \autoref{tab:drücke_einzel}
 zu entnehmen. Dabei ergibt sich der Fehler aus dem Fehler des Mittelwerts 
 und dem systematischen Fehler. Die geplotteten Messwerte inklusive Ausgleichsgeraden
 befinden sich in \autoref{fig:100}. Dabei wurden für die Ausgleichsrechnung die
@@ -552,7 +554,7 @@ Danach nähert sich der Druck dem Enddruck an und es wird kaum noch gepumpt.
   m_1 &= \qty{-46.5(14)e-2}{\per\second}, \\
   m_2 &= \qty{-1.23(4)e-2}{\per\second}.
 \end{align}
-Daraus ergeben sich nach Gleichung~\eqref{eq:saugvermoegen} die effektiven Saugvermögen zu
+Daraus ergeben sich nach Gleichung~\eqref{eqn:4} die effektiven Saugvermögen zu
 \begin{align}
   S_{\text{eff}, 1}^\text{Eva} &= \qty{15.4(16)}{\liter\per\second}, \\
   S_{\text{eff}, 2}^\text{Eva} &= \qty{0.41(5)}{\liter\per\second}.
@@ -583,7 +585,7 @@ Daraus ergeben sich nach Gleichung~\eqref{eq:saugvermoegen} die effektiven Saugv
 %\end{table}
 \begin{table}[htbp]
 \centering
-\caption{Einzelne Druckmesswerte mit ihren geräte-spezifischen systematischen Fehlern.}
+\caption{Einzelne Druckmesswerte mit ihren Geräte-spezifischen systematischen Fehlern.}
 \label{tab:drücke_einzel}
 \small
 \begin{tabular}{rccccc}
@@ -627,9 +629,9 @@ $t$ / s & $\bar{p}$ / mbar & $s_{\bar{p},\text{stat}}$ / mbar & $\Delta\bar{p}_{
 \end{tabular}
 \end{table}
 
-Es ist zu erwähnen, dass der Statistische Fehler des Mittelwertes nochmal eine ganze Größenordnung kleiner ist, als der 
-gesammte Fehler. Somit wirkt dieser vernachlässigbar klein in den 
-Gesammten fehler ein. 
+\noindent Es ist anzumerken, dass der statistische Fehler des Mittelwertes 
+eine ganze Größenordnung kleiner ist, als der gesammte Fehler. Somit wirkt dieser
+vernachlässigbar klein in den gesamten Fehler ein. 
 
 \subsection{Engstelle und Leitwert}
 Als letztes wird zwischen den Beiden Pirani- Druckmessgeräten eine 
@@ -701,14 +703,14 @@ der Drehschieberpumpe und in \autoref{fig:104} jene der Turbomolekularpumpe.
   \centering
   \caption{Saugvermögen der Drehschieberpumpe in Abhängigkeit des Drucks.}
   \label{fig:103}
-\includegraphics{saugvermoegen_drehschieberpumpe_final.pdf}
+\includegraphics[width=0.8\textwidth]{saugvermoegen_drehschieberpumpe_final.pdf}
 \end{figure}
 
 \begin{figure}[h]
   \centering
   \caption{Saugvermögen der Turbomolekularpumpe in Abhängigkeit des Drucks.}
   \label{fig:104}
-\includegraphics{saugvermoegen_turbopumpe_final.pdf}
+\includegraphics[width=0.8\textwidth]{saugvermoegen_turbopumpe_final.pdf}
 \end{figure}
 
 \section*{Fehlerrechnung}
@@ -755,7 +757,7 @@ Einsetzen in die Fehlerfortpflanzung liefert den vollständigen Fehler des Logar
 \begin{equation}
     \Delta y = \sqrt{ \left( \frac{\Delta p}{p - p_{\text{E}}} \right)^2 + \left( \frac{(p - p_0) \, \Delta p_{\text{E}}}{(p - p_{\text{E}})(p_0 - p_{\text{E}})} \right)^2 + \left( \frac{\Delta p_0}{p_0 - p_{\text{E}}} \right)^2 }.
 \end{equation}
-Bei der Bildung von Mittelwerten kommt zum statistischen Fehler des Mittelwerts $\delta x$ noch der systematische Fehler $\delta y$ hinzu[cite: 885]. Der Gesamtfehler ergibt sich somit zu
+Bei der Bildung von Mittelwerten kommt zum statistischen Fehler des Mittelwerts $\delta x$ noch der systematische Fehler $\delta y$ hinzu. Der Gesamtfehler ergibt sich somit zu
 \begin{equation}
     \delta y_{\text{ges}} = \sqrt{(\delta x)^2 + (\delta y)^2}.
 \end{equation}
