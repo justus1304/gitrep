@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
 from uncertainties import ufloat, unumpy
-import uncertainties as unc
+import uncertainities as unc
 # ## Invertierender Linearverstärker a)
 # # Gemeinsame Eingangsspannung
 # U_e = 1.05
@@ -196,16 +196,15 @@ x_log = np.log10(f_Hz_ui)
 y_log = np.log10(unumpy.nominal_values(V_ui))
 
 params, covariance_matrix = np.polyfit(x_log, y_log, deg=1, cov=True)
-m_ufloat, n_ufloat = unc.correlated_values(params, covariance_matrix)
 m_ui = params[0]  # Steigung (erwartet: -1)
 n_ui = params[1]  # Achsenabschnitt
 uncertainties = np.sqrt(np.diag(covariance_matrix))
 
 # Ausgabe
 print("FIT im doppelt-logarithmischen Diagramm:")
-print(f"(UI) Steigung m = {m_ufloat.n:.4f} ± {m_ufloat.s:.4f}")
-print(f"(UI) Achsenabschnitt n = {n_ufloat.n:.4f} ± {n_ufloat.s:.4f}")
-print(f"(UI) Proportionalität: V = {10**n_ufloat.n:.4f} * f^{m_ufloat.n:.4f}")
+print(f"(UI) Steigung m = {m_ui:.4f} ± {uncertainties[0]:.4f}")
+print(f"(UI) Achsenabschnitt n = {n_ui:.4f} ± {uncertainties[1]:.4f}")
+print(f"(UI) Proportionalität: V = {10**n_ui:.4f} * f^{m_ui:.4f}")
 
 # Fehlerbalken
 V_ui_nom_all = unumpy.nominal_values(V_ui)

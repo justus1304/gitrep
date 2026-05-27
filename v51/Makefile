@@ -16,7 +16,7 @@ build/L3_f_fb.pdf: L3_f_fb.py ../matplotlibrc ../header-matplotlib.tex | build
 build/L4_f_fb.pdf: L4_f_fb.py ../matplotlibrc ../header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python L4_f_fb.py
 
-
+#-pvc 
 # hier weitere Abhängigkeiten für build/v51.pdf deklarieren:
 build/v51.pdf: build/plot.pdf
 build/v51.pdf: build/L1_f_fb.pdf
@@ -30,7 +30,6 @@ build/v51.pdf: FORCE | build
 	BIBINPUTS=..: \
 	max_print_line=1048576 \
 	latexmk \
-	  -pvc \
 	  --lualatex \
 	  --output-directory=build \
 	  --interaction=nonstopmode \

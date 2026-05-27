@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
 from uncertainties import ufloat, unumpy
-
+import uncertainties as unc
 ## Zweite Linearverstärkermessung
 f_kHz, U_out_values = np.genfromtxt("Daten/L2.txt", unpack=True)
 f_Hz = f_kHz * 1000
@@ -24,10 +24,11 @@ def gerade(x, m, b):
     return m * x + b
 
 params, covariance_matrix = curve_fit(gerade, x, y)
+m_ufloat, b_ufloat = unc.correlated_values(params, covariance_matrix)
 m,b = params
-dm, db = np.sqrt(np.diag(covariance_matrix))
-m_ufloat = ufloat(m, dm)
-b_ufloat = ufloat(b, db)
+#dm, db = np.sqrt(np.diag(covariance_matrix))
+#m_ufloat = ufloat(m, dm)
+#b_ufloat = ufloat(b, db)
 
 # Grenzfrequenz
 V_grenz = V0 / np.sqrt(2)
