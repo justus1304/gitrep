@@ -13,19 +13,16 @@ was für eine präzise Messung spricht.
     \label{tab:d1}
     \sisetup{table-format=1.2}
     \begin{tblr}{
-        colspec = {S[table-format=1.0] S[table-format=1.4] S[table-format=2.4] S[table-format=2.2]},
+        colspec = {c c c c},
         row{1} = {guard, mode=math},
-        column{2} = {halign=c},  % Zentriere Spalte 2
-        column{3} = {halign=c},  % Zentriere Spalte 3
-        column{4} = {halign=c},  % Zentriere Spalte 4
     }
     \toprule
     \text{Messung} & V_{exp} & V_{theo} & \text{Prozentuale Abweichung} \\
     \midrule
-    1 & 1.4857 & 1.5   & 0.96 \\
-    2 & 9.7143 & 10.0  & 2.94 \\
-    3 & 4.9841 & 4.7   & 6.04 \\
-    4 & 3.4286 & 3.133 & 9.44 \\  
+    1 & \(1.49 \pm 0.03\) & 1.5   & 0.96 \\
+    2 & \(10.10 \pm 0.20\) & 10.0  & 0.99 \\
+    3 & \(4.98 \pm 0.10\) & 4.7   & 6.04 \\
+    4 & \(3.42 \pm 0.10\) & 3.13 & 9.44 \\  
     \bottomrule
     \end{tblr}
 \end{table}
@@ -36,11 +33,39 @@ Aspekt der Beschaffenheit des Operationsverstärkers zurückgeführt werden. Da 
 sich nicht um einen Idealen Verstärker handelt, ist etwa die Leerlaufverstärkung 
 endlich und die Bandbreite begrenzt, was zur Folge haben kann, dass systematische 
 Fehler entstehen. Möglicherweise haben nicht vollständig kompensierte Eingänge 
-die Messungen in Form von Restverzerrungen beeinflusst. Messung 1 zeigt, dass
+die Messungen in Form von Restverzerrungen beeinflusst. Messungen 1 und 2 zeigen, dass
 unter geeigneten Bedingungen durchaus sehr präzise Ergebnisse zu erwarten sind,
 darauffolgende Messungen nehmen an Genauigkeit ab.
 \vspace{0.5cm}
 \\
+\noindent Für die Grenzfrequenzen und die Bandbreite ergeben sich die Werte aus 
+\autoref{tab:d2}. Es ist auffällig, dass die Fehler grundsätzlich sehr groß sind, 
+was größtenteils auf die unzureichende Menge an Messwerten zurückzuführen ist.
+Es wäre hilfreich gewesen, mehr Messwerte in der Nähe der Grenzfrequenzen zu haben,
+um eine genauere Bestimmung zu ermöglichen. In den 4 Durchführungen sind für die 
+Regression und Identifikation der Grenzfrequenzen sowie Bandbreiten nur 3 bis 4 
+Messwerte verfügbar, das resultiert in einem empfindlichen Fit gegenüber 
+Messungenauigkeiten. Dennoch zeigen die ermittelten Werte deutlich, dass die
+Verstärkungsabnahme mit steigender Frequenz einsetzt, was den Erwartungen 
+entspricht.
+\begin{table}[H]
+    \centering
+    \caption{Berechnete Ergebnisse für die Grenzfrequenzen und die Bandbreite.}
+    \label{tab:d2}
+    \begin{tblr}{
+        colspec = {c c c},
+        row{1} = {guard, mode=math},
+    }
+    \toprule
+    \text{Messung} & f \mathbin{/} \unit{\kilo\hertz} & B \mathbin{/} \unit{\kilo\hertz} \\
+    \midrule
+    1 & \(116.11 \pm 27.50\) & \(172.50 \pm 40.64\) \\
+    2 & \(10.45 \pm 9.36\)  & \(105.51 \pm 94.49\) \\
+    3 & \(44.15 \pm 24.39\) & \(220.04 \pm 121.39\) \\
+    4 & \(77.63 \pm 76.81\) & \(266.15 \pm 262.93\) \\  
+    \bottomrule
+    \end{tblr}
+\end{table}
 \noindent Die Untersuchung der Phasenbeziehungen kann als erfolgreich gewertet 
 werden, auch wenn die Dekandenmessungen bessere Werte hätten liefern können.
 Für eine einfachere Identifikation des Graphenverlaufs wären andere 
@@ -49,7 +74,7 @@ Durchgängen fehlt es für höhere Frequenzen an Werten für die Phase der Signa
 Trotzdem verändert sich die Phase am Ausgangsoszilloskop (ausgehend von 180°
 oder -180°) um 90°. In den Plots der Messwerte ist zu erkennen, das höhere
 Frequenzen zunehmend zu einer Phasenveränderung führen. Somit ergibt sich der
-erwartete Verlauf eines Tiefpasses. 
+erwartete Verlauf eines Tiefpasses.
 
 
 \subsection{Der Umkehr-Integrator-und Differenzierer}

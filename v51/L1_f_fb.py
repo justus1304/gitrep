@@ -41,7 +41,19 @@ print(f'Erste Bandbreite ist B1 = {B:.2f} kHz')
 
 # Plot
 fig, ax1 = plt.subplots(1, 1, layout="constrained")
-ax1.loglog(f_Hz, unumpy.nominal_values(V), "k.", label="Messwerte")
+#ax1.loglog(f_Hz, unumpy.nominal_values(V), "k.", label="Messwerte")
+
+# Fehlerbalken
+V_nom_all = unumpy.nominal_values(V)
+V_err_all = unumpy.std_devs(V)
+ax1.errorbar(
+    f_Hz,
+    V_nom_all,
+    yerr=V_err_all,
+    fmt='k.',
+    capsize=3,
+    label='Messwerte'
+)
 
 # Plateau
 f_plot_Hz = np.array([min(f_Hz), max(f_Hz)])
@@ -55,10 +67,13 @@ V_fit = 10 ** (m * np.log10(f_fit_kHz) + b)
 # V_fit = 10 ** (m * np.log10(f_fit_Hz) + b)
 ax1.loglog(f_fit_Hz, V_fit, 'r-', label='Abfall (Gerade)', linewidth=2)
 
+ax1.set_xscale('log')
+ax1.set_yscale('log')
+
 ax1.set_title("Messung 1")
 ax1.set_xlabel("f / Hz")
 ax1.set_ylabel("Verstärkung V")
 ax1.grid(True, which='both', linestyle='--', alpha=0.5)
 ax1.legend()
 
-fig.savefig("build/L1_f.pdf")
+fig.savefig("build/L1_f_fb.pdf")

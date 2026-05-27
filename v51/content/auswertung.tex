@@ -24,7 +24,7 @@ sehen.
 \begin{figure}[H]
     \centering
         \centering
-        \includegraphics[width=0.75\textwidth]{build/L1.pdf}
+        \includegraphics[width=0.75\textwidth]{build/L1_f_fb.pdf}
         \caption{Frequenzgang aus der ersten Messung bei $R_1 = \qty{10}{\kilo\ohm}$
         und $R_2 = \qty{15}{\kilo\ohm}$ des invertierenden-gegengekoppelten-
         Linearverstärkers.}
@@ -34,7 +34,7 @@ sehen.
 \begin{figure}[H]
     \centering
         \centering
-        \includegraphics[width=0.75\textwidth]{build/L2.pdf}
+        \includegraphics[width=0.75\textwidth]{build/L2_f_fb.pdf}
         \caption{Frequenzgang aus der zweiten Messung bei $R_1 = \qty{1}{\kilo\ohm}$
         und $R_2 = \qty{10}{\kilo\ohm}$ des invertierenden-gegengekoppelten-
         Linearverstärkers.}
@@ -44,7 +44,7 @@ sehen.
 \begin{figure}[H]
     \centering
         \centering
-        \includegraphics[width=0.75\textwidth]{build/L3.pdf}
+        \includegraphics[width=0.75\textwidth]{build/L3_f_fb.pdf}
         \caption{Frequenzgang aus der dritten Messung bei $R_1 = \qty{10}{\kilo\ohm}$
         und $R_2 = \qty{47}{\kilo\ohm}$ des invertierenden-gegengekoppelten-
         Linearverstärkers.}
@@ -54,36 +54,54 @@ sehen.
 \begin{figure}[H]
     \centering
         \centering
-        \includegraphics[width=0.75\textwidth]{build/L4.pdf}
+        \includegraphics[width=0.75\textwidth]{build/L4_f_fb.pdf}
         \caption{Frequenzgang aus der vierten Messung bei $R_1 = \qty{15}{\kilo\ohm}$
         und $R_2 = \qty{47}{\kilo\ohm}$ des invertierenden-gegengekoppelten-
         Linearverstärkers.}
     \hfill
     \label{fig:pl4}
 \end{figure}
-\noindent Es ergeben sich die Werte aus \autoref{tab:5}. Für einen Vergleich 
+\noindent Es ergeben sich die Werte aus \autoref{tab:ergebnisse_lin}. Für einen Vergleich 
 der bestimmten Werte durch das Experiment wird zusätzlich die theoretische 
 Verstärkung durch den Quotienten der Widerstände berechnet.
+% \begin{table}[H]
+%     \centering
+%     \caption{Experimentell ermittelte Ergebnisse.}
+%     \label{tab:ergebnisse_lin}
+%     \sisetup{table-format=1.2}
+%     \begin{tblr}{
+%         colspec = {S[table-format=1.0] S[table-format=2.2] S[table-format=2.4] S[table-format=3.2] S[table-format=3.2]},
+%         row{1} = {guard, mode=math},
+%         column{2} = {halign=c},  % Zentriere Spalte 2
+%         column{3} = {halign=c},  % Zentriere Spalte 3
+%         column{4} = {halign=c},  % Zentriere Spalte 4
+%         column{5} = {halign=c},  % Zentriere Spalte 5
+%     }
+%     \toprule
+%     \text{Messung} & V_{exp} & V_{theo} & f \mathbin{/} \unit{\kilo\hertz} & B \mathbin{/} \unit{\kilo\hertz}\\
+%     \midrule
+%     1 & 1.49 \pm 0.03  & 1.5   & 116.11 \pm 27.50 & 172.50 \pm 40.64 \\
+%     2 & 10.10 \pm 0.20 & 10.0  & 10.45 \pm 9.36 & 105.51 \pm 94.49 \\
+%     3 & 4.98 \pm 0.10  & 4.7   & 44.15 \pm 24.39 & 220.04 \pm 121.39 \\
+%     4 & 3.42 \pm 0.10  & 3.133 & 77.63 \pm 76.81 & 266.15 \pm 262.93 \\  
+%     \bottomrule
+%     \end{tblr}
+% \end{table}
 \begin{table}[H]
     \centering
     \caption{Experimentell ermittelte Ergebnisse.}
-    \label{tab:5}
-    \sisetup{table-format=1.2}
+    \label{tab:ergebnisse_lin}
     \begin{tblr}{
-        colspec = {S[table-format=1.0] S[table-format=1.4] S[table-format=2.4] S[table-format=3.2] S[table-format=3.2]},
+        colspec = {c c c c c},
         row{1} = {guard, mode=math},
-        column{2} = {halign=c},  % Zentriere Spalte 2
-        column{3} = {halign=c},  % Zentriere Spalte 3
-        column{4} = {halign=c},  % Zentriere Spalte 4
-        column{5} = {halign=c},  % Zentriere Spalte 5
     }
     \toprule
-    \text{Messung} & V_{exp} & V_{theo} & f \mathbin{/} \unit{\kilo\hertz} & B \mathbin{/} \unit{\kilo\hertz}\\
+    \text{Messung} & V_{exp} & V_{\text{theo}} & f \mathbin{/} \unit{\kilo\hertz} & B \mathbin{/} \unit{\kilo\hertz} \\
     \midrule
-    1 & 1.4857 & 1.5   & 116.11 & 172.50 \\
-    2 & 9.7143 & 10.0  & 10.45 & 101.49 \\
-    3 & 4.9841 & 4.7   & 44.15 & 220.04 \\
-    4 & 3.4286 & 3.133 & 77.63 & 266.15 \\  
+    1 & \(1.49 \pm 0.03\) & 1.5   & \(116.11 \pm 27.50\) & \(172.50 \pm 40.64\) \\
+    2 & \(10.10 \pm 0.20\) & 10.0  & \(10.45 \pm 9.36\)  & \(105.51 \pm 94.49\) \\
+    3 & \(4.98 \pm 0.10\)  & 4.7   & \(44.15 \pm 24.39\) & \(220.04 \pm 121.39\) \\
+    4 & \(3.42 \pm 0.10\)  & 3.133 & \(77.63 \pm 76.81\) & \(266.15 \pm 262.93\) \\  
     \bottomrule
     \end{tblr}
 \end{table}
@@ -97,23 +115,23 @@ Verstärkung durch den Quotienten der Widerstände berechnet.
     \label{tab:1}
     \sisetup{table-format=1.2}
     \begin{tblr}{
-        colspec = {S[table-format=3.0] S S[table-format=3.2]},
+        colspec = {c c c},
         row{1} = {guard, mode=math},
     }
     \toprule
     f \mathbin{/} \unit{\kilo\hertz} & U_{out} \mathbin{/} \unit{\volt} & \varphi \mathbin{/} \si{\degree}\\
     \midrule
-    0.3 & 1.56 & 180 \\
-    0.7 & 1.56 & 180 \\
-    1   & 1.56 & 180 \\
-    3   & 1.56 & 180 \\
-    7   & 1.56 & 180 \\
-    10  & 1.56 & 180 \\
-    30  & 1.56 & 180 \\
-    70  & 1.56 & -120 \\
-    100 & 1.30 & -100 \\
-    300 & 0.53 &     \\
-    700 & 0.28 &     \\
+    0.3 & \(1.56 \pm 0.01\) & \(180 \pm 2\) \\
+    0.7 & \(1.56 \pm 0.01\) & \(180 \pm 2\) \\
+    1   & \(1.56 \pm 0.01\) & \(180 \pm 2\) \\
+    3   & \(1.56 \pm 0.01\) & \(180 \pm 2\) \\
+    7   & \(1.56 \pm 0.01\) & \(180 \pm 2\) \\
+    10  & \(1.56 \pm 0.01\) & \(180 \pm 2\) \\
+    30  & \(1.56 \pm 0.01\) & \(180 \pm 10\) \\
+    70  & \(1.56 \pm 0.01\) & \( -120 \pm 10\) \\
+    100 & \(1.30 \pm 0.01\) & \( -100 \pm 10\) \\
+    300 & \(0.53 \pm 0.01\) &     \\
+    700 & \(0.28 \pm 0.01\) &     \\
     \bottomrule
     \end{tblr}
 \end{minipage}
@@ -124,21 +142,21 @@ Verstärkung durch den Quotienten der Widerstände berechnet.
     \label{tab:2}
     \sisetup{table-format=1.2}
     \begin{tblr}{
-        colspec = {S[table-format=3.0] S S[table-format=3.2]},
+        colspec = {c c c},
         row{1} = {guard, mode=math},
     }
     \toprule
     f \mathbin{/} \unit{\kilo\hertz} & U_{out} \mathbin{/} \unit{\volt} & \varphi \mathbin{/} \si{\degree}\\
     \midrule
-    0.3 & 10.2 & 180 \\
-    0.7 & 10.2 & 180 \\
-    1   & 10.2 & 180 \\
-    3   & 10.2 & 175 \\
-    7   & 10.2 & 170 \\
-    10  & 10.2 & 160 \\
-    30  & 1.56 & -90 \\
-    70  & 1.56 & \\
-    100 & 1.30 & \\
+    0.3 & \(10.2 \pm 0.2\) & \(180 \pm 2\) \\
+    0.7 & \(10.2 \pm 0.2\) & \(180 \pm 2\) \\
+    1   & \(10.2 \pm 0.2\) & \(180 \pm 2\) \\
+    3   & \(10.2 \pm 0.2\) & \(175 \pm 2\) \\
+    7   & \(10.2 \pm 0.2\) & \(170 \pm 10\) \\
+    10  & \(10.2 \pm 0.2\) & \(160 \pm 10\) \\
+    30  & \(1.56 \pm 0.2\) & \( -90 \pm 10\) \\
+    70  & \(1.56 \pm 0.2\) & \\
+    100 & \(1.30 \pm 0.2\) & \\
     \bottomrule
     \end{tblr}
 \end{minipage}
@@ -152,21 +170,21 @@ Verstärkung durch den Quotienten der Widerstände berechnet.
     \label{tab:3}
     \sisetup{table-format=1.2}
     \begin{tblr}{
-        colspec = {S[table-format=3.0] S S[table-format=3.2]},
+        colspec = {c c c},
         row{1} = {guard, mode=math},
     }
     \toprule
     f \mathbin{/} \unit{\kilo\hertz} & U_{out} \mathbin{/} \unit{\volt} & \varphi \mathbin{/} \si{\degree}\\
     \midrule
-    0.3 & 5.3 & -180 \\
-    0.7 & 5.3 & -180 \\
-    1   & 5.2 & -180 \\
-    3   & 5.2 & -178 \\
-    7   & 5.2 & -177 \\
-    10  & 5.2 & -175 \\
-    30  & 4.8 & -130 \\
-    70  & 2.8 & -100 \\
-    100 & 2.0 & -90 \\
+    0.3 & \(5.3 \pm 0.1\) & \( -180 \pm 3\) \\
+    0.7 & \(5.3 \pm 0.1\) & \( -180 \pm 3\) \\
+    1   & \(5.2 \pm 0.1\) & \( -180 \pm 3\) \\
+    3   & \(5.2 \pm 0.1\) & \( -178 \pm 3\) \\
+    7   & \(5.2 \pm 0.1\) & \( -177 \pm 3\) \\
+    10  & \(5.2 \pm 0.1\) & \( -175 \pm 3\) \\
+    30  & \(4.8 \pm 0.1\) & \( -130 \pm 10\) \\
+    70  & \(2.8 \pm 0.1\) & \( -100 \pm 10\) \\
+    100 & \(2.0 \pm 0.1\) & \( -90 \pm 10\) \\
     \bottomrule
     \end{tblr}
 \end{minipage}
@@ -177,31 +195,32 @@ Verstärkung durch den Quotienten der Widerstände berechnet.
     \label{tab:4}
     \sisetup{table-format=1.2}
     \begin{tblr}{
-        colspec = {S[table-format=3.0] S S[table-format=3.2]},
+        colspec = {c c c},
         row{1} = {guard, mode=math},
     }
     \toprule
     f \mathbin{/} \unit{\kilo\hertz} & U_{out} \mathbin{/} \unit{\volt} & \varphi \mathbin{/} \si{\degree}\\
     \midrule
-    0.3 & 3.6 & -178 \\
-    0.7 & 3.6 & -178 \\
-    1   & 3.6 & -178 \\
-    3   & 3.6 & -178 \\
-    7   & 3.6 & -176 \\
-    10  & 3.6 & -180 \\
-    30  & 3.8 & -170 \\
-    70  & 2.8 & -120 \\
-    100 & 2.2 &  \\
+    0.3 & \(3.6 \pm 0.2\) & \( -178 \pm 3\) \\
+    0.7 & \(3.6 \pm 0.2\) & \( -178 \pm 3\) \\
+    1   & \(3.6 \pm 0.2\) & \( -178 \pm 3\) \\
+    3   & \(3.6 \pm 0.2\) & \( -178 \pm 3\) \\
+    7   & \(3.6 \pm 0.2\) & \( -176 \pm 3\) \\
+    10  & \(3.6 \pm 0.2\) & \( -180 \pm 10\) \\
+    30  & \(3.8 \pm 0.2\) & \( -170 \pm 10\) \\
+    70  & \(2.8 \pm 0.2\) & \( -120 \pm 10\) \\
+    100 & \(2.2 \pm 0.2\) & \\
     \bottomrule
     \end{tblr}
 \end{minipage}
 
 
 
-\subsection{Ermittlung der Grundschaltung durch die Phase}
+\subsection{Überprüfung der Phase am Linearverstärker}
 \label{sec:a2}
 Es wird die Phasenbeziehung in Abhängigkeit der Frequenz aufgetragen, die 
-Ergebnisse sind den \autoref{fig:pl5} bis \autoref{fig:pl8} zu sehen. 
+Ergebnisse sind den \autoref{fig:pl5} bis \autoref{fig:pl8} zu sehen. Die dazugehörigen 
+Messwerte befinden sich ebenfalls in den \autoref{tab:1} bis \autoref{tab:4}. 
 Im Wesentlichen verändert sich die Phase um $\qty{90}{\degree}$, ausgehend 
 von der invertierenden Grundschaltung von $\qty{180}{\degree}$ oder 
 $\qty{-180}{\degree}$. Die charakteristischen Verläufe zeigen das klassische
@@ -256,7 +275,7 @@ gemessen. Der Theorie zufolge sollte sich für die Verstärkung eine Proportiona
 der Steigung von $1/f$ gelten. Werden die Frequenzen gegen die zugehörige 
 Verstärkung nun in einem (doppel)logarithmischen Diagramm aufgetragen, sollte 
 sich eine Steigung von $m = -1$ ergeben. Die Messwerte zur Umkehr-Integrator-
-Schaltung befinden sich in \autoref{tab:4}. Die Ausgleichsgerade ist in 
+Schaltung befinden sich in \autoref{tab:mw_ui}. Die Ausgleichsgerade ist in 
 \autoref{fig:pl9} zu sehen. Die Steigung beträgt
 \begin{align*}
     m &= -0.9193 \pm 0.0206.
@@ -278,25 +297,25 @@ Sättigung treibt.
 \begin{table}[H]
     \centering
     \captionof{table}{Messwerte für den Umkehr-Integrator.}
-    \label{tab:4}
+    \label{tab:mw_ui}
     \sisetup{table-format=1.2}
     \begin{tblr}{
-        colspec = {S[table-format=3.0] S[table-format=3.2]},
+        colspec = {c c},
         row{1} = {guard, mode=math},
     }
     \toprule
     f \mathbin{/} \unit{\kilo\hertz} & U_{out} \mathbin{/} \unit{\volt} \\
     \midrule
-    0.1 & 12.5 \\
-    0.2 & 7.6  \\
-    0.4 & 4.4  \\
-    0.8 & 2.6  \\
-    1.0 & 1.7  \\
-    2.0 & 0.9  \\
-    4.0 & 0.45  \\
-    8.0 & 0.24  \\
-    10.0 & 0.19  \\
-    20.0 & 0.12  \\
+    0.1 & \(12.5 \pm 0.02\) \\
+    0.2 & \(7.6 \pm 0.02\) \\
+    0.4 & \(4.4 \pm 0.02\) \\
+    0.8 & \(2.6 \pm 0.02\) \\
+    1.0 & \(1.7 \pm 0.02\) \\
+    2.0 & \(0.9 \pm 0.02\) \\
+    4.0 & \(0.45 \pm 0.02\) \\
+    8.0 & \(0.24 \pm 0.02\) \\
+    10.0 & \(0.19 \pm 0.02\) \\
+    20.0 & \(0.12 \pm 0.02\) \\
     \bottomrule
     \end{tblr}
 \end{table}
@@ -359,27 +378,27 @@ von
     \label{tab:5}
     \sisetup{table-format=1.2}
     \begin{tblr}{
-        colspec = {S[table-format=3.0] S[table-format=3.2]},
+        colspec = {c c},
         row{1} = {guard, mode=math},
     }
     \toprule
     f \mathbin{/} \unit{\kilo\hertz} & U_{out} \mathbin{/} \unit{\milli\volt} \\
     \midrule
-    0.1 & 120 \\
-    0.2 & 170 \\
-    0.4 & 290 \\
-    0.8 & 520 \\
-    1.0 & 640 \\
-    1.2 & 760 \\
-    1.4 & 870 \\
-    1.6 & 1000 \\
-    1.8 & 1310 \\
-    2.0 & 1170 \\
-    2.2 & 1770 \\
+    0.1 & \(120 \pm 0.02\) \\
+    0.2 & \(170 \pm 0.02\) \\
+    0.4 & \(290 \pm 0.02\) \\
+    0.8 & \(520 \pm 0.02\) \\
+    1.0 & \(640 \pm 0.02\) \\
+    1.2 & \(760 \pm 0.02\) \\
+    1.4 & \(870 \pm 0.02\) \\
+    1.6 & \(1000 \pm 0.02\) \\
+    1.8 & \(1310 \pm 0.02\) \\
+    2.0 & \(1170 \pm 0.02\) \\
+    2.2 & \(1770 \pm 0.02\) \\
     \bottomrule
     \end{tblr}
 \end{table}
-Die Ausgangssignale für die drei unterschiedlichen Spannungen (Sinus, Rechteck 
+\noindent Die Ausgangssignale für die drei unterschiedlichen Spannungen (Sinus, Rechteck 
 und Dreieck) befinden sich in \autoref{fig:ss4}, \autoref{fig:ss5} und 
 \autoref{fig:ss6}.
 \begin{figure}[H]

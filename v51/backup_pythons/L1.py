@@ -12,12 +12,14 @@ V = U_out/U_e
 V0 = np.mean(V[:8])
 print('Erste Leerlaufverstärkung ist V1 = ', V0)
 steigung, achsenabschnitt = np.polyfit(np.log10(f_Hz[-4:]), np.log10(V[-4:]), 1)
+
 # Grenzfrequenz berechnen
 V_grenz = V0 / np.sqrt(2)
 log_V_grenz = np.log10(V_grenz)
 log_f_g = (log_V_grenz - achsenabschnitt) / steigung
 f_g_Hz = 10 ** log_f_g / 1000
 print('Erste Grenzfrequenz ist f1_g = ', f_g_Hz)
+
 # Bandbreitenprodukt
 B = V0 * f_g_Hz
 print('Erste Bandbreite ist B1 = ', B)
