@@ -1,13 +1,13 @@
 \section{Theorie}
 \label{sec:Theorie}
-\section{Theoretische Grundlagen}
+
 
 Der Operationsverstärker, kurz OPV, ist ein gleichspannungsgekoppelter Differenzverstärker. Er kann je nach anschluss in vielen bereichen verwendung finden. So kann er als Integriere oder Differenziere 
 einer Spannung genutzt werden. Daher Erhält der OPV auch seinen namen. Er kann jedoch auch zur reinen Verstärkung eines Eingangssignals genutzt werden, oder als eine Art schaltvorrichting in form von 
 einer Schmidt-Trigger Schaltung. 
 
 \subsection{Idealer und realer Operationsverstärker}
-In der Theorie wird oft mit dem Modell des idealen OPV gearbeitet. Dieser zeichnet sich durch eine unendliche Leerlaufverstärkung ($V \to \infty$), 
+In der Theorie wird oft mit dem Modell des idealen OPV gearbeitet \cite{tietzeschenk}. Dieser zeichnet sich durch eine unendliche Leerlaufverstärkung ($V \to \infty$), 
 einen unendlichen eingangswiderstand ($R_e \to \infty$) und einen Ausgangswiderstand von Null ($R_a = 0$) aus.
 Reale Operationsverstärker, wie sie in diesem Versuch genutzt werden, Haben aufgrund Technischer limitierungen Grenzen, so Kann nur ein Sehr großer Wiederstand gewählt werden, sodass fast 
 kein Strom in den Verstärker fließt. Des weiteren weisen Transistoren physikalische grenzen auf, was zu eier frequenzabhängigen obergrenze für die verstärkug führt. Ab überschreiten dieser Grenze 
@@ -16,10 +16,10 @@ keine Differenz im  Eingang gibt.
 
 
 \subsection{Rückkopplung und Gegenkopplung}
-Die Eigenschaften einer OPV-Schaltung hängen von der Art der Rückführung ab:
+Die Eigenschaften einer OPV-Schaltung hängen maßgeblich von der Art der Rückführung des Ausgangssignals ab \cite{demtroeder2}:
 \begin{itemize}
-    \item \textbf{Gegenkopplung:} Ein Teil des Ausgangssignals wird auf den invertierenden Eingang ($-$) zurückgeführt. Dies führt zu einer Stabilisierung und erlaubt den Betrieb als linearer Verstärker.
-    \item \textbf{Mitkopplung:} Die Rückführung erfolgt auf den nicht-invertierenden Eingang ($+$). Dies führt dazu, dass der OPV nur zwei stabile Zustände (Sättigung) einnimmt. So kann der OPV als schalter genutzt werden.
+    \item \textbf{Gegenkopplung:} Ein Teil des Ausgangssignals wird auf den invertierenden Eingang ($-$) zurückgeführt. Dies führt zu einer Stabilisierung des Systems, verringert die Gesamtverstärkung und erlaubt den präzisen Betrieb als linearer Verstärker.
+    \item \textbf{Mitkopplung:} Die Rückführung erfolgt auf den nicht-invertierenden Eingang ($+$). Dies führt zu einer Instabilität, wodurch der OPV die Differenzspannung maximal verstärkt und nur zwei stabile Zustände (die positive oder negative Sättigung) einnimmt. In dieser Konfiguration lässt sich der OPV als Schalter bzw. Komparator nutzen \cite[siehe auch][]{tietzeschenk}.
 \end{itemize}
 
 \subsection{Mathematische Beschreibung verschiedenen Schaltungen}
