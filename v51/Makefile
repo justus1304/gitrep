@@ -16,6 +16,7 @@ build/v51.pdf: FORCE | build
 	BIBINPUTS=..: \
 	max_print_line=1048576 \
 	latexmk \
+	  -pvc \
 	  --lualatex \
 	  --output-directory=build \
 	  --interaction=nonstopmode \

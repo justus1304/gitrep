@@ -1,0 +1,101 @@
+\section{Theorie}
+\label{sec:Theorie}
+
+Der Operationsverstärker, kurz OPV, ist ein gleichspannungsgekoppelter Differenzverstärker. Er kann je nach Anschluss in vielen Bereichen Verwendung finden. So kann er als Integrierer oder Differenzierer einer Spannung genutzt werden. Daher erhält der OPV auch seinen Namen. Er kann jedoch auch zur reinen Verstärkung eines Eingangssignals genutzt werden oder als eine Art Schaltvorrichtung in Form einer Schmitt-Trigger-Schaltung. 
+
+\subsection{Idealer und realer Operationsverstärker}
+In der Theorie wird oft mit dem Modell des idealen OPV gearbeitet \cite{tietzeschenk}. Dieser zeichnet sich durch eine unendliche Leerlaufverstärkung ($V \to \infty$), einen unendlichen Eingangswiderstand ($R_e \to \infty$) und einen Ausgangswiderstand von Null ($R_a = 0$) aus.
+
+Reale Operationsverstärker, wie sie in diesem Versuch genutzt werden, haben aufgrund technischer Limitierungen Grenzen. So kann nur ein sehr großer Widerstand gewählt werden, sodass fast kein Strom in den Verstärker fließt. Des Weiteren weisen Transistoren physikalische Grenzen auf, was zu einer frequenzabhängigen Obergrenze für die Verstärkung führt. Ab Überschreiten dieser Grenze können die Transistoren nicht mehr schnell genug schalten und funktionieren nicht mehr ordnungsgemäß. Des Weiteren kann es zu einer Offsetspannung kommen, wenn eine Ausgangsspannung anliegt, obwohl keine Differenz am Eingang vorliegt.
+
+\subsection{Rückkopplung und Gegenkopplung}
+Die Eigenschaften einer OPV-Schaltung hängen maßgeblich von der Art der Rückführung des Ausgangssignals ab :
+\begin{itemize}
+    \item \textbf{Gegenkopplung:} Ein Teil des Ausgangssignals wird auf den invertierenden Eingang ($-$) zurückgeführt. Dies führt zu einer Stabilisierung des Systems, verringert die Gesamtverstärkung und erlaubt den präzisen Betrieb als linearer Verstärker.
+    \item \textbf{Mitkopplung:} Die Rückführung erfolgt auf den nicht-invertierenden Eingang ($+$). Dies führt zu einer Instabilität, wodurch der OPV die Differenzspannung maximal verstärkt und nur zwei stabile Zustände (die positive oder negative Sättigung) einnimmt. In dieser Konfiguration lässt sich der OPV als Schalter bzw. Komparator nutzen \cite[siehe auch][]{tietzeschenk}.
+\end{itemize}
+
+\subsection{Mathematische Beschreibung und Herleitung der Grundschaltungen}
+ 
+Bei den folgenden Herleitungen werden die Eigenschaften des idealen Operationsverstärkers vorausgesetzt. Da kein Strom in die Eingänge des OPV fließt ($R_e \to \infty$), gilt für die Ströme am invertierenden Knoten nach der Kirchhoffschen Knotenregel \cite{demtroeder2}:
+\begin{equation}
+    I_1 + I_2 = 0 \implies I_1 = -I_2
+\end{equation}
+Zudem sorgt die unendliche Leerlaufverstärkung bei einer Gegenkopplung dafür, dass die Spannungsdifferenz zwischen den beiden Eingängen gegen Null geht ($U_D = 0$). Da der nicht-invertierende Eingang ($+$) auf Masse liegt, befindet sich der invertierende Eingang ($-$) auf einem \textit{virtuellen Nullpunkt} ($U_- = 0\,\text{V}$).
+
+\subsubsection{Invertierender Linearverstärker}
+Für den invertierenden Linearverstärker liegt am Eingang der Widerstand $R_1$ und im Rückkopplungszweig der Widerstand $R_2$. 
+
+Der Strom $I_1$ durch den Eingangswiderstand ergibt sich aus der Spannungsdifferenz zwischen der Eingangsspannung $U_e$ und dem Potenzial des virtuellen Nullpunkts $U_-$:
+\begin{equation*}
+    I_1 = \frac{U_e - U_-}{R_1} = \frac{U_e}{R_1}
+\end{equation*}
+Analog gilt für den Strom $I_2$ durch den Rückkopplungswiderstand $R_2$ mit der Ausgangsspannung $U_a$:
+\begin{equation*}
+    I_2 = \frac{U_a - U_-}{R_2} = \frac{U_a}{R_2}
+\end{equation*}
+Setzt man diese Ströme in die Knotenregel $I_1 = -I_2$ ein, folgt:
+\begin{equation*}
+    \frac{U_e}{R_1} = -\frac{U_a}{R_2}
+\end{equation*}
+Durch Umstellen nach dem Verhältnis von Ausgangs- zu Eingangsspannung erhält man den Verstärkungsfaktor $v$:
+\begin{equation}
+    v = \frac{U_a}{U_e} = -\frac{R_2}{R_1}
+\end{equation}
+
+\subsubsection{Umkehr-Integrator}
+Beim Integrator wird der Rückkopplungswiderstand durch einen Kondensator mit der Kapazität $C$ ersetzt. Für den Strom $I_1$ durch den Eingangswiderstand gilt weiterhin:
+\begin{equation*}
+    I_1(t) = \frac{U_e(t)}{R}
+\end{equation*}
+Der Strom durch einen Kondensator ist proportional zur zeitlichen Änderung der an ihm anliegenden Spannung $U_C(t) = U_-(t) - U_a(t) = -U_a(t)$:
+\begin{equation*}
+    I_2(t) = C \cdot \frac{d U_C(t)}{dt} = -C \cdot \frac{d U_a(t)}{dt}
+\end{equation*}
+Nach der Knotenregel ($I_1 = -I_2$) ergibt sich die Differentialgleichung:
+\begin{equation*}
+    \frac{U_e(t)}{R} = C \cdot \frac{d U_a(t)}{dt} \implies \frac{d U_a(t)}{dt} = -\frac{1}{RC} U_e(t)
+\end{equation*}
+Durch Integration nach der Zeit über das Intervall $[0, t]$ erhält man die Ausgangsspannung des Umkehr-Integrators:
+\begin{equation}
+    U_a(t) = -\frac{1}{RC} \int_{0}^{t} U_e(t') \, dt'
+\end{equation}
+Betrachtet man das Verhalten im Frequenzraum für eine harmonische Wechselspannung $U(t) = U_0 \cdot e^{i\omega t}$, so führt die Integration auf einen Faktor $\frac{1}{i\omega}$ \cite{tietzeschenk}. Für das Amplitudenverhältnis ergibt sich folglich eine Antiproportionalität zur Kreisfrequenz bzw. Frequenz $f$:
+\begin{equation}
+    \frac{U_a}{U_e} \propto \frac{1}{f}
+\end{equation}
+
+\subsubsection{Invertierender Differenzierer}
+Beim Differenzierer wird die Kapazität $C$ an den Eingang und der Widerstand $R$ in den Rückkopplungszweig gesetzt. Der Strom am Eingang durch den Kondensator lautet somit:
+\begin{equation*}
+    I_1(t) = C \cdot \frac{d U_e(t)}{dt}
+\end{equation*}
+Für den Strom im Rückkopplungszweig gilt:
+\begin{equation*}
+    I_2(t) = \frac{U_a(t)}{R}
+\end{equation*}
+Gleichsetzen laut Knotenregel ($I_1 = -I_2$) liefert:
+\begin{equation*}
+    C \cdot \frac{d U_e(t)}{dt} = -\frac{U_a(t)}{R}
+\end{equation*}
+Durch Multiplikation mit $-R$ erhält man die finale Gleichung für die Ausgangsspannung des Differenzierers:
+\begin{equation}
+    U_a(t) = -R \cdot C \cdot \frac{d U_e(t)}{dt}
+\end{equation}
+Da die zeitliche Ableitung im Frequenzraum für eine harmonische Schwingung zu einem Faktor $i\omega$ führt, wächst die Ausgangsamplitude linear mit der Frequenz. Das Amplitudenverhältnis ist somit direkt proportional zur Frequenz $f$:
+\begin{equation}
+    \frac{U_a}{U_e} \propto f
+\end{equation}
+
+\subsubsection{Nicht-invertierender Schmitt-Trigger}
+Durch die Mitkopplung über einen Spannungsteiler aus den Widerständen $R_1$ und $R_2$ wird ein Teil der Ausgangsspannung auf den nicht-invertierenden Eingang ($+$) zurückgeführt. Da sich der OPV immer in der positiven oder negativen Sättigung befindet, nimmt die Ausgangsspannung den Wert der Betriebsspannung $\pm U_S$ an. 
+
+Der Zustand schaltet genau dann um, wenn das Potenzial am nicht-invertierenden Eingang $U_+$ den Wert des invertierenden Eingangs (hier $U_- = 0\,\text{V}$) kreuzt. Über das Prinzip des Spannungsteilers lässt sich das Potenzial ausdrücken als:
+\begin{equation}
+    U_+ = U_e + (U_a - U_e) \cdot \frac{R_1}{R_1 + R_2}
+\end{equation}
+Setzt man die Bedingung für das Umschalten ($U_+ = 0$) an und substituiert $U_a$ durch die Sättigungsspannung $\pm U_S$, erhält man durch Umstellen nach der Eingangsspannung die Schaltschwellen bzw. Grenzspannungen $U_{\text{kipp}}$:
+\begin{equation}
+    U_{\text{kipp}} = \pm U_S \cdot \frac{R_1}{R_1 + R_2}
+\end{equation}
+Diese Schwellen bestimmen die Breite der Hysteresekurve und verhindern ein unerwünschtes Hin- und Herschalten bei verrauschten Signalen.
