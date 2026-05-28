@@ -39,15 +39,12 @@ darauffolgende Messungen nehmen an Genauigkeit ab.
 \vspace{0.5cm}
 \\
 \noindent Für die Grenzfrequenzen und die Bandbreite ergeben sich die Werte aus 
-\autoref{tab:d2}. Es ist auffällig, dass die Fehler grundsätzlich sehr groß sind, 
-was größtenteils auf die unzureichende Menge an Messwerten zurückzuführen ist.
-Es wäre hilfreich gewesen, mehr Messwerte in der Nähe der Grenzfrequenzen zu haben,
-um eine genauere Bestimmung zu ermöglichen. In den 4 Durchführungen sind für die 
-Regression und Identifikation der Grenzfrequenzen sowie Bandbreiten nur 3 bis 4 
-Messwerte verfügbar, das resultiert in einem empfindlichen Fit gegenüber 
-Messungenauigkeiten. Dennoch zeigen die ermittelten Werte deutlich, dass die
-Verstärkungsabnahme mit steigender Frequenz einsetzt, was den Erwartungen 
-entspricht.
+\autoref{tab:d2}. Die Unsicherheiten liegen mit maximal 30.28 \% (Messung 2) im
+akzeptablen Bereich für dieses Experiment, wobei die größeren Fehler auf die
+geringe Anzahl an Messpunkten im Abfallbereich (nur 3 bis 4 Werte) zurückzuführen
+sind. Eine höhere Messpunktdichte nahe der Grenzfrequenz würde den Fit stabilisieren
+und die Fehler reduzieren. Dennoch zeigen die ermittelten Werte deutlich, dass die
+Verstärkungsabnahme mit steigender Frequenz einsetzt, was den Erwartungen entspricht.
 \begin{table}[H]
     \centering
     \caption{Berechnete Ergebnisse für die Grenzfrequenzen und die Bandbreite.}
@@ -59,10 +56,10 @@ entspricht.
     \toprule
     \text{Messung} & f \mathbin{/} \unit{\kilo\hertz} & B \mathbin{/} \unit{\kilo\hertz} \\
     \midrule
-    1 & \(116.11 \pm 27.50\) & \(172.50 \pm 40.64\) \\
-    2 & \(10.45 \pm 9.36\)  & \(105.51 \pm 94.49\) \\
-    3 & \(44.15 \pm 24.39\) & \(220.04 \pm 121.39\) \\
-    4 & \(77.63 \pm 76.81\) & \(266.15 \pm 262.93\) \\  
+    1 & \(116.11 \pm 4.96\) & \(172.50 \pm 6.04\) \\
+    2 & \(10.45 \pm 3.17\)  & \(105.51 \pm 31.95\) \\
+    3 & \(44.15 \pm 2.85\)  & \(220.04 \pm 12.85\) \\
+    4 & \(77.63 \pm 9.00\)  & \(266.15 \pm 27.03\) \\  
     \bottomrule
     \end{tblr}
 \end{table}

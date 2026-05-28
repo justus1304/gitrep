@@ -8,22 +8,22 @@ Der Aufbau der Schaltungen erfolgt auf einer Steckplatine (Breadboard), wobei de
      \begin{subfigure}[b]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{Bilder/1000040074.jpg}
-         \caption{Digitales Speicheroszilloskop}
+         \caption{Digitales Speicheroszilloskop mit Sinusssignal. (Eigenaufnahme)}
          \label{fig:101}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{Bilder/1000040084.jpg}
-         \caption{Aufbau des invertierenden Linearverstärkers}
+         \caption{Aufbau des invertierenden Linearverstärkers. (Eigenaufnahme)}
          \label{fig:100}
      \end{subfigure}
      \caption{Messplatz und beispielhafter Schaltungsaufbau.}
 \end{figure}
 
 \subsection{Invertierender Linearverstärker}
-
-In \autoref{fig:102} ist der Schaltplan für den invertierenden Linearverstärker zu sehen. Danach wird die Schaltung aufgebaut und es wird mit vier unterschiedlichen Widerstandsverhältnissen, also vier Verstärkungsgraden,
+\label{sec:linearverstärker}
+In \autoref{fig:102} ist der Schaltplan für den invertierenden Linearverstärker zu sehen. Danach wird die Schaltung aufgebaut und es wird mit den vier unterschiedlichen Widerstandsverhältnissen
 \begin{align}
     \frac{R_2}{R_1} &= 1{,}5 &
     \frac{R_2}{R_1} &= 10 &
@@ -41,9 +41,7 @@ sowie einer Eingangsamplitude von $\qty{1.05}{\volt}$ die Frequenzabhängigkeit 
 
 \subsection{Umkehr-Integrator und invertierender Differenzierer}
 Für den Integrierer und Differenzierer wird bis auf einen Unterschied das Schaltbild aus \autoref{fig:102} verwendet. Beim Integrierer wird der Widerstand $R_2$ durch eine Kapazität $C$ ersetzt. Beim Differenzierer wird the Widerstand $R_1$ durch die Kapazität ersetzt. Hierbei soll die Funktion der Schaltung als Integrierer bzw. Differenzierer verifiziert werden. Dazu werden als Signalspannungen jeweils eine Dreiecks-, Rechtecks- und Sinusspannung angelegt und das Ausgangssignal auf dem Oszilloskop exportiert. 
-
 Die Messungen werden bei einer Eingangsspannung von $\qty{1.05}{\volt}$ sowie einer Frequenz von $f = \qty{1e6}{Hz}$ aufgenommen.
-
 Die Schaltungen für den Integrierer sowie den Differenzierer sind in \autoref{fig:105} zu sehen.
 
 \begin{figure}[H]
@@ -66,10 +64,16 @@ Die Schaltungen für den Integrierer sowie den Differenzierer sind in \autoref{f
 \end{figure}
 
 \subsection{Nicht-invertierender Schmitt-Trigger}
-Es soll die Hysteresekurve der nicht-invertierenden Schmitt-Trigger-Schaltung aufgenommen werden. Dazu wird die Schaltung aufgebaut und anschließend die Eingangsspannung so lange von Null an ins Positive variiert, bis die Ausgangsspannung in die Sättigung fällt, also die obere Kippspannung erreicht wurde. Analog wird für die negative Kippspannung verfahren. 
-
-Daraus lässt sich die experimentelle Hysteresekurve mit positiver und negativer Kippspannung konstruieren. Die theoretischen Grenzspannungen lassen sich über das Widerstandsverhältnis gemäß der Formel $U_{\text{kipp}} = \pm U_S \cdot \frac{R_1}{R_1+R_2}$ bestimmen (die explizite Berechnung und der Vergleich mit den Messwerten erfolgt im entsprechenden Kapitel der Auswertung).
-
+Es soll die Hysteresekurve der nicht-invertierenden Schmitt-Trigger-Schaltung
+aufgenommen werden. Dazu wird die Schaltung gemäß \autoref{fig:schmitt_schaltung}
+aufgebaut und anschließend die Eingangsspannung so lange von Null an ins Positive
+variiert, bis die Ausgangsspannung in die Sättigung fällt, also die obere 
+Kippspannung erreicht wurde. Analog wird für die negative Kippspannung verfahren. 
+Daraus lässt sich die experimentelle Hysteresekurve mit positiver und negativer
+Kippspannung konstruieren. Die theoretischen Grenzspannungen lassen sich über das
+Widerstandsverhältnis gemäß der Formel $U_{\text{kipp}} = \pm U_S \cdot \frac{R_1}{R_1+R_2}$ 
+bestimmen (die explizite Berechnung und der Vergleich mit den Messwerten erfolgt
+in \autoref{sec:a1}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{Bilder/Schmidt.png}

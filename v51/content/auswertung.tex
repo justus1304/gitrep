@@ -63,30 +63,8 @@ sehen.
 \end{figure}
 \noindent Es ergeben sich die Werte aus \autoref{tab:ergebnisse_lin}. Für einen Vergleich 
 der bestimmten Werte durch das Experiment wird zusätzlich die theoretische 
-Verstärkung durch den Quotienten der Widerstände berechnet.
-% \begin{table}[H]
-%     \centering
-%     \caption{Experimentell ermittelte Ergebnisse.}
-%     \label{tab:ergebnisse_lin}
-%     \sisetup{table-format=1.2}
-%     \begin{tblr}{
-%         colspec = {S[table-format=1.0] S[table-format=2.2] S[table-format=2.4] S[table-format=3.2] S[table-format=3.2]},
-%         row{1} = {guard, mode=math},
-%         column{2} = {halign=c},  % Zentriere Spalte 2
-%         column{3} = {halign=c},  % Zentriere Spalte 3
-%         column{4} = {halign=c},  % Zentriere Spalte 4
-%         column{5} = {halign=c},  % Zentriere Spalte 5
-%     }
-%     \toprule
-%     \text{Messung} & V_{exp} & V_{theo} & f \mathbin{/} \unit{\kilo\hertz} & B \mathbin{/} \unit{\kilo\hertz}\\
-%     \midrule
-%     1 & 1.49 \pm 0.03  & 1.5   & 116.11 \pm 27.50 & 172.50 \pm 40.64 \\
-%     2 & 10.10 \pm 0.20 & 10.0  & 10.45 \pm 9.36 & 105.51 \pm 94.49 \\
-%     3 & 4.98 \pm 0.10  & 4.7   & 44.15 \pm 24.39 & 220.04 \pm 121.39 \\
-%     4 & 3.42 \pm 0.10  & 3.133 & 77.63 \pm 76.81 & 266.15 \pm 262.93 \\  
-%     \bottomrule
-%     \end{tblr}
-% \end{table}
+Verstärkung durch den Quotienten der Widerstände berechnet (Siehe
+\autoref{sec:linearverstärker}).
 \begin{table}[H]
     \centering
     \caption{Experimentell ermittelte Ergebnisse.}
@@ -98,10 +76,10 @@ Verstärkung durch den Quotienten der Widerstände berechnet.
     \toprule
     \text{Messung} & V_{exp} & V_{\text{theo}} & f \mathbin{/} \unit{\kilo\hertz} & B \mathbin{/} \unit{\kilo\hertz} \\
     \midrule
-    1 & \(1.49 \pm 0.03\) & 1.5   & \(116.11 \pm 27.50\) & \(172.50 \pm 40.64\) \\
-    2 & \(10.10 \pm 0.20\) & 10.0  & \(10.45 \pm 9.36\)  & \(105.51 \pm 94.49\) \\
-    3 & \(4.98 \pm 0.10\)  & 4.7   & \(44.15 \pm 24.39\) & \(220.04 \pm 121.39\) \\
-    4 & \(3.42 \pm 0.10\)  & 3.133 & \(77.63 \pm 76.81\) & \(266.15 \pm 262.93\) \\  
+    1 & \(1.49 \pm 0.03\) & 1.5    & \(116.11 \pm 4.96\) & \(172.50 \pm 6.04\) \\
+    2 & \(10.10 \pm 0.20\) & 10.0  & \(10.45 \pm 3.17\)  & \(105.51 \pm 31.95\) \\
+    3 & \(4.98 \pm 0.10\)  & 4.7   & \(44.15 \pm 2.85\)  & \(220.04 \pm 12.85\) \\
+    4 & \(3.42 \pm 0.10\)  & 3.133 & \(77.63 \pm 9.00\)  & \(266.15 \pm 27.03\) \\  
     \bottomrule
     \end{tblr}
 \end{table}
@@ -271,7 +249,7 @@ Verhalten eines Tiefpasses.
 \subsection{Proportionalitätsprüfung am Umkehr-Integrator}
 \label{sec:a3}
 Für den Umkehrintegrator werden zu Frequenzen am Eingang die Ausgangssignale 
-gemessen. Der Theorie zufolge sollte sich für die Verstärkung eine Proportionalität 
+gemessen. \autoref{sec:integrator} zufolge sollte sich für die Verstärkung eine Proportionalität 
 der Steigung von $1/f$ gelten. Werden die Frequenzen gegen die zugehörige 
 Verstärkung nun in einem (doppel)logarithmischen Diagramm aufgetragen, sollte 
 sich eine Steigung von $m = -1$ ergeben. Die Messwerte zur Umkehr-Integrator-
@@ -355,11 +333,11 @@ durch den Integrator erzeugt werden.
 \label{sec:a4}
 Analog zu \autoref{sec:a3} soll für den Umkehr-Differenzierer verfahren werden.
 Für diesen gilt im Gegensatz zum Integrator eine Proportionalität von $f$ 
-zu der Verstärkung. Das entspricht einer Steigung von $m=1$, wenn die Verstärkung 
-$V$ gegen die Frequenz $f$ in einem (doppel)logarithmischen Diagramm aufgetragen 
-wird. Die Messwerte für diesen Teil befinden sich in \autoref{tab:5} und die 
-Ausgleichsgerade in \autoref{fig:pl10}. Für die Steigung ergibt sich ein Wert 
-von 
+zu der Verstärkung (Siehe \autoref{sec:differenzierer}). Das entspricht einer 
+Steigung von $m=1$, wenn die Verstärkung $V$ gegen die Frequenz $f$ in einem
+(doppel)logarithmischen Diagramm aufgetragen wird. Die Messwerte für diesen Teil
+befinden sich in \autoref{tab:5} und die Ausgleichsgerade in \autoref{fig:pl10}.
+Für die Steigung ergibt sich ein Wert von 
 \begin{align*}
     m = 0.8414 \pm 0.0428.
 \end{align*}
@@ -433,9 +411,9 @@ Für den nicht-invertierenden-Schmitt-Trigger werden $R_1 = \qty{10}{\kilo\ohm}$
 und $R_2 = \qty{100}{\kilo\ohm}$ bei einer Ausgangsspannung von $U_S = \pm
 \qty{15}{\volt}$ genutzt. Weiter wird von dem Generator ein Sinussignal bei
 einer Frequenz von $\qty{100}{\hertz}$ ausgegeben. 
-Die obere bzw. untere Kippspannung berechnet sich zu
+Die obere bzw. untere Kippspannung berechnet sich mittels \autoref{eqn:kipp} zu
 \begin{equation*}
-    U_{\text{kipp}} = U_S \cdot \frac{R_1}{R_1 + R_2} = \qty{\pm 1,364}{\volt}.
+    U_{\text{kipp}} = \qty{\pm 1,364}{\volt}.
 \end{equation*}
 Die gesamte Hysteresebreite (Differenz zwischen oberer und unterer Kippspannung)
 beträgt damit
