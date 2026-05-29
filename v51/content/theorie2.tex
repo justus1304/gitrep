@@ -20,7 +20,7 @@ Bei den folgenden Herleitungen werden die Eigenschaften des idealen Operationsve
 \begin{equation}
     I_1 + I_2 = 0 \implies I_1 = -I_2
 \end{equation}
-Zudem sorgt die unendliche Leerlaufverstärkung bei einer Gegenkopplung dafür, dass die Spannungsdifferenz zwischen den beiden Eingängen gegen Null geht ($U_D = 0$). Da der nicht-invertierende Eingang ($+$) auf Masse liegt, befindet sich der invertierende Eingang ($-$) auf einem \textit{virtuellen Nullpunkt} ($U_- = 0\,\text{V}$).
+Zudem sorgt die unendliche Leerlaufverstärkung bei einer Gegenkopplung dafür, dass die Spannungsdifferenz zwischen den beiden Eingängen gegen Null geht ($U_D = 0$). Da der nicht-invertierende Eingang ($+$) auf Masse liegt, stellt sich der invertierende Eingang ($-$) auf einem virtuellen Nullpunkt ($U_- = 0\,\text{V}$).
 
 \subsubsection{Invertierender Linearverstärker}
 Für den invertierenden Linearverstärker liegt am Eingang der Widerstand $R_1$ und im Rückkopplungszweig der Widerstand $R_2$. 
@@ -40,6 +40,9 @@ Durch Umstellen nach dem Verhältnis von Ausgangs- zu Eingangsspannung ergibt si
 \begin{equation}
     v = \frac{U_a}{U_e} = -\frac{R_2}{R_1}
 \end{equation}
+
+Als Zusammenhang der Ausgangsspannung $U_a = \frac{U_e}{\sqrt{2}}$ vor Frequenzabfall und der Grenzfrequenz lässt sich  
+das Bandbreitenprodukt $V_0 \cdot f_g$ bestimmen, wobei $V_0$ die Verstärkung bei niedrigen Frequenzen ist und $f_g$ die Grenzfrequenz.
 
 \subsubsection{Umkehr-Integrator}
 \label{sec:integrator}
@@ -61,7 +64,7 @@ Durch Integration nach der Zeit über das Intervall $[0, t]$ ergibt sich die Aus
 \end{equation}
 Wird das Verhalten im Frequenzraum für eine harmonische Wechselspannung $U(t) = U_0 \cdot e^{i\omega t}$ betrachtet, so führt die Integration auf einen Faktor $\frac{1}{i\omega}$ \cite{tietzeschenk}. Für das Amplitudenverhältnis ergibt sich folglich eine Antiproportionalität zur Kreisfrequenz bzw. Frequenz $f$:
 \begin{equation}
-    \frac{U_a}{U_e} \propto \frac{1}{f}0
+    \frac{U_a}{U_e} \propto \frac{1}{f}
 \end{equation}
 
 \subsubsection{Invertierender Differenzierer}
@@ -82,18 +85,18 @@ Durch Multiplikation mit $-R$ resultiert die finale Gleichung für die Ausgangss
 \begin{equation}
     U_a(t) = -R \cdot C \cdot \frac{d U_e(t)}{dt}
 \end{equation}
-Da die zeitliche Ableitung im Frequenzraum für eine harmonische Schwingung zu einem Faktor $i\omega$ führt, wächst die Ausgangsamplitude linear mit der Frequenz. Das Amplitudenverhältnis ist somit direkt proportional zur Frequenz $f$:
+Da die zeitliche Ableitung im Frequenzraum für eine harmonische Schwingung zu einem Faktor $i\omega$ führt, wächst die Ausgangsamplitude linear mit der Frequenz \cite{tietzeschenk}. Das Amplitudenverhältnis ist somit direkt proportional zur Frequenz $f$:
 \begin{equation}
     \frac{U_a}{U_e} \propto f
 \end{equation}
 
 \subsubsection{Nicht-invertierender Schmitt-Trigger}
 Durch die Mitkopplung über einen Spannungsteiler aus den Widerständen $R_1$ und $R_2$ wird ein Teil der Ausgangsspannung auf den nicht-invertierenden Eingang ($+$) zurückgeführt. Da sich der OPV immer in der positiven oder negativen Sättigung befindet, nimmt die Ausgangsspannung den Wert der Betriebsspannung $\pm U_S$ an. 
-Der Zustand schaltet genau dann um, wenn das Potenzial am nicht-invertierenden Eingang $U_+$ den Wert des invertierenden Eingangs (hier $U_- = 0\,\text{V}$) kreuzt. Über das Prinzip des Spannungsteilers lässt sich das Potenzial ausdrücken als:
+Der Zustand schaltet genau dann um, wenn das Potenzial am nicht-invertierenden Eingang $U_+$ den Wert des invertierenden Eingangs (hier $U_- = 0\,\text{V}$) kreuzt. Über das Prinzip des Spannungsteilers \cite{tietzeschenk} lässt sich das Potenzial ausdrücken als:
 \begin{equation}
     U_+ = U_e + (U_a - U_e) \cdot \frac{R_1}{R_1 + R_2}
 \end{equation}
-Wird die Bedingung für das Umschalten ($U_+ = 0$) angesetzt und $U_a$ durch die Sättigungsspannung $\pm U_S$ substituiert, folgen durch Umstellen nach der Eingangsspannung die Schaltschwellen bzw. Grenzspannungen $U_{\text{kipp}}$:
+Wird die Bedingung für das Umschalten ($U_+ = 0$) angesetzt und $U_a$ durch die Sättigungsspannung $\pm U_S$ ersetzt, folgen durch Umstellen nach der Eingangsspannung die Schaltschwellen bzw. Grenzspannungen $U_{\text{kipp}}$:
 \begin{equation}
     \label{eqn:kipp}
     U_{\text{kipp}} = \pm U_S \cdot \frac{R_1}{R_1 + R_2}

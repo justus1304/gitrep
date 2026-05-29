@@ -61,7 +61,7 @@ f_plot_Hz = np.array([min(f_Hz), max(f_Hz)])
 ax1.loglog(f_plot_Hz, [V0.nominal_value, V0.nominal_value], 'b--', label=f'Plateau', linewidth=2)
 
 # Abfall
-f_fit_kHz = np.logspace(np.log10(min(f_kHz[-3:])), np.log10(max(f_kHz)), 100)
+f_fit_kHz = np.logspace(np.log10(min(f_kHz[-3:]))-0.1, np.log10(max(f_kHz)), 100)
 f_fit_Hz = f_fit_kHz * 1000
 V_fit = 10 ** (m * np.log10(f_fit_kHz) + b)
 # f_fit_Hz = np.logspace(np.log10(min(f_Hz[-3:])), np.log10(max(f_Hz)), 100)

@@ -65,6 +65,17 @@ sehen.
 der bestimmten Werte durch das Experiment wird zusätzlich die theoretische 
 Verstärkung durch den Quotienten der Widerstände berechnet (Siehe
 \autoref{sec:linearverstärker}).
+\begin{align}
+    \intertext{Die experimentelle Leerlaufverstärkung $V_0$ wird durch Mittelung der ersten sechs Messwerte im Plateaubereich berechnet:}
+    V_0 &= \frac{1}{6} \sum_{i=1}^{6} V_i \\[1ex]
+    \intertext{Für die lineare Regression des abfallenden Bereichs werden die letzten drei Messwerte logarithmsh transformiert ($x = \log_{10}(f)$, $y = \log_{10}(V)$). Die Fehlerfortpflanzung für die logarithmierte Verstärkung lautet nach Gauß:}
+    \sigma_{y} &= \frac{\sigma_V}{V \cdot \ln(10)} \\[1ex]
+    \intertext{Mithilfe einer \textit{Curve-Fit}-Routine wird eine Ausgleichsgerade der Form $\log_{10}(V) = m \cdot \log_{10}(f) + b$ angepasst. Der Schnittpunkt der abfallenden Geraden mit der asymptotischen Grenzamplitude $V_{\text{grenz}}$ definiert die Grenzfrequenz $f_g$:}
+    V_{\text{grenz}} &= \frac{V_0}{\sqrt{2}} \\[1ex]
+    \log_{10}(f_g) &= \frac{\log_{10}(V_{\text{grenz}}) - b}{m} \implies f_g = 10^{\frac{\log_{10}(V_{\text{grenz}}) - b}{m}} \\[1ex]
+    \intertext{Das Bandbreitenprodukt $B$ ergibt sich schließlich direkt aus dem Produkt der beiden zuvor bestimmten Kenngrößen:}
+    B &= V_0 \cdot f_g
+\end{align}
 \begin{table}[H]
     \centering
     \caption{Experimentell ermittelte Ergebnisse.}
