@@ -172,13 +172,13 @@ def eins(zeit, druck, fehler,pfad,meinTitel):
 # param4 = eins(zeit4,druck4,fehler4,'build/TurbomolekularpumpeLeckrate4.pdf',0,'Leckratenmessung Turbomolekularpumpe p_g = 105 mbar')
 
 param1 = eins(zeit1, druck1, fehler1, 'build/TurbomolekularpumpeLeckrate1.pdf', 
-              r'Leckratenmessung Turbomolekularpumpe $p_g = 5 +- 1.5 \cdot 10^{-5}$ mbar')
+              r'Leckratenmessung Turbomolekularpumpe $p_g = (5 +- 1.5) \cdot 10^{-5}$ mbar')
 param2 = eins(zeit2, druck2, fehler2, 'build/TurbomolekularpumpeLeckrate2.pdf',
-              r'Leckratenmessung Turbomolekularpumpe $p_g = 6.9 +- 2.3 \cdot 10^{-4}$ mbar')  # 56.96e-5 = 5.696e-4
+              r'Leckratenmessung Turbomolekularpumpe $p_g = (6.9 +- 2.3) \cdot 10^{-4}$ mbar')  # 56.96e-5 = 5.696e-4
 param3 = eins(zeit3, druck3, fehler3, 'build/TurbomolekularpumpeLeckrate3.pdf',
-              r'Leckratenmessung Turbomolekularpumpe $p_g = 1 +- 0.3 \cdot 10^{-4}$ mbar')
+              r'Leckratenmessung Turbomolekularpumpe $p_g = (1 +- 0.3) \cdot 10^{-4}$ mbar')
 param4 = eins(zeit4, druck4, fehler4, 'build/TurbomolekularpumpeLeckrate4.pdf',
-              r'Leckratenmessung Turbomolekularpumpe $p_g = 1.9 +- 0.5 \cdot 10^{-4}$ mbar')
+              r'Leckratenmessung Turbomolekularpumpe $p_g = (1.9 +- 0.5) \cdot 10^{-4}$ mbar')
 
 ##### Tabellen erstellen 
 

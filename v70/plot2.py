@@ -55,7 +55,7 @@ for i in range(len(druck4)):
 def druckFehler(a):
     x = 0
     if (a > 10):
-        x = 1200 * 0.03
+        x = 1200 * 0.003
     else:
         if(a > 2*10**(-3)):
             x = a*0.1
@@ -170,13 +170,13 @@ def eins(zeit, druck, fehler,pfad,slice,meinTitel):
     return ufloat(m_fit1,m_fehler1)
 
 param1 = eins(zeit1, druck1, fehler1, 'build/drehschieberLeckrate1.pdf', 13, 
-              r'Leckratenmessung Drehschieberpumpe $p_g = 0.5 +- 0.05$ mbar')
+              r'Leckratenmessung Drehschieberpumpe $p_g = (0.2 +- 0.02)$ mbar')
 param2 = eins(zeit2, druck2, fehler2, 'build/drehschieberLeckrate2.pdf', 2,
-              r'Leckratenmessung Drehschieberpumpe $p_g = 10 +- 4$ mbar')
+              r'Leckratenmessung Drehschieberpumpe $p_g = (6.3 +- 0.63)$ mbar')
 param3 = eins(zeit3, druck3, fehler3, 'build/drehschieberLeckrate3.pdf', 2,
-              r'Leckratenmessung Drehschieberpumpe $p_g = 50 +- 4$ mbar')
+              r'Leckratenmessung Drehschieberpumpe $p_g = (56 +- 3.6)$ mbar')
 param4 = eins(zeit4, druck4, fehler4, 'build/drehschieberLeckrate4.pdf', 0,
-              r'Leckratenmessung Drehschieberpumpe $p_g = 105 +- 3$ mbar')
+              r'Leckratenmessung Drehschieberpumpe $p_g = (86 +- 3.6)$ mbar')
 
 
 ##### Tabellen erstellen 
