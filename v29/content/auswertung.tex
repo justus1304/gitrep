@@ -3,8 +3,8 @@
 
 
 \subsection{BB84 Schlüsselgenerierung und Nachrichtenverschlüsselung}
-\label{BB84}
-In diesem Abschnitt wird sich erst einmal mit der Funktionsweise der Quantenkryptographie vertraut gemacht. 
+\label{sec:a1}
+In diesem Abschnitt wird sich zuallererst mit der Funktionsweise der Quantenkryptographie vertraut gemacht. 
 Zur Schlüsselgenerierung wurden 52 Bits von Alice an Bob übertragen. Bob hat jeweils eine zufällige der beiden Basen gewählt ($\times$ oder $+$) 
 und die 52 Bits von Alice empfangen. Anschließend haben Alice und Bob ihre Basen über einen öffentlichen Kanal verglichen und die Bits, bei denen sie die gleiche Basis gewählt haben, behalten.
 In diesem Fall waren es 27 Bits, die genutzt werden konnten. Zur Verifikation der Funktionsfähigkeit werden hier die Zahlenfolgen der 27 Bits, also die 27 Nullen oder Einsen, die von Alice geschickt und von Bob 
@@ -15,14 +15,19 @@ empfangen wurden, verglichen.
 \end{align*}
 
 \noindent Da die Zahlenfolgen übereinstimmen, haben somit Alice und Bob jetzt den gleichen Schlüssel. Das ergibt eine Fehlerrate von $\frac{N_\text{Error}}{N_\text{shifted Bits}} = 0$, da alle Bits übereinstimmen.
-Anschließend wird mithilfe des Schlüssels von Alice eine Nachricht verschlüsselt. Die Nachricht lautet: "ALSO". Diese Nachricht wird in Binärcode umgewandelt und mithilfe des ersten 20 Bits des Schlüssels von Alice verschlüsselt.
-Beim Verschlüsseln wird der Schlüssel über die Nachricht gelegt und in der verschlüsselten Nachricht wird bei gleichen Zahlen, also (1 und 1) oder (0 und 0), eine Null als verschlüsseltes Bit vermerkt und bei ungleichen Bits (1 und 0) oder (0 und 1) eine 1 als verschlüsseltes Bit vermerkt. Das Prinzip ist das gleiche wie bei einem XOR-Gatter in der Digitaltechnik.
+Anschließend wird mithilfe des Schlüssels von Alice eine Nachricht verschlüsselt.
+Die Nachricht lautet: ``ALSO''. Diese Nachricht wird in Binärcode umgewandelt und 
+mithilfe des ersten 20 Bits des Schlüssels von Alice verschlüsselt.
+Beim Verschlüsseln wird der Schlüssel über die Nachricht gelegt und in der verschlüsselten
+Nachricht wird bei gleichen Zahlen, also (1 und 1) oder (0 und 0), eine Null als
+verschlüsseltes Bit vermerkt und bei ungleichen Bits (1 und 0) oder (0 und 1) eine
+1 als verschlüsseltes Bit vermerkt (siehe \autoref{sec:bb84}). Das Prinzip ist das gleiche wie bei einem 
+XOR-Gatter in der Digitaltechnik.
 \begin{align*}
 \text{ALSO} & \quad \rightarrow \quad 00000 \, 01011 \, 10010 \, 01110 \\
 \text{Schlüssel} & \quad \rightarrow \quad 11101 \, 01001 \, 10101 \, 10100\\
 \text{Verschlüsselte Nachricht} & \quad \rightarrow \quad 11101 \, 00010 \, 00111 \, 11010
 \end{align*}
-
 Diese verschlüsselte Nachricht kann nun öffentlich an Bob gesendet werden und Bob kann durch Anwenden des gleichen Prinzips auf den Binärcode der Buchstaben schließen und die Nachricht entschlüsseln.
 \begin{align*}
 \text{verschlüsselte Nachricht} & \quad \rightarrow \quad 11101 \, 00010 \, 00111 \, 11010 \\
@@ -31,7 +36,7 @@ Diese verschlüsselte Nachricht kann nun öffentlich an Bob gesendet werden und 
 \end{align*}
 
 \subsection{Abhörversuch von Eve}
-\label{sec:eve}
+\label{sec:a2}
 In diesem Abschnitt wird der Abhörversuch von Eve beschrieben. Eve versucht die Nachricht von Alice
 abzufangen und zu entschlüsseln. Dazu wählt Eve zufällig eine Basis ($\times$ oder $+$) und misst die 52 Bits von Alice. 
 Damit Bob keinen Verdacht schöpft und überhaupt etwas empfängt, muss Eve die gemessenen Bits an Bob weiterleiten. Da Eve aber nicht weiß, 
@@ -68,36 +73,37 @@ Basis gewählt haben. Daraus wird dann die Fehlerrate bestimmt, die auf Eves Zwi
 \caption{Vergleich der shifted Bits von Alice und Bob bei einem Abhörversuch von Eve}
 \label{tab:vergleichEve}
 \end{table}
-
-Die gesendeten und empfangenen Bits, welche durch eine gleiche Basis von Alice und Bob ausgewählt wurden, sind \autoref{tab:vergleichEve} zu entnehmen. Die fehlerhaften Bits wurden mit einem $x$ markiert und belaufen sich auf acht Fehler bei 
-32 ausgewählten verglichenen Bits. Das führt zu einer Fehlerrate von 
+\noindent Die gesendeten und empfangenen Bits, welche durch eine gleiche Basis von
+Alice und Bob ausgewählt wurden, sind \autoref{tab:vergleichEve} zu entnehmen. Die
+fehlerhaften Bits sind mit einem Kreuz markiert und belaufen sich auf acht Fehler
+bei 32 ausgewählten verglichenen Bits. Das führt zu einer Fehlerrate von 
 \begin{equation}
  \frac{N_\text{Error}}{N_\text{shifted Bits}} = \frac{8}{32} = 0.25 
 \end{equation}
 Das bedeutet, dass 25\% der verglichenen Bits fehlerhaft sind, was auf Eves Abhörversuch zurückzuführen ist.
-Eve und Bob können nun diese Fehlerquote als Indiz für Eves Abhörversuch nutzen. Dafür würden sie in der Praxis einen Teil ihres Schlüssels vergleichen, um Fehler aufzudecken. 
-Falls Fehler zu verzeichnen sind, ist Eve aufgedeckt und der Schlüssel sollte von Alice und Bob nicht verwendet werden. 
-Hier wurden alle Bits des Schlüssels verglichen, da es sonst zu wenig Vergleichsmaterial gegeben hätte.
+% Eve und Bob können nun diese Fehlerquote als Indiz für Eves Abhörversuch nutzen. Dafür würden sie in der Praxis einen Teil ihres Schlüssels vergleichen, um Fehler aufzudecken. 
+% Falls Fehler zu verzeichnen sind, ist Eve aufgedeckt und der Schlüssel sollte von Alice und Bob nicht verwendet werden. 
+% Hier wurden alle Bits des Schlüssels verglichen, da es sonst zu wenig Vergleichsmaterial gegeben hätte.
 
 
 \subsection{Schlüsselgenerierung mit Decoy States}
-In diesem Abschnitt wird die Schlüsselgenerierung mit Decoy States beschrieben. Es werden statt Bits jetzt Trits gesendet (0, 1 oder 2) und das wieder entweder in der $\times$ Basis oder in der $+$ Basis.
-Die Codierungen sind wie folgt in \autoref{tab:ternary_protocol} dargestellt. 
-
+\label{sec:a3}
+In diesem Abschnitt wird die Schlüsselgenerierung mit Decoy States beschrieben. 
+Es werden statt Bits jetzt Trits gesendet (0, 1 oder 2) und das wieder entweder in
+der $\times$ Basis oder in der $+$ Basis.
+Die Kodierungen sind wie folgt in \autoref{tab:ternary_protocol} dargestellt. 
 
 \definecolor{colorRed}{RGB}{200, 0, 0}
 \definecolor{colorGreen}{RGB}{0, 150, 0}
 
-
-
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\caption{Codierung der Trits in den beiden Basen und den Decoy States}
+\caption{Kodierung der Trits in den beiden Basen und den Decoy States}
 \label{tab:ternary_protocol}
 \renewcommand{\arraystretch}{1.3} % Erhöht den Zeilenabstand für bessere Lesbarkeit
 \begin{tabular}{|c|c|c|c|}
 \hline
-\text{Basis} & \text{Trit} & \text{Polarisationsrichtung} &\text{decoy State} \\ \hline
+\text{Basis} & \text{Trit} & \text{Polarisationsrichtung} &\text{decoy state} \\ \hline
  & \textbf{0} & \textcolor{colorRed}{$0^\circ$} &  \\ \cline{2-3}
 \textbf{[+]} & \textbf{1} & \textcolor{colorRed}{$90^\circ$} &  \\ \cline{2-3}
  & \textbf{2} & \textcolor{colorGreen}{$0^\circ$} &  \\ \cline{2-4} 
@@ -109,18 +115,14 @@ Die Codierungen sind wie folgt in \autoref{tab:ternary_protocol} dargestellt.
 \end{tabular}
 \end{table}
 
-
-
 \noindent Bob empfängt diese ausgesendeten Bits und wandelt sie wieder in Trits um. 
-Diese Umwandlung erfolgt quasi analog zu Alices Codierung der Trits, nur müssen jetzt entweder die roten oder 
-grünen Bits in der jeweiligen Phase interpretiert werden. Weiteres ist 
-
+Diese Umwandlung erfolgt quasi analog zu Alices Kodierung der Trits, nur müssen 
+jetzt entweder die roten oder grünen Bits in der jeweiligen Phase interpretiert 
+werden.
 
 % Definition der Farben aus dem Praktikum
 \definecolor{colorRed}{RGB}{200, 0, 0}
 \definecolor{colorGreen}{RGB}{0, 150, 0}
-
-
 
 \begin{table}[H]
 \centering
@@ -142,31 +144,33 @@ grünen Bits in der jeweiligen Phase interpretiert werden. Weiteres ist
 \end{tabular}
 \end{table}
 
-Nun werden 52 Trits in zufälligen Basen verschickt und es wird wie in \autoref{BB84} verfahren.
-
-Nach Verwerfen der Trits, bei denen Alice und Bob unterschiedliche Basen gewählt haben, bleiben 32 Trits übrig.
-Diese werden in \autoref{eqn:trits} verglichen.
-
+\noindent Nun werden 52 Trits in zufälligen Basen verschickt und es wird wie in
+\autoref{sec:a1} verfahren. Nach Verwerfen der Trits, bei denen Alice und Bob
+unterschiedliche Basen gewählt haben, bleiben 32 Trits übrig. Diese werden in 
+\autoref{eqn:trits} verglichen.
 \begin{align*}
   \label{eqn:trits}
   \text{Alice:} & \quad 1 \, 2 \, 2 \, 1 \, 1 \, 2 \, 2 \, 1 \, 2 \, 0 \, 1 \, 0 \, 1 \, 0 \, 1 \, 0 \, 0 \, 2 \, 2 \, 0 \, 0 \, 2 \, 0 \, 2 \, 0 \, 2 \, 0 \, 1 \, 1 \, 0 \, 2 \, 2\\
   \text{Bob}: & \quad 1 \, 2 \, 2 \, 1 \, 1 \, 2 \, 2 \, 1 \, 2 \, 0 \, 1 \, 0 \, 1 \, 0 \, 1 \, 0 \, 0 \, 2 \, 2 \, 0 \, 0 \, 2 \, 0 \, 2 \, 0 \, 2 \, 0 \, 1 \, 1 \, 0 \, 2 \, 2
 \end{align*}
-
 \noindent Es ist zu erkennen, dass alle Trits von Alice und Bob übereinstimmen, was zu einer Fehlerrate von $\frac{N_\text{Error}}{N_\text{shifted Trits}} = 0$ und auch 
-zu einem Anteil an Decoy States von $\frac{{N_{decoy}}}{{N_{shifted Bits}}} = 0$ führt. Diese wird im folgenden \autoref{sec:eve} mit der Fehlerrate nach Dazuschalten 
+zu einem Anteil an Decoy States von $\frac{{N_{decoy}}}{{N_{shifted Bits}}} = 0$ führt. Diese wird im folgenden Abschnitt mit der Fehlerrate nach Dazuschalten 
 von Eve verglichen.
 
 \subsection{Abhörversuch von Eve bei der Schlüsselgenerierung mit Decoy States}
-In diesem Abschnitt wird der Abhörversuch von Eve bei der Schlüsselgenerierung mit Decoy States beschrieben. Es werden wieder 52 Trits von Alice an Bob gesendet, aber diesmal mit Decoy States. 
-Eve versucht wieder die Nachricht von Alice abzufangen und zu entschlüsseln. Wenn sie die falsche Basis wählt 
-und somit falsche Trits an Bob weiterleitet, führt das zu einer Fehlerrate von $\frac{N_\text{Error}}{N_\text{shifted Trits}} > 0$ und zur Entstehung von Decoy States, welche von Alice und Bob als Indiz für Eves Abhörversuch genutzt werden können.
-Erhält Bob also so einen Decoy State bei gleicher Basiswahl wie Alice, ist Eve aufgedeckt und der Schlüssel sollte von Alice und Bob nicht verwendet werden. Die gesendeten sowie empfangenen Trits 
-sind in \autoref{tab:vergleichEveDecoy} dargestellt. Die fehlerhaften Trits wurden mit einem $x$ markiert und die Decoy States als Decoy betitelt. 
+\label{sec:a4}
+In diesem Abschnitt wird der Abhörversuch von Eve bei der Schlüsselgenerierung mit
+Decoy States beschrieben. Es werden wieder 52 Trits von Alice an Bob gesendet, aber
+dieses mal mit Decoy States. Eve versucht die Nachricht von Alice abzufangen und zu
+entschlüsseln. Wenn sie die falsche Basis wählt und somit falsche Trits an Bob 
+weiterleitet, führt das zu einer Fehlerrate von $\frac{N_\text{Error}}{N_\text{shifted Trits}} > 0$
+und zur Entstehung von Decoy States, welche von Alice und Bob als Indiz für Eves
+Abhörversuch genutzt werden können. Erhält Bob also so einen Decoy State bei gleicher
+Basiswahl wie Alice, ist Eve aufgedeckt und der Schlüssel sollte von Alice und Bob
+nicht verwendet werden. Die gesendeten sowie empfangenen Trits sind in \autoref{tab:vergleichEveDecoy}
+dargestellt. Die fehlerhaften Trits sind mit einem Kreuz markiert und die Decoy
+States als solches betitelt. Die Messreihen sind dem Anhang zu entnehmen.
 
-\noindent Es wurden wieder 52 Bits losgeschickt, dann von Eve abgehört und das Ergebnis an Bob weitergeleitet. Die jeweiligen 
-Tabellen zu den Messreihen sind im Anhang zu finden. Im Folgenden werden die Bits verglichen, bei denen Alice und Bob die gleiche 
-Basis gewählt haben. Daraus wird dann die Fehlerrate bestimmt, die auf Eves Zwischenschalten zurückzuführen ist.
 \begin{table}[H]
 \centering
 \begin{tabular}{c|c|c|c|c|c}
@@ -194,7 +198,6 @@ Basis gewählt haben. Daraus wird dann die Fehlerrate bestimmt, die auf Eves Zwi
 \caption{Vergleich der shifted Bits von Alice und Bob bei einem Abhörversuch von Eve}
 \label{tab:vergleichEveDecoy}
 \end{table}
-
 
 \noindent Damit ergeben sich Error Rate und Decoy Rate bei 33 behaltenen gleichen Basen
 und darin 14 Fehlern und 7 Decoys zu 

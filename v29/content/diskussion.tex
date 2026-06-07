@@ -1,2 +1,40 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+Das durchgeführte Experiment zum BB84-Protokoll mittels Thorlabs Komponenten kann 
+als sehr erfolgreich gewertet werden. Für die Schlüsselgenerierung aus \autoref{sec:a1}
+ergibt sich eine Fehlerrate von 0\%. Dieser experimentelle Befund zeugt von einem 
+sehr präzisen Aufbau und geeigneten Umgebungsfaktoren. Gleiches ergibt sich in 
+\autoref{sec:a2}. In diesem Teil geht es um die Hinzunahme des Abhörmoduls Eve. 
+Eve und Bob könnten diese Fehlerquote als Indiz für Eves Abhörversuch nutzen. Dafür
+würden sie in der Praxis einen Teil ihres Schlüssels vergleichen, um Fehler 
+aufzudecken. Falls Fehler zu verzeichnen sind, ist Eve aufgedeckt und der Schlüssel 
+sollte von Alice und Bob nicht verwendet werden. Hier wurden alle Bits des Schlüssels
+verglichen, da es sonst zu wenig Vergleichsmaterial gegeben hätte. Der ermittelte 
+Wert entspricht somit der in \autoref{sec:bb84} erläuterten Theorie.
+\vspace{0.5em}
+\\
+\noindent Im zweiten Teil des Experiments (siehe \autoref{sec:a3} und \autoref{sec:a3}) werden Messungen auf Basis eines ternären
+Systems mit 2 Quellen unterschiedlicher Wellenlängen wiederholt. Das geschieht mit 
+und ohne Abhörmodul. Wie zuvor ergibt sich die Fehlerrate ohne Eve zu 0\%. Bei 
+Hinzunahme belaufen sich die Error Rate auf ganze 42\%, die Decoy Rate auf 21\%.
+Die Error Rate überschreitet den Erwartungswert von 25\% deutlich. Diese Abweichung 
+wird durch mehrere Faktoren zu erklären sein. Im zweiten Teil des Experiments kam 
+es bei der Justage zu Problemen, wo die Messdetektoren auch nach mehrfacher Korrektur 
+nicht zu den Ergebnissen führten, wie vom Kontrollblatt \autoref{fig:d3} angegeben.
+Es könnte sich ein systematischer Fehler gebildet haben, der nach finaler Justage 
+während des Messvorgangs erneut aufgetaucht ist und die Messrate dementsprechend in 
+die Höhe getrieben hat. Darüber hinaus ist die Statistik mit 33 ausgewerteten Bits 
+relativ klein, sodass zufällige Schwankungen einen großen Einfluss haben können. 
+Eine größere Anzahl an gesendeten Pulsen würde das Ergebnis näher an den theoretischen
+Erwartungswert bringen. Besonders aufschlussreich ist die Decoy Rate von 21\%. Da
+von Alice aus diese Zustände bewusst nicht gesendet werden, ist ihr Auftreten ein 
+direkter Nachweis für eine Störung des Quantenkanals. Im hier durchgeführten 
+Experiment ist diese Störung eindeutig auf Eves Eingriff zurückzuführen. Die
+Detektion von Decoy States bietet somit einen klaren und einfach zu interpretierenden
+Indikator für Abhörversuche. Ein Vorteil gegenüber dem einfachen BB84-Protokoll,
+das nur auf die Fehlerrate angewiesen ist.
+\\
+\noindent Zusammenfassend lässt sich sagen, dass der Versuch die Funktionsweise des BB84-Protokolls
+sowie die Detektion von Abhörversuchen mittels Fehlerrate und Decoy States erfolgreich
+demonstriert.
