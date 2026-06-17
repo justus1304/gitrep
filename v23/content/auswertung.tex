@@ -1,31 +1,229 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+Zunächst werden in der Vorbereitungsaufgabe für verschiedene Zylinderlängen 
+(Reihen aus jeweils $50 \unit{mm}$- und $75 \unit{mm}$-Zylindern)
+Frequenzspektren aufgenommen. Beispielhafte Spektren sind in \autoref{fig:1}
+abgebildet.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/2vor1.pdf}
+        \caption{Spektrum $50 \unit{mm}$}
+        \label{fig:sub1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/2vor6.pdf}
+        \caption{Spektrum $100 \unit{mm}$}
+        \label{fig:sub2}
+    \end{subfigure}
+    \vspace{1em}
+    
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/2vor12.pdf}
+        \caption{Spektrum $150 \unit{mm}$(aus $50 \unit{mm}$ Zylindern)}
+        \label{fig:sub3}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/vor1.pdf}
+        \caption{Spektrum $75 \unit{mm}$}
+        \label{fig:sub4}
+    \end{subfigure}
+    \vspace{1em}
+    
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/vor4.pdf}
+        \caption{Spektrum $150 \unit{mm}$(aus $75 \unit{mm}$ Zylindern)}
+        \label{fig:sub5}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/vor8.pdf}
+        \caption{Spektrum $225 \unit{mm}$}
+        \label{fig:sub6}
+    \end{subfigure}
+    \caption{Beispielhafte Spektren für verschiedene Zylinderlängen.}
+    \label{fig:1}
 \end{figure}
 
-\begin{table}
-  \centering
-  \caption{Eine Beispieltabelle mit Messdaten.}
-  \label{tab:tabelle}
-  \sisetup{table-format=1.1, per-mode=reciprocal}
-  \begin{tblr}{
-      colspec = {S[table-format=3.0] S[table-format=2.1] S},
-      row{1} = {guard, mode=math},
-      vline{4} = {2}{-}{text=\clap{$\pm$}},
-    }
-    \toprule
-    U \mathbin{/} \unit{\volt} & I \mathbin{/} \unit{\micro\ampere} & \SetCell[c=2]{c} N \mathbin{/} \unit{\per\second} & \\
-    \midrule
-    360 & 0.1 & 98.3 & 0.9 \\
-    400 & 0.2 & 99.8 & 1.0 \\
-    420 & 0.2 & 99.1 & 0.9 \\
-    \bottomrule
-  \end{tblr}
-\end{table}
+Aus zwei dieser Spektren, in diesem Fall die des $50 \unit{mm}$- und des $75 \unit{mm}$-Zylinders,
+wird die Schallgeschwindigkeit bestimmt. Das geschieht auf Grundlage der Interferenzbedingung stehender Wellen 
+in einem Zylinder. Stehende Wellen bilden sich in einem Zylinder bei konstruktiver Interferenz 
+unter folgender Bedingung aus:
+\begin{equation}
+    L = n \cdot \frac{\lambda}{2} \quad \text{mit } n \in \mathbb{N}
+    \label{eq:interf}
+\end{equation}
 
-Siehe \autoref{fig:plot} und \autoref{tab:tabelle}!
+Dabei ist $\lambda$ die Wellenlänge und $L$ die Zylinderlänge. Umgestellt nach $\lambda$ ergibt sich die folgende Gleichung:
+\begin{equation}
+    \lambda = \frac{L\cdot 2}{n}
+    \label{eq:lambda}
+\end{equation}
+Des Weiteren gilt der Zusammenhang zwischen Frequenz $f$ und $\lambda$:
+\begin{equation}
+    f = \frac{c}{\lambda}
+    \label{eq:freq}
+\end{equation}
+Dabei ist $c$ die Schallgeschwindigkeit.
+
+Daraus lässt sich über die gemittelten Abstände unserer Peaks in den besagten zwei Spektren 
+des $50 \unit{mm}$- und $75 \unit{mm}$-Zylinders die Schallgeschwindigkeit berechnen. Indem man \autoref{eq:freq} nach 
+$\lambda$ umstellt und in \autoref{eq:lambda} einsetzt, erhält man folgenden Ausdruck:
+
+\begin{equation}
+    \label{eq:1}
+    f_\text{n} = n \cdot \frac{c}{2\cdot L}
+\end{equation}
+
+So kann man nun einen Ausdruck der Proportionalität zwischen den Abständen der Peaks und der Schallgeschwindigkeit (\autoref{eq:12}) bilden:
+
+\begin{equation}
+    \Delta f = f_{n+1} - f_n = (n+1) \cdot \frac{c}{2L} - n \cdot \frac{c}{2L} = \frac{c}{2L}
+    \label{eq:12}
+\end{equation}
+
+Die Frequenzen, welche positive Interferenz aufzeigen, werden mit der Funktion \texttt{find\_peaks} 
+aus der Bibliothek SciPy \cite{virtanen2020scipy} bestimmt und dann deren Abstände gemittelt. 
+Die Maxima sind in \autoref{fig:13} gekennzeichnet.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{build/peaks.pdf}
+    \caption{frequenzspektrum des $50$, sowie $75 \unit{mm}$-Zylinders, sowie gefundene Maxima}
+    \label{fig:13}
+\end{figure}
+
+Für den $50 \unit{mm}$-Zylinder ergeben sich folgende Abstände und daraus resultierende Schallgeschwindigkeiten (\autoref{eq:werte1}):
+\begin{align}
+    \label{eq:werte1}
+    \overline{f_\text{n}-f_\text{n+1}} &= \qty{3.27(0.23)e3}{\hertz}\\
+    c_\text{50mm} &= \qty{327.10(22.75)}{m/s}
+\end{align}
+
+Für den $75 \unit{mm}$-Zylinder ergeben sich die Werte in \autoref{eqn:werte}:
+\begin{align}
+    \label{eqn:werte}
+    \overline{f_\text{n}-f_\text{n+1}} &= \qty{2.19(0.17)e3}{\hertz}\\
+    c_\text{75mm} &= \qty{329.10(24.87)}{m/s}
+\end{align}
+
+\subsection{Darstellung des Wasserstoffatoms}
+\label{sec:02}
+In diesem Abschnitt wird die Abhängigkeit der Amplitude der Druckwelle vom Polarwinkel 
+im Kugelresonator untersucht und mit der quantenmechanischen Beschreibung des Wasserstoffatoms verglichen. Das geschieht über 
+die Kugelflächenfunktionen, welche die Polar- und Azimutalabhängigkeit beim Wasserstoffatom beschreiben. 
+
+Zunächst wird ein hochaufgelöstes Spektrum bei einem eingestellten Winkel von $180^\circ$ aufgenommen, um die 
+Resonanzfrequenzen zu identifizieren. Bei der Wasserstoffanalogie wäre dies das 
+Abtasten nach den radialen Eigenfrequenzen, also den Werten, die die Quantenzahl $n$ annehmen kann. 
+Der radiale Anteil der Schrödingergleichung ist jedoch nicht gleich dem radialen Anteil der Helmholtzgleichung,
+also lässt sich mit diesem Spektrum keine Aussage über die Lage der Energieeigenwerte des Wasserstoffatoms machen. 
+Es dient lediglich dazu, radiale Eigenfrequenzen zu finden, welche dann in ihrer polaren bzw. azimutalen Abhängigkeit weiter untersucht werden können.
+Das Übersichtsspektrum ist in \autoref{fig:uebersicht} abgebildet.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{build/spektrum.pdf}
+    \caption{Übersichtsspektrum bei Winkel von $180^\circ$}
+    \label{fig:uebersicht}
+\end{figure}
+
+Die gefundenen Eigenfrequenzen bei $f = \qty{2.3}{\kilo\hertz}, \qty{3.7}{\kilo\hertz}, \qty{5.0}{\kilo\hertz}$ und $\qty{7.4}{\kilo\hertz}$ werden 
+in $5^\circ$-Schritten von einem Winkel von $0^\circ$ bis $180^\circ$ untersucht. Dazu wird für jeden dieser Winkel ein Spektrum 
+von $\qty{0.4}{\kilo\hertz}$ um die jeweilige Eigenfrequenz herum aufgenommen. Die Amplituden der Peaks aus diesen Spektren werden wieder 
+mit der Funktion \texttt{find\_peaks} \cite{virtanen2020scipy} ausgewertet. In \autoref{fig:kff} sind die Amplituden gegen den Polarwinkel für die jeweilige 
+Eigenfrequenz dargestellt.
+Es ist zu beachten, dass die Achse des Lautsprechers und des Mikrofons in einem $45^\circ$-Winkel zu 
+der Ebene steht, in der wir den Winkel ($\alpha$) verändern. Also muss der gemessene Winkel mittels \autoref{eqn:transf} in den Polarwinkel transformiert werden. 
+\begin{equation}
+    \label{eqn:transf}
+    \theta = \arccos\left(\frac{1}{2} \cos\alpha - \frac{1}{2}\right)
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/legendre_11_fit.png}
+        \caption{Polarplot für $f = \qty{2.3}{\kilo\hertz}$}
+        \label{fig:kff_1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/legendre_12_fit.png}
+        \caption{Polarplot für $f = \qty{3.7}{\kilo\hertz}$}
+        \label{fig:kff_2}
+    \end{subfigure}
+    \vspace{1em}
+    
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/legendre_13_fit.png}
+        \caption{Polarplot für $f = \qty{5.0}{\kilo\hertz}$}
+        \label{fig:kff_3}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/legendre_14_fit.png}
+        \caption{Polarplot für $f = \qty{7.4}{\kilo\hertz}$}
+        \label{fig:kff_4}
+    \end{subfigure}
+    \caption{Amplituden der untersuchten Resonanzfrequenzen in Abhängigkeit vom Polarwinkel (Vergleich mit Kugelflächenfunktionen).}
+    \label{fig:kff}
+\end{figure}
+
+
+\subsection{Aufspaltung der $l$-Entartung}
+Bisher hat man für jedes $n$, also jede Energiequantenzahl bzw. jede radiale Eigenfrequenz 
+in dem Kugelresonator, nur das Orbital mit der jeweils größten Drehimpulsquantenzahl 
+$l$ in den Polarplots identifiziert. Das lag daran, dass sich die entarteten Zustände der jeweiligen radialen 
+Eigenfrequenz in einer Überlagerung befinden. In dieser Überlagerung dominieren die 
+Zustände mit den größten Drehimpulsquantenzahlen, weil diese noch mehr entartete $m$-Zustände aufweisen.
+Nun legen wir in unseren Kugelresonator Zwischenringe mit den Dicken 
+\begin{equation}
+    d_1 = \qty{3}{\milli\meter}, \quad d_2 = \qty{6}{\milli\meter} \quad \text{und zusammen} \quad d_3 = \qty{9}{\milli\meter}.
+\end{equation}
+
+
+Durch diese wird die Kugelsymmetrie gebrochen und es entsteht eine Aufspaltung der 
+radialen Eigenfrequenzen in die jeweiligen Zustände der Drehimpulsquantenzahlen für dieses $n$. 
+Des Weiteren ist zu beachten, dass durch die Symmetriebrechung die Ebene, in der die Winkel abgetastet werden, nun 
+genau der Polarebene entspricht, wir also direkt den Polarwinkel messen.
+Es werden wie in \autoref{sec:02} für Winkel zwischen $0^\circ$ und $180^\circ$ die Amplituden 
+der Druckwelle im Bereich von $\qty{0.6}{\kilo\hertz}$ um die jeweilige radiale Eigenfrequenz herum aufgenommen.
+Diese Amplituden werden dann für die zwei verschiedenen $l$ in \autoref{fig:auf1} und \autoref{fig:auf2} dargestellt.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/aufspaltung_l1_m0.png}
+        \caption{Polarplot für $l = 0$}
+        \label{fig:auf1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{build/aufspaltung_l1_m1.png}
+        \caption{Polarplot für $l = 1$}
+        \label{fig:auf2}
+    \end{subfigure}
+    \caption{Aufspaltung der radialen Eigenfrequenzen in Abhängigkeit der Drehimpulsquantenzahl $l$.}
+    \label{fig:aufspaltung_main}
+\end{figure}
+
+
+
+
+
+    
