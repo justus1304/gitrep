@@ -7,8 +7,13 @@ build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
 	# and set the matplotlibrc
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
 
+build/test.pdf: test.py ../matplotlibrc ../header-matplotlib.tex | build
+	# so that matplotlib can find the tex header when running
+	# LaTeX in the tmp directory
+	# and set the matplotlibrc
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python test.py
 # hier weitere Abhängigkeiten für build/v23.pdf deklarieren:
-build/v23.pdf: build/plot.pdf
+build/v23.pdf: build/plot.pdf build/test.pdf
 
 build/v23.pdf: FORCE | build
 	# to find header and bib files in the main directory
