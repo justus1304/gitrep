@@ -54,8 +54,7 @@ abgebildet.
     \caption{Beispielhafte Spektren für verschiedene Zylinderlängen.}
     \label{fig:1}
 \end{figure}
-
-Aus zwei dieser Spektren, in diesem Fall die des $50 \unit{mm}$- und des $75 \unit{mm}$-Zylinders,
+\noindent Aus zwei dieser Spektren, in diesem Fall die des $50 \unit{mm}$- und des $75 \unit{mm}$-Zylinders,
 wird die Schallgeschwindigkeit bestimmt. Das geschieht auf Grundlage der Interferenzbedingung stehender Wellen 
 in einem Zylinder. Stehende Wellen bilden sich in einem Zylinder bei konstruktiver Interferenz 
 unter folgender Bedingung aus:
@@ -63,8 +62,7 @@ unter folgender Bedingung aus:
     L = n \cdot \frac{\lambda}{2} \quad \text{mit } n \in \mathbb{N}
     \label{eq:interf}
 \end{equation}
-
-Dabei ist $\lambda$ die Wellenlänge und $L$ die Zylinderlänge. Umgestellt nach $\lambda$ ergibt sich die folgende Gleichung:
+\noindent Dabei ist $\lambda$ die Wellenlänge und $L$ die Zylinderlänge. Umgestellt nach $\lambda$ ergibt sich die folgende Gleichung:
 \begin{equation}
     \lambda = \frac{L\cdot 2}{n}
     \label{eq:lambda}
@@ -75,40 +73,37 @@ Des Weiteren gilt der Zusammenhang zwischen Frequenz $f$ und $\lambda$:
     \label{eq:freq}
 \end{equation}
 Dabei ist $c$ die Schallgeschwindigkeit.
-
-Daraus lässt sich über die gemittelten Abstände unserer Peaks in den besagten zwei Spektren 
-des $50 \unit{mm}$- und $75 \unit{mm}$-Zylinders die Schallgeschwindigkeit berechnen. Indem man \autoref{eq:freq} nach 
-$\lambda$ umstellt und in \autoref{eq:lambda} einsetzt, erhält man folgenden Ausdruck:
-
+\noindent Daraus lässt sich über die gemittelten Abstände unserer Peaks in den
+besagten zwei Spektren des $50 \unit{mm}$- und $75 \unit{mm}$-Zylinders die
+Schallgeschwindigkeit berechnen. Durch Umstellen von \autoref{eq:freq} nach 
+$\lambda$ und anschließendes einsetzen in \autoref{eq:lambda} ergibt sich 
+folgender Ausdruck:
 \begin{equation}
     \label{eq:1}
     f_\text{n} = n \cdot \frac{c}{2\cdot L}
 \end{equation}
-
-So kann man nun einen Ausdruck der Proportionalität zwischen den Abständen der Peaks und der Schallgeschwindigkeit (\autoref{eq:12}) bilden:
-
+So kann ein Ausdruck der Proportionalität zwischen den Abständen der Peaks und
+der Schallgeschwindigkeit (\autoref{eq:12}) gebildet werden:
 \begin{equation}
     \Delta f = f_{n+1} - f_n = (n+1) \cdot \frac{c}{2L} - n \cdot \frac{c}{2L} = \frac{c}{2L}
     \label{eq:12}
 \end{equation}
-
 Die Frequenzen, welche positive Interferenz aufzeigen, werden mit der Funktion \texttt{find\_peaks} 
 aus der Bibliothek SciPy \cite{virtanen2020scipy} bestimmt und dann deren Abstände gemittelt. 
-Die Maxima sind in \autoref{fig:13} gekennzeichnet.
+Die Maxima sind in \autoref{fig:13} markiert.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{build/peaks.pdf}
     \caption{frequenzspektrum des $50$, sowie $75 \unit{mm}$-Zylinders, sowie gefundene Maxima}
     \label{fig:13}
 \end{figure}
-
-Für den $50 \unit{mm}$-Zylinder ergeben sich folgende Abstände und daraus resultierende Schallgeschwindigkeiten (\autoref{eq:werte1}):
+\noindent Für den $50 \unit{mm}$-Zylinder ergeben sich folgende Abstände und daraus
+resultierende Schallgeschwindigkeiten (\autoref{eq:werte1}):
 \begin{align}
     \label{eq:werte1}
     \overline{f_\text{n}-f_\text{n+1}} &= \qty{3.27(0.23)e3}{\hertz}\\
     c_\text{50mm} &= \qty{327.10(22.75)}{m/s}
 \end{align}
-
 Für den $75 \unit{mm}$-Zylinder ergeben sich die Werte in \autoref{eqn:werte}:
 \begin{align}
     \label{eqn:werte}
@@ -121,29 +116,28 @@ Für den $75 \unit{mm}$-Zylinder ergeben sich die Werte in \autoref{eqn:werte}:
 In diesem Abschnitt wird die Abhängigkeit der Amplitude der Druckwelle vom Polarwinkel 
 im Kugelresonator untersucht und mit der quantenmechanischen Beschreibung des Wasserstoffatoms verglichen. Das geschieht über 
 die Kugelflächenfunktionen, welche die Polar- und Azimutalabhängigkeit beim Wasserstoffatom beschreiben. 
-
-Zunächst wird ein hochaufgelöstes Spektrum bei einem eingestellten Winkel von $180^\circ$ aufgenommen, um die 
+\vspace{0.5em} \\
+\noindent Zunächst wird ein hochaufgelöstes Spektrum bei einem eingestellten Winkel von $180^\circ$ aufgenommen, um die 
 Resonanzfrequenzen zu identifizieren. Bei der Wasserstoffanalogie wäre dies das 
 Abtasten nach den radialen Eigenfrequenzen, also den Werten, die die Quantenzahl $n$ annehmen kann. 
 Der radiale Anteil der Schrödingergleichung ist jedoch nicht gleich dem radialen Anteil der Helmholtzgleichung,
 also lässt sich mit diesem Spektrum keine Aussage über die Lage der Energieeigenwerte des Wasserstoffatoms machen. 
 Es dient lediglich dazu, radiale Eigenfrequenzen zu finden, welche dann in ihrer polaren bzw. azimutalen Abhängigkeit weiter untersucht werden können.
 Das Übersichtsspektrum ist in \autoref{fig:uebersicht} abgebildet.
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{build/spektrum.pdf}
     \caption{Übersichtsspektrum bei Winkel von $180^\circ$}
     \label{fig:uebersicht}
 \end{figure}
-
-Die gefundenen Eigenfrequenzen bei $f = \qty{2.3}{\kilo\hertz}, \qty{3.7}{\kilo\hertz}, \qty{5.0}{\kilo\hertz}$ und $\qty{7.4}{\kilo\hertz}$ werden 
+\noindent Die gefundenen Eigenfrequenzen bei $f = \qty{2.3}{\kilo\hertz}, \qty{3.7}{\kilo\hertz}, \qty{5.0}{\kilo\hertz}$ und $\qty{7.4}{\kilo\hertz}$ werden 
 in $5^\circ$-Schritten von einem Winkel von $0^\circ$ bis $180^\circ$ untersucht. Dazu wird für jeden dieser Winkel ein Spektrum 
 von $\qty{0.4}{\kilo\hertz}$ um die jeweilige Eigenfrequenz herum aufgenommen. Die Amplituden der Peaks aus diesen Spektren werden wieder 
 mit der Funktion \texttt{find\_peaks} \cite{virtanen2020scipy} ausgewertet. In \autoref{fig:kff} sind die Amplituden gegen den Polarwinkel für die jeweilige 
 Eigenfrequenz dargestellt.
-Es ist zu beachten, dass die Achse des Lautsprechers und des Mikrofons in einem $45^\circ$-Winkel zu 
-der Ebene steht, in der wir den Winkel ($\alpha$) verändern. Also muss der gemessene Winkel mittels \autoref{eqn:transf} in den Polarwinkel transformiert werden. 
+Es ist zu beachten, dass die Achse des Lautsprechers und des Mikrofons in einem
+$45^\circ$-Winkel zu der Ebene steht, in der der Winkel $\alpha$ verändert 
+wird. Der gemessene Winkel muss mittels \autoref{eqn:transf} in den Polarwinkel transformiert werden. 
 \begin{equation}
     \label{eqn:transf}
     \theta = \arccos\left(\frac{1}{2} \cos\alpha - \frac{1}{2}\right)
@@ -185,18 +179,16 @@ der Ebene steht, in der wir den Winkel ($\alpha$) verändern. Also muss der geme
 
 
 \subsection{Aufspaltung der $l$-Entartung}
-Bisher hat man für jedes $n$, also jede Energiequantenzahl bzw. jede radiale Eigenfrequenz 
+Bisher wurde für jedes $n$, also jede Energiequantenzahl bzw. jede radiale Eigenfrequenz 
 in dem Kugelresonator, nur das Orbital mit der jeweils größten Drehimpulsquantenzahl 
 $l$ in den Polarplots identifiziert. Das lag daran, dass sich die entarteten Zustände der jeweiligen radialen 
 Eigenfrequenz in einer Überlagerung befinden. In dieser Überlagerung dominieren die 
 Zustände mit den größten Drehimpulsquantenzahlen, weil diese noch mehr entartete $m$-Zustände aufweisen.
-Nun legen wir in unseren Kugelresonator Zwischenringe mit den Dicken 
+Es werden in den Kugelresonator Zwischenringe mit den folgenden Dicken eingebaut:
 \begin{equation}
     d_1 = \qty{3}{\milli\meter}, \quad d_2 = \qty{6}{\milli\meter} \quad \text{und zusammen} \quad d_3 = \qty{9}{\milli\meter}.
 \end{equation}
-
-
-Durch diese wird die Kugelsymmetrie gebrochen und es entsteht eine Aufspaltung der 
+\noindent Durch diese wird die Kugelsymmetrie gebrochen und es entsteht eine Aufspaltung der 
 radialen Eigenfrequenzen in die jeweiligen Zustände der Drehimpulsquantenzahlen für dieses $n$. 
 Des Weiteren ist zu beachten, dass durch die Symmetriebrechung die Ebene, in der die Winkel abgetastet werden, nun 
 genau der Polarebene entspricht, wir also direkt den Polarwinkel messen.
@@ -221,9 +213,3 @@ Diese Amplituden werden dann für die zwei verschiedenen $l$ in \autoref{fig:auf
     \caption{Aufspaltung der radialen Eigenfrequenzen in Abhängigkeit der Drehimpulsquantenzahl $l$.}
     \label{fig:aufspaltung_main}
 \end{figure}
-
-
-
-
-
-    
