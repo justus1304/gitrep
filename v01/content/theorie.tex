@@ -1,4 +1,129 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+\subsection{Das Myon}
+\label{sec:t1}
+Das Myon gehört zu den Elementarteilchen der Leptonen und ist etwa 200 mal 
+schwerer als das Elektron. Es hat eine Ruhemasse von $\qty{105.6}{\mega\electronvolt}$
+und gehört mit seinem halbzahligen Spin zu der Gruppe der Fermionen. Auffällig ist 
+die sehr kurze mittlere Lebensdauer, diese beträgt aufgrund der hohen Masse 
+nur $\qty{2.2}{\micro\second}$. \cite{Myon}
+Kosmische Myonen entstehen $\sim \qty{30}{\kilo\meter}$ über der Erdoberfläche, 
+wo hochenergetische Teilchen, meist Protonen, mit den Atomen der Atmosphäre 
+kollidieren. Dabei entstehen Pionen, deren Zerfall wiederum Myonen erzeugen:
+\begin{align*}
+    \pi^+ \longrightarrow \mu^+ + \nu_\mu, \\
+    \pi^- \longrightarrow \mu^- + \nu_\mu
+\end{align*}
+Aufgrund der Entstehungshöhe und der verhältnismäßig kurzen Lebensdauer dürften
+es Myonen klassischerweise nicht viel weiter als $\sim \qty{660}{\meter}$
+schaffen. Aufgrund ihrer hohen Energie sind sie sehr schnell, annähernd 
+Lichtgeschwindigkeit, wenn sie sich in Richtung des Erdbodens bewegen. Daher
+bedarf es relativistischer Betrachtung, welche Aufschluss über
+die tatsächliche Reichweite von Myonen gibt:
+\begin{equation*}
+    s = \gamma v \tau \approx \qty{62.5}{\kilo\meter}, \quad \text{mit } \gamma = \frac{E}{m_\mu c^2}.
+\end{equation*}
+Der Zerfall von Myonen ergibt
+\begin{align*}
+    \mu^+ \longrightarrow e^+ + \overline{\nu_e} + \nu_\mu, \\
+    \mu^- \longrightarrow e^- + \nu_e + \overline{\nu_\mu},
+\end{align*}
+also u.a. Elektronen und Positronen. Diese spielen eine zentrale Rolle für 
+diesen Versuch. Die Bestimmung der Lebensdauer erfolgt nach der Methode der 
+Einzelzerfälle. Ein Myon, das den Szintillatortank (dieser dient als Detektor, 
+siehe \autoref{sec:t3}) durchquert, zerfällt unter einer gewissen Wahrscheinlichkeit 
+in ein Elektron. Die Signale von Eintritt und Zerfall  werden zeittechnisch 
+von der Elektronik erfasst. Aus der Aufzeichnung tausender individueller 
+Zerfallszeiten wird an einem angeschlossenen Computer ein Histogramm erstellt, 
+dass die Häufigkeit der Zerfälle in Abhängigkeit von Kanälen angibt, welche 
+direkten Aufschluss über die Zeitdifferenz der Signale geben (mehr dazu in 
+\autoref{t4}). Daraus wird ein Spektrum $N(t)$ erstellt wodurch mithilfe einer 
+Ausgleichsrechnung $\tau$ ermittelt wird. 
+
+
+\subsection{Die Statistik hinter der Lebensdauer des Myons}
+\label{sec:t2}
+Die Lebensdauer $\tau$ ist definiert über die durchschnittliche Zeit, bis ein 
+Teilchen zerfällt. Die Wahrscheinlichkeit, dass das Myon in einer kurzen 
+Zeitspanne zerfällt ist proportional zu $\mathrm{d}t$. Der dazugehörige
+Proportionalitätsfaktor ist die Zerfallskonstante $\lambda$. 
+\begin{equation*}
+    \mathrm{d}P = \lambda \cdot \mathrm{d}t
+\end{equation*}
+Die Abnahme der Teilchenzahl ist über diese Wahrscheinlichkeit definiert:
+\begin{equation*}
+    \mathrm{d}N = -N \cdot \mathrm{d}P.
+\end{equation*}
+Aus beiden Differentialen lässt sich die Differentialgleichung 
+\begin{equation*}
+    \frac{1}{N} \mathrm{d}N = - \lambda \mathrm{d}t
+\end{equation*}
+aufstellen, dessen Lösung nach Separation der Variablen durch
+\begin{equation*}
+    N(t) = N_0 e^{-\lambda t}
+\end{equation*}
+gegeben ist. Dabei ist $N_0=N(0)$ die Anzahl der Myonen zum Anfangszeitpunkt.
+Die mittlere Lebensdauer ist der Erwartungswert der Zeit, folglich kann diese
+nun als
+\begin{equation}
+    \tau = \langle t \rangle \\
+         = \frac{\int_0^\infty t \cdot N(t) \mathrm{d}t}{\int_0^\infty N(t) \mathrm{d}t} 
+         = \frac{\frac{1}{\lambda^2}}{\frac{1}{\lambda}} \\
+         = \frac{1}{\lambda}
+\end{equation}
+bestimmt werden. $\tau$ ist also der Kehrwert der Zerfallskonstanten $\lambda$.
+Die Funktion für die Teilchenzahl $N(t)$ lautet infolgedessen
+\begin{equation}
+    N(t) = N_0 e^{-\frac{t}{\tau}}.
+\end{equation}
+% Damit lautet die Änderung für die Änderung der Teilchenzahl nun
+% \begin{equation*}
+%     \mathrm{d}N = - \lambda N_0 e^{-\lambda t} \mathrm{d}t.
+% \end{equation*}
+% Die Änderung der Zerfälle kann durch $\mathrm{d}N_{\text{Zerfälle}}=-\mathrm{d}N$
+% ausgedrückt werden. Die Wahrscheinlichkeitsdichte $P = -\dot{N}{N}$ führt mit
+
+
+\subsection{Szintillatoren}
+\label{sec:t3}
+Ein Szintillator ist in der Regel ein Kristall, welcher über die Eigenschaft 
+verfügt, beim Durchgang von energiereichen Teilchen durch Stoßprozesse angeregt
+zu werden. Diese Anregungsenergie gibt er in Form von Licht wieder ab. Das 
+Spektrum umfasst das sichtbare Licht, UV- und Röntgenstrahlen. Es wird zwischen 
+zwei Arten von Szintillatoren unterschieden: den organischen und den anorganischen.
+Organische Szintillatoren sind etwa Kunststoff, spezielle flüssige Lösungsmittel 
+oder Kristalle. Sie haben schnelle Fluoreszenzzeiten (das heißt wenige Nanosekungen)
+und eignen sich somit sehr gut für schnelle Messungen. Große Formate für 
+präzisere Messungen lassen sich leicht herstellen und sind günstig. Andererseits 
+altern diese bei hoher Strahlungsdosis schneller. Darüber hinaus ist die 
+Lichtausbeute gegebenenfalls anisotrop. Das bedeutet, dass die Menge an erzeugtem 
+Szinitillationslicht abhängig von der Einfallrichtung der zu detektierenden 
+Teilchen ist. Anders ist es bei anorganischen Szintillatoren, sie bieten eine 
+gute Lichtausbeute und sind dazu noch ziemlich resistent gegenüber Strahlung.
+Sie haben jedoch den Nachteil, dass sie wesentlich langsamer als organische 
+Szintillatoren sind, ihre Abklingzeit beträgt in der Regel einige hunder Nanosekungen,
+was präzise Messungen erschwert. \cite{Szintillator}
+
+\subsection{Fehlerrechnung}
+Die gemessenen Werte unterliegen Messunsicherheiten und werden demnach im
+Folgenden nicht als fehlerfrei angesehen. Die Fehler entstehen bei der
+Bildung der Mittelwerte durch den Fehler des Mittelwerts und bei der
+Regressionsrechnung sowie der Fehlerforpflanzung durch Python.
+Der Mittelwert ist definiert durch
+\begin{equation}
+    \overline{x} = \frac{1}{N} \sum\limits_{i=1}^N x_i.
+\end{equation}
+\noindent Der Fehler des Mittelwerts ist somit gegeben durch 
+\begin{equation}
+    \begin{aligned}
+        \increment \overline{x} &= \sqrt{\overline{x^2\kern-0.1em} - \overline{x}^2} \\
+                            &= \frac{\sqrt{\frac{1}{N-1} \sum\limits_{i=1}^N (x_i - \overline{x})^2}}{\sqrt{N}}.
+    \end{aligned}
+\end{equation}
+
+\noindent Um Fehler einzubeziehen, wird die Gauß'sche Fehlerfortpflanzung verwendet:
+\begin{equation}
+    \label{eqn:9}
+    \increment f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 \cdot \left(\increment x\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 \cdot \left(\increment y\right)^2 + .... + \left(\frac{\partial f}{\partial z}\right)^2 \cdot \left(\increment z\right)^2}
+\end{equation}

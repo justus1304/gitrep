@@ -1,0 +1,8 @@
+# Radius [m]    Magnetfeldstärke [G]
+3.085e16    1e-4
+1e7 1e7
+1e4 1e12
+4.3e3   1.2e5
+5.246e16    1e-3
+20  5e4
+1.496e10    1e-5
