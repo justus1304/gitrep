@@ -1,31 +1,81 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+\subsection{Auflösungszeit und optimale Verzögerung}
+Um die Auflösungszeit zu bestimmen, wurde die Verzögerung vor der Koinzidenzschaltung variiert und die Anzahl der gemessenen Ereignisse in einem festen Zeitintervall von 20 Sekunden für jede eingestellte Verzögerung gemessen. 
+Die Messwerte sind in \autoref{fig:koinzidenzkurve_myonen} dargestellt. Es wird die Halbwertsbreite (FWHM) der aufgenommenen Verteilung der Messwerte bestimmt und daraus die Auflösungszeit der Koinzidenzschaltung berechnet. Die Halbwertsbreite wird durch die Schnittpunkte der Messwerte mit der halben Höhe der Kurve bestimmt. Die Schnittpunkte liegen bei $x_{\text{links}} = -12{,}24\,\text{ns}$ und $x_{\text{rechts}} = 6{,}74\,\text{ns}$, was eine Halbwertsbreite von
+$\text{FWHM} = x_{\text{rechts}} - x_{\text{links}} = 18{,}98\,\text{ns}$ ergibt. Die Auflösungszeit der Koinzidenzschaltung beträgt damit:
+\begin{equation}
+    \tau_{\text{Koinzidenz}} = \frac{\text{FWHM}}{2} = 9{,}49\,\text{ns}
+\end{equation}
+Die optimale Verzögerung für die Koinzidenzschaltung liegt bei $\qty{-2.75}{\nano\second}$, was bedeutet, dass das Signal des linken Detektors um $2{,}75\,\text{ns}$ verzögert werden muss, um die maximale Anzahl an Koinzidenzen zu erhalten. Im Versuch wurde jedoch nach Augenmaß die Verzögerung auf $-2\,\text{ns}$ eingestellt, was ziemlich nah an der optimalen Verzögerung liegt, wenn man bedenkt, dass die Verzögerung nur in ganzen Nanosekunden eingestellt werden kann.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{build/koinzidenzkurve_myonen_korrigiert.pdf}
+    \caption{Koinzidenzkurve der Myonen zur Bestimmung der Auflösungszeit und optimalen Verzögerung.}
+    \label{fig:koinzidenzkurve_myonen}
 \end{figure}
 
-\begin{table}
-  \centering
-  \caption{Eine Beispieltabelle mit Messdaten.}
-  \label{tab:tabelle}
-  \sisetup{table-format=1.1, per-mode=reciprocal}
-  \begin{tblr}{
-      colspec = {S[table-format=3.0] S[table-format=2.1] S},
-      row{1} = {guard, mode=math},
-      vline{4} = {2}{-}{text=\clap{$\pm$}},
-    }
-    \toprule
-    U \mathbin{/} \unit{\volt} & I \mathbin{/} \unit{\micro\ampere} & \SetCell[c=2]{c} N \mathbin{/} \unit{\per\second} & \\
-    \midrule
-    360 & 0.1 & 98.3 & 0.9 \\
-    400 & 0.2 & 99.8 & 1.0 \\
-    420 & 0.2 & 99.1 & 0.9 \\
-    \bottomrule
-  \end{tblr}
-\end{table}
+\subsection{Bestimmung der Untergrundrate}
+Da die Myonen in der Atmosphäre durch kosmische Strahlung erzeugt werden, ist es möglich, dass zwei Myonen zufällig innerhalb der Auflösungszeit der Koinzidenzschaltung in den Detektoren registriert werden. Diese zufälligen Koinzidenzen werden als Untergrundrate bezeichnet. 
+Die Wahrscheinlichkeit, dass in einem Zeitintervall $\Delta t$ genau $k$ Myonen registriert werden, ist gegeben durch die Poissonverteilung:
+\begin{equation}
+    P(k) = \frac{(\lambda)^k}{k!} e^{-\lambda}
+\end{equation}
+wobei $\lambda = R \Delta t$ die mittlere Anzahl von Teilchen im Zeitfenster $\Delta t$ ist. Die Wahrscheinlichkeit für genau ein weiteres Myon im Zeitfenster einer Messung $\Delta t$ ist damit gegeben durch:
+\begin{equation}
+    P(1) = \lambda e^{-\lambda} = R \Delta t e^{-R \Delta t} = \qty{365(0.19)e-3}{}.
+\end{equation}
+Diese Wahrscheinlichkeit wird mit der Anzahl der insgesamt gemessenen Startsignale multipliziert, um die Anzahl der gesamten Fehlausschläge $N_\text{Untergrund}$ zu bestimmen.
+\begin{equation}
+    N_\text{Untergrund} = P(1) \cdot N_\text{Start} = \qty{1.69(0.18)e3}{counts}
+\end{equation}
+Und um letztendlich die Untergrundrate für jeden Kanal zu bestimmen, wird die Anzahl der Fehlausschläge durch die Anzahl der Kanäle geteilt.
+\begin{equation}
+    U_0 = \frac{N_\text{Untergrund}}{512} = \qty{3.3(0.4)}{counts}
+\end{equation}
 
-Siehe \autoref{fig:plot} und \autoref{tab:tabelle}!
+
+\subsection{Kalibrierung des Vielkanalanalysators auf die physikalische Zeitskala}
+\label{sec:kalibrierung}
+Da in der späteren Auswertung die Lebensdauern der Myonen mit einem Vielkanalanalysator einem der 512 Kanäle zugeordnet werden, muss jeder Kanal auf die physikalische Zeitskala kalibriert werden. Dazu wird ein Doppelimpulsgenerator als Signalquelle verwendet, welcher Impulse in fest einstellbaren Abständen generiert. Die Nummer des Kanals, auf dem die Impulse ankommen, wird dann auf die eingestellte Zeitdifferenz der Impulse aufgetragen und es wird eine lineare Regression durchgeführt. Die Messwerte sowie die Ausgleichsrechnung sind in \autoref{fig:kalibrierung} dargestellt. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{build/kalibrierung.pdf}
+    \caption{Zeitimpulsbreite aufgetragen gegen die Chanelnummer.}
+    \label{fig:kalibrierung}
+\end{figure}
+Die Parameter der Ausgleichsgeraden ergeben sich zu:
+\begin{align*}
+    m =& \qty{0.0217(0.0000)}{\nano\second\per kanal}\\
+    b =& \qty{-0.1514(0.0024)}{\nano\second}
+\end{align*}
+\noindent Es ist zu beachten, das der Messwert Bei einer eingestellten Impulsbreite von $\qty{7}{\micro\second}$ nicht in die Ausgleichsrechnung einbezogen wurde, da er offensichtlich stark abweicht. Grund dafür kann falsches ablesen der Werte gewesen sein.
+
+
+\subsection{Bestimmung der Lebensdauer der Myonen}
+Um nun die Lebensdauer der Myonen zu bestimmen, wurden mehrere Tage lang Start- und Stoppsignale der Myonen gemessen. Die Zeitdifferenz zwischen Start und Stopp wird im Vielkanalanalysator einem der 512 Kanäle zugeordnet und anschließend mit Hilfe des Steigungsparameters aus \autoref{sec:kalibrierung} in eine physikalische Zeitdifferenz umgerechnet. Daraufhin wird die Anzahl der Ereignisse gegen die Zeitdifferenz aufgetragen. Nun kann mit einer Ausgleichsrechnung der exponentiellen Funktion 
+\begin{equation}
+    N(t) = N_0 \cdot e^{-\lambda t} + U_0
+\end{equation}
+der Erwartungswert $\tau = 1/\lambda$ der Lebensdauer der Myonen bestimmt werden. Die Messwerte sowie die Ausgleichsrechnung sind in \autoref{fig:lebensdauer} dargestellt. $U_0$ ist die Untergrundrate, welche in \autoref{sec:untergrund} theoretisch bestimmt wurde. Hier wird sie als Konstante in die Ausgleichsrechnung angenommen. 
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{build/lebensdauer.pdf}
+    \caption{Bestimmung der Lebensdauer der Myonen.}
+    \label{fig:lebensdauer}
+\end{figure}
+ 
+Die Parameter der Ausgleichsrechnung ergeben sich zu:
+\begin{align*}
+    N_0 =& \qty{48.4(1.6)}{counts}\\
+    \lambda =& \qty{0.435(0.033)}{\per\nano\second}\\
+    U_0 =& \qty{0.5(0.7)}{counts}
+\end{align*}
+
+\noindent Damit ergibt sich für die Lebensdauer der Myonen:
+\begin{equation}
+    \tau = \frac{1}{\lambda} = \qty{2.29(0.18)}{\nano\second}
+\end{equation}
