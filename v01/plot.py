@@ -161,6 +161,7 @@ print ('tau = 1/b = ', 1/ufloat(params[1],np.sqrt(cov[1, 1])) , 'ns')
 t_gesammt = 254135 #s
 
 R = (ufloat(365,np.sqrt(365))/20) #1/s
+print('Rate = ', R, '1/s')
 N = R * t_gesammt
 deltat = 2*10**(-5) #s
 
@@ -169,4 +170,4 @@ print(e)
 
 print(e*N)
 
-print(e*N/512)
+print('Untergrundrate = ', e*N/512, 'Counts pro Kanal')
